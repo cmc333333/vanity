@@ -41,91 +41,31 @@
   </head>
   <body>
     <div id="skip-link"><a href="#main-menu">Jump to Navigation</a></div>
-    <div id="page-wrapper">
-      <div id="page">
-        <div id="header">
-          <div class="section clearfix">
-            <a href="/" title="Home" rel="home" id="logo"><img src="/sites/default/files/cmlubinski_theme_logo.gif" alt="Home" /></a>
-            <div id="name-and-slogan">
-              <div id="site-name"><strong><a href="/" title="Home" rel="home"><span>C. M. Lubinski</span></a></strong></div>
-            </div> <!-- /#name-and-slogan -->
-          </div><!-- /.section -->
-        </div> <!-- /#header -->
-        <div id="main-wrapper">
-          <div id="main" class="clearfix with-navigation">
-            <div id="content" class="column"><div class="section">
-              <h1 class="title"><%= @item[:title] %></h1>
-              <div id="content-area">
-                <div id="node-100" class="node node-type-page clearfix">
-                  <div class="content">
-                    <div id="pdf-link"><a href="/sites/default/files/lubinski-resume.pdf">PDF Version</a></div>
-                    <%= yield %>
-                  </div><!-- /.content -->
-                </div><!-- /.node -->
-              </div>
-            </div><!-- #content -->
-          </div><!-- #main -->
-          <div id="navigation">
-            <div class="section clearfix">
-              <ul id="main-menu" class="links clearfix">
-                <li class="menu-114 active-trail first active"><a href="/static/pages/resume" title="Curriculum Vitae" class="active"><span>Curriculum Vitae</span></a></li>
-                <li class="menu-115"><a href="/writings/papers" title="Writings"><span>Writings</span></a></li>
-                <li class="menu-117 last"><a href="/static/pages/calendar" title="Misc."><span>Misc.</span></a></li>
-              </ul>
-            </div><!-- /.section -->
-          </div><!-- /#navigation -->
-          <div class="region region-sidebar-first column sidebar">
-            <div class="section">
-              <div id="block-menu_block-1" class="block block-menu_block region-odd odd region-count-1 count-1">
-                <div class="content-wrapper">
-                  <h2 class="title">Curriculum Vitae</h2>
-                  <div class="content">
-                    <div class="menu-block-1 menu-name-primary-links parent-mlid-0 menu-level-2">
-                      <ul class="menu">
-                        <li class="leaf first menu-mlid-708 active"><a href="/static/pages/resume" title="Résumé" class="active">Résumé</a></li>
-                        <li class="collapsed last menu-mlid-607"><a href="/cv/work_history" title="">Work History</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div> <!-- /.block -->
-              <div id="block-search-0" class="block block-search region-even even region-count-2 count-2">
-                <div class="content-wrapper">
-                  <h2 class="title">Search</h2>
-                  <div class="content">
-                    <form action="/"  accept-charset="UTF-8" method="post" id="search-block-form">
-                      <div>
-                        <div class="container-inline">
-                          <div class="form-item" id="edit-search-block-form-1-wrapper">
-                            <label for="edit-search-block-form-1">Search this site: </label>
-                            <input type="text" maxlength="128" name="search_block_form" id="edit-search-block-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text" />
-                          </div>
-                          <input type="submit" name="op" id="edit-submit" value="Search"  class="form-submit" />
-                          <input type="hidden" name="form_build_id" id="form-c7e8ddc168f2b5bea4947411c964a236" value="form-c7e8ddc168f2b5bea4947411c964a236"  />
-                          <input type="hidden" name="form_id" id="edit-search-block-form" value="search_block_form"  />
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div> <!-- /.block -->
-            </div><!-- /.section -->
-          </div><!-- /.region -->
-        </div><!-- /#main-wrapper -->
-        <div id="footer">
-          <div class="section">
-            <div class="region region-footer">
-              <div id="block-block-2" class="block block-block region-odd odd region-count-1 count-3">
-                <div class="content-wrapper">
-                  <div class="content">
-                    <p>&copy; C.M. Lubinski 2008-2013</p>
-                  </div>
-                </div>
-              </div> <!-- /.block -->
-            </div> <!-- /.region -->
-          </div><!-- /.section -->
-        </div><!-- /#footer -->
-      </div><!-- /#page -->
-    </div><!-- /#page-wrapper -->
+    <div id="page">
+      <div id="header">
+        <a href="/" title="Home" rel="home" id="logo"><img src="/sites/default/files/cmlubinski_theme_logo.gif" alt="Home" /></a>
+        <strong><a href="/" title="Home" rel="home"><span>C. M. Lubinski</span></a></strong>
+      </div> <!-- /#header -->
+      <div id="main">
+        <%= yield %>
+      </div><!-- #main -->
+      <div id="navigation">
+        <ul id="main-menu">
+          <li><a href="/static/pages/resume" title="Curriculum Vitae"><span>Curriculum Vitae</span></a></li>
+          <li><a href="/writings/papers" title="Writings"><span>Writings</span></a></li>
+          <li><a href="/static/pages/calendar" title="Misc."><span>Misc.</span></a></li>
+        </ul>
+      </div><!-- /#navigation -->
+      <div id="sidebar">
+        <h2 class="title">Curriculum Vitae</h2>
+        <ul class="menu">
+          <li class="leaf first menu-mlid-708 active"><a href="/static/pages/resume" title="Résumé" class="active">Résumé</a></li>
+          <li class="collapsed last menu-mlid-607"><a href="/cv/work_history" title="">Work History</a></li>
+        </ul>
+      </div>
+      <div id="footer">
+        <p>&copy; C.M. Lubinski 2008-2013</p>
+      </div><!-- /#footer -->
+    </div><!-- /#page -->
   </body>
 </html>
