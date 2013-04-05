@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="nanoc <%= Nanoc::VERSION %>">
+    <title><%= @item[:title] %> | C.M. Lubinski</title>
+    <!-- 
+      <link rel="shortcut icon" href="/sites/default/files/favicon_0.ico" type="image/x-icon" />
+      <link type="text/css" rel="stylesheet" media="all" href="/modules/book/book.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/modules/node/node.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/modules/system/defaults.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/modules/system/system.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/modules/system/system-menus.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/modules/user/user.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/cck/theme/content-module.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/date/date.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/default/files/geshifilter-languages.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/geshifilter/geshifilter.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/cck/modules/fieldgroup/fieldgroup.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/views/css/views.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/cmlubinski_theme/css/html-reset.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/cmlubinski_theme/css/wireframes.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/cmlubinski_theme/css/layout-liquid.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/cmlubinski_theme/css/page-backgrounds.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/cmlubinski_theme/css/tabs.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/cmlubinski_theme/css/messages.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/cmlubinski_theme/css/pages.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/cmlubinski_theme/css/block-editing.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/cmlubinski_theme/css/blocks.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/cmlubinski_theme/css/navigation.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/cmlubinski_theme/css/panels-styles.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/cmlubinski_theme/css/views-styles.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/cmlubinski_theme/css/nodes.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/cmlubinski_theme/css/comments.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/cmlubinski_theme/css/forms.css?J" />
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/cmlubinski_theme/css/fields.css?J" />
+      <link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/cmlubinski_theme/css/print.css?J" />
+      <script type="text/javascript" src="/misc/jquery.js?J"></script>
+      <link type="text/css" rel="stylesheet" media="all" href="/css/get/100" />
+    -->
+  </head>
+  <body>
+    <div id="skip-link"><a href="#main-menu">Jump to Navigation</a></div>
+    <div id="page-wrapper">
+      <div id="page">
+        <div id="header">
+          <div class="section clearfix">
+            <a href="/" title="Home" rel="home" id="logo"><img src="/sites/default/files/cmlubinski_theme_logo.gif" alt="Home" /></a>
+            <div id="name-and-slogan">
+              <div id="site-name"><strong><a href="/" title="Home" rel="home"><span>C. M. Lubinski</span></a></strong></div>
+            </div> <!-- /#name-and-slogan -->
+          </div><!-- /.section -->
+        </div> <!-- /#header -->
+        <div id="main-wrapper">
+          <div id="main" class="clearfix with-navigation">
+            <div id="content" class="column"><div class="section">
+              <h1 class="title"><%= @item[:title] %></h1>
+              <div id="content-area">
+                <div id="node-100" class="node node-type-page clearfix">
+                  <div class="content">
+                    <div id="pdf-link"><a href="/sites/default/files/lubinski-resume.pdf">PDF Version</a></div>
+                    <%= yield %>
+                  </div><!-- /.content -->
+                </div><!-- /.node -->
+              </div>
+            </div><!-- #content -->
+          </div><!-- #main -->
+          <div id="navigation">
+            <div class="section clearfix">
+              <ul id="main-menu" class="links clearfix">
+                <li class="menu-114 active-trail first active"><a href="/static/pages/resume" title="Curriculum Vitae" class="active"><span>Curriculum Vitae</span></a></li>
+                <li class="menu-115"><a href="/writings/papers" title="Writings"><span>Writings</span></a></li>
+                <li class="menu-117 last"><a href="/static/pages/calendar" title="Misc."><span>Misc.</span></a></li>
+              </ul>
+            </div><!-- /.section -->
+          </div><!-- /#navigation -->
+          <div class="region region-sidebar-first column sidebar">
+            <div class="section">
+              <div id="block-menu_block-1" class="block block-menu_block region-odd odd region-count-1 count-1">
+                <div class="content-wrapper">
+                  <h2 class="title">Curriculum Vitae</h2>
+                  <div class="content">
+                    <div class="menu-block-1 menu-name-primary-links parent-mlid-0 menu-level-2">
+                      <ul class="menu">
+                        <li class="leaf first menu-mlid-708 active"><a href="/static/pages/resume" title="Résumé" class="active">Résumé</a></li>
+                        <li class="collapsed last menu-mlid-607"><a href="/cv/work_history" title="">Work History</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- /.block -->
+              <div id="block-search-0" class="block block-search region-even even region-count-2 count-2">
+                <div class="content-wrapper">
+                  <h2 class="title">Search</h2>
+                  <div class="content">
+                    <form action="/"  accept-charset="UTF-8" method="post" id="search-block-form">
+                      <div>
+                        <div class="container-inline">
+                          <div class="form-item" id="edit-search-block-form-1-wrapper">
+                            <label for="edit-search-block-form-1">Search this site: </label>
+                            <input type="text" maxlength="128" name="search_block_form" id="edit-search-block-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text" />
+                          </div>
+                          <input type="submit" name="op" id="edit-submit" value="Search"  class="form-submit" />
+                          <input type="hidden" name="form_build_id" id="form-c7e8ddc168f2b5bea4947411c964a236" value="form-c7e8ddc168f2b5bea4947411c964a236"  />
+                          <input type="hidden" name="form_id" id="edit-search-block-form" value="search_block_form"  />
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div> <!-- /.block -->
+            </div><!-- /.section -->
+          </div><!-- /.region -->
+        </div><!-- /#main-wrapper -->
+        <div id="footer">
+          <div class="section">
+            <div class="region region-footer">
+              <div id="block-block-2" class="block block-block region-odd odd region-count-1 count-3">
+                <div class="content-wrapper">
+                  <div class="content">
+                    <p>&copy; C.M. Lubinski 2008-2013</p>
+                  </div>
+                </div>
+              </div> <!-- /.block -->
+            </div> <!-- /.region -->
+          </div><!-- /.section -->
+        </div><!-- /#footer -->
+      </div><!-- /#page -->
+    </div><!-- /#page-wrapper -->
+  </body>
+</html>
