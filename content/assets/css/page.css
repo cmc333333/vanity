@@ -70,7 +70,7 @@ body .container-fluid {
 /*  Sidebar */
 #sidebar {
   background: #CCC;
-  color: #465E80;
+  color: #346;
   border: solid thin #5A79A5;
   margin-top: -11px;
   padding: 1em .5em .5em .5em;
@@ -84,12 +84,13 @@ body .container-fluid {
   list-style: none;
 }
 #sidebar a {
-  color: #465E80;
+  color: #346;
 }
 
 /*  Main  */
 #main {
   background: #DCDFF6;
+  color: #222;
   border-radius: 10px;
   padding: 0 2em 2em 2em;
 }

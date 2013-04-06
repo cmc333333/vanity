@@ -4,12 +4,12 @@
   border-bottom: thin solid #313C4B;
   clear: both;
   display: inline-block;
-  width: 95%;
+  width: 100%;
 }
 #resume .zection .lhs {
   float: left;
   padding-right: .6em;
-  width: 47%;
+  width: 50%;
 }
 #resume .zection .rhs {
   border-left: thin solid #313C4B;
@@ -22,6 +22,15 @@
 .zection label {
   font-weight: bold;
   margin-bottom: 0;
+}
+.zection ul label {
+  font-weight: normal;
+  text-decoration: underline;
+}
+.zection ul ul label {
+  text-decoration: none;
+  font-style: italic;
+  display: inline;
 }
 #objective label {
   float: left;
@@ -37,7 +46,6 @@
   font-size: 1.75em;
   margin: .25em;
   background-color: #DCDFF6;
-  color: #000;
 }
 #headers h3 {
   font-style: italic;
@@ -95,12 +103,18 @@
   display: inline-block;
   float: right;
 }
+#work-history .defs .name {
+  font-style: italic;
+}
 #work-history ul,
 #work-history ul ul ul {
   list-style-type: none;
 }
 #work-history ul ul {
   list-style-type: disc;
+}
+#work-history .title {
+  text-decoration: underline;
 }
 
 /*  Education */
@@ -118,6 +132,10 @@
 #education ul ul ul,
 #education ul ul ul li {
   display: inline;
+}
+#education .school {
+  display: inline-block;
+  text-decoration: underline;
 }
 #education .award {
   display: inline-block;
