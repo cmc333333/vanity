@@ -1,0 +1,187 @@
+/***
+ * Generic
+ ***/
+#resume .zection
+{
+    padding-bottom: .6em;
+    border-bottom: thin solid #313C4B;
+    clear: both;
+    display: inline-block;
+    width: 95%;
+}
+#resume .zection .lhs
+{
+    float: left;
+    padding-right: .6em;
+    width: 47%;
+}
+#resume .zection .rhs
+{
+    border-left: thin solid #313C4B;
+    padding-left: 1em;
+    float: left;
+    width: 47%;
+}
+
+/***
+ * Floating Label
+ ***/
+#objective span
+{
+    float: left;
+}
+#education ul li ul span
+{
+    float: none;
+}
+#contact li,
+#objective div,
+#education ul li div
+{
+    text-align: center;
+    float: right;
+}
+
+/***
+ * Lists
+ ***/
+#skills .lhs ul li ul,
+#skills .rhs ul li ul,
+#work-history ul ul,
+#education ul li ul,
+#projects div ul li ul
+{
+    list-style-type: disc; 
+}
+#contact ul,
+#skills div ul,
+#skills .lhs ul,
+#skills .rhs ul li ul li ul,
+#resume .zection ul,
+#resume .zection ul li ul,
+#projects div ul
+{
+    list-style-type: none;
+}
+#skills div ul li ul li ul,
+#skills div ul li ul li ul li,
+#skills div ul li ul li ul ul,
+#education ul li ul li ul li,
+#education ul li ul li ul ul
+{
+    display: inline;
+}
+#skills div ul li ul li ul li,
+#skills .lhs ul li ul li ul li ul li,
+#education ul li ul li li
+{
+    border-right-style: solid;
+    border-right-color: #313C4B;
+    border-right-width:expression(this.nextSibling == null? '0px': '3px');
+    margin: 2px;
+}
+#skills .lhs ul li ul li ul li ul,
+#skills .rhs ul li ul li ul,
+#skills .lhs ul li ul li ul
+{
+    padding-left: 0em;
+}
+/***
+ * Labels
+ ***/
+#resume .zection span,
+#resume .zection .lhs span
+{
+    font-weight: bold;
+}
+#resume .zection ul li span,
+#resume .zection .lhs ul li span
+{
+    font-weight: normal;
+}
+
+#resume .zection div ul li span,
+#resume .zection ul li span
+{
+    text-decoration: underline;
+}
+#resume .zection div ul li ul li span,
+#resume .zection ul li span *,
+#work-history ul li .dates,
+#resume .zection#education ul li ul span
+{
+    text-decoration: none;
+}
+#work-history ul li .dates,
+#work-history .rhs span,
+#resume .zection div ul li ul li span,
+#resume .zection ul li ul li span
+{
+    font-style: italic;
+}
+#resume .zection div ul li ul li ul li span
+{
+    font-style: normal;
+}
+
+/***
+ * Top
+ **/
+#headers *
+{
+    text-align: center;
+}
+#headers h2
+{
+    font-family: serif;
+    letter-spacing: .1em;
+    font-size: 1.75em;
+    margin: .25em;
+    background-color: #DCDFF6;
+    color: #000;
+}
+#headers h3
+{
+    font-style: italic;
+    font-weight: normal;
+    font-size: 1em;
+}
+#contact li
+{
+    clear: both;
+}
+
+/***
+ * Skills
+ **/
+#skills .rhs ul li ul li span
+{
+    display: none;
+}
+
+/***
+ * Education
+ **/
+#education ul li div
+{
+    font-style: italic;
+}
+/***
+ * Footer
+ **/
+#resume-footer
+{
+    text-align: center;
+}
+
+/***
+ * Generic
+ ***/
+#pdf-link
+{
+    padding-bottom: 10px;
+}
+#pdf-link a
+{
+    border-bottom: none;
+}

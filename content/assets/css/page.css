@@ -97,7 +97,7 @@ h1 {
   background: #5A79A5;
   color: #FFF;
   text-align: center;
-  margin: 0 20% 1em 20%;
+  margin: 0 20% .5em 20%;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
   font-size: x-large;
