@@ -1,0 +1,12 @@
+#logo {
+  position: absolute;
+}
+#header strong {
+  background: url('../img/logo_left.gif') left bottom no-repeat;
+  padding-left: 17px;
+  padding-top: 10px;
+  margin-left: 90px;
+  height: 25px;
+  line-height: 25px;
+  display: inline-block;
+}

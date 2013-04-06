@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="/assets/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="/assets/css/page.css" rel="stylesheet" media="screen">
     <!-- 
       <link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/cck/theme/content-module.css?J" />
       <link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/date/date.css?J" />
@@ -41,17 +42,15 @@
       <div id="header">
         <a href="/" title="Home" rel="home" id="logo"><img src="/assets/img/logo.gif" alt="Home" /></a>
         <strong><a href="/" title="Home" rel="home"><span>C. M. Lubinski</span></a></strong>
-      </div> <!-- /#header -->
-      <div id="main">
-        <%= yield %>
-      </div><!-- #main -->
-      <div id="navigation">
         <ul id="main-menu">
           <li><a href="/static/pages/resume" title="Curriculum Vitae"><span>Curriculum Vitae</span></a></li>
           <li><a href="/writings/papers" title="Writings"><span>Writings</span></a></li>
           <li><a href="/static/pages/calendar" title="Misc."><span>Misc.</span></a></li>
         </ul>
-      </div><!-- /#navigation -->
+      </div> <!-- /#header -->
+      <div id="main">
+        <%= yield %>
+      </div><!-- #main -->
       <div id="sidebar">
         <h2 class="title">Curriculum Vitae</h2>
         <ul class="menu">
