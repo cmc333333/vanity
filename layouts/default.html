@@ -29,12 +29,15 @@
             <li><a href="/cv/work_history" title="">Work History</a></li>
           </ul>
         </div>
-        <div id="main" class="span10">
+        <div id="main" class="span9">
+          <h1><%= @item[:title] %></h1>
           <%= yield %>
         </div><!-- #main -->
       </div>
       <div id="footer" class="row-fluid">
-        <p>&copy; C.M. Lubinski 2008-2013</p>
+        <div class="span9 offset2">
+          <span>&copy; C.M. Lubinski 2008-2013</span>
+        </div>
       </div><!-- /#footer -->
     </div><!-- /#page -->
     <script src="//code.jquery.com/jquery.js"></script>

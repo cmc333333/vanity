@@ -1,3 +1,11 @@
+/*  Structure */
+body {
+  background-color: #9CAAC6;
+}
+body .container-fluid {
+  margin-top: 1em;
+}
+
 /*  Header  */
 #logo {
   position: absolute;
@@ -57,4 +65,51 @@
 }
 #main-menu a.last span {
   background: url('../img/mm_right_curve.gif') right no-repeat;
+}
+
+/*  Sidebar */
+#sidebar {
+  background: #CCC;
+  color: #465E80;
+  border: solid thin #5A79A5;
+  margin-top: -11px;
+  padding: 1em .5em .5em .5em;
+}
+#sidebar h2 {
+  font-size: small;
+  line-height: inherit;
+  margin: 0;
+}
+#sidebar ul {
+  list-style: none;
+}
+#sidebar a {
+  color: #465E80;
+}
+
+/*  Main  */
+#main {
+  background: #DCDFF6;
+  border-radius: 10px;
+  padding: 0 2em 2em 2em;
+}
+h1 {
+  background: #5A79A5;
+  color: #FFF;
+  text-align: center;
+  margin: 0 20% 1em 20%;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  font-size: x-large;
+}
+
+/*  Footer  */
+#footer {
+  text-align: center;
+  margin: 1em 0;
+}
+#footer span {
+  background: #DCDFF6;
+  border-radius: 10px;
+  padding: 0 1em;
 }
