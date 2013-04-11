@@ -5,7 +5,7 @@ professor: Andrew Ng
 professor's university: Stanford
 university: Coursera
 categories: [computer science, mathematics, machine learning]
-tools: [octave]
+languages: [octave]
 syllabus:
   Week 1:
   - Introduction

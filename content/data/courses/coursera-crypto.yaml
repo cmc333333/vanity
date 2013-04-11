@@ -5,7 +5,8 @@ professor: Dan Boneh
 professor's university: Stanford
 university: Coursera
 categories: [computer science, mathematics, theory, cryptography, security]
-tools: [python, gmpy]
+languages: [python]
+libraries: [gmpy]
 syllabus:
   week 1:
   - Background and overview.
