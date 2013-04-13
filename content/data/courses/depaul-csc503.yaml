@@ -1,0 +1,7 @@
+title: Parallel Algorithms
+end: 2013-03-01
+professor: "?"
+university: DePaul
+categories: [Computer Science, Distributed Systems, Algorithms]
+languages: [Python]
+libraries: [MPI, OpenCL]
