@@ -1,3 +1,52 @@
+<% course_list.each do |course| %>
+  <div class="course" id="course-<%= course[:id] %>">
+    <div class="header">
+      <h2><%= h(course[:title]) %></h2>
+      <% if course[:categories] %>
+        <ul class="categories">
+          <% course[:categories].each do |category| %>
+            <li><%= h(category) %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <% if course[:languages] %>
+        <ul class="languages">
+          <% course[:languages].each do |language| %>
+            <li><%= h(language) %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <% if course[:libraries] %>
+        <ul class="libraries">
+          <% course[:libraries].each do |library| %>
+            <li><%= h(library) %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+    <div class="from">From <%= h(course[:professor]) %> of
+      <% if course[:"professor's university"] %>
+        <%= h(course[:"professor's university"]) %> via
+      <% end %>
+        <%= h(course[:university]) %>
+    </div>
+    <% if course[:syllabus] %>
+      <ul>
+      <% course[:syllabus].each do |key, lst| %>
+        <li><label><%= h(key.to_s) %></label>
+          <% if lst %>
+            <ul>
+              <% lst.each do |entry| %>
+                <li><%= h(entry) %></li>
+              <% end %>
+            </ul>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
+<% end %>
 <script class="data" type="text/javascript">
   pageJson.courses = <%= course_list.to_json %>;
 </script>

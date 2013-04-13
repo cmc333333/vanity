@@ -1,0 +1,13 @@
+.course h2 {
+  font-size: 1.25em;
+  display: inline-block;
+  line-height: inherit;
+}
+.course .categories, .course .languages, .course .libraries {
+  list-style: none;
+  display: inline;
+}
+.course .categories li, .course .languages li, .course .libraries li {
+  display: inline;
+  font-size: .75em;
+}
