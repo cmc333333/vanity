@@ -4,8 +4,8 @@ end: 2012-06-30
 professor: Andrew Ng
 professor's university: Stanford
 university: Coursera
-categories: [computer science, mathematics, machine learning]
-languages: [octave]
+categories: [Computer Science, Mathematics, Machine Learning]
+languages: [Octave]
 syllabus:
   Week 1:
   - Introduction
@@ -19,9 +19,9 @@ syllabus:
   - Regularization
   Week 4:
   - Multi-Class Classification
-  - Neural Networks: Representation
+  - "Neural Networks: Representation"
   Week 5:
-  - Neural Networks: Learning
+  - "Neural Networks: Learning"
   Week 6:
   - Bias-Variance
   - Advice for Applying Machine Learning
