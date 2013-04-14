@@ -5,3 +5,10 @@ professor's university: Rutgers University
 university: Udacity
 categories: [Computer Science, Mathematics, Algorithms, Graph Theory]
 languages: [Python]
+syllabus:
+  - Multiplication Algorithms, Recurrence Relations
+  - Big-Theta, Graphs, Growth Rates
+  - Basic Graph Algorithms
+  - It’s Who You Know
+  - Strong and Weak Bonds
+  - Hardness of Network Problems
