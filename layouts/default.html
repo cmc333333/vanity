@@ -50,5 +50,10 @@
     </div><!-- /#page -->
     <script src="//code.jquery.com/jquery.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
+    <% if @item[:extra_js] %>
+      <% @item[:extra_js].each do |js| %>
+        <script src="<%= js %>"></script>
+      <% end %>
+    <% end %>
   </body>
 </html>

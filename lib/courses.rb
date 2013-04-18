@@ -21,7 +21,10 @@ end
 def courses
   items << Nanoc::Item.new(
     "<%= render 'courses' %>",
-    {:title => "Courses", :extra_css => ["/assets/css/courses.css"]},
+    {
+      :title => "Courses", 
+      :extra_css => ["/assets/css/courses.css"]
+    },
     "/cv/courses/"
   )
 end
