@@ -7,6 +7,7 @@ university: EdX
 categories: [Computer Science, SaaS]
 languages: [Ruby]
 libraries: [Rails]
+syllabus:
   - Advanced Rails
   - Legacy Code
   - Teams
