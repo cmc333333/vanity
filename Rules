@@ -24,6 +24,9 @@ end
 compile '*' do
   if item.binary?
     # don’t filter binary items
+  elsif item[:extension] == 'md'
+    filter :kramdown
+    layout 'default'
   else
     filter :erb
     layout 'default'
