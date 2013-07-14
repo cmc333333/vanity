@@ -1,0 +1,6 @@
+#presentation div.slide, #presentation .nav-pager {
+  display: none;
+}
+#presentation div.slide {
+  height: 200px;
+}

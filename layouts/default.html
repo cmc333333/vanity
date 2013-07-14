@@ -31,11 +31,24 @@
       </div> <!-- /#header -->
       <div class="row-fluid">
         <div id="sidebar" class="span2">
-          <h2 class="title">Curriculum Vitae</h2>
-          <ul class="menu">
-            <li><a href="/" title="Résumé">Résumé</a></li>
-            <li><a href="/cv/courses" title="Courses">Courses</a></li>
-          </ul>
+          <% if @item.identifier.start_with?("/writings/") %>
+            <h2 class="title">Writings</h2>
+            <ul class="menu">
+              <% @items.select{ |i| 
+                  i.identifier.start_with?("/writings/")
+                }.sort_by {|i| 
+                  i[:title] 
+                }.each do |i| %>
+              <li><a href="<%= i.identifier %>"><%= i[:title] %></a></li>
+              <% end %>
+            </ul>
+          <% else %>
+            <h2 class="title">Curriculum Vitae</h2>
+            <ul class="menu">
+              <li><a href="/" title="Résumé">Résumé</a></li>
+              <li><a href="/cv/courses" title="Courses">Courses</a></li>
+            </ul>
+          <% end %>
         </div>
         <div id="main" class="span9">
           <h1><%= @item[:title] %></h1>

@@ -1,0 +1,24 @@
+.text-center {
+  text-align: center;
+}
+#presentation span.hl {
+  background-color: #ff0;
+}
+#presentation .slides, #start-presentation {
+  display: none;
+}
+#presentation .slides div, #index ul {
+  min-height: 300px;
+  font-size: 22px;
+  line-height: 1.25;
+}
+#symmetric-encryption .slides tr {
+  font-size: 18px;
+}
+#symmetric-encryption .slides th {
+  padding-bottom: 20px;
+}
+#presentation .slides h2, #index h2 {
+  font-size: 32px;
+}
+
