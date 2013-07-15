@@ -25,7 +25,7 @@
         <strong><a href="/" title="Home" rel="home"><span>C.M. Lubinski</span></a></strong>
         <ul id="main-menu">
           <li><a href="/" title="Curriculum Vitae" class="first"><span>Curriculum Vitae</span></a></li>
-          <li><a href="/writings/papers" title="Writings"><span>Writings</span></a></li>
+          <li><a href="/writings" title="Writings"><span>Writings</span></a></li>
           <li><a href="/static/pages/calendar" title="Misc." class="last"><span>Misc.</span></a></li>
         </ul>
       </div> <!-- /#header -->
@@ -35,7 +35,8 @@
             <h2 class="title">Writings</h2>
             <ul class="menu">
               <% @items.select{ |i| 
-                  i.identifier.start_with?("/writings/")
+                  i.identifier.start_with?("/writings/") and
+                  i.identifier.split('/').length == 3
                 }.sort_by {|i| 
                   i[:title] 
                 }.each do |i| %>
