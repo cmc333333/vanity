@@ -5,7 +5,6 @@ title: Writings
 
         
         
-                  <h1 class="title">Papers</h1>
                                 
         
         <div id="content-area">

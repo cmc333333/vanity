@@ -26,7 +26,7 @@
         <ul id="main-menu">
           <li><a href="/" title="Curriculum Vitae" class="first"><span>Curriculum Vitae</span></a></li>
           <li><a href="/writings" title="Writings"><span>Writings</span></a></li>
-          <li><a href="/static/pages/calendar" title="Misc." class="last"><span>Misc.</span></a></li>
+          <li><a href="/misc/calendar" title="Misc." class="last"><span>Misc.</span></a></li>
         </ul>
       </div> <!-- /#header -->
       <div class="row-fluid">
@@ -36,6 +36,18 @@
             <ul class="menu">
               <% @items.select{ |i| 
                   i.identifier.start_with?("/writings/") and
+                  i.identifier.split('/').length == 3
+                }.sort_by {|i| 
+                  i[:title] 
+                }.each do |i| %>
+              <li><a href="<%= i.identifier %>"><%= i[:title] %></a></li>
+              <% end %>
+            </ul>
+          <% elsif @item.identifier.start_with?("/misc/") %>
+            <h2 class="title">Misc</h2>
+            <ul class="menu">
+              <% @items.select{ |i| 
+                  i.identifier.start_with?("/misc/") and
                   i.identifier.split('/').length == 3
                 }.sort_by {|i| 
                   i[:title] 
