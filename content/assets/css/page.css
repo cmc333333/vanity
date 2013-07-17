@@ -80,9 +80,6 @@ body .container-fluid {
   line-height: inherit;
   margin: 0;
 }
-#sidebar ul {
-  list-style: none;
-}
 #sidebar a {
   color: #346;
 }
