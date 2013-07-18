@@ -14,6 +14,9 @@
 #   because “*” matches zero or more characters.
 
 
+compile '/assets/files/*/' do
+  # don’t filter or layout
+end
 compile '/assets/css/*/' do
   # don’t filter or layout
 end
@@ -37,6 +40,9 @@ route '/assets/css/*' do
   @item.identifier.chop + '.' + @item[:extension]
 end
 route '/assets/js/*' do
+  @item.identifier.chop + '.' + @item[:extension]
+end
+route '/assets/files/*' do
   @item.identifier.chop + '.' + @item[:extension]
 end
 

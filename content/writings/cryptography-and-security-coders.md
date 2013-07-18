@@ -9,9 +9,9 @@ extra_js:
   <div class="text-center"><button id="start-presentation">Present</button></div>
   <div id="intro">
     <div class="detail">
-      <p>This page was written to supplement my <em>Cryptography (and Security) for Coders</em> <a
-        href="http://chicagocodecamp.com/sessions/181">talk</a> at the Chicago Code Camp '12. It is a significant
-      improvement on an earlier <a href="http://cmlubinski.info/web-application-security-fundamentals">talk</a>, which 
+      <p>This page was written to supplement my Cryptography (and Security)
+      for Coders talk at the Chicago Code Camp '12. It is a significant
+      improvement on an earlier <a href="/writings/web-application-security-fundamentals">talk</a>, which 
       had less of a programming focus (and actually contained a few errors.)</p>
       <p>I should quickly but emphatically note that, even though we'll be discussing several crypto algorithms, which 
       you should definitely <em>use</em>, you should never <em>implement</em> these algorithms. If you do, you're very 

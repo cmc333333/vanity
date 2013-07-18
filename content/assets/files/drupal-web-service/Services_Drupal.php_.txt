@@ -1,0 +1,110 @@
+<?php
+/**
+ *  @file Provides Services_Drupal class, which allows one to connect to a given Drupal server via XML-RPC.
+ *      Requires php5-xmlrpc
+ **/
+
+class Services_Drupal_Exception extends Exception
+{
+    public $faultString;
+    public $faultCode;
+
+    public function __construct($function, $faultString, $faultCode) {
+        $this->faultString = $faultString;
+        $this->faultCode = $faultCode;
+        $message = 'Failed request for '.$function." fault: $faultString ($faultCode)";
+        parent::__construct($message);
+    }
+}
+
+class Services_Drupal
+{
+    //  Connection Information
+    protected $protocol = 'https';      //  SSL because we will be logging in
+    protected $server;
+    private $timeout;   //  Useful for long operations as default timeout is about a minute
+
+    //  API Information
+    private $domain;
+    private $apikey;
+    private $session_id;
+
+    public static function factory($username, $password, $server, $apikey, $domain)
+    {
+        return new Services_Drupal($username, $password, $server, $apikey, $domain);
+    }
+    public function __construct($username, $password, $server, $apikey, $domain, $timeout = null)
+    {
+        if (!(function_exists('xmlrpc_encode_request'))) {
+            trigger_error('This class requires php5-xmlrpc');
+        }
+        $this->server = $server;
+        $this->timeout = $timeout;
+        $this->connect();
+        $this->apikey = $apikey;
+        $this->domain = $domain;
+        $this->login($username, $password);
+    }
+    private function getUrl()   //  http://localhost/services/xmlrpc
+    {
+        return $this->protocol.'://'.$this->server.'/services/xmlrpc';
+    }
+    public function doRequest($function, array $arguments) 
+    {
+        $request = xmlrpc_encode_request($function, $arguments);
+        $stream_options = array('http' => array(
+            'method' => "POST",
+            'header' => "Content-Type: text/xml",
+            'content' => $request
+            ));
+        if ($this->timeout) {
+            $stream_options['http']['timeout'] = $this->timeout;
+        }
+        $context = stream_context_create($stream_options);
+        $file = file_get_contents($this->getUrl(), false, $context);
+        $response = xmlrpc_decode($file);
+
+        if (is_array($response) && xmlrpc_is_fault($response)) {
+            throw new Services_Drupal_Exception($function, $response['faultString'], $response['faultCode']);
+        }
+
+        return $response;
+    }
+    private function connect()
+    {
+        $response = $this->doRequest('system.connect', array());
+        //  This is not the final session_id, but a temporary id until we log in
+        $this->session_id = $response['sessid'];
+    }
+    private function login($username, $password)
+    {
+        $timestamp = (string)time();
+        $nonce = (string)rand();
+        $hash = hash_hmac('sha256', $timestamp . ';' . $this->domain . ';' . $nonce . ';' . 'user.login',
+            $this->apikey);
+        $response = $this->doRequest('user.login', array($hash, $this->domain, $timestamp, $nonce,
+            $this->session_id, $username, $password));
+        $this->session_id = $response['sessid'];
+    }
+    /**
+     *  Service Calls
+     **/
+    public function node_get($nid, array $fields = array())
+    {
+        return $this->doRequest('node.get', array($this->session_id, $nid, $fields));
+    }
+    public function node_save(array $node_array)
+    {
+        $timestamp = (string)time();
+        $nonce = (string)rand();
+        $hash = hash_hmac('sha256', $timestamp . ';' . $this->domain . ';' . $nonce . ';' . 'node.save',
+            $this->apikey);
+        return $this->doRequest('node.save', array($hash, $this->domain, $timestamp, $nonce,
+            $this->session_id, $node_array));
+        
+    }
+    public function matching_by_fields(array $params_to_match)
+    {
+        return $this->doRequest('matching.by_fields', array($this->session_id, $params_to_match));
+    }
+}
