@@ -68,4 +68,5 @@ layout '*', :erb
 
 preprocess do
   courses
+  podcasts
 end
