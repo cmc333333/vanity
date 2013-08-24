@@ -1,56 +1,73 @@
-<% course_list.each do |course| %>
-  <div class="course" id="<%= course[:id] %>">
+<% course_list.each_with_index do |triplet, index| %>
+  <% if index != 0 %><hr /><% end %>
+  <div class="year">
     <div class="header">
-      <h2 data-toggle="collapse" data-target="#<%= course[:id] %>-content"><%= 
-        h(course[:title]) %></h2>
-      <% if course[:categories] %>
-        <ul class="categories">
-          <% course[:categories].each do |category| %>
-            <li><%= h(category) %></li>
-          <% end %>
-        </ul>
-      <% end %>
-      <% if course[:languages] %>
-        <ul class="languages">
-          <% course[:languages].each do |language| %>
-            <li><%= h(language) %></li>
-          <% end %>
-        </ul>
-      <% end %>
-      <% if course[:libraries] %>
-        <ul class="libraries">
-          <% course[:libraries].each do |library| %>
-            <li><%= h(library) %></li>
-          <% end %>
-        </ul>
-      <% end %>
-    </div>
-
-    <div id="<%= course[:id] %>-content" class="collapse">
-      <div class="from">From <%= h(course[:professor]) %> of
-        <% if course[:"professor's university"] %>
-          <%= h(course[:"professor's university"]) %> via
+      <h2 data-toggle="collapse" data-target="#year-<%= triplet[0] %>-content">
+        <%= triplet[0] %>
+      </h2>
+      <ul class="universities">
+        <% triplet[1].each do |university| %>
+          <li><%= h(university) %></li>
         <% end %>
-          <%= h(course[:university]) %>
-      </div>
-      <% if course[:syllabus] %>
-        <ul>
-        <% course[:syllabus].each do |key, lst| %>
-          <li><label><%= h(key.to_s) %></label>
-            <% if lst %>
-              <ul>
-                <% lst.each do |entry| %>
-                  <li><%= h(entry) %></li>
+      </ul>
+    </div>
+    <div id="year-<%= triplet[0] %>-content" 
+      <% if index != 0 %>class="collapse"<% end %>>
+      <% triplet[2].each do |course| %>
+        <div class="course" id="<%= course[:id] %>">
+          <div class="header">
+            <h3 data-toggle="collapse" 
+              data-target="#<%= course[:id] %>-content">
+              <%= h(course[:title]) %>
+            </h3>
+            <% if course[:categories] %>
+              <ul class="categories">
+                <% course[:categories].each do |category| %>
+                  <li><%= h(category) %></li>
                 <% end %>
               </ul>
             <% end %>
-          </li>
-        <% end %>
-      </ul>
+            <% if course[:languages] %>
+              <ul class="languages">
+                <% course[:languages].each do |language| %>
+                  <li><%= h(language) %></li>
+                <% end %>
+              </ul>
+            <% end %>
+            <% if course[:libraries] %>
+              <ul class="libraries">
+                <% course[:libraries].each do |library| %>
+                  <li><%= h(library) %></li>
+                <% end %>
+              </ul>
+            <% end %>
+          </div>
+
+          <div id="<%= course[:id] %>-content" class="collapse">
+            <div class="from">From <%= h(course[:professor]) %> of
+              <% if course[:"professor's university"] %>
+                <%= h(course[:"professor's university"]) %> via
+              <% end %>
+                <%= h(course[:university]) %>
+            </div>
+            <% if course[:syllabus] %>
+              <ul>
+              <% course[:syllabus].each do |key, lst| %>
+                <li><label><%= h(key.to_s) %></label>
+                  <% if lst %>
+                    <ul>
+                      <% lst.each do |entry| %>
+                        <li><%= h(entry) %></li>
+                      <% end %>
+                    </ul>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+            <% end %>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
 <% end %>
-<script class="data" type="text/javascript">
-  pageJson.courses = <%= course_list.to_json %>;
-</script>
