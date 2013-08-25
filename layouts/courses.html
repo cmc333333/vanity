@@ -44,12 +44,16 @@
           </div>
 
           <div id="<%= course[:id] %>-content" class="collapse">
-            <div class="from">From <%= h(course[:professor]) %> of
-              <% if course[:"professor's university"] %>
-                <%= h(course[:"professor's university"]) %> via
-              <% end %>
-                <%= h(course[:university]) %>
-            </div>
+            <% if course[:professor] %>
+              <div class="from">From <%= h(course[:professor]) %> of
+                <% if course[:"professor's university"] %>
+                  <%= h(course[:"professor's university"]) %> via
+                <% end %>
+                  <%= h(course[:university]) %>
+              </div>
+            <% else %>
+              <div class="from">From <%= h(course[:university]) %></div>
+            <% end %>
             <% if course[:syllabus] %>
               <ul>
               <% course[:syllabus].each do |key, lst| %>
