@@ -30,6 +30,9 @@ compile '*' do
   elsif item[:extension] == 'md'
     filter :kramdown
     layout 'default'
+  elsif item[:extension] == 'mustache'
+    filter :mustache
+    layout 'default'
   else
     filter :erb
     layout 'default'
