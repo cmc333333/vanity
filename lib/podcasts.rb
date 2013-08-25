@@ -10,17 +10,20 @@ def podcast_list
     i[:title]
   }.map{|i| 
     i.attributes.merge({
-      :description_html => Kramdown::Document.new(i[:description]).to_html
+      :description_html => Kramdown::Document.new(i[:description]).to_html,
+      :tags => i[:tags].join(', ')
     })
   }
 end
 
 def podcasts
   items << Nanoc::Item.new(
-    "<%= render 'podcasts' %>",
+    File.open("layouts/podcasts.mustache.html", "r").read,
     {
       :title => "Podcasts",
-      :extra_css => ["/assets/css/podcasts.css"]
+      :extra_css => ["/assets/css/podcasts.css"],
+      :extension => 'mustache',
+      :podcast_list => podcast_list
     },
     "/misc/podcasts/"
   )

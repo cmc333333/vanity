@@ -1,5 +1,0 @@
-<% podcast_list.each do |podcast| %>
-  <h4><%= podcast[:title] %></h4> | <a href="<%= podcast[:url] %>">[Listen]</a>
-  <div><label>Genres:</label><%= podcast[:tags].join(', ') %></div>
-  <div><%= podcast[:description_html] %></div>
-<% end %>
