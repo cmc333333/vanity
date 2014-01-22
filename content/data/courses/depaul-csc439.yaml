@@ -7,7 +7,7 @@ categories: [Computer Science, Security]
 languages: [Scala]
 texts:
   - author: Stallings, William and Brown, Lawrie
-    title: Computer Security: Principles and Practice
+    title: "Computer Security: Principles and Practice"
 syllabus:
   - Cryptography
   - Access Control
@@ -20,7 +20,7 @@ syllabus:
 major projects:
   - name: CBC Implementation
     language: Scala
-  - name: Analysis of Kamouflage: Loss-Resistant Password Management
+  - name: "Analysis of Kamouflage: Loss-Resistant Password Management"
     url: http://crypto.stanford.edu/~dabo/papers/passwordmgr.pdf
   - name: CSRF Example and Solution
     language: Scala

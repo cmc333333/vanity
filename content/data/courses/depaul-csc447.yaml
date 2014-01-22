@@ -4,8 +4,7 @@ end: 2010-06-09
 professor: Corin Pitcher
 university: DePaul
 categories: [Computer Science, Languages]
-languages: [Javascript, Ruby, Scala, Scheme,
-Scala, Scheme]
+languages: [Javascript, Ruby, Scala, Scheme]
 syllabus:
   - Introduction
     - Lisp, Scheme
@@ -14,7 +13,7 @@ syllabus:
     - Read-Eval-Print-Loop
   - Functional Programming
     - Scala
-    - "Data Types: Tuples, Lists"
+    - Data Types; Tuples, Lists
     - Immutability
     - Function Types and Higher-Order Functions
     - For Expressions, List Comprehensions
@@ -25,7 +24,7 @@ syllabus:
     - Option Types
     - Recursive Types
   - Scope and Storage Management
-    - Parameter Passing (Call-by-Value, Vall-by-Reference)
+    - Parameter Passing (Call-by-Value, Call-by-Reference)
     - Static Scope
     - Dynamic Scope
     - First Class Functions
@@ -33,7 +32,7 @@ syllabus:
   - Interpreters and Operational Semantics
     - Abstract Syntax Trees
     - Informal and Formal Semantics
-    - "Operational Semantics: Arithmetic, While-loop, Let, Functions, Closures"
+    - Operational Semantics of Arithmetic, While-loop, Let, Functions, Closures
   - Object-Oriented Programming
     - Dynamic Lookup
     - Inheritance
