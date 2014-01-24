@@ -6,12 +6,12 @@ university: DePaul
 categories: [Computer Science, Languages]
 languages: [Javascript, Ruby, Scala, Scheme]
 syllabus:
-  - Introduction
+  Introduction:
     - Lisp, Scheme
     - Recursion, Higher-Order Functions, Let Bindings
     - List Functions
     - Read-Eval-Print-Loop
-  - Functional Programming
+  Functional Programming:
     - Scala
     - Data Types; Tuples, Lists
     - Immutability
@@ -23,24 +23,24 @@ syllabus:
     - Structured Types
     - Option Types
     - Recursive Types
-  - Scope and Storage Management
+  Scope and Storage Management:
     - Parameter Passing (Call-by-Value, Call-by-Reference)
     - Static Scope
     - Dynamic Scope
     - First Class Functions
     - Closures
-  - Interpreters and Operational Semantics
+  Interpreters and Operational Semantics:
     - Abstract Syntax Trees
     - Informal and Formal Semantics
     - Operational Semantics of Arithmetic, While-loop, Let, Functions, Closures
-  - Object-Oriented Programming
+  Object-Oriented Programming:
     - Dynamic Lookup
     - Inheritance
     - Subtyping
     - Encapsulation
     - Mixins/Traits
     - Prototypes
-  - Type Systems
+  Type Systems:
     - Static Analysis
     - Parametric Polymorphism
     - Type Inference
