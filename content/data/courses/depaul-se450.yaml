@@ -5,3 +5,16 @@ professor: Radha Jagadeesan
 university: DePaul
 categories: [Computer Science, Software Engineering]
 languages: [Java]
+syllabus:
+  - Basics
+  - Objects as Functions
+  - Architectural Patterns
+  - Structural Patterns
+  - Observer/Visualizing a Simulation
+  - Simulation, Null Objects, Proxies
+  - Object Creation
+  - Subclassing and Template Method
+  - Iterator and Visitor
+major projects:
+  - name: Extendible Card Game Simulator
+    language: Java
