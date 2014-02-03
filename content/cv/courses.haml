@@ -1,0 +1,48 @@
+---
+title: Courses
+extra_css: [/assets/css/courses.css]
+---
+- course_markdown().each do |courseYear|
+  - if not courseYear[:first]
+    %hr
+  .year
+    .header
+      %h2{:"data-toggle" => "collapse",
+          :"data-target" => "#year-#{courseYear[:year]}-content"}
+        = courseYear[:year]
+      %ul.universities
+        - courseYear[:universities].each do |university|
+          %li= university
+    - collapseClass = courseYear[:first] ? nil : "collapse"
+    %div{:id => "year-#{courseYear[:year]}-content",
+         :class => collapseClass}
+      - courseYear[:courses].each do |course|
+        - courseId = course[:filename].split("/")[-1].split(".")[0]
+        %div{:id => "#{courseId}", :class => "course"}
+          .header
+            %h3{:"data-toggle" => "collapse",
+                :"data-target" => "##{courseId}-content"}
+              = course[:title]
+            - if course[:categories]
+              %ul.categories
+                - course[:categories].each do |category|
+                  %li= category
+            - if course[:languages]
+              %ul.languages
+                - course[:languages].each do |language|
+                  %li= language
+            - if course[:libraries]
+              %ul.libraries
+                - course[:libraries].each do |library|
+                  %li= library
+          %div{:id => "#{courseId}-content", :class => "collapse"}
+            - if course[:professor]
+              .from
+                - if course[:professorsUniversity]
+                  = "From #{course[:professor]} of #{course[:professorsUniversity]} via #{course[:university]}"
+                - else
+                  = "From #{course[:professor]} of #{course[:university]}"
+            - else
+              .from
+                = "From #{course[:university]}"
+            = course.compiled_content

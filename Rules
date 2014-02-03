@@ -30,6 +30,9 @@ compile '*' do
   elsif item[:extension] == 'md'
     filter :kramdown
     layout 'default'
+  elsif item[:extension] == 'haml'
+    filter :haml
+    layout 'default'
   elsif item[:extension] == 'mustache'
     filter :mustache
     layout 'default'
@@ -57,6 +60,10 @@ route '/data/*' do
   nil
 end
 
+route '/courses/*' do
+  nil
+end
+
 route '*' do
   if item.binary?
     # Write item with identifier /foo/ to /foo.ext
@@ -70,6 +77,5 @@ end
 layout '*', :erb
 
 preprocess do
-  courses
   podcasts
 end
