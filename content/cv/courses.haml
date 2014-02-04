@@ -36,13 +36,17 @@ extra_css: [/assets/css/courses.css]
                 - course[:libraries].each do |library|
                   %li= library
           %div{:id => "#{courseId}-content", :class => "collapse"}
+            - from_str = "From "
             - if course[:professor]
-              .from
-                - if course[:professorsUniversity]
-                  = "From #{course[:professor]} of #{course[:professorsUniversity]} via #{course[:university]}"
-                - else
-                  = "From #{course[:professor]} of #{course[:university]}"
+              - from_str += "#{course[:professor]} of "
+              - if course[:"professor's university"]
+                - from_str += "#{course[:"professor's university"]} via "
+              - from_str += "#{course[:university]}"
             - else
-              .from
-                = "From #{course[:university]}"
+              - from_str += "#{course[:university]}"
+            .from
+              = from_str
+              - if course[:cert]
+                %a{:href => course[:cert][:content_filename][7..-1]}
+                  [Certificate]
             = course.compiled_content
