@@ -15,7 +15,7 @@ def add_certs
   items.select {|i|
     not i.binary? \
     and i[:filename] \
-    and i[:filename].start_with? "content/courses" \
+    and i[:filename].start_with? "content/data/courses" \
     and certs.include? i.trimmed_filename
   }.each {|i|
     i[:cert] = certs[i.trimmed_filename]
@@ -26,7 +26,7 @@ def course_markdown
   items.select {|i|
     not i.binary? \
     and i[:filename] \
-    and i[:filename].start_with? "content/courses"
+    and i[:filename].start_with? "content/data/courses"
   }.group_by {|i| 
     i[:start].year
   }.to_a.sort_by{|year, courses|
