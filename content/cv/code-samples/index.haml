@@ -1,0 +1,23 @@
+---
+title: Code Samples
+extra_css: [/assets/css/code-samples.css]
+---
+%ul
+  - code_samples().each do |sample|
+    %li
+      %a{:href => sample.url()}
+        = sample[:title]
+      - if sample[:categories]
+        %ul.categories
+          - sample[:categories].each do |category|
+            %li= category
+      - if sample[:languages]
+        %ul.languages
+          - sample[:languages].each do |language|
+            %li= language
+      - if sample[:libraries]
+        %ul.libraries
+          - sample[:libraries].each do |library|
+            %li= library
+      %div
+        = sample[:summary]

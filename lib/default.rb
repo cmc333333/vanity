@@ -12,4 +12,13 @@ class Nanoc::Item
     end
     filename
   end
+
+  def url
+    filename = @attributes[:content_filename]
+    if filename
+      filename[7..-1].split(".")[0]
+    else
+      nil
+    end
+  end
 end
