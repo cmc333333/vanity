@@ -1,0 +1,25 @@
+---
+title: It's All Politics (NPR)
+url: http://www.npr.org/rss/podcast/podcast_detail.php?siteId=5495231
+tags: [politics]
+---
+When I think of political pundits, I tend to think of two categories. The
+first consists of remarkably outspoken, extremely biased talking heads such as
+Bill O'Reilly or Al Franken, who expect to influence others by yelling about
+how idiotic the other side's ideas are. The second group is composed of
+academics and intellectuals such as Noam Chomsky, who have debates about the
+relative merits of different ideologies, but tend to stay out of
+up-to-the-minute politics. Ken Rudin and Ron Elving fall in to neither of
+these categories; they are social analysts, editors, humorists, but above all
+else, political junkies. This fifteen minute weekly podcast features these
+seasoned veterans and their perspectives on the most recent political
+elections, turmoil, and controversy. In such a short period of time, the hosts
+manage to hit on each of the major events of the week as well as give many
+sometimes-accurate, sometimes-hilarious forecasts for the fate of our nation.
+Though they have both been in their industry for many years, the hosts clearly
+love their environment, tossing political trivia and punny one-liners at each
+other throughout each episode. Further, though I am quite biased, I feel that
+the hosts remain very balanced, covering, scrutinizing, and mocking both sides
+of the aisle and all shades politicians. I cannot recommend this podcast
+highly enough because whether you are dealing with relationships, education,
+ideology, or technology, *It's All Politics*.

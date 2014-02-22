@@ -1,0 +1,24 @@
+---
+title: Skeptics' Guide to the Universe
+url: http://www.theskepticsguide.org/
+tags: [science, skepticism]
+---
+Dr. Steve Novella hosts a merry band of science-savvy Skeptical Rogues in a
+weekly discussion of advances in technology, changed in education policy, and
+regressions into stupidity. The hour and a half podcasts are not composed of
+news blurbs, however, as the team's mission largely consists of spreading
+critical thinking skills. While every educator and politician uses the terms
+"critical thinking skills" in his/her rhetoric, the SGU delivers at the most
+basic level. Finding examples of misinformation, skewed results, and outright
+deceit comes easily to the crew, and after spending some time listening to
+their explanations and thought processes you, too, will gain an accurate
+'bullshit meter.' Aside from discussing recent events, the Skeptics generally
+interview prominent members of the skeptical community, which provide novel
+perspectives regarding how a healthy reality check can be integrated into our
+daily lives. This is also clearly shown throughout the podcast, which,
+although skeptically and rationally rooted, feels much more like a casual
+conversation with interesting individuals. All-in-all, I highly recommend the
+SGU podcast; the crew has managed to produce quality, informative
+entertainment without losing its audience. More importantly, this podcast has
+solidified some of my stances but opened the door to other,
+unexpected-yet-fascinating questions.

@@ -1,0 +1,17 @@
+---
+title: Podcasts
+extra_css: ["/assets/css/podcasts.css"]
+---
+- podcast_list().each do |podcast|
+  %h4
+    = podcast[:title]
+  = " | "
+  %a{:href => "{podcast[:url]}"}
+    [Listen]
+  %div
+    %label
+      Genres:
+    = (podcast[:tags] or []).join(", ")
+  %div
+    = podcast.compiled_content
+

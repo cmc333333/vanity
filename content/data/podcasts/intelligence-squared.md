@@ -1,0 +1,28 @@
+---
+title: Intelligence Squared US (NPR)
+url: http://www.tsgamegroup.com/event/index.html
+tags: [debate]
+---
+Originating in the United Kingdom, the Intelligence Squared organization was
+created to produce and promote "Oxford-style" debates around the world. NPR
+and the Rosenkranz Foundation picked up the franchise, hosting a United
+States-based debate society which generates a new debate each month, on
+average. The "Oxford-style" of debating may be seen as the traditional form,
+which prominently appears in presidential debates. This form focuses on a
+single topic, specifically a statement which can be affirmed or denied, such
+as 'Guns reduce crime.' A second key feature of this debate style is the two
+distinct sides, one arguing for the motion and one against. To motivate the
+presenters, Intelligence Squared provides the third, crucial feature of their
+debates, the audience. Before the debate begins, the hosts poll the audience
+to see which position they take regarding the statement at hand; they are
+polled again at the end of the evening to see which group converted the most
+followers. The audience also plays a critical role in the midst of the
+venture, with a section specifically devoted to answering their questions (and
+accusations). Though not all debates are for everyone, these hour-long
+podcasts bring valid arguments which often slip through the cracks when I have
+already made my decision. Many situations also arise in which I believe a
+particular issue to be very straight-forward but this podcast has shown the
+nuances and complexities at hand. While I do not recommend these recordings to
+the general populous, if you are interested in debate, philosophical
+questions, or learning the arguments of "the opposition," Intelligence Squared
+US may be for you.

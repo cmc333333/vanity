@@ -73,6 +73,5 @@ end
 layout '*', :erb
 
 preprocess do
-  podcasts
   add_certs
 end
