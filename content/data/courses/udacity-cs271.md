@@ -1,7 +1,7 @@
 ---
 title: Introduction to Artificial Intelligence
 start: 2013-06-04
-end: 2013-09-01
+end: 2014-03-08
 professor: Sebastian Thrun & Peter Norvig
 professor's university: Stanford University
 university: Udacity
