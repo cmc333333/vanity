@@ -1,0 +1,35 @@
+---
+title: Books
+extra_css: ["/assets/css/books.css"]
+---
+%h3
+  Currently Reading
+- goodreads(true).each do |book|
+  .book.reading
+    %h4
+      =book[:title]
+    - if book[:img_l]
+      %a{:href => book[:link]}
+        %img{:src => book[:img_l], :width => 200}
+    %p
+      ="By " + book[:author] + ", " + book[:published]
+    %p
+      =book[:desc_m]
+%h3
+  Recently Read
+- goodreads(false).each do |book|
+  .book.read
+    %h4
+      =book[:title]
+    - if book[:img_m]
+      %a{:href => book[:link]}
+        %img{:src => book[:img_m]}
+    %p
+      ="By " + book[:author] + ", " + book[:published]
+    %p
+      =book[:desc_s]
+%hr
+  %p
+    = "Content from "
+    %a{:href => "http://goodreads.com"}
+      GoodReads

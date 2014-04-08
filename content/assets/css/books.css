@@ -1,0 +1,12 @@
+.book.reading img {
+  float: right;
+}
+.book.read img {
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 0.5em;
+}
+.book {
+  clear: both;
+  margin-bottom: 2em;
+}
