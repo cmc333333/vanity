@@ -6,7 +6,7 @@ extra_css: ["/assets/css/podcasts.css"]
   %h4
     = podcast[:title]
   = " | "
-  %a{:href => "{podcast[:url]}"}
+  %a{:href => podcast[:url]}
     [Listen]
   %div
     %label
