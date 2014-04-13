@@ -1,0 +1,36 @@
+---
+title: Calendar
+extra_css:
+  - "//cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.css"
+  - "/assets/css/lib/chronoline.css"
+  - "/assets/css/calendar.css"
+extra_js:
+  - "//cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.js"
+  - "/assets/js/lib/raphael-min.js"
+  - "/assets/js/lib/chronoline.js"
+  - "/assets/js/calendar.js"
+---
+#cal-display
+#cal-data
+  - gcal_events().each do |event|
+    .event
+      - if event[:end] >= DateTime.now
+        %h3
+          = event[:title] + " '" + event[:start].strftime("%y")
+      - else
+        %h5
+          = event[:title] + " '" + event[:start].strftime("%y")
+      %span.start{:"data-year" => event[:start].strftime("%Y"),
+                  :"data-month" => event[:start].strftime("%-m"),
+                  :"data-day" => event[:start].strftime("%-d")}
+        = event[:start].strftime("%b %-d")
+      to
+      %span.end{:"data-year" => event[:end].strftime("%Y"),
+                :"data-month" => event[:end].strftime("%-m"),
+                :"data-day" => event[:end].strftime("%-d")}
+        = event[:end].strftime("%b %-d")
+      = "-"
+      %span.location
+        = event[:where]
+      %div
+        = event.compiled_content

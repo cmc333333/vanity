@@ -5,4 +5,5 @@ output/
 
 # Temporary file directory
 tmp/
+content/data/gcal/
 content/data/goodreads/

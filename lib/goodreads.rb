@@ -12,7 +12,7 @@ end
 def goodreads(reading)
   items.select {|i|
     i[:meta_filename] \
-    and i[:meta_filename].start_with? "content/data"
+    and i[:meta_filename].start_with? "content/data/goodreads"
   }.sort_by {|i|
     i[:added]
   }.reverse.select {|i|
