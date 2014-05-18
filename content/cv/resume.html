@@ -31,51 +31,57 @@ extra_css:
       <ul>
         <li id="programming-and-scripting"><label for="programming-and-scripting">Programming and Scripting:</label>
           <ul>
-            <li id="server-side">
-              <label for="server-side">Server-Side:</label>
+            <li id="languages">
+              <label for="languages">Languages:</label>
               <ul>
-                <li>Scala,</li>
                 <li>Python,</li>
+                <li>Scala,</li>
                 <li>PHP,</li>
-                <li>Java,</li>
                 <li>SQL,</li>
-                <li>Bash Scripting</li>
+                <li>Javascript</li>
               </ul>
             </li>
-            <li id="client-side">
-              <label for="client-side">Client-Side:</label>
+            <li id="web">
+              <label for="web">Web:</label>
               <ul>
-                <li>Javascript,</li>
+                <li>AJAX.</li>
                 <li>JSON,</li>
-                <li>(X)HTML,</li>
+                <li>RESTful APIs,</li>
+                <li>HTML,</li>
                 <li>CSS</li>
               </ul>
             </li>
-            <li id="communication">
-              <label for="communication">Communication:</label>
+            <li id="libs">
+              <label for="libs">Libs:</label>
               <ul>
-                <li>REST,</li>
-                <li>AJAX,</li>
-                <li>JSON,</li>
-                <li>XML,</li>
-                <li>RSS</li>
+                <li>Django,</li>
+                <li>South,</li>
+                <li>PyParsing,</li>
+                <li>Lift,</li>
+                <li>Jekyll,</li>
+                <li>jQuery</li>
               </ul>
             </li>
-            <li id="libraries">
-              <label for="libraries">Libraries:</label>
+            <li id="styles">
+              <label for="styles">Styles:</label>
               <ul>
-                <li>Lift,</li>
-                <li>Dispatch,</li>
-                <li>Bouncy Castle,</li>
-                <li>Rogue,</li>
-                <li>Apache Commons,</li>
-                <li>jQuery (+ plugins),</li>
-                <li>Prototype,</li>
-                <li>Google Maps,</li>
-                <li>PHPUnit,</li>
-                <li>App Engine,</li>
-                <li>psycopg,</li>
-                <li>unittest</li>
+                <li>Functional,</li>
+                <li>OO,</li>
+                <li>Actors,</li>
+                <li>Constraints,</li>
+                <li>Reactive</li>
+              </ul>
+            </li>
+            <li id="tools">
+              <label for="tools">Tools:</label>
+              <ul>
+                <li>ViM,</li>
+                <li>git,</li>
+                <li>subversion,</li>
+                <li>virtualenv,</li>
+                <li>pip,</li>
+                <li>sbt,</li>
+                <li>shell</li>
               </ul>
             </li>
             <li id="apis">
@@ -84,18 +90,7 @@ extra_css:
                 <li>OAuth2,</li>
                 <li>FB Connect,</li>
                 <li>Rackspace,</li>
-                <li>REST Services</li>
-              </ul>
-            </li>
-            <li id="styles">
-              <label for="styles">Styles:</label>
-              <ul>
-                <li>Functional,</li>
-                <li>Object-Oriented,</li>
-                <li>Aspect-Oriented,</li>
-                <li>Imperative,</li>
-                <li>Declarative,</li>
-                <li>Actor/Queue-Based</li>
+                <li>Google Maps</li>
               </ul>
             </li>
           </ul>
@@ -104,44 +99,32 @@ extra_css:
     </div>
     <div class="rhs">
       <ul>
-	<li id="platforms-tools"><label for="platforms-tools">Platforms/Tools:</label>
+	<li id="platforms"><label for="platforms">Platforms:</label>
 	  <ul>
-	    <li id="operating-systems"><label for="operating-systems">Operating Systems</label>
+	    <li id="operating-systems"><label for="operating-systems">OS:</label>
 	      <ul>
-		<li>Linux (Debian, Ubuntu),</li>
-		<li>Mac OS X,</li>
-		<li>Windows</li>
+		<li>Debian, Ubuntu, CentOS, Arch Linux,</li>
+		<li>Mac OS X</li>
 	      </ul>
 	    </li>
-	    <li id="programming-tools"><label for="programming-tools">Programming Tools</label>
+	    <li id="dbs"><label for="dbs">DBs:</label>
 	      <ul>
-		<li>ViM,</li>
-		<li>Eclipse,</li>
-		<li>Subversion,</li>
-		<li>git,</li>
-		<li>sbt,</li>
-		<li>Gnu Utils (grep, pipes, etc.)</li>
-	      </ul>
-	    </li>
-	    <li id="server-infrastructure"><label for="server-infrastructure">Server Infrastructure</label>
-	      <ul>
-		<li>PostgreSQL,</li>
-                <li>PostGIS,</li>
-		<li>MongoDB,</li>
+		<li>Postgresql,</li>
+		<li>Mysql,</li>
+		<li>Mongodb,</li>
 		<li>Solr,</li>
-		<li>Apache,</li>
-		<li>Lighttpd,</li>
-		<li>Tomcat</li>
+		<li>Elastic Search,</li>
+                <li>PostGIS</li>
 	      </ul>
 	    </li>
 	  </ul>
 	</li>
 	<li id="winning-style"><label for="winning-style">Winning Style:</label>
 	  <ul>
-	    <li>Develops prototypes rapidly, while planning for future scale</li>
+            <li>Agile methodology: rapid iterations with heavy user input</li>
 	    <li>Seeks out existing solutions before beginning from scratch</li>
 	    <li>Bakes in security, stability, and scalability from the start</li>
-	    <li>Works well with teams; loves to learn from others</li>
+            <li>Loves to learn from others and share skills on small teams</li>
 	  </ul>
 	</li>
       </ul>
@@ -153,31 +136,35 @@ extra_css:
       <li><span class="title">Backend Developer</span> - <a target='_blank'
         href="http://consumerfinance.gov">Consumer Financial Protection
         Bureau</a> - <span class="dates">Winter '12 - Present</span>
-        <div class="defs"><span class="name">eRegulations</span>: federal
-          regulation parser + display</div>
+        <div class="defs"><span class="name">eRegulations</span>: <a
+            href="http://eregs.github.io/eregulations/">open source</a> regulation parser/display</div>
         <ul>
-          <li>Co-wrote a Python parser for regulations, which discovered
-          structure, definitions, and citations from plain text</li>
-          <li>Assisted development of a Django-based clean, user-friendly
-          representation for this parsed data, a regulation <a
-            href="http://consumerfinance.gov/eregulations">viewer</a></li>
-          <li>Served in a tight-knit team of devs, designers, and product
-          owners with code review and full-team design sessions</li>
-          <li>Configured and maintained the test and dev environments for
-          these applications (CentOS+Postgres+Apache)</li>
+          <li>Co-wrote a Python parser for regulations: discovers
+          structure, definitions, and citations from messy XML sources</li>
+          <li>Helped develop a Django+Backbone-based regulation <a
+            href="http://consumerfinance.gov/eregulations">viewer</a>,
+          heralded as &ldquo;<a
+            href="http://www.bloombergview.com/articles/2013-10-29/one-federal-website-that-works">user-friendly</a>&rdquo;
+          and &ldquo;<a
+            href="https://twitter.com/imlwilliams/status/466263631978844160">magnificent</a>&rdquo;</li>
+          <li>Served with a brilliant team; per-pull-request code reviews; led
+          the bureau in test coverage; frequent design critiques</li>
+          <li>Configured and maintained demo and continuous-build environments
+          (CentOS+MySQL+Solr+Apache)</li>
+          <li>Co-chair of Transparency group (first tech blog post), heavily
+          involved in Open Source group (CFPB's top committer)</li>
         </ul>
       </li>
       <li><span class="title">Chief Developer</span> – <a  target='_blank'
         href="https://toodalu.com">Toodalu, LLC.</a> – <span
-        class="dates">Summer '10 – Winter '12</span>
+        class="dates">Summer '10 – Winter '12 (acquired)</span>
         <div class="defs"><span class="name">Toodalu</span>: charity-driven rewards network</div>
 	<ul>
           <li>Led the majority of technology decisions, such as application stacks, server security, and communication protocols</li>
           <li>Designed &amp; developed RESTful JSON web services (Scala+Lift) for user-, merchant-, sales-, and admin- facing apps</li>
           <li>Wrote several consumers for these services, including web interfaces (jQuery+CSS+XHTML) and unit tests (Python)</li>
           <li>Integrated multiple third parties, including credit card processors, cloud hosting, social networks, &amp; push notifications</li>
-          <li>Configured and maintained all associated servers (Debian, Tomcat, Postgres, MongoDB, Nginx, Wordpress, Solr)</li>
-          <li>Implemented programs to handle routine operations (e.g. data rotation,) migrating databases, resizing photos, etc.</li>
+          <li>Configured and maintained all associated servers (Debian+Tomcat+Postgres+MongoDB+Nginx+Wordpress+Solr)</li>
 	</ul>
       </li>
       <li><span class="title">Web Developer</span> – <a  target='_blank' href="http://networkninja.com">Network Ninja, Inc.</a> – <span class="dates">Summer '08 – Summer '10</span>
@@ -202,7 +189,6 @@ extra_css:
         <div class="defs"><span class="name">TCDB</span>: timekeeping &amp; admin tool for staff</div>
 	<ul>
           <li>Extended and maintained code (PHP + MySQL,) creating new features based directly on user and admin feedback</li>
-          <li>Maintained server, including migrating from CentOS to Debian and preventing downloads for non-local users</li>
 	</ul>
       </li>
     </ul>
@@ -211,13 +197,15 @@ extra_css:
     <label for="education">Education:</label>
     <ul>
       <li><span class="school">DePaul University, Chicago, Illinois</span>
-	<div class="award">Master of Science, Computer Science (Theory, Security), Expected Spring, 2014 -- GPA 4.00</div>
+	<div class="award">Master of Science, Computer Science (Theory), 2014 -- GPA 4.00</div>
 	<ul>
 	  <li id="depaul-relevant-topics"><label for="depaul-relevant-topics">Relevant Topics:</label>
-            Type Theory, Network &amp; Distributed Sys, Complexity, Cryptography, Software Eng., Research Topics
+          Type Theory, Cryptology, Distributed Systems, Parallel Algorithms,
+          Software Eng., Research Topics
           </li>
           <li id="depaul-major-projects"><label for="depaul-major-projects">Major Projects:</label>
-            A mobile, intelligent agent; network play added to a multiplayer game; an extendable card game sim
+            Thesis (Formalized Forensics); distrubuted MUD (Akka); network
+            play added to a game (XNA)
 	  </li>
 	</ul>
       </li>
@@ -232,26 +220,15 @@ extra_css:
 	      <li>Dean's List,</li>
 	      <li>Trustee Honors Scholarship,</li>
 	      <li>Chad Zinn Outstanding Helpdesk Award,</li>
+              <li>TA position,</li>
+              <li>two <a target="_blank"
+                href="http://www.cs.grinnell.edu/drupal6/thursday-extras#series-2006">accepted</a>
+              <a target="_blank"
+                href="http://www.cs.grinnell.edu/drupal6/thursday-extras#series-2006">seminars</a>,</li>
 	      <li>ACM <a  target='_blank' href="http://www.siguccs.org/Conference/Fall2007/awards_winners.php">Award of Excellence</a>,</li>
-	      <li>Participation in ACM Regional Programming Contest and Putnam Exam
+              <li>ACM Regional Programming Contest,</li>
+              <li>Putnam Exam</li>
 	    </li></ul>
-	  </li>
-	  <li id="grinnell-extracurriculars"><label for="grinnell-extracurriculars">Extracurriculars:</label>
-	    <ul>
-	      <li>CS Student Education Policy Committee,</li>
-	      <li>ACM Student Member,</li>
-	      <li>Problem Solving Seminar,</li>
-              <li>Satirical newspaper (<a  target='_blank' href="http://www.thebands.biz/">B&amp;S</a>) writer</li>
-	    </ul>
-	  </li>
-	  <li id="grinnell-other-impact"><label for="grinnell-other-impact">Other Impact:</label>
-	    <ul>
-	      <li>Gave two CS <a  target='_blank' href="http://www.cs.grinnell.edu/drupal6/thursday-extras#series-2006">Department</a> <a  target='_blank'
-                href="http://www.cs.grinnell.edu/drupal6/thursday-extras#series-2007">Seminars</a>,</li>
-	      <li>Wrote <a  target='_blank' href="http://www.cs.grinnell.edu/~rebelsky/Glimmer/MediaScript/grinnell-windows.html">two</a> <a  target='_blank' href="http://www.cs.grinnell.edu/~walker/lubinski/vim.html">tutorials</a> still given to student by the 
-		faculty,</li>
-              <li>Served as TA</li>
-	    </ul>
 	  </li>
 	</ul>
       </li>
@@ -260,13 +237,25 @@ extra_css:
 	  <li id="additional-courses"><label for="additional-courses">Online
             Courses:</label>
             <ul>
-              <li>Cryptography,</li>
+              <li>Crypto,</li>
               <li>Machine Learning,</li>
-              <li>Algorithms,</li>
+              <li>SaaS (Rails),</li>
               <li>Data Science,</li>
-              <li>Natural Language Processing,</li>
-              <li>Artificial Intelligence,</li>
+              <li>Natural Language Proc.,</li>
+              <li>AI,</li>
+              <li>Logic,</li>
               <li>and <a href="/cv/courses">more</a></li>
+            </ul>
+          </li>
+          <li id="additional-groups"><label
+            for="additional-groups">Groups/Confs:</label>
+            <ul>
+              <li>ACM,</li>
+              <li>Chicago Area Scala Enthusiasts,</li>
+              <li>Strange Loop,</li>
+              <li>OSCON,</li>
+              <li>Lambda Jam,</li>
+              <li>Philly ETE</li>
             </ul>
           </li>
           <li id="additional-self-study"><label for="additional-self-study">Self-study:</label>
@@ -278,40 +267,42 @@ extra_css:
               <li>and a tendency to tinker with the latest tech</li>
             </ul>
           </li>
-          <li id="additional-groups"><label for="additional-groups">Groups:</label>
-            <ul>
-              <li>ACM,</li>
-              <li>Chicago Area Scala Enthusiasts,</li>
-              <li>and others (software engineering, web development, security, etc.)</li>
-            </ul>
-          </li>
-          <li id="additional-presentations"><label for="additional-presentations">Presentations:</label>
-            <ul>
-              <li>Local conferences and user groups</li>
-              <li>(<a href="/writings/drupal-web-service">web services</a>,</li>
-              <li><a  target='_blank' href="http://www.cdmug.org/node/244">PHP 5.3</a>,</li>
-              <li><a  target='_blank' href="http://2011.drupalcampchicago.org/sessions/web-application-security-fundamentals">security</a>,</li>
-              <li><a  target='_blank' href="/writings/cryptography-and-security-coders">cryptography</a>,</li>
-              <li><a  target='_blank' href="https://github.com/cmc333333">and</a></li>
-              <li><a  target='_blank' href="/writings">more</a>)</li>
-            </ul>
-          </li>
 	</ul>
       </li>
     </ul>
   </div>
-  <div class="zection" id="projects">
-    <div class="lhs">
-      <label for="projects">Personal Projects:</label>
+  <div class="zection">
+    <div class="lhs" id="pride">
+      <label for="pride">Points of Pride:</label>
       <ul>
-        <li><span>Patches/Plugins</span> for ViM (text editor), Trac (ticketing system), Dispatch (HTTP lib), WordPress (blogging), and Lift (web framework)</li>
-        <li><span>FragSpace</span>, a service to create game servers on the fly; building with Go and App Engine; an OAuth server</li>
+        <li><span>Presentations</span> about <a
+          href="/writings/drupal-web-service/">web services</a>, <a
+          href="/writings/cryptography-and-security-coders">security</a>, <a
+          href="https://docs.google.com/presentation/d/12SL5zFNW8N7Hta3hvuXd49N0IvQWq6nvb5C0CMNZVpY/edit?usp=sharing">static
+          sites</a>, and specific tech at conferences, meetups, and work</li>
+        <li><span>Papers</span>, including a master's <a
+          href="http://cmc333333.github.io/forensics-thesis-code/formalized-forensics.pdf">thesis</a>
+        and <a href="http://csf2014.di.univr.it/accepted">CSF '14</a>
+        paper</li>
+        <li><span>Articles</span> about <a
+          href="http://cfpb.github.io/articles/rules-rules/">parsing</a>, <a
+          href="http://off-by-one-mag.github.io/issue-1/articles/constraint-programming/">constraint
+          programming</a>, <a href="/writings/vim-faq/">ViM</a></li>
+        <li><span>Open Source</span> developer, with patches/plugins to eRegs,
+        ViM, Trac, Dispatch, WordPress, Lift; see <a
+          href="http://github.com/cmc333333">GitHub</a></li>
       </ul>
     </div>
-    <div class="rhs">
+    <div class="rhs" id="projects">
+      <label for="projects">Other Projects:</label>
       <ul>
-        <li><span>Python</span> projects including <span>FillMyPod</span> (podcast mixer,) <span>PipesUtils</span> (App Engine filter for Yahoo Pipes,) and <span>HackBase</span> (Django + App Engine journalist database)</li>
-        <li><span>PHP</span> projects: Drupal vanity <a href="/">website</a> and <span>NYTGrabber</span>, a tool used in Anthropology research to help analyze use of Arabic words in print media</li>
+        <li><span>FillMyPod</span>, a Python podcast mixer</li>
+        <li><span>Newslearning</span>, a Scala NLP and Machine Learning utlity
+        for classification techniques with news articles (OpenShift)</li>
+        <li><span>NYTGrabber</span>, a PHP tool used in Anthropology research to
+        help analyze use of Arabic words in print media</li>
+        <li><span>Vanity</span>, my Nanoc (Ruby)-based static, personal
+        website</li>
       </ul>
     </div>
   </div>
