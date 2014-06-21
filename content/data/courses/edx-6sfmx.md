@@ -7,3 +7,9 @@ professor's university: MIT
 university: EdX
 categories: [Mathematics]
 ---
+- Dimensional Analysis
+- Easy Cases
+- Lumping
+- Pictorial Proofs
+- Taking Out the Big Part
+- Analogy
