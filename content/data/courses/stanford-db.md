@@ -1,7 +1,7 @@
 ---
 title: Databases
-start: 2014-06-09
-end: 2014-07-09
+start: 2014-06-12
+end: 2014-06-21
 professor: Jennifer Widom
 university: Stanford
 categories: [Computer Science, Data Science]
