@@ -1,0 +1,27 @@
+---
+title: Introduction to Forensic Science
+start: 2014-08-11
+end: 2013-10-06
+professor: Roderick Bates
+professor's university: Nanyang Technical University
+university: Coursera
+categories: [Science]
+---
+- Introduction to Forensic Science
+  - Basic Ideas in Forensic Science
+  - What is Forensic Science
+  - Application of Forensic Science
+  - Limits of Forensic Science
+  - Locard's Exchange Principle
+  - Roberto Calvi Case
+  - Buck Ruxton & the Jigsaw Murders Case
+  - Forensic Laboratories
+  - Reconstruction & Re-enactment
+  - The Woodchipper Murder Case
+- Chemical Analysis in Forensic Science
+- Time of Death; Blood
+- DNA
+- Fingerprinting; Polymers & Fibers; Firearms
+- Narcotics
+- Toxicology
+- Case Studies
