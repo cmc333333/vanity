@@ -19,6 +19,15 @@ categories: [Science]
   - Reconstruction & Re-enactment
   - The Woodchipper Murder Case
 - Chemical Analysis in Forensic Science
+  - Introduction to Atomic Structure
+  - Elemental Analysis
+  - Analysis of Microscopic Objects
+  - Napolean Case
+  - JFK Assassination Case
+  - Introduction to Chromatography
+  - GC & HPLC
+  - Infrared Spectroscopy
+  - Mass Spectroscopy
 - Time of Death; Blood
 - DNA
 - Fingerprinting; Polymers & Fibers; Firearms

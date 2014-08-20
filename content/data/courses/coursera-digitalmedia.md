@@ -8,6 +8,15 @@ university: Coursera
 categories: [Computer Science, Art]
 languages: [Processing]
 ---
+###### Course Projects
+* [Sound Wave Visualizer](https://vimeo.com/100075908)
+  [[Code](https://github.com/cmc333333/visualdjtube)]
+* [Field Goal Game](https://vimeo.com/101272477)
+  [[Code](https://github.com/cmc333333/fieldgoal)]
+* [Image Editor](https://vimeo.com/102434754)
+  [[Code](https://github.com/cmc333333/ImageEditor)]
+
+###### Topics
 - Lesson 1: Introduction: sonic painter
   - Using Processing
   - Setting up your Android or iOS device
