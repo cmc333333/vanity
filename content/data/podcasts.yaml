@@ -1,0 +1,15 @@
+rss:
+  - id: floss
+    url: http://feeds.twit.tv/floss.xml
+  - id: gwj
+    url: http://www.gamerswithjobs.com/taxonomy/term/408/0/feed
+  - id: waitwait
+    url: http://www.npr.org/rss/podcast.php?id=35
+  - id: moth
+    url: http://feeds.themoth.org/themothpodcast
+  - id: se
+    url: http://feeds.feedburner.com/se-radio
+  - id: 60science
+    url: http://rss.sciam.com/sciam/60secsciencepodcast
+  - id: sgu
+    url: http://www.theskepticsguide.org/feed/sgu
