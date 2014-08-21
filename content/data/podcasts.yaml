@@ -13,3 +13,41 @@ rss:
     url: http://rss.sciam.com/sciam/60secsciencepodcast
   - id: sgu
     url: http://www.theskepticsguide.org/feed/sgu
+  - id: javaposse
+    url: http://feeds.feedburner.com/javaposse
+  - id: chariot
+    url: http://chariotsolutions.com/podcasts/show/all-shows/feed/
+  - id: american
+    url: http://feeds.thisamericanlife.org/talpodcast
+  - id: 60mind
+    url: http://rss.sciam.com/sciam/60-second-mind
+  - id: secnow
+    url: http://leo.am/podcasts/sn
+  - id: 60earth
+    url: http://rss.sciam.com/sciam/60-second-earth
+  - id: omega
+    url: http://omegataupodcast.net/category/podcast-en/feed/
+  - id: planetmoney
+    url: http://www.npr.org/rss/podcast.php?id=510289
+  - id: memorypalace
+    url: http://feeds.feedburner.com/TheMemoryPalace
+  - id: iqsquared
+    url: http://www.npr.org/rss/podcast.php?id=510184
+  - id: freakonomics
+    url: http://feeds.feedburner.com/freakonomicsradio
+  - id: linuxoutlaws
+    url: http://feeds.feedburner.com/linuxoutlaws
+  - id: scalawags
+    url: http://thescalawags.libsyn.com/rss
+  - id: onion
+    url: http://www.theonion.com/feeds/radionews/
+  - id: lifewellwasted
+    url: http://www.alifewellwasted.com/episodes/episodes.xml
+  - id: ted
+    url: http://feeds.feedburner.com/tedtalks_audio
+  - id: thisdevlife
+    url: http://feeds.feedburner.com/ThisDevelopersLife
+  - id: starshipsofa
+    url: http://www.starshipsofa.com/feed/
+  - id: 99invisible
+    url: http://feeds.99percentinvisible.org/99percentinvisible
