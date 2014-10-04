@@ -28,12 +28,13 @@ categories: [Science]
   - GC & HPLC
   - Infrared Spectroscopy
   - Mass Spectroscopy
-- Time of Death; Blood
+- Time of Death
   - Recent deaths
   - Decomposing Bodies: Putrefaction, Forensic Entomology
   - Analysis of Skeletal Remains
   - Ötzi Case
-  - Blood
+- Blood
+  - Blood Biology
   - Tests for Blood
   - Precipitin Technology
   - Blood Spatter Analysis
@@ -49,7 +50,46 @@ categories: [Science]
   - Mitochondrial DNA
   - DNA Profiling of Other Species
   - Peter Falconio & Joanne Lees Case
-- Fingerprinting; Polymers & Fibers; Firearms
+- Fingerprinting
+  - History of Fingerprinting
+  - Principles of Fingerprinting
+  - Visualising Fingerprints
+  - Brandon Mayfield Case Summary
+- Polymers & Fibers
+  - Introduction to Polymers & Fibers
+  - Natural Polymers
+  - Hair
+  - Wayne Williams Case
+  - Sarah Payne Case
+- Firearms
+  - Internal Ballistics
+  - Gun Shot Residue
 - Narcotics
+  - Types of Illegal Drugs
+  - Cocaine
+  - Opium, Morphine & Heroin
+  - Synthetic Drugs
+  - Analogs
+  - Detection and Identification of Drugs
 - Toxicology
+  - Introduction to Toxicology
+  - Deliberate & Accidental Poisoning
+  - Toxins & Biological Poisons
+  - LD50
+  - Forensic Toxicology
+  - Alcohol
+  - Inorganic Poisons - Arsenic
+  - Inorganic Poisons - Thallium
+  - Inorganic Poisons - Barium
+  - Nerve Agents
+  - Georgi Markov Case
+  - Alexander Litvinenko Case
 - Case Studies
+  - King Richard III Case
+  - Annie Le Case
+  - June Devaney Case
+  - JonBonent Ramsey
+  - The Unabomber Case
+  - Psychological Profiling
+  - The Soham Murders Case
+  - Dr. Crippen Case
