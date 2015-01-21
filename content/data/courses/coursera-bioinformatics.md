@@ -1,0 +1,131 @@
+---
+title: Bioinformatics Algorithms (Part 1)
+start: 2014-10-20
+end: 2015-01-12
+professor: Pavel Pevzner, Phillip E. C. Compeau, Nikolay Vyahhi
+professor's university: UC San Diego
+university: Coursera
+languages: [Python]
+categories: [Biology, Computer Science, Algorithms, Bioinformatics]
+---
+- Where in the Genome Does DNA Replication Begin?
+  - Introduction to DNA Replication
+  - Hidden Messages in the Replication Origin
+  - Some Hidden Messages are More Surprising than Others
+  - An Explosion of Hidden Messages
+  - The Simplest Way to Replicate DNA
+  - Asymmetry of Replication
+  - Peculiar Statistics of the Forward and Reverse Half-Strands
+  - Some Hidden Messages Are More Elusive than Others
+  - A Final Attempt at Finding DnaA Boxes in E. Coli
+  - Complications in oriC Predictions
+  - Find DnaA boxes in Salmonella enterica
+  - Open Problems
+  - Multiple Replication Origins in a Bacterial Genome
+  - Finding Replication Origins in Draft Bacterial Genomes
+  - Finding Replication Origins in Archaea
+  - Finding Replication Origins in Yeast
+  - Computing Exact Probabilities of Patterns in a String and the Overlapping Words Paradox
+  - Big-O Notation
+  - Probabilities of Patterns in a String
+  - The Most Beautiful Experiment in Biology
+  - Chemical Basis for Directionality of DNA Strands
+  - The Overlapping Words Paradox
+- How Do We Sequence Antibiotics? (Brute Force Algorithms)
+  - The Discovery of Antibiotics
+  - How Do Bacteria Make Antibiotics?
+  - Dodging the Central Dogma
+  - Sequencing Antibiotics by Shattering Them Into Pieces
+  - A Brute Force Algorithm for Cyclopeptide Sequencing
+  - A Faster Algorithm for Cyclopeptide Sequencing
+  - How Fast Is This Algorithm?
+  - Adapting Cyclopeptide Sequencing for Spectra with Errors
+  - From 20 to More than 100 Amino Acids
+  - The Spectral Convolution Saves the Day
+  - From Simulated to Real Spectra
+  - Sequence a Peptide from a Real Spectrum
+  - Open Problems
+  - Beltway and Turnpike Problems
+  - Sequencing Standard Subpeptides
+  - Sequencing Cyclic Peptides in Primates
+  - Gause and Lysenkoism
+  - Discovery of Codons
+  - Quorum Sensing
+  - Molecular Mass
+  - Selenocysteine and Pyrrolysine
+  - A Pseudo-polynomial Algorithm for the Turnpike Problem
+- Which DNA Patterns Act As Cellular Clocks? (Randomized Algorithms)
+  - Do We Have a "Clock Gene"?
+  - Motif Finding Is More Difficult Than You Think
+  - Implanted Motif Problem
+  - Scoring Motifs
+  - From the Motif Finding Problem to the Median String Problem
+  - Greedy Motif Search
+  - Motif Finding Meets Oliver Cromwell
+  - Randomized Motif Search
+  - How Can a Randomized Algorithm Perform So Well?
+  - Gibbs Sampling
+  - Gibbs Sampler in Action
+  - Complications in Motif Finding
+  - How Does Tuberculosis Hibernate to Hide from Antibiotics?
+  - Identify the DosR Motif
+  - Gene Expression
+  - DNA Arrays
+  - Buffon's Needle (The First Randomized Algorithm)
+- How Do We Assemble Genomes? (Graph Algorithms)
+  - Exploding Newspapers
+  - Genome Assembly Is More Difficult Than You Think
+  - The String Reconstruction Problem
+  - String Reconstruction As a Walk Through the Overlap Graph
+  - Another Graph...
+  - ...Another Walk
+  - Seven Bridges of Konigsberg
+  - Eulerian Cycles and Balanced Graphs
+  - Euler's Theorem
+  - Universal String Problem
+  - From Euler's Algorithm to an Algorithm for Finding Eulerian Cycles
+  - Assembling Read-Pairs
+  - De Bruijn Graphs Face the Harsh Realities of Assembly
+  - Assembling a Real Genome
+  - A Short History of Read Generation Technologies
+  - Repeats in the Human Genome
+  - Graphs
+  - Icosian Game
+  - Tractable versus Intractable Problems
+  - Leonhard Euler
+  - Seven Bridges of Kaliningrad
+  - Inferring Multiplicities of Edges in de Bruijn Graphs
+- How Do We Compare Biological Sequences? (Dynamic Programming Algorithms)
+  - Cracking the Non-Ribosomal Code
+  - What is Sequence Alignment?
+  - The Manhattan Tourist Problem
+  - Sequence Alignment is the Manhattan Tourist Problem in Disguise
+  - The Change Problem
+  - The Manhattan Tourist Problem Revisited
+  - From Manhattan to an Arbitrary DAG
+  - Backtracking in the Alignment Graph
+  - Scoring Alignments
+  - Local Versus Global Sequence Alignment
+  - The Myriad Faces of Sequence Alignment
+  - Penalizing Insertions and Deletions in Sequence Alignment
+  - Space-Efficient Sequence Alignment
+  - Multiple Sequence Alignment
+  - Reconstructing the Non-Ribosomal Code
+  - Non-Ribosomal Code
+  - Topological Orderings in Graphs
+  - PAM Scoring Matrices
+  - Divide-and-Conquer Algorithms
+  - Multiple Scoring Alignment
+- Are There Fragile Regions in the Human Genome? (Combinatorial Algorithms)
+  - Of Mice and Men
+  - The Random Breakage Model of Chromosome Evolution
+  - Modeling Chromosomes by Signed Permutations
+  - Reversal Distance
+  - Sorting by Reversals: Greed is Good But Not Great
+  - Breakpoints
+  - Rearrangements in Tumor Genomes
+  - From Unichromosomal to Multichromsomal Genomes
+  - Two-Breaks
+  - Breakpoint Graphs
+  - Rearrangement Hotspots in the Human Genome
+  - Constructing Synteny Blocks
