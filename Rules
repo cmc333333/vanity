@@ -18,7 +18,9 @@ compile '/assets/files/*/' do
   # don’t filter or layout
 end
 compile '/assets/css/*/' do
-  # don’t filter or layout
+  if item[:extension] == 'scss'
+    filter :sass, syntax: :scss
+  end
 end
 compile '/assets/js/*/' do
   # don’t filter or layout
@@ -43,7 +45,11 @@ compile '*' do
 end
 
 route '/assets/css/*' do
-  @item.identifier.chop + '.' + @item[:extension]
+  if @item[:extension] == 'scss'
+    @item.identifier.chop + '.css'
+  else
+    @item.identifier.chop + '.' + @item[:extension]
+  end
 end
 route '/assets/js/*' do
   @item.identifier.chop + '.' + @item[:extension]
