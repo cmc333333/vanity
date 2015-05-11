@@ -111,3 +111,14 @@ h1 {
   border-radius: 10px;
   padding: 0 1em;
 }
+
+/* Specific functionality */
+ul.commas > li {
+  display: inline-block;
+}
+ul.commas > li::after {
+  content: ","
+}
+ul.commas > li:last-child::after {
+  content: ""
+}

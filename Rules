@@ -39,7 +39,7 @@ compile '*' do
     filter :mustache
     layout 'default'
   else
-    filter :erb
+    filter :erb, trim_mode: "<>"
     layout 'default'
   end
 end

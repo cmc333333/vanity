@@ -157,10 +157,13 @@ featured_in:
 mentions:
   - source: White House
     url: https://www.whitehouse.gov/sites/default/files/docs/us_national_action_plan_6p.pdf
+    skip_in_listing: true
   - url: http://www.wired.com/2013/01/hack-the-government/
     source: Wired
+    skip_in_listing: true
   - url: http://fcw.com/Articles/2014/06/27/CFPB-CIO-Ashwin-Vasan-innovation.aspx
     source: FCW
+    skip_in_listing: true
   - source: Housing Wire
     urls:
     - http://www.housingwire.com/articles/30259-cfpb-going-digital-to-help-everyone-understand-everything
@@ -186,60 +189,59 @@ mentions:
     url: http://www.pymnts.com/uncategorized/2013/cfpb-releases-consumer-friendly-regulations-tool/
   - source: CFPB
     url: http://www.consumerfinance.gov/newsroom/prepared-remarks-of-cfpb-director-richard-cordray-at-the-american-bar-association/
+    skip_in_listing: true
   - source: CFPB
     url: http://www.consumerfinance.gov/newsroom/prepared-remarks-of-cfpb-deputy-director-steve-antonakes-at-the-american-bankers-association-regulatory-compliance-conference/
+    skip_in_listing: true
   - source: CFPB
     url: http://www.consumerfinance.gov/newsroom/written-testimony-of-david-silberman-before-the-house-financial-services-subcommittee-on-financial-institutions-and-consumer-credit/ 
+    skip_in_listing: true
   - source: CFPB
     url: http://www.consumerfinance.gov/newsroom/cfpb-procedures-to-ensure-consumers-making-remittance-transfers-are-protected/
+    skip_in_listing: true
 ---
+<h2>eRegulations</h2>
 
-%h2 Quotes
-%ul#quotes
-  - @item[:quotes].each do |quote|
-    %li
-      %a{href: quote[:url]}
-        = quote[:quote]
-%h2 Other
-eRegs has been highlighted by the 
-%a{href: "https://www.whitehouse.gov/sites/default/files/docs/us_national_action_plan_6p.pdf"}
-  White House
-(for "mak[ing] regulations easier to read"), CFPB's director,
-%a{href: "http://www.consumerfinance.gov/newsroom/prepared-remarks-of-cfpb-director-richard-cordray-at-the-american-bar-association/"}
-  Richard Cordray
-(so that regulations may be "understood by the general public"), as well as CFPB's deputy directory,
-%a{href: "http://www.consumerfinance.gov/newsroom/prepared-remarks-of-cfpb-deputy-director-steve-antonakes-at-the-american-bankers-association-regulatory-compliance-conference/"}
-  Steve Antonakes
-(describing the tool as "intuitive, easy-to-navigate"), and
-%a{href: "http://www.consumerfinance.gov/newsroom/written-testimony-of-david-silberman-before-the-house-financial-services-subcommittee-on-financial-institutions-and-consumer-credit/"}
-  brought up
-to a United States House of Representatives subcommittee.
-%a{href: "http://www.bloomberg.com/news/articles/2013-10-29/one-federal-website-that-works"}
-  Bloomberg
-and
-%a{href: "http://www.nextgov.com/emerging-tech/2014/01/want-make-digital-government-work-hire-your-own-coders/76223/"}
-  Nextgov
-ran featured pieces on our software, but it also made its way into
-%a{href: "http://www.wired.com/2013/01/hack-the-government/"}
-  Wired
-and
-%a{href: "http://fcw.com/Articles/2014/06/27/CFPB-CIO-Ashwin-Vasan-innovation.aspx"}
-  FCW
-= "."
-In addition, many industry organizations journaled the project's releases:
-%ul
-  - skip_list = ['White House', 'CFPB', 'Bloomberg', 'Nextgov', 'Wired', 'FCW']
-  - mentions = @item[:mentions].reject{|i| skip_list.include? i[:source]}
-  - mentions.each do |item|
-    %li 
-      - if item[:url]
-        %a{href: item[:url]}
-          = item[:source]
-      - else
-        = item[:source]
-        - item[:urls].each_index do |idx|
-          [
-          %a{href: item[:urls][idx]}<
-            = idx
-          ]
+<p>eRegs has been highlighted by the
+  <a href="https://www.whitehouse.gov/sites/default/files/docs/us_national_action_plan_6p.pdf">White House</a> 
+  (for "mak[ing] regulations easier to read"), by CFPB's director,
+  <a href="http://www.consumerfinance.gov/newsroom/prepared-remarks-of-cfpb-director-richard-cordray-at-the-american-bar-association/">Richard Cordray</a>
+  (as helping regulations be "understood by the general public"), by CFPB's
+  deputy director,
+  <a href="http://www.consumerfinance.gov/newsroom/prepared-remarks-of-cfpb-deputy-director-steve-antonakes-at-the-american-bankers-association-regulatory-compliance-conference/">Steve Antonakes</a>
+  (who described it as "intuitive, easy-to-navigate"), and
+  <a href="http://www.consumerfinance.gov/newsroom/written-testimony-of-david-silberman-before-the-house-financial-services-subcommittee-on-financial-institutions-and-consumer-credit/">brought up</a>
+  to a United States House of Representatives subcommittee.</p>
+<p>
+  <a href="http://www.bloomberg.com/news/articles/2013-10-29/one-federal-website-that-works">Bloomberg</a>
+  and
+  <a href="http://www.nextgov.com/emerging-tech/2014/01/want-make-digital-government-work-hire-your-own-coders/76223/">Nextgov</a>
+  ran featured pieces on our software, but it also made its way into
+  <a href="http://www.wired.com/2013/01/hack-the-government/">Wired</a>
+  and
+  <a href="http://fcw.com/Articles/2014/06/27/CFPB-CIO-Ashwin-Vasan-innovation.aspx">FCW</a>
+  . In addition, many industry organizations journaled the project's releases,
+  including:
+</p>
+<ul class="commas">
+  <% @item[:mentions].reject{|i| i[:skip_in_listing]}.each do |item| %>
+    <%# Ugliness due to erb whitespace handing #%>
+    <li><% 
+      if item[:url] 
+        %><a href="<%= item[:url] %>"><%= item[:source] %></a><%
+      else
+        %><%= item[:source] %> <% item[:urls].each_index do |idx|
+          %><a href="<%= item[:urls][idx] %>">[<%= idx %>]</a><%
+        end %><%
+      end %></li>
+  <% end %>
+</ul>
 
+<p>We also received a lot of love from users and the open-gov community. In
+particular, we launched shortly after the healthcare.gov debacle, leading to
+numerous flattering comparisons. I've collected some of these tweets and
+articles below.</p>
+<ul data-quotes-vis="true">
+  <% @item[:quotes].each do |quote| %>
+    <li><a href="<%= quote[:url] %>"><%= quote[:quote] %></a></li>
+  <% end %>
