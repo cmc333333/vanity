@@ -3,9 +3,8 @@ require 'nokogiri'
 require 'open-uri'
 require 'yaml'
 
-class GRBook < Struct.new(:shelves, :book_id, :title, :author, :published,
-                          :link, :desc, :desc_m, :desc_s, :img_m, :img_l,
-                          :added)
+class GRBook
+  attr_accessor :shelves, :book_id, :title, :author, :published, :link, :desc, :desc_m, :desc_s, :img_m, :img_l, :added
 end
 
 

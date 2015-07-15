@@ -12,7 +12,7 @@ extra_js:
 ---
 #cal-display
 #cal-data
-  - gcal_events().each do |event|
+  - [].each do |event|
     .event
       - if event[:end] >= DateTime.now
         %h3

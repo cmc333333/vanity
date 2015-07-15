@@ -35,6 +35,9 @@ prune:
 # “layout/” directories in the site directory.
 data_sources:
   -
+    type: static
+    items_root: /static/
+  -
     # The type is the identifier of the data source. By default, this will be
     # `filesystem_unified`.
     type: filesystem_unified
@@ -57,6 +60,7 @@ data_sources:
     # will have the identifier “/about/” when turned off, but when turned on
     # it will become “/about.html/” instead.
     allow_periods_in_identifiers: false
+
 
 # Configuration for the “watch” command, which watches a site for changes and
 # recompiles if necessary.

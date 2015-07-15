@@ -25,6 +25,7 @@ end
 compile '/assets/js/*/' do
   # don’t filter or layout
 end
+passthrough '/static/*'
 
 compile '*' do
   if item.binary?
