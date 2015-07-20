@@ -27,3 +27,5 @@ categories: [Art]
 - The Bronze Age to Today 
   - How has globalization and the information age influenced a new generation of art and artists?
   - How has the popularity of superheroes in film and TV changed the nature of comic book fandom?
+
+Final project: creation and exploration of a superhero and supervillain, [The Adventurer & The Nihilist](https://docs.google.com/presentation/d/13kgFyGudcCJewA9ER7PPYIaCRAfk6jEeEkAU29NT-v8/edit?usp=sharing)
