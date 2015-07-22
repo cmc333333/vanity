@@ -1,5 +1,5 @@
 ---
-The Rise of Superheroes and Their Impact on Pop Culture
+title: The Rise of Superheroes and Their Impact on Pop Culture
 start: 2015-05-12
 end: 2015-07-16
 professor: Michael Uslan & Stan Lee
