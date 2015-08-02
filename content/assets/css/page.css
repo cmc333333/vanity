@@ -101,6 +101,10 @@ h1 {
   font-size: x-large;
 }
 
+a {
+  color: #005580;
+}
+
 /*  Footer  */
 #footer {
   text-align: center;
