@@ -126,3 +126,7 @@ ul.commas > li::after {
 ul.commas > li:last-child::after {
   content: ""
 }
+
+ul.clean {
+  list-style: none;
+}

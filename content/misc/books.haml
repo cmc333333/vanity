@@ -2,8 +2,7 @@
 title: Books
 extra_css: ["/assets/css/books.css"]
 ---
-%h3
-  Currently Reading
+%h3 Currently Reading
 - goodreads(true).each do |book|
   .book.reading
     %h4
@@ -15,9 +14,8 @@ extra_css: ["/assets/css/books.css"]
       ="By " + book[:author] + ", " + book[:published]
     %p
       =book[:desc_m]
-%h3
-  Recently Read
-- goodreads(false).each do |book|
+%h3 Recently Read
+- goodreads(false).take(10).each do |book|  # recently read
   .book.read
     %h4
       =book[:title]
@@ -28,6 +26,13 @@ extra_css: ["/assets/css/books.css"]
       ="By " + book[:author] + ", " + book[:published]
     %p
       =book[:desc_s]
+%h3 Less Fresh
+%ul{class: "clean"}
+  - goodreads(false).drop(10).each do |book|  # read prior
+    %li
+      %a{href: book[:link]}
+        = book[:title]
+      = "By #{book[:author]}, #{book[:published]}"
 %hr
   %p
     = "Content from "

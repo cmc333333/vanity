@@ -2,6 +2,8 @@
 
 # Default location for output, needs to match output_dir's value found in config.yaml
 output/
+.sass-cache/
+crash.log
 
 # Temporary file directory
 tmp/
