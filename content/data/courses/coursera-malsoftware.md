@@ -5,8 +5,10 @@ end: 2013-07-29
 professor: Lorenzo Cavallaro
 professor's university: University of London International Programmes
 university: Coursera
-categories: [Computer Science, Security]
-languages: [Assembler]
+tags:
+  - Computer Science
+  - Security
+  - Assembly
 ---
 - Malicious Software
 - Botnets & Detection

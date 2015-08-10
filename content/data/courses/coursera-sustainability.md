@@ -5,7 +5,7 @@ end: 2012-10-28
 professor: Jonathan Tomkin
 professor's university: University of Illinois
 university: Coursera
-categories: [Sustainability, Environmentalism]
+tags: [Sustainability, Environmentalism]
 ---
 - Week 1
   - Introduction & Population

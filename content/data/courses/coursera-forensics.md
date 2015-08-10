@@ -5,7 +5,8 @@ end: 2013-10-06
 professor: Roderick Bates
 professor's university: Nanyang Technical University
 university: Coursera
-categories: [Science]
+tags:
+  - Science
 ---
 - Introduction to Forensic Science
   - Basic Ideas in Forensic Science

@@ -5,8 +5,11 @@ end: 2014-04-13
 professor: Greg Restall & Jen Davoren
 professor's university: University of Melbourne
 university: Coursera
-categories: [Logic, Philosophy, Computer Science]
-languages: [prolog]
+tags:
+  - Logic
+  - Philosophy
+  - Computer Science
+  - Prolog
 ---
 - Language and Models of Propositional Logic
 - Proof Trees for Propositional Logic

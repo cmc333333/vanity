@@ -5,13 +5,13 @@ end: 2013-05-05
 professor: Michael Collins
 professor's university: Columbia University
 university: Coursera
-categories:
+tags:
   - Computer Science
   - Natural Language Processing
   - Statistics
   - Machine Learning
   - Algorithms
-languages: [Python]
+  - Python
 ---
 - Language modeling
 - Trigram Language Models

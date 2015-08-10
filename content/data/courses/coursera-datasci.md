@@ -5,8 +5,13 @@ end: 2013-06-26
 professor: Bill Howe
 professor's university: University of Washington
 university: Coursera
-categories: [Computer Science, Statistics, Data Science, Analytics]
-languages: [Python, Hive]
+tags:
+  - Computer Science
+  - Statistics
+  - Data Science
+  - Analytics
+  - Python
+  - Hive
 ---
 - Data science articulated, data science examples, history and context, 
   technology landscape 

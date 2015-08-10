@@ -5,7 +5,9 @@ end: 2012-08-20
 professor: Ezekiel Emanuel
 professor's university: University of Pennsylvania
 university: Coursera
-categories: [Health, Policy]
+tags:
+  - Health
+  - Policy
 ---
 - Access to health care
 - Quality of health care

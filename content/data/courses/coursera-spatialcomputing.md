@@ -5,9 +5,13 @@ end: 2014-11-25
 professor: Shashi Shekhar and Brent Hecht
 professor's university: University of Minnesota
 university: Coursera
-languages: [Java]
-tools: [WikiBrain, TileMill]
-categories: [Mathematics, Computer Science, GIS]
+tags:
+  - Java
+  - WikiBrain
+  - TileMill
+  - Mathematics
+  - Computer Science
+  - GIS
 ---
 - Introduction to Spatial Computing
   - Defining Spatial Computing

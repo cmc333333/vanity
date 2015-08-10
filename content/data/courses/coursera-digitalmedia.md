@@ -5,8 +5,10 @@ end: 2014-08-04
 professor: Mick Grierson, Marco Gillies, & Matthew Yee-King
 professor's university: University of London
 university: Coursera
-categories: [Computer Science, Art]
-languages: [Processing]
+tags:
+  - Computer Science
+  - Art
+  - Processing
 ---
 ###### Course Projects
 * [Sound Wave Visualizer](https://vimeo.com/100075908)

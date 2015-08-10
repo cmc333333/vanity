@@ -4,8 +4,13 @@ start: 2012-11-05
 end: 2013-03-15
 professor: Yaser S. Abu-Mostafa
 university: Caltech
-categories: [Computer Science, Mathematics, Machine Learning]
-languages: [R, Octave, Python]
+tags: 
+  - R
+  - Octave
+  - Python
+  - Computer Science
+  - Mathematics
+  - Machine Learning
 ---
 - The Learning Problem, Perceptron
 - Is Learning Feasible?

@@ -5,8 +5,12 @@ end: 2012-12-02
 professor: Tim Roughgarden
 professor's university: Stanford
 university: Coursera
-categories: [Computer Science, Mathematics, Algorithms, Graph Theory]
-languages: [Lua]
+tags:
+  - Computer Science
+  - Mathematics
+  - Algorithms
+  - Graph Theory
+  - Lua
 ---
 - Week 1
   - Two Motivating Applications (Sequence Alignment and Internet Routing)

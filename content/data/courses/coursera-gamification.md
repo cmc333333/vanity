@@ -5,7 +5,9 @@ end: 2012-10-07
 professor: Kevin Werbach
 professor's university: University of Pennsylvania
 university: Coursera
-categories: [Gamification Psychology]
+tags:
+  - Gamification
+  - Psychology
 ---
 - Week 1
   - What is Gamification?

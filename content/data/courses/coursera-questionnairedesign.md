@@ -5,7 +5,9 @@ end: 2014-08-25
 professor: Frederick Conrad and Frauke Kreuter
 professor's university: University of Michigan
 university: Coursera
-categories: [Social Science, Statistics]
+tags:
+  - Social Science
+  - Statistics
 ---
 - Overview on standardized interviewing
   - Different types of questions

@@ -81,4 +81,5 @@ layout '*', :erb
 
 preprocess do
   add_certs
+  Tag.build_references(items)
 end

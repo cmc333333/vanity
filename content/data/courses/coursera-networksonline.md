@@ -5,8 +5,12 @@ end: 2014-03-09
 professor: Matthew O. Jackson
 professor's university: Stanford
 university: Coursera
-categories: [Computer Science, Mathematics, Networks, Graph Theory]
-tools: [Pajek]
+tags:
+  - Computer Science
+  - Mathematics
+  - Networks
+  - Graph Theory
+  - Pajek
 ---
 - Introduction, Empirical Background and Definitions:
   - Examples of Social Networks and their Impact

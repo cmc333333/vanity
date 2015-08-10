@@ -4,8 +4,12 @@ start: 2012-01-09
 end: 2012-03-19
 professor: Marcus Schaefer
 university: DePaul
-categories: [Computer Science, Cryptography, Security, Mathematics]
-languages: [Python]
+tags:
+  - Computer Science
+  - Cryptography
+  - Security
+  - Mathematics
+  - Python
 text:
   - author: Trappe, Washington
     title: Introduction to Cryptography

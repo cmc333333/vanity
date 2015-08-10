@@ -4,8 +4,11 @@ start: 2012-03-29
 end: 2012-05-31
 professor: Elliot Clark
 university: DePaul
-categories: [Computer Science, Distributed Systems, Networking]
-languages: [Java]
+tags:
+  - Computer Science
+  - Distributed Systems
+  - Networking
+  - Java
 texts:
   - author: Tanenbaum, Andrew S.
     title: Distributed Systems, Principles and Paradigms

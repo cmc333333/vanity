@@ -5,8 +5,11 @@ end: 2013-08-13
 professor: Pascal Van Hentenryck
 professor's university: University of Melbourne
 university: Coursera
-categories: [Computer Science, Mathematics]
-languages: [Python, Minizinc]
+tags:
+  - Computer Science
+  - Mathematics
+  - Python
+  - Minizinc
 ---
 - Constraint Programming
 - Local Search

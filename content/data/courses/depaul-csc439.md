@@ -4,8 +4,10 @@ start: 2012-09-09
 end: 2012-11-19
 professor: Radha Jagadeesan
 university: DePaul
-categories: [Computer Science, Security]
-languages: [Scala]
+tags:
+  - Computer Science
+  - Security
+  - Scala
 texts:
   - author: Stallings, William and Brown, Lawrie
     title: "Computer Security: Principles and Practice"

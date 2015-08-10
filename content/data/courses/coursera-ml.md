@@ -5,8 +5,11 @@ end: 2012-06-30
 professor: Andrew Ng
 professor's university: Stanford
 university: Coursera
-categories: [Computer Science, Mathematics, Machine Learning]
-languages: [Octave]
+tags:
+  - Computer Science
+  - Mathematics
+  - Machine Learning
+  - Octave
 ---
 - Week 1
   - Introduction

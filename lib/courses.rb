@@ -23,10 +23,43 @@ def add_certs
 end
 
 def course_markdown
+  language = Tag.lookup("language")
+  library = Tag.lookup("library")
+  tool = Tag.lookup("tool")
+
   items.select {|i|
     not i.binary? \
     and i[:filename] \
     and i[:filename].start_with? "content/data/courses"
+  }.map {|i|
+    if i[:tags]
+      langs = i[:tags].
+        select{|t| t.attributes.fetch(:tags, []).include? language}.
+        map{|t| t[:name]}
+      libs = i[:tags].
+        select{|t| t.attributes.fetch(:tags, []).include? library}.
+        map{|t| t[:name]}
+      tools = i[:tags].
+        select{|t| t.attributes.fetch(:tags, []).include? tool}.
+        map{|t| t[:name]}
+      cats = i[:tags].
+        reject{|t| (t.attributes.fetch(:tags, []) & [language, library, tool]).any?}.
+        map{|t| t[:name]}
+
+      if langs.any?
+        i.attributes = i.attributes.merge(languages: langs)
+      end
+      if libs.any?
+        i.attributes = i.attributes.merge(libraries: libs)
+      end
+      if tools.any?
+        i.attributes = i.attributes.merge(tools: tools)
+      end
+      if cats.any?
+        i.attributes = i.attributes.merge(categories: cats)
+      end
+    end
+    i
   }.group_by {|i| 
     i[:start].year
   }.to_a.sort_by{|year, courses|

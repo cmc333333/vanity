@@ -5,7 +5,9 @@ end: 2015-03-02
 professor: Gerhard Wickler, Austin Tate
 professor's university: University of Edinburgh
 university: Coursera
-categories: [Computer Science, AI]
+tags:
+  - Computer Science
+  - AI
 ---
 - Introduction and Planning in Context
   - What is Planning

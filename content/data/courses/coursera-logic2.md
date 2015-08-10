@@ -5,8 +5,11 @@ end: 2014-06-20
 professor: Greg Restall & Jen Davoren
 professor's university: University of Melbourne
 university: Coursera
-categories: [Logic, Philosophy, Computer Science]
-languages: [prolog]
+tags:
+  - Logic
+  - Philosophy
+  - Computer Science
+  - Prolog
 ---
 - The Syntax of Predicate Logic; Translations using quantifiers
 - Models for Predicate Logic; Classifying propositions and arguments; Finite

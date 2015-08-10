@@ -5,7 +5,9 @@ end: 2013-03-22
 professor: Jean-Paul Restoule
 professor's university: University of Toronto
 university: Coursera
-categories: [Sociology, History]
+tags:
+  - Sociology
+  - History
 ---
 - Comparing worldviews
 - Aboriginal Education, past, present and future

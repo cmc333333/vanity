@@ -5,8 +5,12 @@ end: 2013-01-31
 professor: Roger Peng
 professor's university: Johns Hopkins Bloomberg School of Public Health
 university: Coursera
-categories: [Computer Science, Statistics, Mathematics, Analytics]
-languages: [R]
+tags:
+  - Computer Science
+  - Statistics
+  - Mathematics
+  - Analytics
+  - R
 ---
 - Data Types
 - Vector Operations

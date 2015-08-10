@@ -5,9 +5,14 @@ end: 2012-06-11
 professor: Dan Boneh
 professor's university: Stanford
 university: Coursera
-categories: [Computer Science, Mathematics, Theory, Cryptography, Security]
-languages: [Python]
-libraries: [gmpy]
+tags:
+  - Computer Science
+  - Mathematics
+  - Theory
+  - Cryptography
+  - Security
+  - Python
+  - gmpy
 ---
 - Week 1
   - Background and overview.

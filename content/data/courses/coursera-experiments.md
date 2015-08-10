@@ -5,8 +5,11 @@ end: 2014-08-24
 professor: Kevin Dunn
 professor's university: McMaster University
 university: Coursera
-categories: [Science, Data Science, Statistics]
-languages: [R]
+tags:
+  - Science
+  - Data Science
+  - Statistics
+  - R
 ---
 - Week 1: Why experiment? We consider experiments that can improve processes in
   your life, and those of the people around you. We explore examples of

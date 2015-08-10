@@ -5,9 +5,14 @@ end: 2014-12-15
 professor: Monica Linden, David Sheinberg
 professor's university: Brown University
 university: Coursera
-languages: [Python]
-tools: [numpy, matplotlib]
-categories: [Biology, Neuroscience, Computer Science, Bioinformatics]
+tags:
+  - Biology
+  - Neuroscience
+  - Computer Science
+  - Bioinformatics
+  - Python
+  - numpy
+  - matplotlib
 ---
 - What does the brain tell us? Exploring neural responses
   - Neurons

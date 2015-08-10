@@ -5,8 +5,12 @@ end: 2015-08-29
 professor: Edward Angel
 professor's university: University of New Mexico
 university: Coursera
-categories: [Computer Science, Graphics, Web]
-languages: [GLSL, Javascript]
+tags:
+  - Computer Science
+  - Graphics
+  - Web
+  - GLSL
+  - JavaScript
 ---
 - Introduction and Background
   - Course Overview

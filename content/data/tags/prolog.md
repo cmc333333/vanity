@@ -1,0 +1,4 @@
+---
+name: Prolog
+tags: [language]
+---

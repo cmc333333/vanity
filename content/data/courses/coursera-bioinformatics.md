@@ -5,8 +5,12 @@ end: 2015-01-12
 professor: Pavel Pevzner, Phillip E. C. Compeau, Nikolay Vyahhi
 professor's university: UC San Diego
 university: Coursera
-languages: [Python]
-categories: [Biology, Computer Science, Algorithms, Bioinformatics]
+tags:
+  - Biology
+  - Computer Science
+  - Algorithms
+  - Bioinformatics
+  - Python
 ---
 - Where in the Genome Does DNA Replication Begin?
   - Introduction to DNA Replication
