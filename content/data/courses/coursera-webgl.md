@@ -12,6 +12,14 @@ tags:
   - GLSL
   - JavaScript
 ---
+#### Projects
+* [Interactive Tessellation](/static/coursera-webgl/week2/gasket2.html)
+* [Painting Program](/static/coursera-webgl/week4/painter.html)
+* [Simple CAD System](/static/coursera-webgl/assignment3/cad.html)
+* [CAD System w/ Lighting](/static/coursera-webgl/assignment4/cad.html)
+* [Spherical Texture Mapping](/static/coursera-webgl/assignment5/globe.html)
+
+#### Syllabus
 - Introduction and Background
   - Course Overview
   - Outline via Examples
