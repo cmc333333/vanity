@@ -13,4 +13,4 @@ tags:
 ---
 - Constraint Programming
 - Local Search
-- Linear & Integer Programming
+- Linear &amp; Integer Programming
