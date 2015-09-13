@@ -77,7 +77,7 @@ route '*' do
   end
 end
 
-layout '*', :erb
+layout '*', :haml
 
 preprocess do
   add_certs

@@ -1,0 +1,69 @@
+!!!
+%html{lang: "en"}
+  %head
+    %meta{charset: "utf-8"}
+    %meta{name: "generator", content: "nanoc #{Nanoc::VERSION}"}
+    %title= "#{@item[:title]} | C.M. Lubinski"
+    %link{rel: "shortcut icon", href: "/favicon.ico", type: "image/x-icon"}
+    %meta{name: "viewport", content: "width=device-dieth, initial-scale=1.0"}
+    %link{href: "/assets/css/lib/bootstrap.min.css", rel: "stylesheet",
+          media: "screen"}
+    %link{href: "/assets/css/lib/bootstrap-responsive.min.css",
+          rel: "stylesheet", media: "screen"}
+    %link{href: "/assets/css/page.css", rel: "stylesheet", media: "screen"}
+    - @item.attributes.fetch(:extra_css, []).each do |css|
+      %link{href: css, rel: "stylesheet", media: "screen"}
+    %script{type: "text/javascript"} pageJson = {};
+  %body
+    .container-fluid
+      #header.row-fluid
+        %a#logo{href: "/", title: "Home", rel: "home"}
+          %img{src: "/assets/img/logo.gif", alt: "Home"}
+        %strong
+          %a{href: "/", title: "Home", rel: "home"}
+            %span C.M. Lubinski
+        %ul#main-menu
+          %li
+            %a.first{href: "/", title: "Curriculum Vitae"}
+              %span Curriculum Vitae
+          %li
+            %a{href: "/writings", title: "Writings"}
+              %span Writings
+          %li
+            %a.last{href: "/misc/books", title: "Misc."}
+              %span Misc.
+      .row-fluid
+        #sidebar.span2
+          - if @item.identifier.start_with? "/writings/"
+            %h2.title Writings
+            %ul.menu
+              - writing_items.each do |i|
+                %li
+                  %a{href: i.identifier}= i[:title]
+          - elsif @item.identifier.start_with? "/misc/"
+            %h2.title Misc
+            %ul.menu
+              - misc_items.each do |i|
+                %li
+                  %a{href: i.identifier}= i[:title]
+          - else
+            %h2.title Curriculum Vitae
+            %ul.menu
+              %li
+                %a{href: "/"} Résumé
+              %li
+                %a{href: "/cv/work"} Work History
+              %li
+                %a{href: "/cv/courses"} Courses
+              %li
+                %a{href: "/cv/code-samples"} Code Samples
+        #main.span9
+          %h1= item[:title]
+          = yield
+      #footer.row-fluid
+        .span9.offset2
+          %span &copy; C.M. Lubinski 2008-2015
+    %script{src: "/assets/js/lib/jquery-1.11.3.min.js"}
+    %script{src: "/assets/js/bootstrap.min.js"}
+    - @item.attributes.fetch(:extra_js, []).each do |js|
+      %script{src: js}
