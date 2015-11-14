@@ -2,7 +2,9 @@
 title: Signals &amp; Systems Part 01
 start: 2015-07-16
 professor: Vikram Gadre
-university: Indian Institute of Technology Bombay
+professor's university: Indian Institute of Technology Bombay
+university: EdX
+categories: [Electrical Engineering, Mathematics]
 ---
 
 #### An introduction to signals and systems
