@@ -1,5 +1,5 @@
 ---
-title: Knowledge-Based AI: Cognitive Systems
+title: "Knowledge-Based AI: Cognitive Systems"
 start: 2015-11-11
 professor: Ashok Goel
 professor's university: Georgia Tech
