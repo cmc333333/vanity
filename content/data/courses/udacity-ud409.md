@@ -1,6 +1,7 @@
 ---
 title: "Knowledge-Based AI: Cognitive Systems"
 start: 2015-11-11
+end: 2015-12-01
 professor: Ashok Goel
 professor's university: Georgia Tech
 university: Udacity
