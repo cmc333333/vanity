@@ -1,0 +1,27 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    colored (1.2)
+    cri (2.7.0)
+      colored (~> 1.2)
+    haml (4.0.7)
+      tilt
+    kramdown (1.9.0)
+    mini_portile2 (2.0.0)
+    nanoc (3.8.0)
+      cri (~> 2.3)
+    nokogiri (1.6.7.2)
+      mini_portile2 (~> 2.0.0.rc2)
+    tilt (2.0.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  haml
+  kramdown
+  nanoc (= 3.8.0)
+  nokogiri
+
+BUNDLED WITH
+   1.10.6
