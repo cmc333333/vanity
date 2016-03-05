@@ -10,3 +10,7 @@ tmp/
 content/data/gcal/
 content/data/goodreads/
 content/data/podcasts/
+
+# Ruby
+.bundle
+vendor
