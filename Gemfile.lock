@@ -6,12 +6,14 @@ GEM
       colored (~> 1.2)
     haml (4.0.7)
       tilt
-    kramdown (1.9.0)
+    kramdown (1.10.0)
     mini_portile2 (2.0.0)
     nanoc (3.8.0)
       cri (~> 2.3)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    rake (10.5.0)
+    sass (3.4.21)
     tilt (2.0.2)
 
 PLATFORMS
@@ -22,6 +24,8 @@ DEPENDENCIES
   kramdown
   nanoc (= 3.8.0)
   nokogiri
+  rake
+  sass
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
