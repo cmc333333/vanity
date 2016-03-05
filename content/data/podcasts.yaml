@@ -2,7 +2,7 @@ rss:
   - id: floss
     url: http://feeds.twit.tv/floss.xml
   - id: gwj
-    url: http://www.gamerswithjobs.com/taxonomy/term/408/0/feed
+    url: https://www.gamerswithjobs.com/taxonomy/term/408/0/feed
   - id: waitwait
     url: http://www.npr.org/rss/podcast.php?id=35
   - id: moth
@@ -19,12 +19,8 @@ rss:
     url: http://chariotsolutions.com/podcasts/show/all-shows/feed/
   - id: american
     url: http://feeds.thisamericanlife.org/talpodcast
-  - id: 60mind
-    url: http://rss.sciam.com/sciam/60-second-mind
   - id: secnow
     url: http://leo.am/podcasts/sn
-  - id: 60earth
-    url: http://rss.sciam.com/sciam/60-second-earth
   - id: omega
     url: http://omegataupodcast.net/category/podcast-en/feed/
   - id: planetmoney
@@ -39,8 +35,6 @@ rss:
     url: http://feeds.feedburner.com/linuxoutlaws
   - id: scalawags
     url: http://thescalawags.libsyn.com/rss
-  - id: onion
-    url: http://www.theonion.com/feeds/radionews/
   - id: lifewellwasted
     url: http://www.alifewellwasted.com/episodes/episodes.xml
   - id: ted
