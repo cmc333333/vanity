@@ -10,13 +10,81 @@ tags:
   - Mathematics
   - Matlab
 ---
+- Introduction to Image and Video Processing
+    - Analog v.s. Digital Systems
+    - Image and Video Signals
+    - Electromagnetic Spectrum
 - Signals and Systems
+    - 2D and 3D Discrete Signals
+    - Complex Exponential Signals
+    - Linear Shift-Invariant Systems
+    - 2D Convolution
+    - Filtering in the Spatial Domain
 - Fourier Transform and Sampling
+    - 2D Fourier Transform
+    - Sampling
+    - Discrete Fourier Transform
+    - Filtering in the Frequency Domain
+    - Change of Sampling Rate
 - Motion Estimation
+    - Applications of Motion Estimation
+    - Phase Correlation
+    - Block Matching
+    - Spatio-Temporal Gradient Methods
+    - Fundamentals of Color Image Processing
 - Image Enhancement
+    - Point-wise Intensity Transformations
+    - Histogram Processing
+    - Linear Noise Smoothing
+    - Non-linear Noise Smoothing
+    - Sharpening
+    - Homomorphic Filtering
+    - Pseudo Coloring
+    - Video Enhancement
 - Image Recovery
+    - Image Restoration
+    - Matrix-Vector Notation for Images
+    - Inverse Filtering
+    - Constrained Least Squares
+    - Set-Theoretic Restoration Approaches
+    - Iterative Restoration Algorithms
+    - Iterative Least-Squares and Constrained Least-Squares
+    - Spatially Adaptive Algorithms
+    - Wiener Restoration Filter
+    - Wiener v.s. Constrained Least-Squares Restoration Filter
+    - Wiener Noise Smoothing Filter
+    - Bayesian Restoration Algorithms
+    - Maximum Likelihood and Maximum A Posteriori Estimation
+    - Other Restoration Applications
 - Lossless Compression
+    - Elements of Information Theory
+    - Run-Length Coding and Fax
+    - Huffman Coding
+    - Arithmetic Coding
+    - Dictionary Techniques
+    - Predictive Coding
 - Image Compression
+    - Scalar Quantization
+    - Vector Quantization
+    - Differential Pulse-Code Modulation
+    - Fractal Image Compression
+    - Transform Coding
+    - JPEG
+    - Subband Image Compression
 - Video Compression
+    - Motion-Compensated Hybrid Video Encoding
+    - On Video Compression Standards
+    - H.261, H.263, MPEG-1 and MPEG-2
+    - MPEG-4
+    - H.264
+    - H.265
 - Image and Video Segmentation
+    - Methods Based on Intensity Discontinuity
+    - Methods Based on Intensity Similarity
+    - Watersheds and K-Means Algorithms
+    - Advanced Methods
 - Sparsity
+    - Sparsity-Promoting Norms
+    - Matching Pursuit
+    - Smooth Reformulations
+    - Applications
