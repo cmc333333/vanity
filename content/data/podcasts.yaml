@@ -18,7 +18,7 @@ rss:
   - id: chariot
     url: http://chariotsolutions.com/podcasts/show/all-shows/feed/
   - id: american
-    url: http://feeds.thisamericanlife.org/talpodcast
+    url: http://feed.thisamericanlife.org/talpodcast
   - id: secnow
     url: http://leo.am/podcasts/sn
   - id: omega
