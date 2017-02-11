@@ -4,7 +4,7 @@ rss:
   - id: gwj
     url: https://www.gamerswithjobs.com/taxonomy/term/408/0/feed
   - id: waitwait
-    url: http://www.npr.org/rss/podcast.php?id=35
+    url: https://www.npr.org/rss/podcast.php?id=344098539
   - id: moth
     url: http://feeds.themoth.org/themothpodcast
   - id: se
@@ -24,11 +24,11 @@ rss:
   - id: omega
     url: http://omegataupodcast.net/category/podcast-en/feed/
   - id: planetmoney
-    url: http://www.npr.org/rss/podcast.php?id=510289
+    url: https://www.npr.org/rss/podcast.php?id=510289
   - id: memorypalace
     url: http://feeds.feedburner.com/TheMemoryPalace
   - id: iqsquared
-    url: http://www.npr.org/rss/podcast.php?id=510184
+    url: http://iq2.iq2us.libsynpro.com/rss
   - id: freakonomics
     url: http://feeds.feedburner.com/freakonomicsradio
   - id: linuxoutlaws
