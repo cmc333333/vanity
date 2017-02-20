@@ -1,47 +1,69 @@
 rss:
-  - id: floss
-    url: http://feeds.twit.tv/floss.xml
-  - id: gwj
-    url: https://www.gamerswithjobs.com/taxonomy/term/408/0/feed
-  - id: waitwait
-    url: https://www.npr.org/rss/podcast.php?id=344098539
-  - id: moth
-    url: http://feeds.themoth.org/themothpodcast
-  - id: se
-    url: http://feeds.feedburner.com/se-radio
   - id: 60science
     url: http://rss.sciam.com/sciam/60secsciencepodcast
-  - id: sgu
-    url: http://www.theskepticsguide.org/feed/sgu
-  - id: javaposse
-    url: http://feeds.feedburner.com/javaposse
-  - id: chariot
-    url: http://chariotsolutions.com/podcasts/show/all-shows/feed/
-  - id: american
-    url: http://feed.thisamericanlife.org/talpodcast
-  - id: secnow
-    url: http://leo.am/podcasts/sn
-  - id: omega
-    url: http://omegataupodcast.net/category/podcast-en/feed/
-  - id: planetmoney
-    url: https://www.npr.org/rss/podcast.php?id=510289
-  - id: memorypalace
-    url: http://feeds.feedburner.com/TheMemoryPalace
-  - id: iqsquared
-    url: http://iq2.iq2us.libsynpro.com/rss
-  - id: freakonomics
-    url: http://feeds.feedburner.com/freakonomicsradio
-  - id: linuxoutlaws
-    url: http://feeds.feedburner.com/linuxoutlaws
-  - id: scalawags
-    url: http://thescalawags.libsyn.com/rss
-  - id: lifewellwasted
-    url: http://www.alifewellwasted.com/episodes/episodes.xml
-  - id: ted
-    url: http://feeds.feedburner.com/tedtalks_audio
-  - id: thisdevlife
-    url: http://feeds.feedburner.com/ThisDevelopersLife
-  - id: starshipsofa
-    url: http://www.starshipsofa.com/feed/
   - id: 99invisible
     url: http://feeds.99percentinvisible.org/99percentinvisible
+  - id: chariot
+    url: http://chariotsolutions.com/podcasts/show/all-shows/feed/
+  - id: courtappointed
+    url: https://audioboom.com/channels/4901846.rss
+  - id: criminal
+    url: http://feeds.thisiscriminal.com/CriminalShow
+  - id: drupaleasy
+    url: http://feeds.feedburner.com/DrupalEasyPodcast
+  - id: floss
+    url: http://feeds.twit.tv/floss.xml
+  - id: freakonomics
+    url: http://feeds.feedburner.com/freakonomicsradio
+  - id: gwj
+    url: https://www.gamerswithjobs.com/taxonomy/term/408/0/feed
+  - id: oncomputing
+    url: https://feeds.feedburner.com/oncomputing
+  - id: iqsquared
+    url: http://iq2.iq2us.libsynpro.com/rss
+  - id: invisibilia
+    url: https://www.npr.org/rss/podcast.php?id=510307
+  - id: politicaljunkie
+    url: https://krpoliticaljunkie.com/feed/podcast
+  - id: lullabot
+    url: https://www.lullabot.com/rss/podcasts/drupalizeme-podcast
+  - id: onrac
+    url: http://feeds.feedburner.com/OhNoPodcast
+  - id: planetmoney
+    url: https://www.npr.org/rss/podcast.php?id=510289
+  - id: omega
+    url: http://omegataupodcast.net/category/podcast-en/feed/
+  - id: reveal
+    url: http://feeds.revealradio.org/revealpodcast
+  - id: sawbones
+    url: http://sawbones.libsyn.com/rss
+  - id: nojargon
+    url: http://nojargon.libsyn.com/rss
+  - id: secnow
+    url: http://leo.am/podcasts/sn
+  - id: serial
+    url: http://feeds.serialpodcast.org/serialpodcast
+  - id: se
+    url: http://feeds.feedburner.com/se-radio
+  - id: starshipsofa
+    url: http://www.starshipsofa.com/feed/
+  - id: supreme
+    url: http://www.supremepodcast.com/SupremePodcast.com/A_Weekly_Podcast_Concerning_the_United_States_Supreme_Court/rss.xml
+  - id: talestoterrify
+    url: http://talestoterrify.com/feed/
+  - id: ted
+    url: http://feeds.feedburner.com/tedtalks_audio
+  - id: memorypalace
+    url: http://feeds.feedburner.com/TheMemoryPalace
+  - id: moth
+    url: http://feeds.themoth.org/themothpodcast
+  - id: nosleep
+    url: https://rss.art19.com/nosleep
+  - id: sgu
+    url: http://www.theskepticsguide.org/feed/sgu
+  - id: scalawags
+    url: http://thescalawags.libsyn.com/rss
+  - id: american
+    url: http://feed.thisamericanlife.org/talpodcast
+  - id: waitwait
+    url: https://www.npr.org/rss/podcast.php?id=344098539
