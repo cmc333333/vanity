@@ -17,8 +17,6 @@ rss:
     url: http://feeds.feedburner.com/freakonomicsradio
   - id: gwj
     url: https://www.gamerswithjobs.com/taxonomy/term/408/0/feed
-  - id: oncomputing
-    url: https://feeds.feedburner.com/oncomputing
   - id: iqsquared
     url: http://iq2.iq2us.libsynpro.com/rss
   - id: invisibilia
