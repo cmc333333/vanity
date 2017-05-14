@@ -1,6 +1,8 @@
 rss:
   - id: 60science
     url: http://rss.sciam.com/sciam/60secsciencepodcast
+  - id: wesa-specials
+    url: https://wesa.drupal.publicbroadcasting.net/podcasts/term/1787/rss.xml
   - id: 99invisible
     url: http://feeds.99percentinvisible.org/99percentinvisible
   - id: chariot
@@ -9,8 +11,12 @@ rss:
     url: https://audioboom.com/channels/4901846.rss
   - id: criminal
     url: http://feeds.thisiscriminal.com/CriminalShow
+  - id: criminal-injustice
+    url: http://criminalinjustice.libsyn.com/rss
   - id: drupaleasy
     url: http://feeds.feedburner.com/DrupalEasyPodcast
+  - id: essential-pittsburgh
+    url: https://wesa.drupal.publicbroadcasting.net/podcasts/term/10528/rss.xml
   - id: floss
     url: http://feeds.twit.tv/floss.xml
   - id: freakonomics
@@ -51,6 +57,8 @@ rss:
     url: http://talestoterrify.com/feed/
   - id: ted
     url: http://feeds.feedburner.com/tedtalks_audio
+  - id: confluence
+    url: https://wesa.drupal.publicbroadcasting.net/podcasts/70488/rss.xml
   - id: memorypalace
     url: http://feeds.feedburner.com/TheMemoryPalace
   - id: moth
