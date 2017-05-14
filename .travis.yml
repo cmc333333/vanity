@@ -1,0 +1,9 @@
+language: generic
+sudo: required
+services:
+- docker
+script:
+- docker build .
+deploy:
+- provider: script
+  script: curl -X POST "https://registry.hub.docker.com/u/cmc333333/vanity/trigger/${DOCKER_HUB_TOKEN}/"
