@@ -80,7 +80,7 @@ rss:
   - id: allegheny-front
     url: http://www.alleghenyfront.org/feed/podcast/
   - id: black-tapes
-    url: http://theblacktapes.libsyn.com/
+    url: http://theblacktapes.libsyn.com/rss
   - id: confluence
     url: https://wesa.drupal.publicbroadcasting.net/podcasts/70488/rss.xml
   - id: drabble
@@ -92,7 +92,7 @@ rss:
   - id: nosleep
     url: https://rss.art19.com/nosleep
   - id: scarecast
-    url: http://maddmike.libsyn.com/
+    url: http://maddmike.libsyn.com/rss
   - id: sgu
     url: http://www.theskepticsguide.org/feed/sgu
   - id: scalawags
