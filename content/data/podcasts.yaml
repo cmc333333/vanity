@@ -1,4 +1,6 @@
 rss:
+  - id: 15-minute-history
+    url: http://feeds.feedburner.com/15MinuteHistory
   - id: 60science
     url: http://rss.sciam.com/sciam/60secsciencepodcast
   - id: wesa-specials
@@ -13,6 +15,8 @@ rss:
     url: http://feeds.thisiscriminal.com/CriminalShow
   - id: criminal-injustice
     url: http://criminalinjustice.libsyn.com/rss
+  - id: darkest-night
+    url: http://darkestnight.libsyn.com/rss
   - id: drupaleasy
     url: http://feeds.feedburner.com/DrupalEasyPodcast
   - id: essential-pittsburgh
@@ -23,26 +27,42 @@ rss:
     url: http://feeds.feedburner.com/freakonomicsradio
   - id: gwj
     url: https://www.gamerswithjobs.com/taxonomy/term/408/0/feed
+  - id: grapple
+    url: http://feeds.feedburner.com/grapplepodcast
   - id: iqsquared
     url: http://iq2.iq2us.libsynpro.com/rss
   - id: invisibilia
     url: https://www.npr.org/rss/podcast.php?id=510307
   - id: politicaljunkie
     url: https://krpoliticaljunkie.com/feed/podcast
+  - id: limetown
+    url: http://feeds.soundcloud.com/users/soundcloud:users:125221818/sounds.rss
+  - id: linear-digressions
+    url: http://feeds.feedburner.com/udacity-linear-digressions
+  - id: lore
+    url: http://lorepodcast.libsyn.com/rss
   - id: lullabot
     url: https://www.lullabot.com/rss/podcasts/drupalizeme-podcast
   - id: onrac
     url: http://feeds.feedburner.com/OhNoPodcast
+  - id: our-fake-history
+    url: http://ourfakehistory.libsyn.com/rss
   - id: planetmoney
     url: https://www.npr.org/rss/podcast.php?id=510289
   - id: omega
     url: http://omegataupodcast.net/category/podcast-en/feed/
+  - id: pseudopod
+    url: http://pseudopod.org/feed/podcast/
   - id: reveal
     url: http://feeds.revealradio.org/revealpodcast
+  - id: s-town
+    url: http://feeds.stownpodcast.org/stownpodcast
   - id: sawbones
     url: http://sawbones.libsyn.com/rss
   - id: nojargon
     url: http://nojargon.libsyn.com/rss
+  - id: science-vs
+    url: http://feeds.gimletmedia.com/sciencevs
   - id: secnow
     url: http://leo.am/podcasts/sn
   - id: serial
@@ -57,19 +77,33 @@ rss:
     url: http://talestoterrify.com/feed/
   - id: ted
     url: http://feeds.feedburner.com/tedtalks_audio
+  - id: allegheny-front
+    url: http://www.alleghenyfront.org/feed/podcast/
+  - id: black-tapes
+    url: http://theblacktapes.libsyn.com/
   - id: confluence
     url: https://wesa.drupal.publicbroadcasting.net/podcasts/70488/rss.xml
+  - id: drabble
+    url: http://feeds.feedburner.com/TheDrabblecast
   - id: memorypalace
     url: http://feeds.feedburner.com/TheMemoryPalace
   - id: moth
     url: http://feeds.themoth.org/themothpodcast
   - id: nosleep
     url: https://rss.art19.com/nosleep
+  - id: scarecast
+    url: http://maddmike.libsyn.com/
   - id: sgu
     url: http://www.theskepticsguide.org/feed/sgu
   - id: scalawags
     url: http://thescalawags.libsyn.com/rss
   - id: american
     url: http://feed.thisamericanlife.org/talpodcast
+  - id: developers-life
+    url: http://feeds.feedburner.com/thisdeveloperslife
+  - id: trump-on-earth
+    url: https://trumponearth.libsyn.com/rss
+  - id: us-and-them
+    url: http://usandthempodcast.libsyn.com/rss
   - id: waitwait
     url: https://www.npr.org/rss/podcast.php?id=344098539
