@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var $player = $('#jquery_jplayer');
   $player.jPlayer({
-    swfPath: "http://www.jplayer.org/latest/js/Jplayer.swf",
+    swfPath: "https://cdnjs.cloudflare.com/ajax/libs/jplayer/2.6.3/jquery.jplayer/Jplayer.swf",
     supplied: "mp3",
     volume: 1,
     wmode:"window",
