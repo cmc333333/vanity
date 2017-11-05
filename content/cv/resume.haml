@@ -4,9 +4,13 @@ extra_css:
   - /assets/css/resume.css
 ---
 
-#pdf-link
-  %a{href: "/assets/files/lubinski-resume.pdf"}
-    PDF Version</a>
+%div
+  .span6
+    %a{href: "/assets/files/lubinski-resume.pdf"}
+      PDF Version
+  .span6.text-right
+    %a{href: "https://docs.google.com/document/d/1OYoK67HSMKl9KwzWvLc2TGmsAZVGkwB2U3mm4GHsmu0/edit"}
+      Google Drive Version
 #resume
   %section.row-fluid
     %section.span6.text-center
