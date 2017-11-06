@@ -5,7 +5,7 @@
     %meta{name: "generator", content: "nanoc #{Nanoc::VERSION}"}
     %title= "#{@item[:title]} | C.M. Lubinski"
     %link{rel: "shortcut icon", href: "/favicon.ico", type: "image/x-icon"}
-    %meta{name: "viewport", content: "width=device-dieth, initial-scale=1.0"}
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
     %link{href: "/assets/css/lib/bootstrap.min.css", rel: "stylesheet",
           media: "screen"}
     %link{href: "/assets/css/lib/bootstrap-responsive.min.css",
@@ -23,15 +23,12 @@
           %a{href: "/", title: "Home", rel: "home"}
             %span C.M. Lubinski
         %ul#main-menu
-          %li
-            %a.first{href: "/", title: "Curriculum Vitae"}
-              %span Curriculum Vitae
-          %li
-            %a{href: "/writings", title: "Writings"}
-              %span Writings
-          %li
-            %a.last{href: "/misc/books", title: "Misc."}
-              %span Misc.
+          %li.first<
+            %a{href: "/", title: "Curriculum Vitae"} Curriculum Vitae
+          %li<
+            %a{href: "/writings", title: "Writings"} Writings
+          %li.last<
+            %a.last{href: "/misc/books", title: "Misc."} Misc.
       .row-fluid
         #sidebar.span2
           - if @item.identifier.start_with? "/writings/"

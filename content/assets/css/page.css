@@ -37,34 +37,44 @@ body .container-fluid {
   margin-top: 5px;
 }
 #main-menu li {
-  background: #5A79A5 url('../img/mm_middle.gif') repeat-x;
   float: left;
-  display: inline;
   list-style-type: none;
   line-height: 50px;
+}
+#main-menu li.first {
+  margin-left: 10px;
+}
+#main-menu li:before {
+  content: "";
+  width: 25px;
   height: 50px;
-}
-#main-menu li a {
-  background: url('../img/mm_left.gif') left top no-repeat;
-  padding-left: 25px;
   display: inline-block;
-  text-decoration: none;
+  background: url('../img/mm_left.gif') no-repeat right top;
+  vertical-align: top;
 }
-#main-menu a.first {
-  background: url('../img/mm_left_curve.gif') left top no-repeat;
-  padding-left: 35px;
+#main-menu li.first:before {
+  background-image: url('../img/mm_left_curve.gif');
 }
-#main-menu li span {
-  background: url('../img/mm_right.gif') right no-repeat;
-  padding-right: 25px;
+#main-menu li:after {
+  content: "";
+  width: 25px;
+  height: 50px;
+  display: inline-block;
+  background: url('../img/mm_right.gif') no-repeat left top;
+  vertical-align: top;
+}
+#main-menu li.last:after {
+  background-image: url('../img/mm_right_curve.gif');
+}
+#main-menu a {
+  display: inline-block;
+  height: 50px;
+  background: #5A79A5 url('../img/mm_middle.gif') repeat-x;
   font-size: x-large;
   color: #FFF;
   font-variant: small-caps;
   font-style: italic;
-  display: inline-block;
-}
-#main-menu a.last span {
-  background: url('../img/mm_right_curve.gif') right no-repeat;
+  padding: 0 3px;
 }
 
 /*  Sidebar */
