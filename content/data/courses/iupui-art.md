@@ -1,7 +1,0 @@
----
-title: Art Appreciation
-start: 2006-06-01
-end: 2006-07-30
-university: IUPUI
-categories: [Art]
----

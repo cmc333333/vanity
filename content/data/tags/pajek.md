@@ -1,4 +1,0 @@
----
-name: Pajek
-tags: [tool]
----

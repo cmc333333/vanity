@@ -1,9 +1,0 @@
-.categories, .languages, .libraries {
-  list-style: none;
-  display: inline;
-}
-.categories li, .languages li, .libraries li {
-  display: inline;
-  font-size: .75em;
-}
-

@@ -1,4 +1,0 @@
----
-name: Minizinc
-tags: [language]
----

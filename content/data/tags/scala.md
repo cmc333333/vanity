@@ -1,4 +1,0 @@
----
-name: Scala
-tags: [language]
----

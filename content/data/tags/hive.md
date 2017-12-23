@@ -1,4 +1,0 @@
----
-name: Hive
-tags: [language]
----

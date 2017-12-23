@@ -1,4 +1,0 @@
----
-name: Java
-tags: [language]
----

@@ -1,7 +1,0 @@
----
-title: Reading Laboratory
-start: 2007-08-01
-end: 2007-12-20
-university: Grinnell
-categories: [Speed Reading]
----

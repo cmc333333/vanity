@@ -1,8 +1,0 @@
----
-title: "Humanities II: Roman and Early Christian Culture"
-start: 2007-08-01
-end: 2007-12-20
-professor: Ellen Mease
-university: Grinnell
-categories: [English, Theater]
----
