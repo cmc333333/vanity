@@ -7,8 +7,6 @@ const callbackParseString = require('xml2js').parseString;
 
 const parseString = promisify(callbackParseString);
 
-const userId = 21996113;
-
 function parseItem(item) {
   const imgLg = item.book_large_image_url[0];
   const imgMd = item.book_medium_image_url[0];
@@ -28,9 +26,10 @@ function parseItem(item) {
   };
 }
 
-exports.sourceNodes = async ({ boundActionCreators }) => {
+exports.sourceNodes = async ({ boundActionCreators }, pluginOptions) => {
   const { createNode } = boundActionCreators;
-  const { data } = await axios.get(`http://www.goodreads.com/review/list_rss/${userId}`);
+  const { data } = await axios.get(
+    `http://www.goodreads.com/review/list_rss/${pluginOptions.userId}`);
   const { rss: { channel } } = await parseString(data);
   channel[0].item.forEach((item) => {
     const book = parseItem(item);
