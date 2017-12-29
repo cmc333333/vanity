@@ -1,6 +1,6 @@
+import _ from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
-import sortOn from 'sort-on';
 
 import setPageTitle from '../../util/set-page-title';
 
@@ -51,8 +51,11 @@ export default function Work({ data }) {
         end: e.node.frontmatter.end || new Date().toISOString(),
       },
     }));
-  const jobs = sortOn(unsortedJobs, ['frontmatter.end', 'frontmatter.start']);
-  jobs.reverse();
+  const jobs = _.orderBy(
+    unsortedJobs,
+    [j => j.frontmatter.end, j => j.frontmatter.start],
+    ['desc', 'desc'],
+  );
 
   return (
     <div>
