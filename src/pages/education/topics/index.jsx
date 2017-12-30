@@ -2,9 +2,9 @@ import _ from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import setPageTitle from '../../util/set-page-title';
-import CurrentTopics from '../../components/education/topics/current-topics';
-import Entry from '../../components/education/topics/entry';
+import setPageTitle from '../../../util/set-page-title';
+import CurrentTopics from '../../../components/education/topics/current-topics';
+import Entry from '../../../components/education/topics/entry';
 
 export default class Topics extends React.Component {
   constructor(props) {
