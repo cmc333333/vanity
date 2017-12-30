@@ -1,0 +1,14 @@
+title: Cryptology
+start: 2012-01-09
+end: 2012-03-19
+professor: Marcus Schaefer
+university: DePaul
+tags:
+  - Computer Science
+  - Cryptography
+  - Security
+  - Mathematics
+  - Python
+text:
+  - author: Trappe, Washington
+    title: Introduction to Cryptography

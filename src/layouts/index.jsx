@@ -78,6 +78,17 @@ function CV() {
   );
 }
 
+function Education() {
+  return (
+    <div>
+      <h2 className="title">Education</h2>
+      <ul className="menu">
+        <li><Link to="/education/topics/">By Topic</Link></li>
+      </ul>
+    </div>
+  );
+}
+
 export default function Layout(props) {
   const { children, location } = props;
   const { pathname } = location;
@@ -86,6 +97,8 @@ export default function Layout(props) {
     menu = <Writings />;
   } else if (pathname.startsWith('/misc/')) {
     menu = <Misc />;
+  } else if (pathname.startsWith('/education/')) {
+    menu = <Education />;
   } else {
     menu = <CV />;
   }
