@@ -1,8 +1,10 @@
 import Link from 'gatsby-link';
+import { columns, row } from 'glamor/ous';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
 
+import { space } from '../styles';
 import './bootstrap.min.css';
 import './bootstrap-responsive.min.css';
 import './page.css';
@@ -104,11 +106,11 @@ export default function Layout(props) {
   }
 
   return (
-    <div className="container-fluid">
+    <div css={{ marginTop: space, paddingLeft: space, paddingRight: space }}>
       <Helmet>
         <link rel="shortcut icon" href={favicon} type="image/x-icon" />
       </Helmet>
-      <div id="header" className="row-fluid">
+      <div id="header" css={row}>
         <Link id="logo" to="/">
           <img src={logo} alt="Home" />
         </Link>
@@ -129,17 +131,15 @@ export default function Layout(props) {
           </li>
         </ul>
       </div>
-      <div className="row-fluid">
-        <div id="sidebar" className="span2">
+      <div css={row}>
+        <div id="sidebar" css={columns(2)}>
           { menu }
         </div>
-        <div id="main" className="span9">
-          { children() }
-        </div>
-      </div>
-      <div id="footer" className="row-fluid">
-        <div className="span9 offset2">
-          <span>&copy; C.M. Lubinski 2008-2017</span>
+        <div css={columns(9)}>
+          <div id="main">{ children() }</div>
+          <div id="footer">
+            <span>&copy; C.M. Lubinski 2008-2017</span>
+          </div>
         </div>
       </div>
     </div>

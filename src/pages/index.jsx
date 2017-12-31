@@ -1,113 +1,142 @@
 import Link from 'gatsby-link';
+import { css } from 'glamor';
+import { columns, row } from 'glamor/ous';
+import glamorous from 'glamorous';
 import React from 'react';
 
 import resume from '../assets/lubinski-resume.pdf';
 import setPageTitle from '../util/set-page-title';
-import './resume.scss';
+import typography from '../util/typography';
 
 const email = 'cm.lubinski@gmail.com';
+
+const BorderedRow = glamorous.section(row, { borderBottom: '1px solid #000' });
+const ThirdCol = glamorous.section(columns('oneThird'));
+const HalfCol = glamorous.section(columns('half'));
+const LeftCol = glamorous(HalfCol)({
+  borderRight: '1px solid #000',
+  paddingRight: typography.rhythm(2 / 3),
+});
+const MarkerlessList = glamorous.ul({ listStyleType: 'none' });
+const FlushList = glamorous(MarkerlessList)({ marginLeft: 0 });
+const SectionHeader = glamorous.h4({ '::after': { content: ':' } });
+const SubSectionHeader = glamorous.h5(
+  { fontWeight: 'normal', textDecoration: 'underline' },
+  typography.scale(0),
+);
+const SubSubHeader = glamorous.h6(
+  { display: 'inline', fontStyle: 'italic', fontWeight: 'normal' },
+  typography.scale(0),
+);
+const FloatRight = glamorous.span({ float: 'right' });
 
 export default function Index() {
   return (
     <div>
       { setPageTitle('Résumé') }
-      <div className="row-fluid">
-        <div className="span6"><a href={resume}>PDF Version</a></div>
-        <div className="Span6 text-right">
+      <div css={css(row, { marginBottom: '1rem' })}>
+        <HalfCol><a href={resume}>PDF Version</a></HalfCol>
+        <HalfCol css={{ textAlign: 'right' }}>
           <a href="https://docs.google.com/document/d/1OYoK67HSMKl9KwzWvLc2TGmsAZVGkwB2U3mm4GHsmu0/edit">
             Google Drive Version
           </a>
-        </div>
+        </HalfCol>
       </div>
       <div id="resume">
-        <section className="row-fluid">
-          <section className="span6 text-center">
+        <BorderedRow css={{ textAlign: 'center' }}>
+          <LeftCol>
             <h2>C.M. Lubinski</h2>
-            <h3>Humble Hacker</h3>
-          </section>
-          <section className="span6 text-center" style={{ paddingTop: '1em' }}>
+            <glamorous.H3
+              css={typography.scale(1 / 5)}
+              fontStyle="italic"
+              fontWeight="normal"
+            >
+              Humble Hacker
+            </glamorous.H3>
+          </LeftCol>
+          <HalfCol>
             <p>
               <a href={`mailto:${email}`}>{ email }</a>
               &ndash; 872.333.9262
             </p>
             <p>Pittsburgh, PA 15203</p>
             <p><a href="http://cmlubinski.info">http://cmlubinski.info</a></p>
-          </section>
-        </section>
-        <div className="row-fluid no-border">
-          <h4>Relevant Skills &amp; Interests</h4>
-        </div>
-        <section className="row-fluid">
-          <div className="span4">
-            <h5>Web Development</h5>
-            <ul className="no-marker">
+          </HalfCol>
+        </BorderedRow>
+        <SectionHeader>Relevant Skills &amp; Interests</SectionHeader>
+        <BorderedRow>
+          <ThirdCol>
+            <SubSectionHeader>Web Development</SubSectionHeader>
+            <MarkerlessList>
               <li>Model-View-Controller</li>
               <li>Static Site Generators &amp; Caching</li>
               <li>Content Management Systems</li>
-            </ul>
-            <h5>APIs &amp; Data</h5>
-            <ul className="no-marker">
+            </MarkerlessList>
+            <SubSectionHeader>APIs &amp; Data</SubSectionHeader>
+            <MarkerlessList>
               <li>RESTful clients &amp; services</li>
               <li>Relational &amp; Document DBs</li>
               <li>Search Indexes, Key-Value Stores</li>
-            </ul>
-          </div>
-          <div className="span4">
-            <h5>Natural Language Processing</h5>
-            <ul className="no-marker">
+            </MarkerlessList>
+          </ThirdCol>
+          <ThirdCol>
+            <SubSectionHeader>Natural Language Processing</SubSectionHeader>
+            <MarkerlessList>
               <li>Parsing &amp; Formal Grammars</li>
               <li>Search &amp; Information Retrieval</li>
               <li>Machine &amp; Statistical Learning</li>
-            </ul>
-            <h5>Geospatial/GIS</h5>
-            <ul className="no-marker">
+            </MarkerlessList>
+            <SubSectionHeader>Geospatial/GIS</SubSectionHeader>
+            <MarkerlessList>
               <li>Slippy Maps, Interactive Displays</li>
               <li>Geo-aware DBs, Frameworks</li>
               <li>Importing Data (Census/ACS)</li>
-            </ul>
-          </div>
-          <div className="span4">
-            <h5>Rapid, Stable Delivery</h5>
-            <ul className="no-marker">
+            </MarkerlessList>
+          </ThirdCol>
+          <ThirdCol>
+            <SubSectionHeader>Rapid, Stable Delivery</SubSectionHeader>
+            <MarkerlessList>
               <li>Cloud infrastructure/deployments</li>
               <li>Unit Tests, Continuous Integrat&rsquo;n</li>
               <li>Release Early, Always Shipping</li>
-            </ul>
-            <h5>Teamwork</h5>
-            <ul className="no-marker">
+            </MarkerlessList>
+            <SubSectionHeader>Teamwork</SubSectionHeader>
+            <MarkerlessList>
               <li>Agile, Open Source Development</li>
               <li>Tight-knit Peers, Always Learning</li>
               <li>Code Review via Pull Request</li>
-            </ul>
-          </div>
-        </section>
-        <section className="row-fluid">
-          <h4><Link to="/cv/work">Recent Work History</Link></h4>
-          <h5>
+            </MarkerlessList>
+          </ThirdCol>
+        </BorderedRow>
+        <BorderedRow>
+          <SectionHeader>
+            <Link to="/cv/work">Recent Work History</Link>
+          </SectionHeader>
+          <SubSectionHeader>
             Innovation Specialist &mdash;{' '}
             <a href="https://18f.gsa.gov/">
               18F (General Services Administration)
             </a>
-            <span>Sept &rsquo;14 &ndash; Present</span>
-          </h5>
-          <ul className="no-marker no-indent">
+            <FloatRight>Sept &lsquo;14 &ndash; Present</FloatRight>
+          </SubSectionHeader>
+          <FlushList>
             <li>
-              <span className="hl">
+              <SubSubHeader>
                 <a href="https://github.com/18f/C2">Communicart</a>
-              </span>{' '}
+              </SubSubHeader>{' '}
               Web &amp; email-based approval tracking. Ruby, Rails, Postgres,
               Cloud Foundry
             </li>
             <li>
-              <span className="hl">
+              <SubSubHeader>
                 <a href="https://github.com/18f/peacrcorps-site">
                   Peace Corps Donations
                 </a>
-              </span>{' '}
+              </SubSubHeader>{' '}
               CMS &amp; payment collection. Python, Django, Postgres, JS &amp;
               Grunt, SASS, AWS
             </li>
-          </ul>
+          </FlushList>
           <ul>
             <li>
               Helped navigate waterfall-only clients, agile developers, &amp;
@@ -130,31 +159,31 @@ export default function Index() {
               hotfixes with peers around the country
             </li>
           </ul>
-          <h5>
+          <SubSectionHeader>
             Backend Developer &mdash;{' '}
             <a href="http://consumerfinance.gov/">
               Consumer Financial Protection Bureau
             </a>
-            <span>Dec &rsquo;12 &ndash; Sept &rsquo;14</span>
-          </h5>
-          <ul className="no-marker no-indent">
+            <FloatRight>Dec &lsquo;12 &ndash; Sep &lsquo;14</FloatRight>
+          </SubSectionHeader>
+          <FlushList>
             <li>
-              <span className="hl">
+              <SubSubHeader>
                 <a href="https://github.com/cfpb/mapusaurus">Mapusaurus</a>
-              </span>{' '}
+              </SubSubHeader>{' '}
               Slippy-map highlighting red-lining cases. Python, GeoDjango,
               PostGIS, Leaflet, Topo JSON
             </li>
             <li>
-              <span className="hl">
+              <SubSubHeader>
                 <a href="https://github.com/cfpb/eregulations">
                   eRegulations
                 </a>
-              </span>{' '}
+              </SubSubHeader>{' '}
               Regulation parser, compiler, and viewer. Python, Django, MySQL,
               Solr, Backbone
             </li>
-          </ul>
+          </FlushList>
           <ul>
             <li>
               Discovered structure, definitions, citations, &amp; other data
@@ -173,23 +202,23 @@ export default function Index() {
               involved in Open Source (CFPB&rsquo;s top committer)
             </li>
           </ul>
-          <h5>
+          <SubSectionHeader>
             Chief Developer &mdash;{' '}
             <a href="http://toodalu.com/">Toodalu, LLC (acquired)</a>
-            <span>Aug &rsquo;10 &ndash; Dec &rsquo;12</span>
-          </h5>
-          <ul className="no-marker no-indent">
+            <FloatRight>Aug &lsquo;10 &ndash; Dec &lsquo;12</FloatRight>
+          </SubSectionHeader>
+          <FlushList>
             <li>
-              <span className="hl">APIs</span>{' '}
+              <SubSubHeader>APIs</SubSubHeader>{' '}
               Securely stored &amp; served data; core business logic. Scala,
               Lift, REST, JSON, PostGIS, Mongo, Solr
             </li>
             <li>
-              <span className="hl">Web UIs</span>{' '}
+              <SubSubHeader>Web UIs</SubSubHeader>{' '}
               Corresponding user, merchant, sales, &amp; admin apps. Scala,
               Lift, Wordpress
             </li>
-          </ul>
+          </FlushList>
           <ul>
             <li>
               Led the majority of technology decisions, refactoring the code
@@ -204,18 +233,18 @@ export default function Index() {
               continuous integration with black-box Python tests
             </li>
           </ul>
-          <h5>
+          <SubSectionHeader>
             Web Developer &mdash;{' '}
             <a href="http://networkninja.com/">Network Ninja, Inc.</a>
-            <span>Jun &rsquo;08 &ndash; Aug &rsquo;10</span>
-          </h5>
-          <ul className="no-marker no-indent">
+            <FloatRight>Jun &lsquo;08 &ndash; Aug &lsquo;10</FloatRight>
+          </SubSectionHeader>
+          <FlushList>
             <li>
-              <span className="hl">Legal Server</span>{' '}
+              <SubSubHeader>Legal Server</SubSubHeader>{' '}
               Client/document tracking for pro bono attorneys. Object-oriented
               PHP, Postgres
             </li>
-          </ul>
+          </FlushList>
           <ul>
             <li>
               Coordinated with project managers, kept accurate time estimates;
@@ -226,18 +255,18 @@ export default function Index() {
               migrated to Trac from a custom ticket system
             </li>
           </ul>
-        </section>
-        <section className="row-fluid">
-          <section className="span6">
-            <h4>Formal Education</h4>
-            <h5>
+        </BorderedRow>
+        <BorderedRow>
+          <LeftCol>
+            <SectionHeader>Formal Education</SectionHeader>
+            <SubSectionHeader>
               DePaul University
-              <span>Chicago, IL</span>
-            </h5>
-            <ul className="no-marker">
+              <FloatRight>Chicago, IL</FloatRight>
+            </SubSectionHeader>
+            <MarkerlessList>
               <li>
                 MS, Computer Science (Theory), 2014{' '}
-                <span className="right">GPA 4.00</span>
+                <FloatRight>GPA 4.00</FloatRight>
               </li>
               <li>
                 &ldquo;
@@ -246,15 +275,15 @@ export default function Index() {
                 </a>
                 &rdquo;: Master&rsquo;s Thesis
               </li>
-            </ul>
-            <h5>
+            </MarkerlessList>
+            <SubSectionHeader>
               Grinnell College
-              <span>Grinnell, IA</span>
-            </h5>
-            <ul className="no-marker">
+              <FloatRight>Grinnell, IA</FloatRight>
+            </SubSectionHeader>
+            <MarkerlessList>
               <li>
                 BA, Computer Science (Honors), 2008{' '}
-                <span className="right">GPA 3.69</span>
+                <FloatRight>GPA 3.69</FloatRight>
               </li>
               <li>
                 Dean&rsquo;s List, Honors Scholarship,{' '}
@@ -263,23 +292,23 @@ export default function Index() {
                 </a>,
                 TA
               </li>
-            </ul>
-          </section>
-          <section className="span6">
-            <h4>Continued Education</h4>
-            <h5>
+            </MarkerlessList>
+          </LeftCol>
+          <HalfCol>
+            <SectionHeader>Continued Education</SectionHeader>
+            <SubSectionHeader>
               Online Courses
-              <span>(Coursera, Udacity, edX, Stanford, etc.)</span>
-            </h5>
-            <ul className="no-marker">
+              <FloatRight>(Coursera, Udacity, edX, Stanford, etc.)</FloatRight>
+            </SubSectionHeader>
+            <MarkerlessList>
               <li>AI, Bioinformatics, Crypto, Data Sci, Discrete Opt,</li>
-              <li>Formal Logic, ML, Network Analysis, NLP, & more</li>
-            </ul>
-            <h5>
+              <li>Formal Logic, ML, Network Analysis, NLP, &amp; more</li>
+            </MarkerlessList>
+            <SubSectionHeader>
               Informal
-              <span>(Conferences, Meetups, etc.)</span>
-            </h5>
-            <ul className="no-marker">
+              <FloatRight>(Conferences, Meetups, etc.)</FloatRight>
+            </SubSectionHeader>
+            <MarkerlessList>
               <li>Strange Loop, OSCON, Lambda Jam, Philly ETE</li>
               <li>
                 Self-study:{' '}
@@ -287,13 +316,13 @@ export default function Index() {
                 <Link to="/misc/podcasts">podcasts</Link>,
                 and a tendency to tinker
               </li>
-            </ul>
-          </section>
-        </section>
-        <section className="row-fluid">
-          <h4>Other Points of Pride</h4>
+            </MarkerlessList>
+          </HalfCol>
+        </BorderedRow>
+        <section>
+          <SectionHeader>Other Points of Pride</SectionHeader>
           <p>
-            <span className="hl">Presentations</span>{' '}
+            <SubSubHeader>Presentations</SubSubHeader>{' '}
             about{' '}
             <Link to="/writings/cryptography-and-security-for-coders">
               security
@@ -304,7 +333,7 @@ export default function Index() {
             team morale, and more at conferences, meetups, &amp; work
           </p>
           <p>
-            <span className="hl">Articles</span>{' '}
+            <SubSubHeader>Articles</SubSubHeader>{' '}
             ranging from{' '}
             <a href="http://cfpb.github.io/articles/rules-rules/">
               parsing
@@ -316,20 +345,20 @@ export default function Index() {
             <a href="https://18f.gsa.gov/2015/04/09/flexibility-when-releasing-a-new-product-peace-corps-new-donation-platform/">
               trade-offs
             </a>, to verifiable forensics (
-            <a href="http://csf2014.di.univr.it/accepted">CSF &rsquo;14</a>)
+            <a href="http://csf2014.di.univr.it/accepted">CSF &lsquo;14</a>)
           </p>
           <p>
-            <span className="hl">Contributions</span>{' '}
+            <SubSubHeader>Contributions</SubSubHeader>{' '}
             upstream, with patches/plugins/discussions to Vim, Trac, Dispatch,
             various Django libraries
           </p>
           <p>
-            <span className="hl">Open Source</span>{' '}
+            <SubSubHeader>Open Source</SubSubHeader>{' '}
             personal projects for mixing podcasts, classifying news, a static
             personal site, web scrapers, etc.
           </p>
           <p>
-            <span className="hl">Purpose</span>{' '}
+            <SubSubHeader>Purpose</SubSubHeader>{' '}
             matters. Apps for pro bono attorneys, charities, regulators, Peace
             Corps volunteers, and do-gooders
           </p>
