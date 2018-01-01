@@ -1,22 +1,24 @@
 import Link from 'gatsby-link';
 import { css } from 'glamor';
-import { columns, row } from 'glamor/ous';
 import glamorous from 'glamorous';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import resume from '../assets/lubinski-resume.pdf';
+import { columns, row } from '../styles';
 import setPageTitle from '../util/set-page-title';
 import typography from '../util/typography';
 
 const email = 'cm.lubinski@gmail.com';
 
 const BorderedRow = glamorous.section(row, { borderBottom: '1px solid #000' });
-const ThirdCol = glamorous.section(columns('oneThird'));
-const HalfCol = glamorous.section(columns('half'));
+const ThirdCol = glamorous.section(columns(4));
+const HalfCol = glamorous.section(columns(6));
 const LeftCol = glamorous(HalfCol)({
   borderRight: '1px solid #000',
   paddingRight: typography.rhythm(2 / 3),
 });
+const RightCol = glamorous(HalfCol)({ paddingLeft: typography.rhythm(2 / 3) });
 const MarkerlessList = glamorous.ul({ listStyleType: 'none' });
 const FlushList = glamorous(MarkerlessList)({ marginLeft: 0 });
 const SectionHeader = glamorous.h4({ '::after': { content: ':' } });
@@ -24,11 +26,30 @@ const SubSectionHeader = glamorous.h5(
   { fontWeight: 'normal', textDecoration: 'underline' },
   typography.scale(0),
 );
-const SubSubHeader = glamorous.h6(
+const subSubHeaderCss = css(
   { display: 'inline', fontStyle: 'italic', fontWeight: 'normal' },
   typography.scale(0),
 );
+const SubSubHeader = glamorous.h6(subSubHeaderCss);
 const FloatRight = glamorous.span({ float: 'right' });
+
+function PridePoint({ children, title }) {
+  return (
+    <div>
+      <glamorous.H5 {...subSubHeaderCss}>{ title }</glamorous.H5>{' '}
+      <glamorous.P
+        display="inline-block"
+        marginBottom={typography.rhythm(2 / 3)}
+      >
+        { children }
+      </glamorous.P>
+    </div>
+  );
+}
+PridePoint.propTypes = {
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
+};
 
 export default function Index() {
   return (
@@ -54,7 +75,7 @@ export default function Index() {
               Humble Hacker
             </glamorous.H3>
           </LeftCol>
-          <HalfCol>
+          <RightCol>
             <glamorous.P
               marginBottom={typography.rhythm(2 / 3)}
               marginTop={typography.rhythm(2 / 3)}
@@ -66,7 +87,7 @@ export default function Index() {
               <br />
               <a href="http://cmlubinski.info">http://cmlubinski.info</a>
             </glamorous.P>
-          </HalfCol>
+          </RightCol>
         </BorderedRow>
         <SectionHeader>Relevant Skills &amp; Interests</SectionHeader>
         <BorderedRow>
@@ -299,7 +320,7 @@ export default function Index() {
               </li>
             </MarkerlessList>
           </LeftCol>
-          <HalfCol>
+          <RightCol>
             <SectionHeader>Continued Education</SectionHeader>
             <SubSectionHeader>
               Online Courses
@@ -322,12 +343,11 @@ export default function Index() {
                 and a tendency to tinker
               </li>
             </MarkerlessList>
-          </HalfCol>
+          </RightCol>
         </BorderedRow>
         <section>
           <SectionHeader>Other Points of Pride</SectionHeader>
-          <p>
-            <SubSubHeader>Presentations</SubSubHeader>{' '}
+          <PridePoint title="Presentations">
             about{' '}
             <Link to="/writings/cryptography-and-security-for-coders">
               security
@@ -336,9 +356,8 @@ export default function Index() {
               static sites
             </a>,
             team morale, and more at conferences, meetups, &amp; work
-          </p>
-          <p>
-            <SubSubHeader>Articles</SubSubHeader>{' '}
+          </PridePoint>
+          <PridePoint title="Articles">
             ranging from{' '}
             <a href="http://cfpb.github.io/articles/rules-rules/">
               parsing
@@ -351,22 +370,19 @@ export default function Index() {
               trade-offs
             </a>, to verifiable forensics (
             <a href="http://csf2014.di.univr.it/accepted">CSF &lsquo;14</a>)
-          </p>
-          <p>
-            <SubSubHeader>Contributions</SubSubHeader>{' '}
+          </PridePoint>
+          <PridePoint title="Contributions">
             upstream, with patches/plugins/discussions to Vim, Trac, Dispatch,
             various Django libraries
-          </p>
-          <p>
-            <SubSubHeader>Open Source</SubSubHeader>{' '}
+          </PridePoint>
+          <PridePoint title="Open Source">
             personal projects for mixing podcasts, classifying news, a static
             personal site, web scrapers, etc.
-          </p>
-          <p>
-            <SubSubHeader>Purpose</SubSubHeader>{' '}
+          </PridePoint>
+          <PridePoint title="Purpose">
             matters. Apps for pro bono attorneys, charities, regulators, Peace
             Corps volunteers, and do-gooders
-          </p>
+          </PridePoint>
         </section>
       </div>
     </div>

@@ -1,12 +1,11 @@
 import Link from 'gatsby-link';
 import { css } from 'glamor';
-import { columns, row } from 'glamor/ous';
 import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import { space } from '../styles';
+import { columns, row, space } from '../styles';
 import typography from '../util/typography';
 import favicon from './favicon.ico';
 import logo from './img/logo.gif';
@@ -26,7 +25,7 @@ function Sidebar({ children, title }) {
       background="#CCC"
       border="solid thin #5A79A5"
       color="#346"
-      css={columns(2)}
+      css={css(columns(2), { marginRight: '2%' })}
       marginTop={typography.rhythm(-2 / 3)}
       paddingLeft={typography.rhythm(1 / 3)}
       paddingRight={typography.rhythm(1 / 3)}
@@ -217,8 +216,6 @@ const footer = (
 export default function Layout(props) {
   const { children, location } = props;
   const { pathname } = location;
-
-  css.global('html', { fontSize: '100%' }); // fix bug in glamor/ous
 
   let sidebar;
   if (pathname.startsWith('/writings/')) {

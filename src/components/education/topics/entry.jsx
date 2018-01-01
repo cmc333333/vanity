@@ -1,11 +1,10 @@
 import { css } from 'glamor';
-import { columns, row } from 'glamor/ous';
 import glamorous from 'glamorous';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { space, trailingComma } from '../../../styles';
+import { columns, row, space, trailingComma } from '../../../styles';
 import { buttonStyle } from './styles';
 
 const Row = glamorous.div(
@@ -41,8 +40,8 @@ export default function Entry({
   });
   return (
     <Row>
-      <div css={columns(4)}>{ url ? <a href={url}>{ title }</a> : title }</div>
-      <div css={columns(2)}>{ entryType }</div>
+      <div css={columns(5)}>{ url ? <a href={url}>{ title }</a> : title }</div>
+      <div css={columns(1)}>{ entryType }</div>
       <div css={columns(2)}>{ moment(end).format('MMM Do, YYYY') }</div>
       <div css={columns(4)}>{ tagLinks }</div>
     </Row>
