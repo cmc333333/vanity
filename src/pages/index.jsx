@@ -55,12 +55,17 @@ export default function Index() {
             </glamorous.H3>
           </LeftCol>
           <HalfCol>
-            <p>
+            <glamorous.P
+              marginBottom={typography.rhythm(2 / 3)}
+              marginTop={typography.rhythm(2 / 3)}
+            >
               <a href={`mailto:${email}`}>{ email }</a>
               &ndash; 872.333.9262
-            </p>
-            <p>Pittsburgh, PA 15203</p>
-            <p><a href="http://cmlubinski.info">http://cmlubinski.info</a></p>
+              <br />
+              Pittsburgh, PA 15203
+              <br />
+              <a href="http://cmlubinski.info">http://cmlubinski.info</a>
+            </glamorous.P>
           </HalfCol>
         </BorderedRow>
         <SectionHeader>Relevant Skills &amp; Interests</SectionHeader>

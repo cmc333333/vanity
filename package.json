@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
-    "bootstrap": "^3.3.7",
     "es6-promisify": "^5.0.0",
     "gatsby": "^1.9.119",
     "gatsby-link": "^1.6.28",

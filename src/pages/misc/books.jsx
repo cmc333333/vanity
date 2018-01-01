@@ -59,7 +59,7 @@ export default function Books({ data }) {
         />))
       }
       <h3>Less Fresh</h3>
-      <ul className="clean">
+      <ul css={{ listStyle: 'none' }}>
         { books.filter(b => !b.currentlyReading).slice(10).map(b => (
           <li>
             <a href={b.link}>{b.title}</a>{' '}

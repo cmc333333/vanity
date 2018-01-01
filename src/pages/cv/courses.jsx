@@ -23,7 +23,7 @@ class Collapser extends React.Component {
           <HComponent onClick={this.toggle}>{ this.props.title }</HComponent>
           { this.props.tags }
         </div>
-        <div className={this.state.collapsed ? 'collapse' : null}>
+        <div css={this.state.collapsed ? { display: 'none' } : {}}>
           { this.props.children }
         </div>
       </div>
