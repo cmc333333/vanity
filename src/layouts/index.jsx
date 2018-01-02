@@ -91,6 +91,7 @@ const cv = (
 const education = (
   <Sidebar title="Education">
     <SidebarLink to="/education/topics/">By Topic</SidebarLink>
+    <SidebarLink to="/education/degrees/">Degrees &amp; Certificates</SidebarLink>
   </Sidebar>
 );
 
