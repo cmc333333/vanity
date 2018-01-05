@@ -1,7 +1,14 @@
 title: America Through Foreign Eyes
 start: 2017-02-26
 end: 2017-03-27
-professor: Anne S. Chao, Julie Fette, & Jeffrey Fleisher
-professorsUniversity: Rice University
-university: Coursera
+university: Rice University
+via: Coursera
+grade: 100%
+people:
+  - role: teacher
+    name: Anne S. Chao
+  - role: teacher
+    name: Julie Fette
+  - role: teacher
+    name: Jeffrey Fleisher
 url: "https://www.coursera.org/learn/america-through-foreign-eyes"

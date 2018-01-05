@@ -1,9 +1,18 @@
 title: From GPS and Google Maps to Spatial Computing
 start: 2014-09-23
 end: 2014-11-25
-professor: Shashi Shekhar and Brent Hecht
-professorsUniversity: University of Minnesota
-university: Coursera
+university: University of Minnesota
+via: Coursera
+certificate:
+  type: Verified Certificate
+  date: 2014-12-10
+  distinction: with Distinction
+grade: 96.3%
+people:
+  - role: teacher
+    name: Shashi Shekhar
+  - role: teacher
+    name: Brent Hecht
 tags:
   - Java
   - WikiBrain

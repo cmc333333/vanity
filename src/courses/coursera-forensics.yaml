@@ -1,9 +1,16 @@
 title: Introduction to Forensic Science
 start: 2014-08-11
 end: 2013-10-06
-professor: Roderick Bates
-professorsUniversity: Nanyang Technical University
-university: Coursera
-url: "https://www.coursera.org/learn/forensic-science"
+university: Nanyang Technical University, Singapore
+via: Coursera
+certificate:
+  type: Statement of Accomplishment
+  date: 2014-11-14
+  distinction: with Distinction
+grade: 97.5%
+people:
+  - role: teacher
+    name: Roderick Bates
+url: "https://www.coursera.org/course/ntufsc"
 tags:
   - Science

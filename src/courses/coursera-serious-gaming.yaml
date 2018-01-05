@@ -1,7 +1,12 @@
 title: Serious Gaming
 start: 2016-07-11
 end: 2016-08-29
-professor: 
-professorsUniversity: Erasmus University Rotterdam
-university: Coursera
+university: Erasmus University Rotterdam
+via: Coursera
+grade: 96%
+people:
+  - role: teacher
+    name: Jeroen Jansz
+  - role: teacher
+    name: Mijke Slot
 url: "https://www.coursera.org/learn/serious-gaming"

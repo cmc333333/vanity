@@ -1,9 +1,17 @@
 title: Introduction to Data Science
 start: 2013-05-01
 end: 2013-06-26
-professor: Bill Howe
-professorsUniversity: University of Washington
-university: Coursera
+university: University of Washington
+via: Coursera
+certificate:
+  type: Statement of Accomplishment
+  date: 2013-06-29
+  distinction: with Distinction
+grade: 100%
+people:
+  - role: teacher
+    name: Bill Howe
+url: "https://www.coursera.org/course/datasci"
 tags:
   - Computer Science
   - Statistics

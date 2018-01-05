@@ -1,6 +1,9 @@
 title: Research Colloquium II
 start: 2012-09-09
 end: 2012-11-19
-professor: Peter Hastings
-university: DePaul
-categories: [Computer Science]
+university: DePaul University
+people:
+  - role: teacher
+    name: Peter Hastings
+tags:
+  - Computer Science

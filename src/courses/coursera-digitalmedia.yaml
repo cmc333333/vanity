@@ -1,9 +1,20 @@
 title: Creative Programming for Digital Media & Mobile Applications
 start: 2014-06-23
 end: 2014-08-04
-professor: Mick Grierson, Marco Gillies, & Matthew Yee-King
-professorsUniversity: University of London
-university: Coursera
+university: University of London
+via: Coursera
+certificate:
+  type: Verified Certificate
+  date: 2014-08-15
+  distinction: with Distinction
+grade: 100%
+people:
+  - role: teacher
+    name: Mick Grierson
+  - role: teacher
+    name: Marco Gillies
+  - role: teacher
+    name: Matthew Yee-King
 url: "https://www.coursera.org/learn/digitalmedia"
 tags:
   - Computer Science

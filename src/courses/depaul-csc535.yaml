@@ -1,7 +1,11 @@
 title: Formal Semantics of Programming Languages
 start: 2010-09-14
 end: 2010-11-23
-professor: James Riely
-university: DePaul
-categories: [Computer Science, Languages]
-languages: [Coq]
+university: DePaul University
+people:
+  - role: teacher
+    name: James Riely
+tags:
+  - Computer Science
+  - Languages
+  - Coq

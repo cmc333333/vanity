@@ -1,10 +1,16 @@
 title: "Malicious Software and its Underground Economy: Two Sides to Every Story"
 start: 2013-06-17
 end: 2013-07-29
-professor: Lorenzo Cavallaro
-professorsUniversity: University of London International Programmes
-university: Coursera
-url: "https://www.coursera.org/learn/malsoftware"
+university: University of London International Programmes
+via: Coursera
+certificate:
+  type: Statement of Accomplishment
+  date: 2013-09-24
+grade: 98.8%
+people:
+  - role: teacher
+    name: Lorenzo Cavallaro
+url: "https://www.coursera.org/course/malsoftware"
 tags:
   - Computer Science
   - Security

@@ -1,9 +1,19 @@
 title: Applied Cryptography
 start: 2012-04-16
 end: 2012-07-16
-professor: David Evans
-professorsUniversity: University of Virginia
-university: Udacity
+university: University of Virginia
+via: Udacity
+certificate:
+  type: Certificate of Completion
+  date: 2012-07-17
+people:
+  - role: teacher
+    name: David Evans
 url: "https://www.udacity.com/course/applied-cryptography--cs387"
-categories: [Computer Science, Mathematics, Theory, Cryptography, Security]
-languages: [Python]
+tags:
+  - Computer Science
+  - Mathematics
+  - Theory
+  - Cryptography
+  - Security
+  - Python

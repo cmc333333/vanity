@@ -1,4 +1,5 @@
 import glamorous from 'glamorous';
+import _ from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -31,7 +32,46 @@ Degree.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-export default function Degrees() {
+function Certificates({ data }) {
+  const withCerts = _.orderBy(
+    data.filter(d => d.certificate),
+    [d => d.certificate.date],
+    ['desc'],
+  );
+  return (
+    <glamorous.Ul listStyleType="none" marginLeft={0}>
+      { withCerts.map(wc => (
+        <glamorous.Li
+          key={wc.title}
+          paddingLeft={typography.rhythm(1)}
+          textIndent={`-${typography.rhythm(1)}`}
+        >
+          { wc.certificate.type }
+          { wc.certificate.distinction ?
+              ` (${wc.certificate.distinction})` : null }
+          {', "'}
+          { wc.url ? <a href={wc.url}>{ wc.title }</a> : wc.title }
+          {'" from '}
+          { wc.university }
+        </glamorous.Li>
+        )) }
+    </glamorous.Ul>
+  );
+}
+Certificates.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape({
+    certificate: PropTypes.shape({
+      date: PropTypes.string.isRequired,
+      distinction: PropTypes.string,
+      type: PropTypes.string.isRequired,
+    }),
+    title: PropTypes.string.isRequired,
+    university: PropTypes.string.isRequired,
+    url: PropTypes.string,
+  })).isRequired,
+};
+
+export default function Degrees({ data }) {
   return (
     <div>
       { setPageTitle('Degrees & Certificates') }
@@ -73,7 +113,37 @@ export default function Degrees() {
           of study.  Often, this work is recognized through semi-formal
           certification.
         </glamorous.P>
+        <Certificates data={data.allCoursesYaml.edges.map(e => e.node)} />
       </Degree>
     </div>
   );
 }
+Degrees.propTypes = {
+  data: PropTypes.shape({
+    allCoursesYaml: PropTypes.shape({
+      edges: PropTypes.arrayOf(PropTypes.shape({
+        node: PropTypes.shape(Certificates.propTypes.data),
+      })).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
+
+export const query = graphql`
+  query Certs {
+    allCoursesYaml {
+      edges {
+        node {
+          certificate {
+            date
+            distinction
+            type
+          }
+          id
+          title
+          university
+          url
+        }
+      }
+    }
+  }
+`;

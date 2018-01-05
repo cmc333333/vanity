@@ -1,7 +1,9 @@
 title: Securing Digital Democracy
 start: 2016-10-31
 end: 2016-12-12
-professor: J. Alex Halderman
-professorsUniversity: University of Michigan
-university: Coursera
+university: University of Michigan
+via: Coursera
+people:
+  - role: teacher
+    name: J. Alex Halderman
 url: "https://www.coursera.org/learn/digital-democracy"

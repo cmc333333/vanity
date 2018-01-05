@@ -1,9 +1,24 @@
 title: Databases
 start: 2014-06-12
 end: 2014-06-21
-professor: Jennifer Widom
-university: Stanford
+university: Stanford University
+people:
+  - role: teacher
+    name: Jennifer Widom
+certificate:
+  type: Statement of Accomplishment
+  date: 2014-06-22
 url: "https://lagunita.stanford.edu/courses/Home/Databases/Engineering/about"
-categories: [Computer Science, Data Science]
-tools: [Sqlite, Kernow, Libxml]
-languages: [SQL, XPath, XQuery, XSLT, DTD, JSON, JSONSchema]
+tags:
+  - Computer Science
+  - Data Science
+  - Sqlite
+  - Kernow
+  - Libxml
+  - SQL
+  - XPath
+  - XQuery
+  - XSLT
+  - DTD
+  - JSON
+  - JSONSchema

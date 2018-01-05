@@ -1,9 +1,20 @@
 title: Bioinformatics Algorithms (Part 1)
 start: 2014-10-20
 end: 2015-01-12
-professor: Pavel Pevzner, Phillip E. C. Compeau, Nikolay Vyahhi
-professorsUniversity: UC San Diego
-university: Coursera
+university: UC San Diego
+via: Coursera
+certificate:
+  type: Verified Certificate
+  date: 2015-02-17
+  distinction: with Distinction
+grade: 100%
+people:
+  - role: teacher
+    name: Pavel Pevzner
+  - role: teacher
+    name: Phillip E. C. Compeau
+  - role: teacher
+    name: Nikolay Vyahhi
 tags:
   - Biology
   - Computer Science

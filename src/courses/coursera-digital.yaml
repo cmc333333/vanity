@@ -1,9 +1,11 @@
 title: Fundamentals of Digital Image and Video Processing
 start: 2016-03-07
 end: 2016-06-05
-professor: Aggelos K. Katsaggelos
-professorsUniversity: Northwestern University
-university: Coursera
+university: Northwestern University
+via: Coursera
+people:
+  - role: teacher
+    name: Aggelos K. Katsaggelos
 url: "https://www.coursera.org/learn/digital"
 tags:
   - Computer Science

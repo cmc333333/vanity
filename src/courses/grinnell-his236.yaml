@@ -1,6 +1,9 @@
 title: British History II
 start: 2005-08-01
 end: 2005-12-20
-professor: Elizabeth Prevost
-university: Grinnell
-categories: [History]
+university: Grinnell College
+people:
+  - role: teacher
+    name: Elizabeth Prevost
+tags:
+  - History

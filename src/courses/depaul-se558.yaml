@@ -1,10 +1,16 @@
 title: Architecture and Design for Multiplayer Games
 start: 2011-03-29
 end: 2011-06-07
-professor: Edward Keenan
-university: DePaul
-categories: [Computer Science, Game Development, Networking]
-languages: [C++, C#]
+university: DePaul University
+people:
+  - role: teacher
+    name: Edward Keenan
+tags:
+  - Computer Science
+  - Game Development
+  - Networking
+  - C++
+  - C#
 major projects:
   - name: Add Network Play to a (Complete) Game
     language: C#

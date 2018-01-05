@@ -1,7 +1,19 @@
 title: What is news?
 start: 2017-03-20
 end: 2017-04-27
-professor: Joe Grimm, et al.
-professorsUniversity: Michigan State University
-university: Coursera
+university: Michigan State University
+via: Coursera
+people:
+  - role: teacher
+    name: Joanne Gerstner
+  - role: teacher
+    name: Eric Freedman
+  - role: teacher
+    name: Joe Grimm
+  - role: teacher
+    name: David Poulson
+  - role: teacher
+    name: Jeremy Steele
+  - role: teacher
+    name: Lucinda D. Davenport
 url: "https://www.coursera.org/learn/what-is-news"

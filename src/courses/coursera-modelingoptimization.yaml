@@ -1,9 +1,17 @@
 title: Modeling Discrete Optimization
 start: 2015-08-03
 end: 2015-09-28
-professor: Peter James Stuckey
-professorsUniversity: University of Melbourne
-university: Coursera
+university: University of Melbourne
+via: Coursera
+certificate:
+  type: Statement of Accomplishment
+  date: 2015-11-04
+  distinction: with Distinction
+grade: 91%
+people:
+  - role: teacher
+    name: Peter James Stuckey
+url: "https://www.coursera.org/course/modelingoptimization"
 tags:
   - Computer Science
   - Mathematics

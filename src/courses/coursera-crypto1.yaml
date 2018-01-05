@@ -1,10 +1,17 @@
 title: Cryptography I
 start: 2012-03-12
 end: 2012-06-11
-professor: Dan Boneh
-professorsUniversity: Stanford
-university: Coursera
-url: "https://www.coursera.org/learn/crypto"
+university: Stanford University
+via: Coursera
+certificate:
+  type: Statement of Acomplishment
+  date: 2012-12-06
+  distinction: with Distinction
+grade: 100%
+people:
+  - role: teacher
+    name: Dan Boneh
+url: "https://www.coursera.org/course/crypto"
 tags:
   - Computer Science
   - Mathematics

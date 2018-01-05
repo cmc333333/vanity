@@ -1,8 +1,21 @@
-title: HTML5 Game Development
+title: "HTML5 Game Development: Building High Performance Web Apps"
 start: 2014-03-11
 end: 2014-04-06
-professor: Colt McAnlis & Peter Lubbers
-university: Udacity
-categories: [Computer Science, Web, Games]
-languages: [HTML5, Javascript]
-libraries: [Canvas]
+university: Google
+via: Udacity
+certificate:
+  type: Certificate of Completion
+  date: 2014-04-06
+  distinction: with Highest Distinction
+people:
+  - role: teacher
+    name: Colt McAnlis
+  - role: teacher
+    name: Peter Lubbers
+tags:
+  - Computer Science
+  - Web
+  - Games
+  - HTML5
+  - Javascript
+  - Canvas

@@ -1,8 +1,16 @@
 title: Signals & Systems Part 01
 start: 2015-07-16
 end: 2015-12-10
-professor: Vikram Gadre
-professorsUniversity: Indian Institute of Technology Bombay
-university: EdX
+university: Indian Institute of Technology Bombay
+via: edX
+certificate:
+  type: Verified Certificate of Achievement
+  date: 2015-12-19
+grade: 63%
+people:
+  - role: teacher
+    name: Vikram Gadre
 url: "https://www.edx.org/course/signals-systems-part-1-iitbombayx-ee210-1x-2"
-categories: [Electrical Engineering, Mathematics]
+tags:
+  - Electrical Engineering
+  - Mathematics

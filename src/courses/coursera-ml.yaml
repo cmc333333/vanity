@@ -1,10 +1,16 @@
 title: Machine Learning
 start: 2012-04-23
 end: 2012-06-30
-professor: Andrew Ng
-professorsUniversity: Stanford
-university: Coursera
-url: "https://www.coursera.org/learn/machine-learning"
+university: Stanford University
+via: Coursera
+certificate:
+  type: Statement of Accomplishment
+  date: 2013-11-12
+grade: 100%
+people:
+  - role: teacher
+    name: Andrew Ng
+url: "https://www.coursera.org/course/ml"
 tags:
   - Computer Science
   - Mathematics

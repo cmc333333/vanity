@@ -1,9 +1,17 @@
 title: Computing for Data Analysis
 start: 2013-01-02
 end: 2013-01-31
-professor: Roger Peng
-professorsUniversity: Johns Hopkins Bloomberg School of Public Health
-university: Coursera
+university: Johns Hopkins University
+via: Coursera
+certificate:
+  type: Statement of Accomplishment
+  date: 2013-04-17
+  distinction: with Distinction
+grade: 99%
+people:
+  - role: teacher
+    name: Roger Peng
+url: "https://www.coursera.org/course/compdata"
 tags:
   - Computer Science
   - Statistics

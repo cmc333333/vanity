@@ -1,8 +1,10 @@
 title: Distributed Systems I
 start: 2012-03-29
 end: 2012-05-31
-professor: Elliot Clark
-university: DePaul
+university: DePaul University
+people:
+  - role: teacher
+    name: Elliot Clark
 tags:
   - Computer Science
   - Distributed Systems

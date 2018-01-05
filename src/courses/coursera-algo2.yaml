@@ -1,9 +1,16 @@
 title: "Algorithms: Design and Analysis, Part 2"
 start: 2013-02-18
 end: 2012-12-02
-professor: Tim Roughgarden
-professorsUniversity: Stanford
-university: Coursera
+university: Stanford University
+via: Coursera
+certificate:
+  type: Statement of Accomplishment
+  date: 2013-02-16
+grade: 87.6%
+people:
+  - role: teacher
+    name: Tim Roughgarden
+url: "https://www.coursera.org/course/algo2"
 tags:
   - Computer Science
   - Mathematics

@@ -1,10 +1,17 @@
 title: "Social and Economic Networks: Models and Analysis"
 start: 2014-01-05
 end: 2014-03-09
-professor: Matthew O. Jackson
-professorsUniversity: Stanford
-university: Coursera
-url: "https://www.coursera.org/learn/social-economic-networks"
+university: Stanford University
+via: Coursera
+certificate:
+  type: Statement of Accomplishment
+  date: 2014-03-11
+  distinction: with Distinction
+grade: 99.6%
+people:
+  - role: teacher
+    name: Matthew O. Jackson
+url: "https://www.coursera.org/course/networksonline"
 tags:
   - Computer Science
   - Mathematics

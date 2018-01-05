@@ -1,9 +1,18 @@
 title: Exploring Neural Data
 start: 2014-09-29
 end: 2014-12-15
-professor: Monica Linden, David Sheinberg
-professorsUniversity: Brown University
-university: Coursera
+university: Brown University
+via: Coursera
+certificate:
+  type: Statement of Accomplishment
+  date: 2014-12-22
+grade: 96.6%
+people:
+  - role: teacher
+    name: Monica Linden
+  - role: teacher
+    name: David Sheinberg
+url: "https://www.coursera.org/course/neuraldata"
 tags:
   - Biology
   - Neuroscience

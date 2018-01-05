@@ -1,8 +1,10 @@
 title: Cryptology
 start: 2012-01-09
 end: 2012-03-19
-professor: Marcus Schaefer
-university: DePaul
+university: DePaul University
+people:
+  - role: teacher
+    name: Marcus Schaefer
 tags:
   - Computer Science
   - Cryptography

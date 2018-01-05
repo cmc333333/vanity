@@ -1,9 +1,16 @@
 title: Interactive Computer Graphics with WebGL
 start: 2015-06-29
 end: 2015-08-29
-professor: Edward Angel
-professorsUniversity: University of New Mexico
-university: Coursera
+university: University of New Mexico
+via: Coursera
+certificate:
+  type: Verified Certificate
+  date: 2015-10-06
+  distinction: with Distinction
+grade: 83%
+people:
+  - role: teacher
+    name: Edward Angel
 tags:
   - Computer Science
   - Graphics

@@ -1,8 +1,10 @@
 title: Computer Security
 start: 2012-09-09
 end: 2012-11-19
-professor: Radha Jagadeesan
-university: DePaul
+university: DePaul University
+people:
+  - role: teacher
+    name: Radha Jagadeesan
 tags:
   - Computer Science
   - Security

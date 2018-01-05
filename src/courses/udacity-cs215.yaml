@@ -1,9 +1,19 @@
-title: Algorithms
+title: "Algorithms: Crunching Social Networks"
 start: 2012-06-25
 end: 2013-05-01
-professor: Michael Littman
-professorsUniversity: Rutgers University
-university: Udacity
+university: Rutgers University
+via: Udacity
+certificate:
+  type: Certificate of Completion
+  date: 2013-05-30
+  distinction: with Highest Distinction
+people:
+  - role: teacher
+    name: Michael Littman
 url: "https://www.udacity.com/course/intro-to-algorithms--cs215"
-categories: [Computer Science, Mathematics, Algorithms, Graph Theory]
-languages: [Python]
+tags:
+  - Computer Science
+  - Mathematics
+  - Algorithms
+  - Graph Theory
+  - Python

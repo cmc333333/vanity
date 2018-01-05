@@ -1,9 +1,18 @@
 title: "Logic: Languages and Information 2"
 start: 2014-04-22
 end: 2014-06-20
-professor: Greg Restall & Jen Davoren
-professorsUniversity: University of Melbourne
-university: Coursera
+university: University of Melbourne
+via: Coursera
+certificate:
+  type: Verified Certificate
+  date: 2014-06-23
+  distinction: with Distinction
+grade: 100%
+people:
+  - role: teacher
+    name: Greg Restall
+  - role: teacher
+    name: Jen Davoren
 tags:
   - Logic
   - Philosophy

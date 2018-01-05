@@ -1,10 +1,18 @@
 title: Discrete Optimization
 start: 2013-06-18
 end: 2013-08-13
-professor: Pascal Van Hentenryck
-professorsUniversity: University of Melbourne
-university: Coursera
-url: "https://www.coursera.org/learn/discrete-optimization"
+university: University of Melbourne
+via: Coursera
+certificate:
+  type: Statement of Accomplishment
+  date: 2013-08-22
+  distinction: with Distinction
+grade: 86%
+people:
+  - role: teacher
+    name: Pascal Van Hentenryck
+    distinction: with Distinction
+url: "https://www.coursera.org/course/optimization"
 tags:
   - Computer Science
   - Mathematics

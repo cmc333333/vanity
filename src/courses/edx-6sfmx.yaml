@@ -1,8 +1,17 @@
 title: Street-Fighting Math
 start: 2014-04-08
 end: 2014-05-30
-professor: Sanjoy Mahanjan & Isaac Chuang
-professorsUniversity: MIT
-university: EdX
+university: MITx
+via: edX
+certificate:
+  type: Honor Code Certificate
+  date: 2014-05-29
+grade: 88%
+people:
+  - role: teacher
+    name: Sanjoy Mahanjan
+  - role: teacher
+    name: Isaac Chuang
 url: "https://www.edx.org/course/street-fighting-math-mitx-6-sfmx"
-categories: [Mathematics]
+tags:
+  - Mathematics

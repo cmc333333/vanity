@@ -1,8 +1,20 @@
 title: Statistical Learning
 start: 2015-01-19
 end: 2015-04-03
-professor: 
+university: Stanford University
+certificate:
+  type: Statement of Accomplishment
+  date: 2015-04-08
+people:
+  - role: teacher
+    name: Trevor Hastie
+  - role: teacher
+    name: Rob Tibshirani
 university: Stanford
 url: "https://lagunita.stanford.edu/courses/HumanitiesSciences/StatLearning/Winter2016/about"
-categories: [Computer Science, Data Science, Mathematics, Statistics]
-languages: [R]
+tags:
+  - Computer Science
+  - Data Science
+  - Mathematics
+  - Statistics
+  - R

@@ -1,10 +1,17 @@
 title: Experimentation for Improvement
 start: 2014-07-07
 end: 2014-08-24
-professor: Kevin Dunn
-professorsUniversity: McMaster University
-university: Coursera
-url: "https://www.coursera.org/learn/experimentation"
+university: McMaster University
+via: Coursera
+certificate:
+  type: Statement of Accomplishment
+  date: 2014-09-01
+  distinction: with Distinction
+grade: 94%
+people:
+  - role: teacher
+    name: Kevin Dunn
+url: "https://www.coursera.org/course/experiments"
 tags:
   - Science
   - Data Science

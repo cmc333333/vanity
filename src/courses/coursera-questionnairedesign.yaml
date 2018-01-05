@@ -1,10 +1,18 @@
 title: Questionnaire Design for Social Surveys
 start: 2014-07-07
 end: 2014-08-25
-professor: Frederick Conrad and Frauke Kreuter
-professorsUniversity: University of Michigan
-university: Coursera
-url: "https://www.coursera.org/learn/questionnaire-design"
+university: University of Michigan
+via: Coursera
+certificate:
+  type: Statement of Accomplishment
+  date: 2014-08-28
+grade: 92.5%
+people:
+  - role: teacher
+    name: Frederick Conrad
+  - role: teacher
+    name: Frauke Kreuter
+url: "https://www.coursera.org/course/questionnairedesign"
 tags:
   - Social Science
   - Statistics

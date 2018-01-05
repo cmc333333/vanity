@@ -1,8 +1,21 @@
-title: Introduction to Artificial Intelligence
+title: "Introduction to Artificial Intelligence: AI-Class"
 start: 2013-06-04
 end: 2014-03-08
-professor: Sebastian Thrun & Peter Norvig
-professorsUniversity: Stanford University
-university: Udacity
+university: Stanford University
+via: Udacity
+certificate:
+  type: Certificate of Completion
+  date: 2014-03-09
+  distinction: with Highest Distinction
+people:
+  - role: teacher
+    name: Sebastian Thrun
+  - role: teacher
+    name: Peter Norvig
 url: "https://www.udacity.com/course/intro-to-artificial-intelligence--cs271"
-categories: [Computer Science, Mathematics, Algorithms, AI, Machine Learning]
+tags:
+  - Computer Science
+  - Mathematics
+  - Algorithms
+  - AI
+  - Machine Learning

@@ -1,9 +1,18 @@
 title: Software as a Service I
 start: 2012-09-24
 end: 2012-11-07
-professor: Armando Fox and David Patterson
-professorsUniversity: Berkely
-university: EdX
-categories: [Computer Science, SaaS]
-languages: [Ruby]
-libraries: [Rails]
+university: BerkelyX
+via: edX
+certificate:
+  type: Certificate
+  date: 2012-11-08
+people:
+  - role: teacher
+    name: Armando Fox
+  - role: teacher
+    name: David Patterson
+tags:
+  - Computer Science
+  - SaaS
+  - Ruby
+  - Rails

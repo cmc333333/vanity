@@ -1,9 +1,14 @@
 title: "Knowledge-Based AI: Cognitive Systems"
 start: 2015-11-11
 end: 2015-12-01
-professor: Ashok Goel
-professorsUniversity: Georgia Tech
-university: Udacity
+university: Georgia Tech
+via: Udacity
+people:
+  - role: teacher
+    name: Ashok Goel
 url: "https://www.udacity.com/course/knowledge-based-ai-cognitive-systems--ud409"
-categories: [Computer Science, Algorithms, Artificial Intelligence]
-languages: [Python]
+tags:
+  - Computer Science
+  - Algorithms
+  - Artificial Intelligence
+  - Python

@@ -1,8 +1,10 @@
 title: Learning From Data
 start: 2012-11-05
 end: 2013-03-15
-professor: Yaser S. Abu-Mostafa
 university: Caltech
+people:
+  - role: teacher
+    name: Yaser S. Abu-Mostafa
 tags: 
   - Computer Science
   - Machine Learning
