@@ -1,55 +1,19 @@
 import Link from 'gatsby-link';
-import { css } from 'glamor';
 import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
 
+import MainMenuLink, { mainMenuHeight } from '../components/main-menu-link';
+import Sidebar from '../components/sidebar';
+import SidebarLink from '../components/sidebar-link';
 import { columns, row, space } from '../styles';
-import typography from '../util/typography';
 import favicon from './favicon.ico';
 import logo from './img/logo.gif';
 import logoLeft from './img/logo_left.gif';
 import logoMiddle from './img/logo_middle.gif';
 import logoRight from './img/logo_right.gif';
-import mmLeft from './img/mm_left.gif';
-import mmLeftCurve from './img/mm_left_curve.gif';
-import mmMiddle from './img/mm_middle.gif';
-import mmRight from './img/mm_right.gif';
-import mmRightCurve from './img/mm_right_curve.gif';
 
-
-function Sidebar({ children, title }) {
-  return (
-    <glamorous.Div
-      background="#CCC"
-      border="solid thin #5A79A5"
-      color="#346"
-      css={css(columns(2), { marginRight: '2%' })}
-      marginTop={typography.rhythm(-2 / 3)}
-      paddingLeft={typography.rhythm(1 / 3)}
-      paddingRight={typography.rhythm(1 / 3)}
-      paddingTop={typography.rhythm(2 / 3)}
-    >
-      <h2 css={css(typography.scale(0), { margin: 0 })}>
-        { title }
-      </h2>
-      <ul>{ children }</ul>
-    </glamorous.Div>
-  );
-}
-Sidebar.propTypes = {
-  children: PropTypes.node.isRequired,
-  title: PropTypes.string.isRequired,
-};
-
-function SidebarLink({ children, to }) {
-  return <li><Link css={{ color: '#346' }} to={to}>{ children }</Link></li>;
-}
-SidebarLink.propTypes = {
-  children: PropTypes.node.isRequired,
-  to: PropTypes.string.isRequired,
-};
 
 const writings = (
   <Sidebar title="Writings">
@@ -94,67 +58,6 @@ const education = (
     <SidebarLink to="/education/degrees/">Degrees &amp; Certificates</SidebarLink>
   </Sidebar>
 );
-
-const mainMenuHeight = '50px';
-
-function MainMenuLink({
-  children,
-  first,
-  last,
-  to,
-}) {
-  const pseudoEl = {
-    content: ' ',
-    display: 'inline-block',
-    height: mainMenuHeight,
-    verticalAlign: 'top',
-    width: '25px',
-  };
-  return (
-    <glamorous.Li
-      css={{
-        ':before': {
-          ...pseudoEl,
-          background: `url(${first ? mmLeftCurve : mmLeft}) no-repeat right top`,
-        },
-        ':after': {
-          ...pseudoEl,
-          background: `url(${last ? mmRightCurve : mmRight}) no-repeat left top`,
-        },
-      }}
-      float="left"
-      lineHeight={mainMenuHeight}
-      listStyleType="none"
-      marginLeft={first ? '10px' : null}
-    >
-      <Link
-        css={{
-          ...(typography.scale(1 / 2)),
-          background: `#5A79A5 url(${mmMiddle}) repeat-x`,
-          color: '#FFF',
-          display: 'inline-block',
-          fontVariant: 'small-caps',
-          fontStyle: 'italic',
-          height: mainMenuHeight,
-          lineHeight: mainMenuHeight,
-        }}
-        to={to}
-      >
-        { children }
-      </Link>
-    </glamorous.Li>
-  );
-}
-MainMenuLink.propTypes = {
-  children: PropTypes.node.isRequired,
-  first: PropTypes.bool,
-  last: PropTypes.bool,
-  to: PropTypes.string.isRequired,
-};
-MainMenuLink.defaultProps = {
-  first: false,
-  last: false,
-};
 
 const headerName = (
   <glamorous.Span
