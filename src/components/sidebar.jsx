@@ -21,7 +21,12 @@ export default function Sidebar({ children, title }) {
       <h2 css={css(typography.scale(0), { margin: 0 })}>
         { title }
       </h2>
-      <ul>{ children }</ul>
+      <glamorous.Ul
+        listStyleType="circle"
+        marginLeft={typography.rhythm(2 / 3)}
+      >
+        { children }
+      </glamorous.Ul>
     </glamorous.Div>
   );
 }

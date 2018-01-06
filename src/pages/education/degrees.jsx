@@ -14,6 +14,7 @@ const University = glamorous.span(
     marginBottom: typography.rhythm(2 / 3),
   },
 );
+const UniversitylessP = glamorous.p({ marginTop: typography.rhythm(2 / 3) });
 
 function Degree({ children, title }) {
   return (
@@ -33,14 +34,10 @@ Degree.propTypes = {
 };
 
 function Certificates({ data }) {
-  const withCerts = _.orderBy(
-    data.filter(d => d.certificate),
-    [d => d.certificate.date],
-    ['desc'],
-  );
+  const ordered = _.orderBy(data, ['certificate.date'], ['desc']);
   return (
     <glamorous.Ul listStyleType="none" marginLeft={0}>
-      { withCerts.map(wc => (
+      { ordered.map(wc => (
         <glamorous.Li
           key={wc.title}
           paddingLeft={typography.rhythm(1)}
@@ -64,7 +61,36 @@ Certificates.propTypes = {
       date: PropTypes.string.isRequired,
       distinction: PropTypes.string,
       type: PropTypes.string.isRequired,
-    }),
+    }).isRequired,
+    title: PropTypes.string.isRequired,
+    university: PropTypes.string.isRequired,
+    url: PropTypes.string,
+  })).isRequired,
+};
+
+
+function NonCertificates({ data }) {
+  const ordered = _.orderBy(data, ['end'], ['desc']);
+  return (
+    <glamorous.Ul listStyleType="none" marginLeft={0}>
+      { ordered.map(wc => (
+        <glamorous.Li
+          key={wc.title}
+          paddingLeft={typography.rhythm(1)}
+          textIndent={`-${typography.rhythm(1)}`}
+        >
+          {'"'}
+          { wc.url ? <a href={wc.url}>{ wc.title }</a> : wc.title }
+          {'" from '}
+          { wc.university }
+        </glamorous.Li>
+        )) }
+    </glamorous.Ul>
+  );
+}
+NonCertificates.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape({
+    end: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     university: PropTypes.string.isRequired,
     url: PropTypes.string,
@@ -72,6 +98,9 @@ Certificates.propTypes = {
 };
 
 export default function Degrees({ data }) {
+  const courses = data.allCoursesYaml.edges.map(e => e.node);
+  const withCerts = courses.filter(c => c.certificate);
+  const withoutCerts = courses.filter(c => !c.certificate);
   return (
     <div>
       { setPageTitle('Degrees & Certificates') }
@@ -103,7 +132,7 @@ export default function Degrees({ data }) {
         </p>
       </Degree>
       <Degree title="Certificates from Continuing Education">
-        <glamorous.P marginTop={typography.rhythm(2 / 3)}>
+        <UniversitylessP>
           Largely through online instruction (notably:{' '}
           <a href="https://coursera.org">Coursera</a>,{' '}
           <a href="https://edx.org">edX</a>, and{' '}
@@ -112,8 +141,19 @@ export default function Degrees({ data }) {
           can safely claim to have completed a second bachelor&rsquo;s-worth
           of study.  Often, this work is recognized through semi-formal
           certification.
-        </glamorous.P>
-        <Certificates data={data.allCoursesYaml.edges.map(e => e.node)} />
+        </UniversitylessP>
+        <Certificates data={withCerts} />
+      </Degree>
+      <Degree title="Non-degree Programs">
+        <UniversitylessP>
+          Of course, not all education programs end with a degree or
+          certificate. While still following academic progression via a
+          structured content, if the bulk of the material is covered through
+          self-study, there&rsquo;s less incentive for institutions to certify
+          learners. This shouldn&rsquo;t diminish the courses, however; many
+          are on par with their degree-granting kin.
+        </UniversitylessP>
+        <NonCertificates data={withoutCerts} />
       </Degree>
     </div>
   );
@@ -122,7 +162,17 @@ Degrees.propTypes = {
   data: PropTypes.shape({
     allCoursesYaml: PropTypes.shape({
       edges: PropTypes.arrayOf(PropTypes.shape({
-        node: PropTypes.shape(Certificates.propTypes.data),
+        node: PropTypes.arrayOf(PropTypes.shape({
+          certificate: PropTypes.shape({
+            date: PropTypes.string.isRequired,
+            distinction: PropTypes.string,
+            type: PropTypes.string.isRequired,
+          }).isRequired,
+          end: PropTypes.string.isRequired,
+          title: PropTypes.string.isRequired,
+          university: PropTypes.string.isRequired,
+          url: PropTypes.string,
+        })).isRequired,
       })).isRequired,
     }).isRequired,
   }).isRequired,
@@ -130,7 +180,11 @@ Degrees.propTypes = {
 
 export const query = graphql`
   query Certs {
-    allCoursesYaml {
+    allCoursesYaml(
+      filter: {
+        university: { regex: "/^(?!Grinnell)(?!DePaul)/" }
+      }
+    ) {
       edges {
         node {
           certificate {
@@ -138,7 +192,7 @@ export const query = graphql`
             distinction
             type
           }
-          id
+          end
           title
           university
           url
