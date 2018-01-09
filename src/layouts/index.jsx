@@ -146,7 +146,7 @@ export default function Layout(props) {
       </div>
       <div css={row}>
         { sidebar }
-        <div css={columns(9)}>
+        <div css={columns(12, 9)}>
           <glamorous.Div
             background="#DCDFF6"
             borderRadius="10px"

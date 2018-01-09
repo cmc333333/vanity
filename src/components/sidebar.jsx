@@ -12,7 +12,7 @@ export default function Sidebar({ children, title }) {
       background="#CCC"
       border="solid thin #5A79A5"
       color="#346"
-      css={css(columns(2), { marginRight: '2%' })}
+      css={css(columns(12, 2), { marginRight: '2%' })}
       marginTop={typography.rhythm(-2 / 3)}
       paddingLeft={typography.rhythm(1 / 3)}
       paddingRight={typography.rhythm(1 / 3)}

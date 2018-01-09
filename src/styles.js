@@ -21,10 +21,22 @@ export const row = css({
   },
 });
 
-export function columns(width) {
-  return css({
-    boxSizing: 'border-box',
-    float: 'left',
-    width: `calc(${width}/12 * 100%)`,
-  });
+export function columns(spanOnSmall, spanOnMedium, spanOnLarge) {
+  return css(
+    {
+      boxSizing: 'border-box',
+      float: 'left',
+      width: `calc(${spanOnSmall}/12 * 100%)`,
+    },
+    spanOnMedium ? {
+      '@media (min-width: 640px)': {
+        width: `calc(${spanOnMedium}/12 * 100%)`,
+      },
+    } : {},
+    spanOnLarge ? {
+      '@media (min-width: 1024px)': {
+        width: `calc(${spanOnLarge}/12 * 100%)`,
+      },
+    } : {},
+  );
 }
