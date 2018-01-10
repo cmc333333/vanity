@@ -1,7 +1,7 @@
 ---
 title: FillMyPod
 url: https://github.com/cmc333333/fillmypod
-languages: [Python]
+tags: [Python]
 summary: |
   A small Python application which mixes MP3 files from multiple locations.
   Written with generators/iterators to provide more flexibility when

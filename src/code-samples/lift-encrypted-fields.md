@@ -1,8 +1,10 @@
 ---
 title: Lift Encrypted Fields
 url: https://github.com/cmc333333/Lift-Encrypted-Fields
-languages: [Scala]
-libraries: [Lift, Bouncy Castle]
+tags:
+  - Scala
+  - Lift
+  - Bouncy Castle
 summary: |
   This library adds authenticated encryption fields to a popular web
   framework. It is the result of personal research, but quickly ended up in

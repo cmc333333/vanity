@@ -1,9 +1,10 @@
 ---
 title: Logging Example
 url: https://github.com/cmc333333/loggingexample
-languages: [Scala]
-libraries: [Lift]
-tools: [MongoDB]
+tags:
+  - Scala
+  - Lift
+  - MongoDB
 summary: |
   This is a short example of logging a JSON-based RESTful API using MongoDB.
   It was plucked from a presentation I gave a few years ago and is as close as

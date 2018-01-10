@@ -1,21 +1,37 @@
 import Link from 'gatsby-link';
+import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import { trailingComma } from '../../styles';
 import setPageTitle from '../../util/set-page-title';
 
 export default function CodeSamples({ data }) {
-  const children = data.allMarkdownRemark.edges.map(e => (
-    <li key={e.node.fields.basename}>
-      <Link to={`/cv/code-samples/${e.node.fields.basename}`}>
-        { e.node.frontmatter.title }
-      </Link>
-      <ul className="categories">
-        { (e.node.frontmatter.tags || []).map(t => <li key={t}>{ t }</li>) }
-      </ul>
-      <div>{ e.node.frontmatter.summary }</div>
-    </li>
-  ));
+  const children = data.allMarkdownRemark.edges.map(e => e.node).map((node) => {
+    const { basename } = node.fields;
+    const { summary, title } = node.frontmatter;
+    const tags = node.frontmatter.tags || [];
+
+    return (
+      <li key={basename}>
+        <Link to={`/cv/code-samples/${basename}`}>{ title }</Link>
+        <glamorous.Ul
+          display="inline-block"
+          listStyleType="none"
+        >
+          { tags.map((tag, idx) => (
+            <glamorous.Li
+              css={idx !== tags.length - 1 ? trailingComma : {}}
+              display="inline"
+              key={tag}
+            >
+              { tag }
+            </glamorous.Li>)) }
+        </glamorous.Ul>
+        <div>{ summary }</div>
+      </li>
+    );
+  });
   return (
     <div>
       { setPageTitle('Code Samples') }

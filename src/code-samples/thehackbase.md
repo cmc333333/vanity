@@ -1,8 +1,7 @@
 ---
 title: The Hack Base
 url: https://github.com/cmc333333/thehackbase
-languages: [Python]
-libraries: [Django]
+tags: [Python, Django]
 summary: |
   This is a small, database-driven application written in Python with Django.
   It's goals were minimal, but included the ability to switch between a Google

@@ -1,9 +1,11 @@
 ---
 title: Fragspace
 url: https://github.com/cmc333333/fragspace
-languages: [Go]
-libraries: [App Engine]
-tools: [Memcache, Rackspace]
+tags:
+  - Go
+  - App Engine
+  - Memcache
+  - Rackspace
 summary: |
   Frag Space is an API for spinning up new game servers, written in Go. It was
   developed to pick up a new language, learn some APIs (Rackspace and Swipe,)
