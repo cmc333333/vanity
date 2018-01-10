@@ -19,15 +19,24 @@ const LeftCol = glamorous(HalfCol)({
   paddingRight: typography.rhythm(2 / 3),
 });
 const RightCol = glamorous(HalfCol)({ paddingLeft: typography.rhythm(2 / 3) });
-const MarkerlessList = glamorous.ul({ listStyleType: 'none' });
+const MarkerlessList = glamorous.ul({ listStyleType: 'none', marginBottom: 0 });
 const FlushList = glamorous(MarkerlessList)({ marginLeft: 0 });
-const SectionHeader = glamorous.h4({ '::after': { content: ':' } });
+const SectionHeader = glamorous.h4({
+  '::after': { content: ':' },
+  marginBottom: typography.rhythm(2 / 3),
+  marginTop: typography.rhythm(1 / 3),
+});
 const SubSectionHeader = glamorous.h5(
-  { fontWeight: 'normal', textDecoration: 'underline' },
+  { fontWeight: 'normal', marginBottom: 0, textDecoration: 'underline' },
   typography.scale(0),
 );
 const subSubHeaderCss = css(
-  { display: 'inline', fontStyle: 'italic', fontWeight: 'normal' },
+  {
+    display: 'inline',
+    fontStyle: 'italic',
+    fontWeight: 'normal',
+    marginBottom: 0,
+  },
   typography.scale(0),
 );
 const SubSubHeader = glamorous.h6(subSubHeaderCss);
