@@ -5,13 +5,24 @@ import React from 'react';
 import setPageTitle from '../../../util/set-page-title';
 import CurrentTopics from '../../../components/education/topics/current-topics';
 import Entry from '../../../components/education/topics/entry';
+import Visualization from '../../../components/education/topics/visualization';
+import TopicEntry, { commonTags } from '../../../util/topic-entry';
+
 
 export default class Topics extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { inBrowser: false, topics: [] };
-    this.activate = this.activate.bind(this);
+    const entryCollections = Object.entries(props.data)
+      .map(([entryType, { edges }]) =>
+        edges.map(e => new TopicEntry({ ...e.node, entryType })));
+    this.entries = _.orderBy(_.flatten(entryCollections), ['date'], ['desc']);
+    this.common = commonTags(this.entries);
+    this.state = { inBrowser: false, selectedTopics: [] };
+
     this.deactivate = this.deactivate.bind(this);
+    this.selectTopic = this.selectTopic.bind(this);
+    this.setTopics = this.setTopics.bind(this);
+    this.vis = null;
   }
 
   componentDidMount() {
@@ -20,51 +31,62 @@ export default class Topics extends React.Component {
     /* eslint-enable react/no-did-mount-set-state */
   }
 
-  activate(topic) {
-    const topics = this.state.topics.concat([topic]);
-    this.setState({ topics: _.uniq(topics) });
+  componentDidUpdate() {
+    if (this.vis) {
+      this.vis.selectNodes(this.state.selectedTopics);
+    }
+  }
+
+  setTopics(...topics) {
+    this.setState({ selectedTopics: _.uniq(topics).sort() });
+  }
+
+  selectTopic(topic) {
+    const topics = this.state.selectedTopics.concat([topic]);
+    this.setState({ selectedTopics: _.uniq(topics).sort() });
   }
 
   deactivate(...toRemove) {
     this.setState({
-      topics: this.state.topics.filter(t => !toRemove.includes(t)),
+      selectedTopics: _.difference(this.state.selectedTopics, toRemove),
     });
   }
 
-  render() {
-    const courses = this.props.data.allCoursesYaml.edges.map(e => ({
-      entryType: 'Course',
-      end: e.node.end,
-      key: e.node.id,
-      tags: new Set(e.node.tags),
-      title: e.node.title,
-      url: e.node.url || '',
-    }));
-    const entries = courses;
-    const filtered = this.state.topics.length ?
-      entries.filter(c => this.state.topics.some(t => c.tags.has(t))) :
-      entries;
-    const sorted = _.orderBy(filtered, ['end'], ['desc']);
+  filteredTopics() {
+    return this.state.selectedTopics.length ?
+      this.entries.filter(e =>
+        this.state.selectedTopics.some(t => e.tags.has(t))) :
+      this.entries;
+  }
 
+  render() {
     return (
       <div>
         { setPageTitle('Education by Topic') }
-        <CurrentTopics
-          deactivate={this.deactivate}
-          topics={this.state.topics}
-        />
-        { sorted.map(e =>
-          <Entry activate={this.activate} inBrowser={this.state.inBrowser} {...e} />) }
+        <CurrentTopics deactivate={this.deactivate} topics={this.state.selectedTopics} />
+        { this.state.inBrowser ?
+          <Visualization
+            entries={this.entries}
+            getVis={(vis) => { this.vis = vis; }}
+            setTopics={this.setTopics}
+          /> : null }
+        { this.filteredTopics().map(topicEntry => (
+          <Entry
+            key={topicEntry.id}
+            selectTopic={this.selectTopic}
+            selectableTopics={this.state.inBrowser ? this.common : new Set()}
+            topicEntry={topicEntry}
+          />)) }
       </div>
     );
   }
 }
 Topics.propTypes = {
   data: PropTypes.shape({
-    allCoursesYaml: PropTypes.shape({
+    Course: PropTypes.shape({
       edges: PropTypes.arrayOf(PropTypes.shape({
         node: PropTypes.shape({
-          end: PropTypes.string.isRequired,
+          date: PropTypes.string.isRequired,
           id: PropTypes.string.isRequired,
           tags: PropTypes.arrayOf(PropTypes.string),
           title: PropTypes.string.isRequired,
@@ -77,10 +99,10 @@ Topics.propTypes = {
 
 export const query = graphql`
   query Topics {
-    allCoursesYaml {
+    Course: allCoursesYaml {
       edges {
         node {
-          end
+          date: end
           id
           tags
           title

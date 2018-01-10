@@ -99,8 +99,7 @@ NonCertificates.propTypes = {
 
 export default function Degrees({ data }) {
   const courses = data.allCoursesYaml.edges.map(e => e.node);
-  const withCerts = courses.filter(c => c.certificate);
-  const withoutCerts = courses.filter(c => !c.certificate);
+  const [withCerts, withoutCerts] = _.partition(courses, c => c.certificate);
   return (
     <div>
       { setPageTitle('Degrees & Certificates') }

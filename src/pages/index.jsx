@@ -12,8 +12,8 @@ import typography from '../util/typography';
 const email = 'cm.lubinski@gmail.com';
 
 const BorderedRow = glamorous.section(row, { borderBottom: '1px solid #000' });
-const ThirdCol = glamorous.section(columns(12, 6, 4));
-const HalfCol = glamorous.section(columns(12, 6));
+const ThirdCol = glamorous.section(columns({ small: 12, medium: 6, large: 4 }));
+const HalfCol = glamorous.section(columns({ small: 12, medium: 6 }));
 const LeftCol = glamorous(HalfCol)({
   borderRight: '1px solid #000',
   paddingRight: typography.rhythm(2 / 3),

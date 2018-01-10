@@ -7,7 +7,7 @@ import Helmet from 'react-helmet';
 import MainMenuLink, { mainMenuHeight } from '../components/main-menu-link';
 import Sidebar from '../components/sidebar';
 import SidebarLink from '../components/sidebar-link';
-import { columns, row, space } from '../styles';
+import { columns, hideOn, row, space } from '../styles';
 import favicon from './favicon.ico';
 import logo from './img/logo.gif';
 import logoLeft from './img/logo_left.gif';
@@ -55,7 +55,10 @@ const cv = (
 const education = (
   <Sidebar title="Education">
     <SidebarLink to="/education/topics/">By Topic</SidebarLink>
-    <SidebarLink to="/education/degrees/">Degrees &amp; Certificates</SidebarLink>
+    <SidebarLink to="/education/degrees/">
+      Degrees &amp; Cert
+      <span css={hideOn({ medium: true })}>ificate</span>s
+    </SidebarLink>
   </Sidebar>
 );
 
@@ -146,7 +149,7 @@ export default function Layout(props) {
       </div>
       <div css={row}>
         { sidebar }
-        <div css={columns(12, 9)}>
+        <div css={columns({ small: 12, medium: 9 })}>
           <glamorous.Div
             background="#DCDFF6"
             borderRadius="10px"

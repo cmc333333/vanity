@@ -1,11 +1,10 @@
-import { css } from 'glamor';
 import glamorous from 'glamorous';
-import moment from 'moment';
 import PropTypes from 'prop-types';
 import React from 'react';
 
 import { columns, row, space, trailingComma } from '../../../styles';
-import { buttonStyle } from './styles';
+import TopicEntry from '../../../util/topic-entry';
+import Button from './button';
 
 const Row = glamorous.div(
   row,
@@ -17,47 +16,48 @@ const Row = glamorous.div(
 );
 
 export default function Entry({
-  activate,
-  entryType,
-  end,
-  inBrowser,
-  tags,
-  title,
-  url,
+  selectTopic,
+  selectableTopics,
+  topicEntry,
 }) {
-  const tagList = Array.from(tags);
-  tagList.sort();
+  const {
+    date,
+    entryType,
+    tags,
+    title,
+    url,
+  } = topicEntry;
+  const tagList = Array.from(tags).sort();
   const tagLinks = tagList.map((tag, idx) => {
-    if (inBrowser) {
-      const props = {
-        ...css(buttonStyle, idx < tagList.length - 1 ? trailingComma : {}),
-        key: tag,
-        onClick: () => activate(tag),
-      };
-      return <button {...props}><span>{ tag }</span></button>;
+    const style = idx === tagList.length - 1 ? {} : trailingComma;
+    if (selectableTopics.has(tag)) {
+      return (
+        <Button css={style} key={tag} onClick={() => selectTopic(tag)}>
+          { tag }
+        </Button>
+      );
     }
-    return tag;
+    return <span css={style} key={tag}>{ tag }</span>;
   });
   return (
     <Row>
-      <div css={columns(5)}>{ url ? <a href={url}>{ title }</a> : title }</div>
-      <div css={columns(1)}>{ entryType }</div>
-      <div css={columns(2)}>{ moment(end).format('MMM Do, YYYY') }</div>
-      <div css={columns(4)}>{ tagLinks }</div>
+      <div css={columns({ small: 12, medium: 10, large: 5 })}>
+        { url ? <a href={url}>{ title }</a> : title }
+      </div>
+      <div css={columns({ small: 6, medium: 2, large: 1 })}>
+        { entryType }
+      </div>
+      <div css={columns({ small: 6, medium: 4, large: 2 })}>
+        { date.format('MMM Do, YYYY') }
+      </div>
+      <div css={columns({ small: 12, medium: 8, large: 4 })}>
+        { tagLinks }
+      </div>
     </Row>
   );
 }
 Entry.propTypes = {
-  activate: PropTypes.func.isRequired,
-  entryType: PropTypes.string.isRequired,
-  end: PropTypes.string.isRequired,
-  inBrowser: PropTypes.bool.isRequired,
-  tags: PropTypes.instanceOf(Set),
-  title: PropTypes.string.isRequired,
-  url: PropTypes.string,
+  selectTopic: PropTypes.func.isRequired,
+  selectableTopics: PropTypes.instanceOf(Set).isRequired,
+  topicEntry: PropTypes.instanceOf(TopicEntry).isRequired,
 };
-Entry.defaultProps = {
-  tags: new Set(),
-  url: '',
-};
-
