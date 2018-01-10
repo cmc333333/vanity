@@ -52,6 +52,7 @@ export default function MainMenuLink({
           fontStyle: 'italic',
           height: mainMenuHeight,
           lineHeight: mainMenuHeight,
+          paddingRight: '4px',
         }}
         to={to}
       >

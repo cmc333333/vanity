@@ -18,7 +18,15 @@ exports.onCreateNode = ({ boundActionCreators, getNode, node }) => {
 };
 
 exports.createPages = async ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+  const { createPage, createRedirect } = boundActionCreators;
+
+  createRedirect({
+    fromPath: '/cv/courses',
+    isPermanent: true,
+    redirectInBrowser: true,
+    toPath: '/education/topics/',
+  });
+
   const result = await graphql(`
     {
       allMarkdownRemark(

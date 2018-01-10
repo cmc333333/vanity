@@ -48,7 +48,6 @@ const cv = (
   <Sidebar title="Curriculum Vitae">
     <SidebarLink to="/">Résumé</SidebarLink>
     <SidebarLink to="/cv/work/">Work History</SidebarLink>
-    <SidebarLink to="/cv/courses/">Courses</SidebarLink>
     <SidebarLink to="/cv/code-samples/">Code Samples</SidebarLink>
   </Sidebar>
 );
@@ -102,6 +101,7 @@ const mainMenu = (
   >
     <MainMenuLink first to="/">Curriculum Vitae</MainMenuLink>
     <MainMenuLink to="/writings/">Writings</MainMenuLink>
+    <MainMenuLink to="/education/topics/">Education</MainMenuLink>
     <MainMenuLink last to="/misc/books/">Misc.</MainMenuLink>
   </glamorous.Ul>
 );
