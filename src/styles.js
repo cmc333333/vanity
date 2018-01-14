@@ -35,7 +35,7 @@ const typography = new Typography({
   bodyWeight: 400,
   headerWeight: 500,
   boldWeight: 'bold',
-  overrideStyles: ({ scale }) => ({
+  overrideStyles: ({ rhythm, scale }) => ({
     a: {
       color: colors.link,
       textDecoration: 'none',
@@ -43,12 +43,30 @@ const typography = new Typography({
     body: {
       backgroundColor: colors.backgroundPage,
     },
-    h1: scale(1),
-    h2: scale(3 / 4),
-    h3: scale(2 / 4),
-    h4: scale(1 / 4),
-    h5: scale(-1 / 4),
-    h6: scale(-2 / 4),
+    h1: {
+      ...scale(1),
+      marginBottom: rhythm(4 / 4),
+    },
+    h2: {
+      ...scale(3 / 4),
+      marginBottom: rhythm(3 / 4),
+    },
+    h3: {
+      ...scale(2 / 4),
+      marginBottom: rhythm(2 / 4),
+    },
+    h4: {
+      ...scale(1 / 4),
+      marginBottom: rhythm(1 / 4),
+    },
+    h5: {
+      ...scale(-1 / 4),
+      marginBottom: rhythm(0 / 4),
+    },
+    h6: {
+      ...scale(-2 / 4),
+      marginBottom: rhythm(0 / 4),
+    },
     img: {
       marginBottom: 0,
     },
