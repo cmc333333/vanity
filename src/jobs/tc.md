@@ -1,6 +1,5 @@
 ---
 company: Grinnell College IT Services
-jobTitle: Technology Consultant
 title: Technology Consultant
 start: 2005-10-01
 end: 2008-05-19

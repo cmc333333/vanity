@@ -1,7 +1,7 @@
 ---
 company: Network Ninja, Inc.
-companyUrl: http://www.networkninja.com/
-jobTitle: Web Developer
+url: http://www.networkninja.com/
+title: Web Developer
 start: 2008-06-06
 end: 2010-08-13
 color: "#25408e"

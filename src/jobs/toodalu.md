@@ -1,7 +1,7 @@
 ---
 company: Toodalu
-companyUrl: http://www.toodalu.com/
-jobTitle: Chief Developer
+url: http://www.toodalu.com/
+title: Chief Developer
 start: 2010-08-16
 end: 2012-11-21
 color: "#0e9"

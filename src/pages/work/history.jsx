@@ -1,14 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Timeline from '../../components/work-history/timeline';
+import JobComponent from '../../components/work/job';
+import Timeline from '../../components/work/timeline';
 import Job from '../../util/job';
 import setPageTitle from '../../util/set-page-title';
 
-export default function Chronology({ data }) {
+export default function WorkHistory({ data }) {
   const jobs = data.Jobs.edges.map(e => new Job({
     color: e.node.frontmatter.color,
     company: e.node.frontmatter.company,
+    html: e.node.html,
     id: e.node.fields.basename,
     end: e.node.frontmatter.end,
     events: e.node.frontmatter.events,
@@ -18,12 +20,13 @@ export default function Chronology({ data }) {
   }));
   return (
     <div>
-      { setPageTitle('Work Chronology') }
+      { setPageTitle('Work History') }
       <Timeline jobs={jobs} />
+      { jobs.map(job => <JobComponent key={job.id} job={job} />) }
     </div>
   );
 }
-Chronology.propTypes = {
+WorkHistory.propTypes = {
   data: PropTypes.shape({
     Jobs: PropTypes.shape({
       edges: PropTypes.arrayOf(PropTypes.shape({
@@ -58,6 +61,10 @@ export const query = graphql`
         fields: {
           dirname: { eq: "jobs" }
         }
+      }
+      sort: {
+        order: DESC
+        fields: [ frontmatter___start ]
       }
     ) {
       edges {

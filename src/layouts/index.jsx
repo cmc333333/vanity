@@ -47,7 +47,7 @@ const misc = (
 const cv = (
   <Sidebar title="Curriculum Vitae">
     <SidebarLink to="/">Résumé</SidebarLink>
-    <SidebarLink to="/cv/work/">Work History</SidebarLink>
+    <SidebarLink to="/work/history/">Work History</SidebarLink>
     <SidebarLink to="/cv/code-samples/">Code Samples</SidebarLink>
   </Sidebar>
 );

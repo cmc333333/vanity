@@ -20,6 +20,7 @@ export default class Job {
   constructor({
     color = '',
     company = '',
+    html = '',
     id = '',
     end = '',
     events,
@@ -29,6 +30,7 @@ export default class Job {
   }) {
     this.color = color || colors.background;
     this.company = company;
+    this.html = html;
     this.id = id;
     this.end = end ? moment(end) : moment().add(3, 'months');
     this.events = (events || []).map(e => new Event(e));

@@ -1,6 +1,5 @@
 ---
 company: Grinnell College IT Services
-jobTitle: Application Developer
 title: Application Developer
 shortTitle: App Developer
 start: 2007-08-01

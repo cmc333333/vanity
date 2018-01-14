@@ -1,3 +1,4 @@
+import glamorous from 'glamorous';
 import _ from 'lodash';
 import moment from 'moment';
 import PropTypes from 'prop-types';
@@ -60,9 +61,9 @@ export default function Timeline({ jobs }) {
   };
 
   return (
-    <div css={colors}>
+    <glamorous.Div css={colors} marginBottom="1rem">
       <ReactTimeline items={items} options={options} />
-    </div>
+    </glamorous.Div>
   );
 }
 Timeline.propTypes = {

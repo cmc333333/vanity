@@ -26,6 +26,12 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
     redirectInBrowser: true,
     toPath: '/education/topics/',
   });
+  createRedirect({
+    fromPath: '/cv/work',
+    isPermanent: true,
+    redirectInBrowser: true,
+    toPath: '/work/history/',
+  });
 
   const result = await graphql(`
     {

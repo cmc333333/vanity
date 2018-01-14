@@ -1,7 +1,7 @@
 ---
 company: Consumer Financial Protection Bureau
-companyUrl: http://www.consumerfinance.gov/
-jobTitle: Backend Developer
+url: http://www.consumerfinance.gov/
+title: Backend Developer
 start: 2012-12-03
 end: 2014-09-05
 color: "#20aa3f"
