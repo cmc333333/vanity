@@ -27,6 +27,7 @@ export default class Job {
     start = '',
     shortTitle = '',
     title = '',
+    url = '',
   }) {
     this.color = color || colors.background;
     this.company = company;
@@ -37,6 +38,7 @@ export default class Job {
     this.start = moment(start);
     this.shortTitle = shortTitle;
     this.title = title;
+    this.url = url;
   }
 
   asTimelineItem(end) {

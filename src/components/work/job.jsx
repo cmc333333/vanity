@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import JobModel from '../../util/job';
-import typography from '../../util/typography';
 
 export default function Job({
   job: {
@@ -19,7 +18,7 @@ export default function Job({
 
   return (
     <div>
-      <h2 css={typography.scale(1 / 3)}>
+      <h2>
         { title } @ { companyEl }
       </h2>
       { body }

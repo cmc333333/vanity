@@ -5,9 +5,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import resume from '../assets/lubinski-resume.pdf';
-import { columns, row } from '../styles';
+import { columns, row, scaleText, spacing } from '../styles';
 import setPageTitle from '../util/set-page-title';
-import typography from '../util/typography';
 
 const email = 'cm.lubinski@gmail.com';
 
@@ -16,19 +15,19 @@ const ThirdCol = glamorous.section(columns({ small: 12, medium: 6, large: 4 }));
 const HalfCol = glamorous.section(columns({ small: 12, medium: 6 }));
 const LeftCol = glamorous(HalfCol)({
   borderRight: '1px solid #000',
-  paddingRight: typography.rhythm(2 / 3),
+  paddingRight: spacing(),
 });
-const RightCol = glamorous(HalfCol)({ paddingLeft: typography.rhythm(2 / 3) });
+const RightCol = glamorous(HalfCol)({ paddingLeft: spacing() });
 const MarkerlessList = glamorous.ul({ listStyleType: 'none', marginBottom: 0 });
 const FlushList = glamorous(MarkerlessList)({ marginLeft: 0 });
 const SectionHeader = glamorous.h4({
   '::after': { content: ':' },
-  marginBottom: typography.rhythm(2 / 3),
-  marginTop: typography.rhythm(1 / 3),
+  marginBottom: spacing(1 / 2),
+  marginTop: spacing(1 / 4),
 });
 const SubSectionHeader = glamorous.h5(
   { fontWeight: 'normal', marginBottom: 0, textDecoration: 'underline' },
-  typography.scale(0),
+  scaleText(0),
 );
 const subSubHeaderCss = css(
   {
@@ -37,7 +36,7 @@ const subSubHeaderCss = css(
     fontWeight: 'normal',
     marginBottom: 0,
   },
-  typography.scale(0),
+  scaleText(0),
 );
 const SubSubHeader = glamorous.h6(subSubHeaderCss);
 const FloatRight = glamorous.span({ float: 'right' });
@@ -48,7 +47,7 @@ function PridePoint({ children, title }) {
       <glamorous.H5 {...subSubHeaderCss}>{ title }</glamorous.H5>{' '}
       <glamorous.P
         display="inline-block"
-        marginBottom={typography.rhythm(2 / 3)}
+        marginBottom={spacing(1 / 2)}
       >
         { children }
       </glamorous.P>
@@ -75,19 +74,15 @@ export default function Index() {
       <div id="resume">
         <BorderedRow css={{ textAlign: 'center' }}>
           <LeftCol>
-            <h2>C.M. Lubinski</h2>
-            <glamorous.H3
-              css={typography.scale(1 / 5)}
-              fontStyle="italic"
-              fontWeight="normal"
-            >
+            <h2 css={scaleText(6 / 4)}>C.M. Lubinski</h2>
+            <glamorous.H3 fontStyle="italic" fontWeight="normal">
               Humble Hacker
             </glamorous.H3>
           </LeftCol>
           <RightCol>
             <glamorous.P
-              marginBottom={typography.rhythm(2 / 3)}
-              marginTop={typography.rhythm(2 / 3)}
+              marginBottom={spacing(1 / 2)}
+              marginTop={spacing(1 / 2)}
             >
               <a href={`mailto:${email}`}>{ email }</a>
               &ndash; 872.333.9262

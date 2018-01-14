@@ -8,7 +8,7 @@ import mmLeftCurve from '../layouts/img/mm_left_curve.gif';
 import mmMiddle from '../layouts/img/mm_middle.gif';
 import mmRight from '../layouts/img/mm_right.gif';
 import mmRightCurve from '../layouts/img/mm_right_curve.gif';
-import typography from '../util/typography';
+import { scaleText } from '../styles';
 
 export const mainMenuHeight = '50px';
 
@@ -44,7 +44,7 @@ export default function MainMenuLink({
     >
       <Link
         css={{
-          ...(typography.scale(1 / 2)),
+          ...(scaleText(1)),
           background: `#5A79A5 url(${mmMiddle}) repeat-x`,
           color: '#FFF',
           display: 'inline-block',

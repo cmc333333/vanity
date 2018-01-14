@@ -3,26 +3,26 @@ import _ from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import { scaleText, spacing } from '../../styles';
 import setPageTitle from '../../util/set-page-title';
-import typography from '../../util/typography';
 
 const University = glamorous.span(
-  typography.scale(1 / 6),
+  scaleText(1 / 4),
   {
     display: 'block',
     fontStyle: 'italic',
-    marginBottom: typography.rhythm(2 / 3),
+    marginBottom: spacing(1 / 2),
   },
 );
-const UniversitylessP = glamorous.p({ marginTop: typography.rhythm(2 / 3) });
+const UniversitylessP = glamorous.p({ marginTop: spacing(1 / 2) });
 
 function Degree({ children, title }) {
   return (
-    <glamorous.Div marginTop={typography.rhythm(1)}>
-      <glamorous.H2 css={typography.scale(1 / 3)} marginBottom={0} marginTop={0}>
+    <glamorous.Div marginTop={spacing()}>
+      <glamorous.H2 marginBottom={0} marginTop={0}>
         { title }
       </glamorous.H2>
-      <glamorous.Div paddingLeft={typography.rhythm(1)}>
+      <glamorous.Div paddingLeft={spacing()}>
         { children }
       </glamorous.Div>
     </glamorous.Div>
@@ -40,8 +40,8 @@ function Certificates({ data }) {
       { ordered.map(wc => (
         <glamorous.Li
           key={wc.title}
-          paddingLeft={typography.rhythm(1)}
-          textIndent={`-${typography.rhythm(1)}`}
+          paddingLeft={spacing()}
+          textIndent={`-${spacing()}`}
         >
           { wc.certificate.type }
           { wc.certificate.distinction ?
@@ -76,8 +76,8 @@ function NonCertificates({ data }) {
       { ordered.map(wc => (
         <glamorous.Li
           key={wc.title}
-          paddingLeft={typography.rhythm(1)}
-          textIndent={`-${typography.rhythm(1)}`}
+          paddingLeft={spacing()}
+          textIndent={`-${spacing()}`}
         >
           {'"'}
           { wc.url ? <a href={wc.url}>{ wc.title }</a> : wc.title }

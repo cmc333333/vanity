@@ -2,8 +2,7 @@ import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import typography from '../util/typography';
-import { columns } from '../styles';
+import { columns, scaleText, spacing } from '../styles';
 
 export default function Sidebar({ children, title }) {
   return (
@@ -13,17 +12,16 @@ export default function Sidebar({ children, title }) {
       color="#346"
       css={columns({ small: 12, medium: 2 })}
       marginRight="2%"
-      marginTop={typography.rhythm(-2 / 3)}
-      paddingLeft={typography.rhythm(1 / 3)}
-      paddingRight={typography.rhythm(1 / 3)}
-      paddingTop={typography.rhythm(2 / 3)}
+      paddingLeft={spacing(1 / 2)}
+      paddingRight={spacing(1 / 2)}
+      paddingTop={spacing(1 / 2)}
     >
-      <glamorous.H2 margin={0} css={typography.scale(0)}>
+      <glamorous.H2 margin={0} css={scaleText(0)}>
         { title }
       </glamorous.H2>
       <glamorous.Ul
         listStyleType="circle"
-        marginLeft={typography.rhythm(2 / 3)}
+        marginLeft={spacing(1 / 2)}
       >
         { children }
       </glamorous.Ul>

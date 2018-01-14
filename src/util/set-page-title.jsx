@@ -10,8 +10,9 @@ export default function setPageTitle(text) {
       borderBottomLeftRadius="20px"
       borderBottomRightRadius="20px"
       color="#FFF"
-      fontSize="x-large"
       key="h1"
+      paddingBottom=".5rem"
+      paddingTop=".5rem"
       margin="0 20% .5em 20%"
       textAlign="center"
     >

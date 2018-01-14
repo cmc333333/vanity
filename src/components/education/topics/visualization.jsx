@@ -4,7 +4,7 @@ import React from 'react';
 import Graph from 'react-graph-vis';
 
 import TopicEntry, { tagGraph } from '../../../util/topic-entry';
-import typography from '../../../util/typography';
+import { spacing } from '../../../styles';
 
 
 export default function Visualization({ entries, getVis, setTopics }) {
@@ -39,7 +39,7 @@ export default function Visualization({ entries, getVis, setTopics }) {
         border="1px solid silver"
         bottom={0}
         margin={0}
-        padding={typography.rhythm(1 / 3)}
+        padding={spacing(1 / 4)}
         position="absolute"
         right={0}
       >

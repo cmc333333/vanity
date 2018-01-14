@@ -1,14 +1,62 @@
 import { css } from 'glamor';
+import gray from 'gray-percentage';
+import Typography from 'typography';
 
 const mediaQueries = {
   medium: '@media (min-width: 640px)',
   large: '@media (min-width: 1024px)',
 };
 
-export const space = '1rem';
 export const colors = {
   background: '#dcdff6',
+  backgroundPage: '#9caac6',
+  bodyText: gray(23, 204),
+  link: '#005580',
 };
+
+const typography = new Typography({
+  baseFontSize: '16px',
+  baseLineHeight: 1.5,
+  bodyFontFamily: [
+    '-apple-system',
+    'BlinkMacSystemFont',
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    'sans-serif',
+  ],
+  scaleRatio: 1.5,
+  bodyColor: colors.bodyText,
+  bodyWeight: 400,
+  headerWeight: 500,
+  boldWeight: 'bold',
+  overrideStyles: ({ scale }) => ({
+    a: {
+      color: colors.link,
+      textDecoration: 'none',
+    },
+    body: {
+      backgroundColor: colors.backgroundPage,
+    },
+    h1: scale(1),
+    h2: scale(3 / 4),
+    h3: scale(2 / 4),
+    h4: scale(1 / 4),
+    h5: scale(-1 / 4),
+    h6: scale(-2 / 4),
+    img: {
+      marginBottom: 0,
+    },
+  }),
+});
+export default typography;
+export const { rhythm: spacing, scale: scaleText } = typography;
+
 
 export const trailingComma = css({
   '::after': {

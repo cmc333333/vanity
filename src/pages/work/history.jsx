@@ -17,6 +17,7 @@ export default function WorkHistory({ data }) {
     start: e.node.frontmatter.start,
     shortTitle: e.node.frontmatter.shortTitle,
     title: e.node.frontmatter.title,
+    url: e.node.frontmatter.url,
   }));
   return (
     <div>

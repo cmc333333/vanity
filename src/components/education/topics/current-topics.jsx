@@ -3,8 +3,7 @@ import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { columns, row, trailingComma } from '../../../styles';
-import typography from '../../../util/typography';
+import { columns, row, spacing, trailingComma } from '../../../styles';
 import Button from './button';
 
 
@@ -16,7 +15,6 @@ export default function CurrentTopics({
     const deactivateList = topics.map((topic, idx) => (
       <Button
         css={css(
-          typography.scale(0),
           idx <= topics.length - 2 ? trailingComma : {},
           idx === topics.length - 2 ? { '::after': { content: ', or ' } } : {},
         )}
@@ -29,12 +27,12 @@ export default function CurrentTopics({
     return (
       <glamorous.Fieldset
         css={row}
-        paddingLeft={typography.rhythm(1)}
-        paddingRight={typography.rhythm(1)}
+        paddingLeft={spacing()}
+        paddingRight={spacing()}
       >
         <glamorous.Legend
           border={0}
-          css={css(typography.scale(0), columns({ small: 12, medium: 2, large: 1 }))}
+          css={columns({ small: 12, medium: 2, large: 1 })}
           fontWeight="bold"
         >
           Topics:

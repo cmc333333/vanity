@@ -7,7 +7,7 @@ import Helmet from 'react-helmet';
 import MainMenuLink, { mainMenuHeight } from '../components/main-menu-link';
 import Sidebar from '../components/sidebar';
 import SidebarLink from '../components/sidebar-link';
-import { colors, columns, hideOn, row, space } from '../styles';
+import { colors, columns, hideOn, row, spacing } from '../styles';
 import favicon from './favicon.ico';
 import logo from './img/logo.gif';
 import logoLeft from './img/logo_left.gif';
@@ -136,7 +136,11 @@ export default function Layout(props) {
   }
 
   return (
-    <div css={{ marginTop: space, paddingLeft: space, paddingRight: space }}>
+    <glamorous.Div
+      marginTop={spacing(1 / 2)}
+      paddingLeft={spacing()}
+      paddingRight={spacing()}
+    >
       <Helmet>
         <link rel="shortcut icon" href={favicon} type="image/x-icon" />
       </Helmet>
@@ -161,7 +165,7 @@ export default function Layout(props) {
           { footer }
         </div>
       </div>
-    </div>
+    </glamorous.Div>
   );
 }
 Layout.propTypes = {

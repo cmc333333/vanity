@@ -2,7 +2,7 @@ import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { columns, row, space, trailingComma } from '../../../styles';
+import { columns, row, spacing, trailingComma } from '../../../styles';
 import TopicEntry from '../../../util/topic-entry';
 import Button from './button';
 
@@ -10,8 +10,8 @@ const Row = glamorous.div(
   row,
   {
     borderBottom: '1px solid black',
-    paddingBottom: space,
-    paddingTop: space,
+    paddingBottom: spacing(1 / 2),
+    paddingTop: spacing(1 / 2),
   },
 );
 
