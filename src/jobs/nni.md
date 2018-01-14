@@ -3,7 +3,8 @@ company: Network Ninja, Inc.
 companyUrl: http://www.networkninja.com/
 jobTitle: Web Developer
 start: 2008-06-06
-end: 2012-08-13
+end: 2010-08-13
+color: "#25408e"
 ---
 *LegalServer*: A webapp for pro bono attorneys, ~500 daily users written with
 OO-PHP, Protoype, Postgres, & Debian

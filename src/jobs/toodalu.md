@@ -4,6 +4,7 @@ companyUrl: http://www.toodalu.com/
 jobTitle: Chief Developer
 start: 2010-08-16
 end: 2012-11-21
+color: "#0e9"
 ---
 *Toodalu*: A charity-driven rewards network, ~50 daily users written with
 Scala, Lift, Postgres, MongoDB, Solr, & Debian

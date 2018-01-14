@@ -4,6 +4,10 @@ companyUrl: http://www.consumerfinance.gov/
 jobTitle: Backend Developer
 start: 2012-12-03
 end: 2014-09-05
+color: "#20aa3f"
+events:
+- title: Bright Idea<br />(Harvard)
+  date: 2015-02-18
 ---
 [*Mapusaurus*](https://github.com/cfpb/mapusaurus): Open source map software
 to detect red-lining concerns written with Python, GeoDjango, Leaflet,

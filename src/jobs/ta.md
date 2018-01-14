@@ -1,6 +1,8 @@
 ---
 company: Grinnell College CS Department
 jobTitle: Teaching Assistant
+title: Teaching Assistant
+shortTitle: TA
 start: 2008-01-01
 end: 2008-05-19
 partTime: true

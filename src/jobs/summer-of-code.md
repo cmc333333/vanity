@@ -1,6 +1,8 @@
 ---
 company: Google, Inc.
 jobTitle: Summer of Code Intern
+title: Summer of Code Intern
+shortTitle: Google
 start: 2007-05-01
 end: 2007-09-30
 partTime: true

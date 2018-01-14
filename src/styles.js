@@ -6,6 +6,9 @@ const mediaQueries = {
 };
 
 export const space = '1rem';
+export const colors = {
+  background: '#dcdff6',
+};
 
 export const trailingComma = css({
   '::after': {

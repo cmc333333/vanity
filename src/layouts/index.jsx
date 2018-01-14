@@ -7,7 +7,7 @@ import Helmet from 'react-helmet';
 import MainMenuLink, { mainMenuHeight } from '../components/main-menu-link';
 import Sidebar from '../components/sidebar';
 import SidebarLink from '../components/sidebar-link';
-import { columns, hideOn, row, space } from '../styles';
+import { colors, columns, hideOn, row, space } from '../styles';
 import favicon from './favicon.ico';
 import logo from './img/logo.gif';
 import logoLeft from './img/logo_left.gif';
@@ -111,7 +111,7 @@ const footer = (
     textAlign="center"
   >
     <glamorous.Span
-      background="#DCDFF6"
+      background={colors.background}
       borderRadius="10px"
       padding="0 1em"
     >
@@ -151,7 +151,7 @@ export default function Layout(props) {
         { sidebar }
         <div css={columns({ small: 12, medium: 9 })}>
           <glamorous.Div
-            background="#DCDFF6"
+            background={colors.background}
             borderRadius="10px"
             color="#222"
             padding="0 2em 2em 2em"
