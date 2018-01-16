@@ -75,13 +75,17 @@ const typography = new Typography({
 export default typography;
 export const { rhythm: spacing, scale: scaleText } = typography;
 
+function trailingStr(content) {
+  return {
+    '::after': {
+      content,
+      marginRight: spacing(1 / 4),
+    },
+  };
+}
 
-export const trailingComma = css({
-  '::after': {
-    content: ', ',
-    marginRight: '4px',
-  },
-});
+export const trailingComma = trailingStr(', ');
+export const trailingColon = trailingStr(': ');
 
 export function hideOn({ small = false, medium = false, large = false }) {
   return css({

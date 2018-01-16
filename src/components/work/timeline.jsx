@@ -67,5 +67,5 @@ export default function Timeline({ jobs }) {
   );
 }
 Timeline.propTypes = {
-  jobs: PropTypes.arrayOf(Job).isRequired,
+  jobs: PropTypes.arrayOf(PropTypes.instanceOf(Job)).isRequired,
 };

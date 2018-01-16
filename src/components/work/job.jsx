@@ -1,12 +1,59 @@
+import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import { scaleText, trailingColon } from '../../styles';
 import JobModel from '../../util/job';
+import TechProject from '../../util/tech-project';
+
+function Impact({ impact }) {
+  if (impact.length) {
+    return (
+      <div>
+        <glamorous.H3 css={scaleText(1 / 4)}>Demonstrated Impact</glamorous.H3>
+        <ul>
+          { impact.map(item => <li key={item}>{ item }</li>) }
+        </ul>
+      </div>
+    );
+  }
+  return null;
+}
+Impact.propTypes = {
+  impact: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
+function Projects({ projects }) {
+  if (projects.length) {
+    return (
+      <div>
+        <h3 css={scaleText(1 / 4)}>Highlighted Projects</h3>
+        <ul>
+          { projects.map(project => (
+            <li key={project.title}>
+              <glamorous.Span css={trailingColon} fontStyle="italic">
+                { project.title }
+              </glamorous.Span>
+              { project.summary }
+            </li>)) }
+        </ul>
+      </div>
+    );
+  }
+  return null;
+}
+Projects.propTypes = {
+  projects: PropTypes.arrayOf(PropTypes.instanceOf(TechProject)).isRequired,
+};
 
 export default function Job({
   job: {
     company,
+    end,
     html,
+    impact,
+    projects,
+    start,
     title,
     url,
   },
@@ -19,9 +66,19 @@ export default function Job({
   return (
     <div>
       <h2>
-        { title } @ { companyEl }
+        { title } &mdash; { companyEl }
+        <glamorous.Span
+          float="right"
+          fontSize={scaleText(0).fontSize /* maintain lineHeight */}
+          fontWeight="normal"
+        >
+          { start.format("MMM 'YY") } &ndash;{' '}
+          { end ? end.format("MMM 'YY") : 'Present '}
+        </glamorous.Span>
       </h2>
       { body }
+      <Impact impact={impact} />
+      <Projects projects={projects} />
     </div>
   );
 }

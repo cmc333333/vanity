@@ -22,8 +22,10 @@ export default class Job {
     company = '',
     html = '',
     id = '',
+    impact,
     end = '',
     events,
+    projects,
     start = '',
     shortTitle = '',
     title = '',
@@ -33,8 +35,10 @@ export default class Job {
     this.company = company;
     this.html = html;
     this.id = id;
-    this.end = end ? moment(end) : moment().add(3, 'months');
+    this.impact = impact || [];
+    this.end = end ? moment(end) : end;
     this.events = (events || []).map(e => new Event(e));
+    this.projects = projects || [];
     this.start = moment(start);
     this.shortTitle = shortTitle;
     this.title = title;
