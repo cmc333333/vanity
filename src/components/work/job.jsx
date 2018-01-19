@@ -2,7 +2,7 @@ import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { scaleText, trailingColon } from '../../styles';
+import { columns, row, scaleText, trailingColon } from '../../styles';
 import JobModel from '../../util/job';
 import TechProject from '../../util/tech-project';
 
@@ -65,12 +65,15 @@ export default function Job({
 
   return (
     <div>
-      <h2>
-        { title } &mdash; { companyEl }
+      <h2 css={row}>
+        <span css={columns({ small: 12, medium: 8, large: 9 })}>
+          { title } &mdash; { companyEl }
+        </span>
         <glamorous.Span
-          float="right"
+          css={columns({ small: 12, medium: 4, large: 3 })}
           fontSize={scaleText(0).fontSize /* maintain lineHeight */}
           fontWeight="normal"
+          textAlign="right"
         >
           { start.format("MMM 'YY") } &ndash;{' '}
           { end ? end.format("MMM 'YY") : 'Present '}

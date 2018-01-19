@@ -137,9 +137,10 @@ export default function Layout(props) {
 
   return (
     <glamorous.Div
+      marginLeft="auto"
+      marginRight="auto"
       marginTop={spacing(1 / 2)}
-      paddingLeft={spacing()}
-      paddingRight={spacing()}
+      maxWidth="1000px"
     >
       <Helmet>
         <link rel="shortcut icon" href={favicon} type="image/x-icon" />

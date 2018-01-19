@@ -35,7 +35,7 @@ export default function Timeline({ jobs }) {
 
   const options = {
     end: nearFuture,
-    height: '250px',
+    height: '350px',
     horizontalScroll: true,
     max: nearFuture,
     min: timelineMin,

@@ -331,8 +331,10 @@ export default function Index() {
               <FloatRight>(Coursera, Udacity, edX, Stanford, etc.)</FloatRight>
             </SubSectionHeader>
             <MarkerlessList>
-              <li>AI, Bioinformatics, Crypto, Data Sci, Discrete Opt,</li>
-              <li>Formal Logic, ML, Network Analysis, NLP, &amp; more</li>
+              <li>
+                AI, Bioinformatics, Crypto, Data Sci, Discrete Opt,
+                Formal Logic, ML, Network Analysis, NLP, &amp; more
+              </li>
             </MarkerlessList>
             <SubSectionHeader>
               Informal
