@@ -61,7 +61,9 @@ export default function Job({
   /* eslint-disable react/no-danger */
   const body = <div dangerouslySetInnerHTML={{ __html: html }} />;
   /* eslint-enable react/no-danger */
-  const companyEl = url ? <a href={url}>{ company }</a> : company;
+  const companyEl = url ?
+    <glamorous.A href={url} whiteSpace="nowrap">{ company }</glamorous.A> :
+    <glamorous.Span whiteSpace="nowrap">{ company }</glamorous.Span>;
 
   return (
     <div>
