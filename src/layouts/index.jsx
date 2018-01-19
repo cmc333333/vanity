@@ -40,15 +40,20 @@ const writings = (
 );
 const misc = (
   <Sidebar title="Misc">
+    <SidebarLink to="/writings/">Writings</SidebarLink>
     <SidebarLink to="/misc/books/">Books</SidebarLink>
     <SidebarLink to="/misc/podcasts/">Podcasts</SidebarLink>
   </Sidebar>
 );
 const cv = (
-  <Sidebar title="Curriculum Vitae">
+  <Sidebar title="At a Glance">
     <SidebarLink to="/">Résumé</SidebarLink>
-    <SidebarLink to="/work/history/">Work History</SidebarLink>
     <SidebarLink to="/cv/code-samples/">Code Samples</SidebarLink>
+  </Sidebar>
+);
+const work = (
+  <Sidebar title="Work">
+    <SidebarLink to="/work/history/">History</SidebarLink>
   </Sidebar>
 );
 const education = (
@@ -99,8 +104,8 @@ const mainMenu = (
     marginLeft="80px"
     marginTop="5px"
   >
-    <MainMenuLink first to="/">Curriculum Vitae</MainMenuLink>
-    <MainMenuLink to="/writings/">Writings</MainMenuLink>
+    <MainMenuLink first to="/">At a Glance</MainMenuLink>
+    <MainMenuLink to="/work/history/">Work</MainMenuLink>
     <MainMenuLink to="/education/topics/">Education</MainMenuLink>
     <MainMenuLink last to="/misc/books/">Misc.</MainMenuLink>
   </glamorous.Ul>
@@ -131,6 +136,8 @@ export default function Layout(props) {
     sidebar = misc;
   } else if (pathname.startsWith('/education/')) {
     sidebar = education;
+  } else if (pathname.startsWith('/work/')) {
+    sidebar = work;
   } else {
     sidebar = cv;
   }
