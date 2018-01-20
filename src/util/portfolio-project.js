@@ -1,4 +1,4 @@
-export default class TechProject {
+export default class PortfolioProject {
   constructor({
     job = '',
     source = '',

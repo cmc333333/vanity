@@ -4,7 +4,7 @@ import React from 'react';
 
 import { columns, row, scaleText, trailingComma, trailingColon } from '../../styles';
 import JobModel from '../../util/job';
-import TechProject from '../../util/tech-project';
+import PortfolioProject from '../../util/portfolio-project';
 
 function ProjectSection({ children, title }) {
   if (children && children.length) {
@@ -42,7 +42,7 @@ function Project({ project: { summary, technology, title } }) {
   );
 }
 Project.propTypes = {
-  project: PropTypes.instanceOf(TechProject).isRequired,
+  project: PropTypes.instanceOf(PortfolioProject).isRequired,
 };
 
 export default function Job({

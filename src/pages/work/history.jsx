@@ -5,12 +5,12 @@ import React from 'react';
 import JobComponent from '../../components/work/job';
 import Timeline from '../../components/work/timeline';
 import Job from '../../util/job';
-import TechProject from '../../util/tech-project';
+import PortfolioProject from '../../util/portfolio-project';
 import setPageTitle from '../../util/set-page-title';
 
 export default function WorkHistory({ data }) {
   const projectsByJob = _.groupBy(
-    data.TechProjects.edges.map(e => new TechProject(e.node.frontmatter)),
+    data.Portfolio.edges.map(e => new PortfolioProject(e.node.frontmatter)),
     'job',
   );
   const jobs = data.Jobs.edges.map(e => new Job({
@@ -61,7 +61,7 @@ WorkHistory.propTypes = {
         }).isRequired,
       })).isRequired,
     }).isRequired,
-    TechProjects: PropTypes.shape({
+    Portfolio: PropTypes.shape({
       edges: PropTypes.arrayOf(PropTypes.shape({
         node: PropTypes.shape({
           frontmatter: PropTypes.shape({
@@ -114,10 +114,10 @@ export const query = graphql`
         }
       }
     }
-    TechProjects: allMarkdownRemark(
+    Portfolio: allMarkdownRemark(
       filter: {
         fields: {
-          dirname: { eq: "tech-projects" }
+          dirname: { eq: "portfolio" }
         }
       }
       sort: {
