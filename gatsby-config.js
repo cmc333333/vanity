@@ -43,6 +43,9 @@ module.exports = {
     },
     'gatsby-transformer-remark',
     'gatsby-transformer-yaml',
+    'gatsby-remark-autolink-headers',
+    'gatsby-plugin-catch-links',
+    'gatsby-plugin-glamor',
     'gatsby-plugin-nprogress',
     {
       resolve: 'gatsby-plugin-google-analytics',
@@ -51,7 +54,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-glamor',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-typography',
       options: {
@@ -59,4 +62,7 @@ module.exports = {
       },
     },
   ],
+  siteMetadata: {
+    siteUrl: 'http://cmlubinski.info',
+  },
 };
