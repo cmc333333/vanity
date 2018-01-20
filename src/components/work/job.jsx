@@ -2,48 +2,47 @@ import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { columns, row, scaleText, trailingColon } from '../../styles';
+import { columns, row, scaleText, trailingComma, trailingColon } from '../../styles';
 import JobModel from '../../util/job';
 import TechProject from '../../util/tech-project';
 
-function Impact({ impact }) {
-  if (impact.length) {
+function ProjectSection({ children, title }) {
+  if (children && children.length) {
     return (
       <div>
-        <glamorous.H3 css={scaleText(1 / 4)}>Demonstrated Impact</glamorous.H3>
-        <ul>
-          { impact.map(item => <li key={item}>{ item }</li>) }
-        </ul>
+        <h3 css={scaleText(1 / 4)}>{ title }</h3>
+        <ul>{ children }</ul>
       </div>
     );
   }
   return null;
 }
-Impact.propTypes = {
-  impact: PropTypes.arrayOf(PropTypes.string).isRequired,
+ProjectSection.propTypes = {
+  children: PropTypes.node,
+  title: PropTypes.string.isRequired,
+};
+ProjectSection.defaultProps = {
+  children: null,
 };
 
-function Projects({ projects }) {
-  if (projects.length) {
-    return (
-      <div>
-        <h3 css={scaleText(1 / 4)}>Highlighted Projects</h3>
-        <ul>
-          { projects.map(project => (
-            <li key={project.title}>
-              <glamorous.Span css={trailingColon} fontStyle="italic">
-                { project.title }
-              </glamorous.Span>
-              { project.summary }
-            </li>)) }
-        </ul>
-      </div>
-    );
-  }
-  return null;
+
+function Project({ project: { summary, technology, title } }) {
+  const techList = technology.map((tech, idx) => (
+    <span css={idx === technology.length - 1 ? {} : trailingComma} key={tech}>
+      { tech }
+    </span>
+  ));
+  return (
+    <li>
+      <glamorous.Span css={trailingColon} fontStyle="italic">
+        { title }
+      </glamorous.Span>
+      { summary }<br />{ techList }
+    </li>
+  );
 }
-Projects.propTypes = {
-  projects: PropTypes.arrayOf(PropTypes.instanceOf(TechProject)).isRequired,
+Project.propTypes = {
+  project: PropTypes.instanceOf(TechProject).isRequired,
 };
 
 export default function Job({
@@ -82,8 +81,12 @@ export default function Job({
         </glamorous.Span>
       </h2>
       { body }
-      <Impact impact={impact} />
-      <Projects projects={projects} />
+      <ProjectSection title="Demonstrated Impact">
+        { impact.map(line => <li key={line}>{ line }</li>) }
+      </ProjectSection>
+      <ProjectSection title="Project Spotlight">
+        { projects.map(proj => <Project key={proj.title} project={proj} />) }
+      </ProjectSection>
     </div>
   );
 }
