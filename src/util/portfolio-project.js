@@ -1,5 +1,6 @@
 export default class PortfolioProject {
   constructor({
+    html = '',
     job = '',
     source = '',
     summary = '',
@@ -7,6 +8,7 @@ export default class PortfolioProject {
     title = '',
     url = '',
   }) {
+    this.html = html;
     this.job = job;
     this.source = source;
     this.summary = summary;
