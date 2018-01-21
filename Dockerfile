@@ -17,6 +17,7 @@ RUN npm install --only=prod
 
 
 COPY ["gatsby-config.js", "gatsby-node.js", "/app/"]
+COPY ["data", "/app/data/"]
 COPY ["plugins", "/app/plugins/"]
 COPY ["src", "/app/src/"]
 COPY ["static", "/app/static/"]
