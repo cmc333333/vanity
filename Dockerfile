@@ -3,7 +3,7 @@ FROM node:8.9.3
 EXPOSE 80
 ENV NODE_ENV=production
 
-COPY ["nginx.conf", "/etc/nginx/sites-enables/default"]
+COPY ["nginx.conf", "/etc/nginx/sites-enabled/default"]
 
 RUN apt-get update \
     && apt-get -y install nginx \
