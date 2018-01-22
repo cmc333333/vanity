@@ -8,21 +8,16 @@ color: "#20aa3f"
 events:
 - title: Bright Idea<br />(Harvard)
   date: 2015-02-18
+impact:
+- Shipped three multi-month software projects and two significant prototypes,
+  cementing the success of the first round of T&I fellows.
+- Improved the team's code quality by setting a high bar; led CFPB in commits,
+  test coverage, alignment with style guides, and depth of code review.
+- Aided government accountability through groups focused on Transparency &
+  Communications (Co-Chair), Open Source, and Release Management as well as
+  writing T&I's [first blog
+  post](http://cfpb.github.io/articles/rules-rules/).
+- Influenced co-workers and management by creating nearly a dozen
+  presentations, ranging from technology-specific decision-making to
+  longer-term policy manifestos.
 ---
-*Better Government*: One step at a time
-
-* Co-chair of the Transparency & Communications working group, writing the
-  first CFPB technical blog
-  [post](http://cfpb.github.io/articles/rules-rules/) (Jekyll)
-* Heavily involved in the Open Source working group; reviewed projects for
-  release and became CFPB's top committer
-* Participated in release/change management meetings, “business capability”
-  discussions, etc. to help steer our efforts
-* Maintained an internal Prose.io instance to make contributing to our
-  enterprise Github easier for non-tech folks
-* Championed pull-request code reviews; copious, automated tests; license
-  attribution; and rapid, public deployments
-* Internal technical presentations on TastyPie, security, parsing, static site
-  generators, and tech-centric project proposals
-* Worked remotely, visiting D.C. once a quarter; kept in contact with my team
-  via chat, phone, and occasional webex

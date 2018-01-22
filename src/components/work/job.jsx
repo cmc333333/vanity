@@ -1,4 +1,5 @@
 import glamorous from 'glamorous';
+import Markdown from 'markdown-to-jsx';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -82,7 +83,7 @@ export default function Job({
       </h2>
       { body }
       <ProjectSection title="Demonstrated Impact">
-        { impact.map(line => <li key={line}>{ line }</li>) }
+        { impact.map(line => <li key={line}><Markdown>{ line }</Markdown></li>) }
       </ProjectSection>
       <ProjectSection title="Project Spotlight">
         { projects.map(proj => <Project key={proj.title} project={proj} />) }
