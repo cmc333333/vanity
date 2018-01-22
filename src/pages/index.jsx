@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import resume from '../assets/lubinski-resume.pdf';
-import { columns, row, scaleText, spacing } from '../styles';
+import { columns, mediaQueries, row, scaleText, spacing } from '../styles';
 import setPageTitle from '../util/set-page-title';
 
 const email = 'cm.lubinski@gmail.com';
@@ -14,7 +14,11 @@ const BorderedRow = glamorous.section(row, { borderBottom: '1px solid #000' });
 const ThirdCol = glamorous.section(columns({ small: 12, medium: 6, large: 4 }));
 const HalfCol = glamorous.section(columns({ small: 12, medium: 6 }));
 const LeftCol = glamorous(HalfCol)({
-  borderRight: '1px solid #000',
+  borderBottom: '1px solid #000',
+  [mediaQueries.medium]: {
+    borderBottom: 'none',
+    borderRight: '1px solid #000',
+  },
   paddingRight: spacing(),
 });
 const RightCol = glamorous(HalfCol)({ paddingLeft: spacing() });

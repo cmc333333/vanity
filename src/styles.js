@@ -2,7 +2,7 @@ import { css } from 'glamor';
 import gray from 'gray-percentage';
 import Typography from 'typography';
 
-const mediaQueries = {
+export const mediaQueries = {
   medium: '@media (min-width: 640px)',
   large: '@media (min-width: 1024px)',
 };
