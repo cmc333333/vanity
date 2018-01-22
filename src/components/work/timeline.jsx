@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ReactTimeline from 'react-visjs-timeline';
 
+import { spacing } from '../../styles';
 import Job from '../../util/job';
 
 const timelineMin = moment('2005-08-01');
@@ -35,13 +36,13 @@ export default function Timeline({ jobs }) {
 
   const options = {
     end: nearFuture,
-    height: '350px',
+    height: '300px',
     horizontalScroll: true,
     max: nearFuture,
     min: timelineMin,
     selectable: false,
     showCurrentTime: false,
-    start: moment().subtract(5, 'years'),
+    start: moment().subtract(4, 'years'),
     zoomable: false,
   };
 
@@ -61,8 +62,18 @@ export default function Timeline({ jobs }) {
   };
 
   return (
-    <glamorous.Div css={colors} marginBottom="1rem">
+    <glamorous.Div css={colors} marginBottom="1rem" position="relative">
       <ReactTimeline items={items} options={options} />
+      <glamorous.P
+        bottom={0}
+        margin={0}
+        padding={spacing(1 / 4)}
+        position="absolute"
+        textAlign="center"
+        width="100%"
+      >
+        Drag left or right to see more.
+      </glamorous.P>
     </glamorous.Div>
   );
 }
