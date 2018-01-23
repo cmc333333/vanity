@@ -8,6 +8,10 @@ color: "#20aa3f"
 events:
 - title: Bright Idea<br />(Harvard)
   date: 2015-02-18
+- title: Wrote First<br />Technical Blog
+  date: 2014-01-31
+- title: '"One Federal Website<br />That Works" (Bloomberg)'
+  date: 2013-10-29
 impact:
 - Shipped three multi-month software projects and two significant prototypes,
   cementing the success of the first round of T&I fellows.

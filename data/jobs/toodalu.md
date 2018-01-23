@@ -1,10 +1,17 @@
 ---
-company: Toodalu
+company: Toodalu, LLC
 url: http://www.toodalu.com/
 title: Chief Developer
 start: 2010-08-16
 end: 2012-11-21
 color: "#0e9"
+events:
+- title: Major Pivot<br />to Charity app
+  date: 2011-04-04
+- title: Moxie Award Finalist,<br />Startup of the Month<br />(BuiltIn Chicago)
+  date: 2012-07-01
+- title: Toodalu Acquired<br />(Spring Rewards)
+  date: 2013-01-01
 ---
 *Toodalu*: A charity-driven rewards network, ~50 daily users written with
 Scala, Lift, Postgres, MongoDB, Solr, & Debian
