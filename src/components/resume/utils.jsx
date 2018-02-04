@@ -59,7 +59,7 @@ export const InlineList = glamorous(MarkerlessList)({
   fontStyle: 'italic',
   '& li': {
     display: 'inline',
-    '::after': { content: ' ▪ ' },
+    '::after': { content: ' • ' },
   },
   '& li:last-child': {
     '::after': { content: 'none' },

@@ -32,11 +32,11 @@ export default function Contact() {
         </glamorous.H3>
       </LeftCol>
       <ContactRight>
-        <a href={`mailto:${email}`}>{ email }</a> ▪ 872.333.9262
+        <a href={`mailto:${email}`}>{ email }</a> • 872.333.9262
         <br />
         Pittsburgh, PA 15203
         <br />
-        <a href={website}>{ website }</a> ▪{' '}
+        <a href={website}>{ website }</a> •{' '}
         <a href="https://github.com/cmc333333">GitHub</a>
       </ContactRight>
     </BorderedRow>
