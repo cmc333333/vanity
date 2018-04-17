@@ -1,0 +1,11 @@
+#!/bin/bash
+set -euo pipefail
+
+docker run\
+  --rm -it\
+  --env NODE_ENV=${NODE_ENV:-dev}\
+  --publish 8000:8000\
+  --volume $PWD:/usr/src/app\
+  --workdir /usr/src/app\
+  node:8.9.3\
+  npm "$@"
