@@ -48,7 +48,6 @@ const misc = (
 const cv = (
   <Sidebar title="At a Glance">
     <SidebarLink to="/">Résumé</SidebarLink>
-    <SidebarLink to="/cv/code-samples/">Code Samples</SidebarLink>
   </Sidebar>
 );
 const work = (
