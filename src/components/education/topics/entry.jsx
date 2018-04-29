@@ -22,7 +22,6 @@ export default function Entry({
 }) {
   const {
     date,
-    entryType,
     tags,
     title,
     url,
@@ -41,16 +40,13 @@ export default function Entry({
   });
   return (
     <Row>
-      <div css={columns({ small: 12, medium: 10, large: 5 })}>
+      <div css={columns({ small: 12, medium: 12, large: 5 })}>
         { url ? <a href={url}>{ title }</a> : title }
       </div>
-      <div css={columns({ small: 6, medium: 2, large: 1 })}>
-        { entryType }
-      </div>
-      <div css={columns({ small: 6, medium: 4, large: 2 })}>
+      <div css={columns({ small: 12, medium: 4, large: 2 })}>
         { date.format('MMM Do, YYYY') }
       </div>
-      <div css={columns({ small: 12, medium: 8, large: 4 })}>
+      <div css={columns({ small: 12, medium: 8, large: 5 })}>
         { tagLinks }
       </div>
     </Row>
