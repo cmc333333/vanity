@@ -20,8 +20,8 @@ export default function Pride() {
         customer service
       </ParagraphWithTitle>
       <ParagraphWithTitle title="Purpose">
-        matters; I write tools for pro bono attorneys, charities, regulators,
-        the public, and other do-gooders
+        matters;  I write software for legal aid agencies, charities,
+        researchers, regulators and the public
       </ParagraphWithTitle>
     </section>
   );

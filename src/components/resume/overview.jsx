@@ -10,9 +10,11 @@ const TagList = glamorous(InlineList)({ marginBottom: baseSpace });
 export default function Overview() {
   return (
     <BorderedRow>
-      <SectionHeader css={columns({ small: 12 })}>Overview</SectionHeader>
+      <SectionHeader css={columns({ small: 12 })}>
+        Skills &amp; Hats
+      </SectionHeader>
       <ThirdCol>
-        <SubSectionHeader>APIs &amp; Data</SubSectionHeader>
+        <SubSectionHeader>APIs &amp; Data Wrangler</SubSectionHeader>
         <TagList>
           <li>Python</li>
           <li>Postgres</li>
@@ -26,7 +28,7 @@ export default function Overview() {
         </MarkerlessList>
       </ThirdCol>
       <ThirdCol>
-        <SubSectionHeader>Web Development</SubSectionHeader>
+        <SubSectionHeader>Web Developer</SubSectionHeader>
         <TagList>
           <li>Django</li>
           <li>NodeJS</li>
@@ -41,7 +43,7 @@ export default function Overview() {
         </MarkerlessList>
       </ThirdCol>
       <ThirdCol>
-        <SubSectionHeader>Team &amp; Workflow</SubSectionHeader>
+        <SubSectionHeader>Communicator &amp; Team Player</SubSectionHeader>
         <TagList>
           <li>Agile</li>
           <li>User-Centered</li>

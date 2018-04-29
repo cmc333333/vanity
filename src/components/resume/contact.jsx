@@ -5,7 +5,7 @@ import { scaleText } from '../../styles';
 import { baseSpace, BorderedRow, LeftCol, RightCol } from './utils';
 
 const email = 'cm.lubinski@gmail.com';
-const website = 'http://cmlubinski.info';
+const website = 'https://cmlubinski.info';
 
 const ContactRight = glamorous(RightCol)({
   marginBottom: baseSpace,

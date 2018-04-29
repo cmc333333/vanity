@@ -73,24 +73,24 @@ export default function WorkHistory() {
       </TechList>
       <ul>
         <li>
-          Launched five new federal software systems and significantly
-          extended six more as a full-stack developer
+          Launched a dozen significant projects through close collaboration
+          with agency partners, designers, and devs
         </li>
         <li>
-          Helped guide waterfall-centric clients, agile engineers, &amp;
-          research-oriented designers to successful sprints
+          Spanned full development stack, including devops, ETL scripts, APIs,
+          security, interfaces, and visualizations
+        </li>
+        <li>
+          Promoted to “Lead” of 30+ engineers; hosted presentations,
+          discussions, code reviews, and pairing sessions
         </li>
         <li>
           Set high expectations for code contributions, focusing on
           legibility, testability, and clean code principles
         </li>
         <li>
-          Promoted to “Lead” of 30+ engineers; hosted presentations, post
-          mortems, code reviews, &amp; pairing sessions
-        </li>
-        <li>
           Filtered ~100 resumes and interviewed nearly 50 technical
-          candidates, leading to seven 18F hires
+          candidates, leading to eight 18F hires
         </li>
       </ul>
       <JobHeader
@@ -172,7 +172,7 @@ export default function WorkHistory() {
         title="Web Developer"
       />
       <Description>
-        White-labeled case management tool for pro bono attorneys, aiding
+        White-labeled case management tool for pro bono legal aid, providing
         document/client tracking and reporting
       </Description>
       <TechList>
