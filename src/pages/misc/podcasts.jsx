@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import setPageTitle from '../../util/set-page-title';
-import { colors }, styles from '../../styles';
+import styles, { colors } from '../../styles';
 
 function Podcast({
   description,
