@@ -1,7 +1,9 @@
+import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 
 import setPageTitle from '../../util/set-page-title';
+import { colors }, styles from '../../styles';
 
 function Podcast({
   description,
@@ -10,12 +12,18 @@ function Podcast({
   title,
 }) {
   return (
-    <div>
+    <glamorous.Div
+      borderBottomColor={colors.bodyText}
+      borderBottomStyle="solid"
+      borderBottomWidth="1px"
+      marginBottom={styles.rhythm(0.5)}
+      paddingBottom={styles.rhythm(0.5)}
+    >
       <h4 style={{ display: 'inline-block' }}><a href={link}>{ title }</a></h4>
       {' | '}
       <a href={latestUrl}>[Play]</a>
-      <div>{ description }</div>
-    </div>
+      <div dangerouslySetInnerHTML={{ __html: description}} />
+    </glamorous.Div>
   );
 }
 Podcast.propTypes = {
