@@ -43,7 +43,7 @@ export default function Overview() {
         </MarkerlessList>
       </ThirdCol>
       <ThirdCol>
-        <SubSectionHeader>Communicator &amp; Team Player</SubSectionHeader>
+        <SubSectionHeader>Communicator &amp; Teammate</SubSectionHeader>
         <TagList>
           <li>Agile</li>
           <li>User-Centered</li>
