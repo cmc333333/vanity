@@ -19,7 +19,9 @@ function Podcast({
       marginBottom={styles.rhythm(0.5)}
       paddingBottom={styles.rhythm(0.5)}
     >
-      <h4 style={{ display: 'inline-block' }}><a href={link}>{ title }</a></h4>
+      <glamorous.H4 display="inline-block">
+        <a href={link}>{ title }</a>
+      </glamorous.H4>
       {' | '}
       <a href={latestUrl}>[Play]</a>
       <div dangerouslySetInnerHTML={{ __html: description}} />
