@@ -120,7 +120,7 @@ const footer = (
       borderRadius="10px"
       padding="0 1em"
     >
-      &copy; C.M. Lubinski 2008-2018
+      &copy; C.M. Lubinski 2008-2019
     </glamorous.Span>
   </glamorous.Div>
 );
