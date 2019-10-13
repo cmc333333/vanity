@@ -1,11 +1,12 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 
 export default function DrupalsServicesModule() {
   return (
-    <div>
+    <Layout>
       { setPageTitle("Drupal's Services Module") }
       <p>
         Luckily, Drupal has the{' '}
@@ -171,7 +172,6 @@ export default function DrupalsServicesModule() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }
-

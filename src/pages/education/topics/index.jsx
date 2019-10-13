@@ -1,3 +1,4 @@
+import { graphql } from 'gatsby';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -6,6 +7,7 @@ import setPageTitle from '../../../util/set-page-title';
 import CurrentTopics from '../../../components/education/topics/current-topics';
 import Entry from '../../../components/education/topics/entry';
 import Visualization from '../../../components/education/topics/visualization';
+import Layout from '../../../layouts';
 import TopicEntry, { commonTags } from '../../../util/topic-entry';
 
 
@@ -61,7 +63,7 @@ export default class Topics extends React.Component {
 
   render() {
     return (
-      <div>
+      <Layout>
         { setPageTitle('Education by Topic') }
         <CurrentTopics deactivate={this.deactivate} topics={this.state.selectedTopics} />
         { this.state.inBrowser ?
@@ -77,7 +79,7 @@ export default class Topics extends React.Component {
             selectableTopics={this.state.inBrowser ? this.common : new Set()}
             topicEntry={topicEntry}
           />)) }
-      </div>
+      </Layout>
     );
   }
 }
@@ -98,7 +100,7 @@ Topics.propTypes = {
 };
 
 export const query = graphql`
-  query Topics {
+  {
     Course: allCoursesYaml {
       edges {
         node {

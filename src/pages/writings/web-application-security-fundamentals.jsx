@@ -1,11 +1,12 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../layouts';
 import setPageTitle from '../../util/set-page-title';
 
 export default function WebApplicationSecurityFundamentals() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Web Application Security Fundamentals') }
       <div style={{ textAlign: 'center' }}>
         Given as a{' '}
@@ -798,6 +799,6 @@ export default function WebApplicationSecurityFundamentals() {
         authentication privileges as needed. I may have just ended by ISP
         contract and would prefer my old IP have special status.
       </p>
-    </div>
+    </Layout>
   );
 }

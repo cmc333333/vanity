@@ -1,11 +1,12 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 
 export default function WebServices() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Web Services') }
       <h2>Web 2.0 : The Need</h2>
       <p>
@@ -107,6 +108,6 @@ export default function WebServices() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }

@@ -1,11 +1,12 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 
 export default function UsefulFeatures() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('A List of Some Other Useful Features') }
       <p>
         The following is a list of spiffy features and a short explaination.
@@ -120,6 +121,6 @@ export default function UsefulFeatures() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }

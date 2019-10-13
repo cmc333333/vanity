@@ -1,11 +1,12 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 
 export default function Index() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Programming Languages for Web Developers') }
       <p>
         I consider myself a programming languages connoisseur; I truly love to
@@ -32,6 +33,6 @@ export default function Index() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }

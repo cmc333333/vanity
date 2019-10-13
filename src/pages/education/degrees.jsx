@@ -1,8 +1,10 @@
+import { graphql } from 'gatsby';
 import glamorous from 'glamorous';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Layout from '../../layouts';
 import { scaleText, spacing } from '../../styles';
 import setPageTitle from '../../util/set-page-title';
 
@@ -101,7 +103,7 @@ export default function Degrees({ data }) {
   const courses = data.allCoursesYaml.edges.map(e => e.node);
   const [withCerts, withoutCerts] = _.partition(courses, c => c.certificate);
   return (
-    <div>
+    <Layout>
       { setPageTitle('Degrees & Certificates') }
       <Degree title="Master of Science, Computer Science (with Distinction)">
         <University>
@@ -154,7 +156,7 @@ export default function Degrees({ data }) {
         </UniversitylessP>
         <NonCertificates data={withoutCerts} />
       </Degree>
-    </div>
+    </Layout>
   );
 }
 Degrees.propTypes = {
@@ -178,7 +180,7 @@ Degrees.propTypes = {
 };
 
 export const query = graphql`
-  query Certs {
+  {
     allCoursesYaml(
       filter: {
         university: { regex: "/^(?!Grinnell)(?!DePaul)/" }

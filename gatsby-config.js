@@ -130,6 +130,7 @@ module.exports = {
     'gatsby-remark-autolink-headers',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-glamor',
+    'gatsby-plugin-lodash',
     'gatsby-plugin-nprogress',
     {
       resolve: 'gatsby-plugin-google-analytics',

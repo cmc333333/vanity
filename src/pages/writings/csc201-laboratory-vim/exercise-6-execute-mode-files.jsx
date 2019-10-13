@@ -1,12 +1,13 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 import './csc201-laboratory-vim.css';
 
 export default function ExecuteModeFiles() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Exercise 6: Execute Mode and Files') }
       <p>
         We now reach the last major mode of ViM, the &ldquo;execute&rdquo;
@@ -265,7 +266,7 @@ export default function ExecuteModeFiles() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }
 

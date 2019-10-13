@@ -1,7 +1,7 @@
 const path = require('path');
 
-exports.onCreateNode = ({ boundActionCreators, getNode, node }) => {
-  const { createNodeField } = boundActionCreators;
+exports.onCreateNode = ({ actions, getNode, node }) => {
+  const { createNodeField } = actions;
   if (node.internal.type === 'MarkdownRemark') {
     const { relativePath } = getNode(node.parent);
     createNodeField({
@@ -17,8 +17,8 @@ exports.onCreateNode = ({ boundActionCreators, getNode, node }) => {
   }
 };
 
-exports.createPages = async ({ graphql, boundActionCreators }) => {
-  const { createPage, createRedirect } = boundActionCreators;
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage, createRedirect } = actions;
 
   createRedirect({
     fromPath: '/cv/courses',

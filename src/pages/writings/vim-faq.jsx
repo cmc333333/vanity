@@ -1,11 +1,12 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../layouts';
 import setPageTitle from '../../util/set-page-title';
 
 export default function VimFaq() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Vim FAQ') }
       <p>
         This is a bit of an addendum to my original{' '}
@@ -504,6 +505,6 @@ export default function VimFaq() {
         a specific hotkey, adding something like{' '}
         <code>noremap &lt;F4&gt; :NERDTree&lt;CR&gt;</code> to your .vimrc.
       </p>
-    </div>
+    </Layout>
   );
 }

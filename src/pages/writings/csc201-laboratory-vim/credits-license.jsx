@@ -1,11 +1,12 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 
 export default function CreditsLicense() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Credits and License') }
       <p>
         Written by C.M. Lubinski, January 2008, with help from Marge M.
@@ -23,6 +24,6 @@ export default function CreditsLicense() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }

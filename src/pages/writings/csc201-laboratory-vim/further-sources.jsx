@@ -1,11 +1,12 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 
 export default function FurtherSources() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Further Sources') }
       <p>
         Many of the examples were borrowed and modified from the examples
@@ -51,6 +52,6 @@ export default function FurtherSources() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }

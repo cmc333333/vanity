@@ -1,12 +1,13 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 import './csc201-laboratory-vim.css';
 
 export default function RevisitingInsertMode() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Exercise 4: Revisiting Insert Mode') }
       <p>
         Now that we&rsquo;ve covered some more command mechanics, I&rsquo;d
@@ -149,6 +150,6 @@ export default function RevisitingInsertMode() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }

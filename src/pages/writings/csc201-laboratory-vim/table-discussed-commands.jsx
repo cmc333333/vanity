@@ -1,12 +1,13 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 import './csc201-laboratory-vim.css';
 
 export default function DiscussedCommands() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Table of Discussed Commands') }
       <table>
         <thead>
@@ -678,7 +679,6 @@ export default function DiscussedCommands() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }
-

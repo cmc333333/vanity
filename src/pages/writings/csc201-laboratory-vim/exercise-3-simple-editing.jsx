@@ -1,12 +1,13 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 import './csc201-laboratory-vim.css';
 
 export default function SimpleEditing() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Exercise 3: Simple Editing') }
       <p>
         We begin with the &ldquo;delete&rdquo; command. As with most commands,
@@ -175,7 +176,7 @@ export default function SimpleEditing() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }
 

@@ -1,11 +1,12 @@
-import Link, { withPrefix } from 'gatsby-link';
+import { Link, withPrefix } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 
 export default function AddingStructure() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('PHP : Adding Some Structure') }
       <p>
         We now create a PHP object which will allow us to access our Drupal
@@ -282,6 +283,6 @@ export default function AddingStructure() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }

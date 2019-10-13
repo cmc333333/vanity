@@ -1,12 +1,13 @@
 import React from 'react';
 
+import Layout from '../../layouts';
 import setPageTitle from '../../util/set-page-title';
 
 const highlight = { backgroundColor: '#ff0' };
 
 export default function CrypotgraphyCoders() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Cryptography (and Security) for Coders') }
       <p>
         This page was written to supplement my Cryptography (and Security) for
@@ -1038,6 +1039,6 @@ export default function CrypotgraphyCoders() {
         performed on the underlying plain text. Unfortunately, these methods
         are terribly, terribly slow and are almost never used in practice.
       </p>
-    </div>
+    </Layout>
   );
 }

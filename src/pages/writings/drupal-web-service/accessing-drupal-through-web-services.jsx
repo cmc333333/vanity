@@ -1,11 +1,12 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 
 export default function AccessingDrupal() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Accessing Drupal through Web Services') }
       <p>
         Regardless of the mechanism used for accessing your Drupal site
@@ -149,6 +150,6 @@ export default function AccessingDrupal() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }

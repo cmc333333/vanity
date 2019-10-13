@@ -1,10 +1,11 @@
 import React from 'react';
 
+import Layout from '../../layouts';
 import setPageTitle from '../../util/set-page-title';
 
 export default function PHP53() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('What Does PHP 5.3 Mean for Drupal?') }
       <p>
         For Drupal Camp Chicago 2010, I presented on PHP 5.3 for Drupal
@@ -24,6 +25,6 @@ export default function PHP53() {
         width="555"
       />
       <p>Or, see the <a href="http://www.cdmug.org/node/244">video</a></p>
-    </div>
+    </Layout>
   );
 }

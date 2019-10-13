@@ -1,12 +1,13 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 import './csc201-laboratory-vim.css';
 
 export default function ProgrammingVim() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Exercise 9: Programming with ViM') }
       <p>
         Though ViM was designed to be a multifunctional text editor, it is
@@ -369,7 +370,6 @@ export default function ProgrammingVim() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }
-

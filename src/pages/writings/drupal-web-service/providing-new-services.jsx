@@ -1,11 +1,12 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 
 export default function ProvidingNewServices() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Providing New Services') }
       <p>
         The final topic for this presentation regarding adding new services
@@ -71,6 +72,6 @@ export default function ProvidingNewServices() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }

@@ -1,11 +1,12 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 
 export default function Intro() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('CSC201 Laboratory: ViM') }
       <p>
         In this lab, we will be working with the versatile open-source editor,
@@ -87,6 +88,6 @@ export default function Intro() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }

@@ -1,8 +1,9 @@
-import Link from 'gatsby-link';
+import { graphql, Link } from 'gatsby';
 import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Layout from '../../layouts';
 import { trailingComma } from '../../styles';
 import setPageTitle from '../../util/set-page-title';
 
@@ -33,10 +34,10 @@ export default function CodeSamples({ data }) {
     );
   });
   return (
-    <div>
+    <Layout>
       { setPageTitle('Code Samples') }
       <ul>{ children }</ul>
-    </div>
+    </Layout>
   );
 }
 CodeSamples.propTypes = {
@@ -59,7 +60,7 @@ CodeSamples.propTypes = {
 };
 
 export const query = graphql`
-  query Samples {
+  {
     allMarkdownRemark(
       filter: {
         fields: {

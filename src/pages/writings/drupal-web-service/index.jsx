@@ -1,11 +1,12 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 
 export default function Index() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Drupal as a Web Service') }
       <p>
         I gave a{' '}
@@ -56,6 +57,6 @@ export default function Index() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }

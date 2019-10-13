@@ -7,8 +7,8 @@ const callbackParseString = require('xml2js').parseString;
 
 const parseString = promisify(callbackParseString);
 
-exports.sourceNodes = async ({ boundActionCreators }, pluginOptions) => {
-  const { createNode } = boundActionCreators;
+exports.sourceNodes = async ({ actions }, pluginOptions) => {
+  const { createNode } = actions;
   await Promise.all(pluginOptions.rsses.map(async (rssUrl) => {
     const { data } = await axios.get(rssUrl);
     const { rss: { channel } } = await parseString(data);

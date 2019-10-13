@@ -1,12 +1,13 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 import './csc201-laboratory-vim.css';
 
 export default function ExecuteModeFiles() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Exercise 7: Searching and Substituting') }
       <p>
         Searching and substitution are essential to any application that works
@@ -199,6 +200,6 @@ export default function ExecuteModeFiles() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }

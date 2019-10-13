@@ -1,4 +1,4 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';

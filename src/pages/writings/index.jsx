@@ -1,11 +1,12 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../layouts';
 import setPageTitle from '../../util/set-page-title';
 
 export default function Writings() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Writings') }
       <div>
         <p>
@@ -163,6 +164,6 @@ export default function Writings() {
           publicly and thoroughly vetted.
         </p>
       </div>
-    </div>
+    </Layout>
   );
 }

@@ -1,12 +1,13 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 import './csc201-laboratory-vim.css';
 
 export default function VimrcFile() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Exercise 8: The .vimrc File') }
       <p>
         As you learned with your introduction to Emacs, many Unix programs
@@ -209,7 +210,6 @@ export default function VimrcFile() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }
-

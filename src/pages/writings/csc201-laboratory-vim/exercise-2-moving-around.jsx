@@ -1,12 +1,13 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 import './csc201-laboratory-vim.css';
 
 export default function MovingAround() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Exercise 2: Moving Around') }
       <p>
         In both insert and command mode, movement keys include those that one
@@ -169,6 +170,6 @@ export default function MovingAround() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }

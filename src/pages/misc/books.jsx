@@ -1,6 +1,8 @@
+import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Layout from '../../layouts';
 import setPageTitle from '../../util/set-page-title';
 
 
@@ -40,7 +42,7 @@ Book.defaultProps = {
 export default function Books({ data }) {
   const books = data.allGoodreads.edges.map(e => e.node.book);
   return (
-    <div>
+    <Layout>
       { setPageTitle('Books') }
       <h3>Currently Reading</h3>
       { books.filter(b => b.currentlyReading).map(b => (
@@ -72,7 +74,7 @@ export default function Books({ data }) {
         Content from{' '}
         <a href="http://goodreads.com">GoodReads</a>
       </p>
-    </div>
+    </Layout>
   );
 }
 Books.propTypes = {
@@ -98,7 +100,7 @@ Books.propTypes = {
 
 
 export const query = graphql`
-  query Books {
+  {
     allGoodreads (
       filter: {
         book: {

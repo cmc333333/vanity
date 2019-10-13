@@ -1,4 +1,5 @@
-import Link from 'gatsby-link';
+import { globalHistory } from "@reach/router"
+import { Link } from 'gatsby';
 import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -124,9 +125,8 @@ const footer = (
   </glamorous.Div>
 );
 
-export default function Layout(props) {
-  const { children, location } = props;
-  const { pathname } = location;
+export default function Layout({ children }) {
+  const { pathname } = globalHistory.location;
 
   let sidebar;
   if (pathname.startsWith('/writings/')) {
@@ -167,7 +167,7 @@ export default function Layout(props) {
             color="#222"
             padding="0 2em 2em 2em"
           >
-            { children() }
+            { children }
           </glamorous.Div>
           { footer }
         </div>

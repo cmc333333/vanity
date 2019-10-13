@@ -26,8 +26,8 @@ function parseItem(item) {
   };
 }
 
-exports.sourceNodes = async ({ boundActionCreators }, pluginOptions) => {
-  const { createNode } = boundActionCreators;
+exports.sourceNodes = async ({ actions }, pluginOptions) => {
+  const { createNode } = actions;
   const { data } = await axios.get(
     `http://www.goodreads.com/review/list_rss/${pluginOptions.userId}`);
   const { rss: { channel } } = await parseString(data);

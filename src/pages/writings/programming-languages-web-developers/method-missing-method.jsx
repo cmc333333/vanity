@@ -1,11 +1,12 @@
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 
 export default function MethodMissingMethods() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Method-Missing Method') }
       <p>
         A concept which may not arise for a static programmer is the idea of a
@@ -94,6 +95,6 @@ export default function MethodMissingMethods() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }

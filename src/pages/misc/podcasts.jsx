@@ -1,7 +1,9 @@
+import { graphql } from 'gatsby';
 import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Layout from '../../layouts';
 import setPageTitle from '../../util/set-page-title';
 import styles, { colors } from '../../styles';
 
@@ -38,10 +40,10 @@ Podcast.propTypes = {
 export default function Podcasts({ data }) {
   const podcasts = data.allPodcast.edges.map(e => e.node.podcast);
   return (
-    <div>
+    <Layout>
       { setPageTitle('Podcasts') }
       { podcasts.map(p => <Podcast key={p.link} {...p} />) }
-    </div>
+    </Layout>
   );
 }
 Podcasts.propTypes = {
@@ -57,7 +59,7 @@ Podcasts.propTypes = {
 };
 
 export const query = graphql`
-  query Podcasts {
+  {
     allPodcast (
       sort: {
         fields: [podcast___latestDate]

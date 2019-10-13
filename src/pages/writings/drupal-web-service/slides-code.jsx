@@ -1,11 +1,12 @@
-import Link, { withPrefix } from 'gatsby-link';
+import { Link, withPrefix } from 'gatsby';
 import React from 'react';
 
+import Layout from '../../../layouts';
 import setPageTitle from '../../../util/set-page-title';
 
 export default function SlidesCode() {
   return (
-    <div>
+    <Layout>
       { setPageTitle('Slides and Code') }
       <iframe
         frameBorder="0"
@@ -27,6 +28,6 @@ export default function SlidesCode() {
           </Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }

@@ -1,3 +1,4 @@
+import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -26,7 +27,7 @@ CodeSample.propTypes = {
 };
 
 export const query = graphql`
-  query CodeSample($basename: String!) {
+  query($basename: String!) {
     markdownRemark(
       fields: { 
         basename: { eq: $basename }
