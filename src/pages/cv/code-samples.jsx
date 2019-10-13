@@ -5,7 +5,6 @@ import React from 'react';
 
 import Layout from '../../layouts';
 import { trailingComma } from '../../styles';
-import setPageTitle from '../../util/set-page-title';
 
 export default function CodeSamples({ data }) {
   const children = data.allMarkdownRemark.edges.map(e => e.node).map((node) => {
@@ -34,8 +33,7 @@ export default function CodeSamples({ data }) {
     );
   });
   return (
-    <Layout>
-      { setPageTitle('Code Samples') }
+    <Layout title="Code Samples">
       <ul>{ children }</ul>
     </Layout>
   );

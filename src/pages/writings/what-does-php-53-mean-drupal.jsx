@@ -1,12 +1,10 @@
 import React from 'react';
 
 import Layout from '../../layouts';
-import setPageTitle from '../../util/set-page-title';
 
 export default function PHP53() {
   return (
-    <Layout>
-      { setPageTitle('What Does PHP 5.3 Mean for Drupal?') }
+    <Layout title="What Does PHP 5.3 Mean for Drupal?">
       <p>
         For Drupal Camp Chicago 2010, I presented on PHP 5.3 for Drupal
         developers. I focused on the new features of the new version,

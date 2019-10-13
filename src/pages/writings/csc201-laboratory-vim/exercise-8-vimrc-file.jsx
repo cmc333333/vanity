@@ -2,13 +2,11 @@ import { Link } from 'gatsby';
 import React from 'react';
 
 import Layout from '../../../layouts';
-import setPageTitle from '../../../util/set-page-title';
 import './csc201-laboratory-vim.css';
 
 export default function VimrcFile() {
   return (
-    <Layout>
-      { setPageTitle('Exercise 8: The .vimrc File') }
+    <Layout title="Exercise 8: The .vimrc File">
       <p>
         As you learned with your introduction to Emacs, many Unix programs
         read from a configuration file at startup. ViM&rsquo;s startip file is

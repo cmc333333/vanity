@@ -2,12 +2,10 @@ import { Link } from 'gatsby';
 import React from 'react';
 
 import Layout from '../../../layouts';
-import setPageTitle from '../../../util/set-page-title';
 
 export default function Index() {
   return (
-    <Layout>
-      { setPageTitle('Programming Languages for Web Developers') }
+    <Layout title="Programming Languages for Web Developers">
       <p>
         I consider myself a programming languages connoisseur; I truly love to
         pick up new languages, take them for a spin, and pick apart their

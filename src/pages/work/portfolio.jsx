@@ -5,14 +5,12 @@ import React from 'react';
 import ProjectComponent from '../../components/work/portfolio-project';
 import Layout from '../../layouts';
 import PortfolioProject from '../../util/portfolio-project';
-import setPageTitle from '../../util/set-page-title';
 
 export default function Portfolio({ data }) {
   const projects = data.Portfolio.edges.map(e =>
     new PortfolioProject({ ...e.node.frontmatter, html: e.node.html }));
   return (
-    <Layout>
-      { setPageTitle('Portfolio') }
+    <Layout title="Portfolio">
       { projects.map(project =>
         <ProjectComponent key={project.title} project={project} />) }
     </Layout>

@@ -1,14 +1,12 @@
 import React from 'react';
 
 import Layout from '../../layouts';
-import setPageTitle from '../../util/set-page-title';
 
 const highlight = { backgroundColor: '#ff0' };
 
 export default function CrypotgraphyCoders() {
   return (
-    <Layout>
-      { setPageTitle('Cryptography (and Security) for Coders') }
+    <Layout title="Cryptography (and Security) for Coders">
       <p>
         This page was written to supplement my Cryptography (and Security) for
         Coders talk at the Chicago Code Camp &rsquo;12. It is a significant

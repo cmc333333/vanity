@@ -2,12 +2,10 @@ import { Link } from 'gatsby';
 import React from 'react';
 
 import Layout from '../../layouts';
-import setPageTitle from '../../util/set-page-title';
 
 export default function WebApplicationSecurityFundamentals() {
   return (
-    <Layout>
-      { setPageTitle('Web Application Security Fundamentals') }
+    <Layout title="Web Application Security Fundamentals">
       <div style={{ textAlign: 'center' }}>
         Given as a{' '}
         <a href="http://2011.drupalcampchicago.org/sessions/web-application-security-fundamentals">

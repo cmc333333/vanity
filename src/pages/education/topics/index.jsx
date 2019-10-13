@@ -3,7 +3,6 @@ import _ from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import setPageTitle from '../../../util/set-page-title';
 import CurrentTopics from '../../../components/education/topics/current-topics';
 import Entry from '../../../components/education/topics/entry';
 import Visualization from '../../../components/education/topics/visualization';
@@ -63,8 +62,7 @@ export default class Topics extends React.Component {
 
   render() {
     return (
-      <Layout>
-        { setPageTitle('Education by Topic') }
+      <Layout title="Education by Topic">
         <CurrentTopics deactivate={this.deactivate} topics={this.state.selectedTopics} />
         { this.state.inBrowser ?
           <Visualization

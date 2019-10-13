@@ -2,12 +2,10 @@ import { Link, withPrefix } from 'gatsby';
 import React from 'react';
 
 import Layout from '../../../layouts';
-import setPageTitle from '../../../util/set-page-title';
 
 export default function SlidesCode() {
   return (
-    <Layout>
-      { setPageTitle('Slides and Code') }
+    <Layout title="Slides and Code">
       <iframe
         frameBorder="0"
         height="451"

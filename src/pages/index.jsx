@@ -1,6 +1,5 @@
 import React from 'react';
 
-import setPageTitle from '../util/set-page-title';
 import Contact from '../components/resume/contact';
 import Education from '../components/resume/education';
 import Links from '../components/resume/links';
@@ -18,9 +17,8 @@ export default function Index() {
     },
   };
   return (
-    <Layout>
+    <Layout title="Résumé">
       <div css={resumeStyles}>
-        { setPageTitle('Résumé') }
         <Links />
         <Contact />
         <Overview />

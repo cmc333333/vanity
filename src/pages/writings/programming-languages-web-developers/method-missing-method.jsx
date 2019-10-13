@@ -2,12 +2,10 @@ import { Link } from 'gatsby';
 import React from 'react';
 
 import Layout from '../../../layouts';
-import setPageTitle from '../../../util/set-page-title';
 
 export default function MethodMissingMethods() {
   return (
-    <Layout>
-      { setPageTitle('Method-Missing Method') }
+    <Layout title="Method-Missing Method">
       <p>
         A concept which may not arise for a static programmer is the idea of a
         method-missing <em>method</em>. This is a &ldquo;magic&rdquo; method

@@ -2,12 +2,10 @@ import { Link, withPrefix } from 'gatsby';
 import React from 'react';
 
 import Layout from '../../../layouts';
-import setPageTitle from '../../../util/set-page-title';
 
 export default function AddingStructure() {
   return (
-    <Layout>
-      { setPageTitle('PHP : Adding Some Structure') }
+    <Layout title="PHP : Adding Some Structure">
       <p>
         We now create a PHP object which will allow us to access our Drupal
         site from elsewhere. I&rsquo;ve taken some short cuts (assuming https,

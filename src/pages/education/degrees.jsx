@@ -6,7 +6,6 @@ import React from 'react';
 
 import Layout from '../../layouts';
 import { scaleText, spacing } from '../../styles';
-import setPageTitle from '../../util/set-page-title';
 
 const University = glamorous.span(
   scaleText(1 / 4),
@@ -103,8 +102,7 @@ export default function Degrees({ data }) {
   const courses = data.allCoursesYaml.edges.map(e => e.node);
   const [withCerts, withoutCerts] = _.partition(courses, c => c.certificate);
   return (
-    <Layout>
-      { setPageTitle('Degrees & Certificates') }
+    <Layout title="Degrees & Certificates">
       <Degree title="Master of Science, Computer Science (with Distinction)">
         <University>
           College of Computing and Digital Media, Depaul University

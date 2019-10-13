@@ -2,12 +2,10 @@ import { Link } from 'gatsby';
 import React from 'react';
 
 import Layout from '../../../layouts';
-import setPageTitle from '../../../util/set-page-title';
 
 export default function Index() {
   return (
-    <Layout>
-      { setPageTitle('Drupal as a Web Service') }
+    <Layout title="Drupal as a Web Service">
       <p>
         I gave a{' '}
         <a href="http://2009.drupalcampchicago.org/sessions/drupal-web-service">

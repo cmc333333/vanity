@@ -8,7 +8,6 @@ import Timeline from '../../components/work/timeline';
 import Layout from '../../layouts';
 import Job from '../../util/job';
 import PortfolioProject from '../../util/portfolio-project';
-import setPageTitle from '../../util/set-page-title';
 
 export default function WorkHistory({ data }) {
   const projectsByJob = _.groupBy(
@@ -30,8 +29,7 @@ export default function WorkHistory({ data }) {
     url: e.node.frontmatter.url,
   }));
   return (
-    <Layout>
-      { setPageTitle('Work History') }
+    <Layout title="Work History">
       <Timeline jobs={jobs} />
       { jobs.map(job => <JobComponent key={job.id} job={job} />) }
     </Layout>

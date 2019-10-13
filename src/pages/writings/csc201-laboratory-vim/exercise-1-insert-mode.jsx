@@ -2,13 +2,11 @@ import { Link } from 'gatsby';
 import React from 'react';
 
 import Layout from '../../../layouts';
-import setPageTitle from '../../../util/set-page-title';
 import './csc201-laboratory-vim.css';
 
 export default function InsertMode() {
   return (
-    <Layout>
-      { setPageTitle('Exercise 1: Insert Mode') }
+    <Layout title="Exercise 1: Insert Mode">
       <p>
         Unlike Emacs, gedit, notepad, etc., ViM was designed with the idea of
         &ldquo;modes&rdquo; of editing. This means that the same strokes may

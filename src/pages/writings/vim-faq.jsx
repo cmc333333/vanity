@@ -2,12 +2,10 @@ import { Link } from 'gatsby';
 import React from 'react';
 
 import Layout from '../../layouts';
-import setPageTitle from '../../util/set-page-title';
 
 export default function VimFaq() {
   return (
-    <Layout>
-      { setPageTitle('Vim FAQ') }
+    <Layout title="Vim FAQ">
       <p>
         This is a bit of an addendum to my original{' '}
         <Link to="/writings/csc201-laboratory-vim/">introduction</Link> to Vim

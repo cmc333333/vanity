@@ -125,7 +125,7 @@ const footer = (
   </glamorous.Div>
 );
 
-export default function Layout({ children }) {
+export default function Layout({ children, title }) {
   const { pathname } = globalHistory.location;
 
   let sidebar;
@@ -149,6 +149,7 @@ export default function Layout({ children }) {
       maxWidth="1000px"
     >
       <Helmet>
+        <title>{`${title} | C.M. Lubinski`}</title>
         <link rel="shortcut icon" href={favicon} type="image/x-icon" />
       </Helmet>
       <div id="header" css={row}>
@@ -167,6 +168,19 @@ export default function Layout({ children }) {
             color="#222"
             padding="0 2em 2em 2em"
           >
+            <glamorous.H1
+              background="#5A79A5"
+              borderBottomLeftRadius="20px"
+              borderBottomRightRadius="20px"
+              color="#FFF"
+              key="h1"
+              paddingBottom=".5rem"
+              paddingTop=".5rem"
+              margin="0 20% .5em 20%"
+              textAlign="center"
+            >
+              {title}
+            </glamorous.H1>
             { children }
           </glamorous.Div>
           { footer }

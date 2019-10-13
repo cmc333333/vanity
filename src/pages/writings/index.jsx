@@ -2,12 +2,10 @@ import { Link } from 'gatsby';
 import React from 'react';
 
 import Layout from '../../layouts';
-import setPageTitle from '../../util/set-page-title';
 
 export default function Writings() {
   return (
-    <Layout>
-      { setPageTitle('Writings') }
+    <Layout title="Writings">
       <div>
         <p>
           <Link to="/writings/csc201-laboratory-vim/">

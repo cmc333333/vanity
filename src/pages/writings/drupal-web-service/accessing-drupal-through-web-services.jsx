@@ -2,12 +2,10 @@ import { Link } from 'gatsby';
 import React from 'react';
 
 import Layout from '../../../layouts';
-import setPageTitle from '../../../util/set-page-title';
 
 export default function AccessingDrupal() {
   return (
-    <Layout>
-      { setPageTitle('Accessing Drupal through Web Services') }
+    <Layout title="Accessing Drupal through Web Services">
       <p>
         Regardless of the mechanism used for accessing your Drupal site
         through a web service, users will follow the same basic steps. First,

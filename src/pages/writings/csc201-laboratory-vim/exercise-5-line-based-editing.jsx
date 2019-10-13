@@ -2,13 +2,11 @@ import { Link } from 'gatsby';
 import React from 'react';
 
 import Layout from '../../../layouts';
-import setPageTitle from '../../../util/set-page-title';
 import './csc201-laboratory-vim.css';
 
 export default function LineBasedEditing() {
   return (
-    <Layout>
-      { setPageTitle('Exercise 5: Line-Based Editing') }
+    <Layout title="Exercise 5: Line-Based Editing">
       <p>
         This is all fine and dandy, but, even in notepad we can select, copy,
         delete, etc. multiple lines at once; how can we perform these

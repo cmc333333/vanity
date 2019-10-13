@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Layout from '../../layouts';
-import setPageTitle from '../../util/set-page-title';
 import styles, { colors } from '../../styles';
 
 function Podcast({
@@ -40,8 +39,7 @@ Podcast.propTypes = {
 export default function Podcasts({ data }) {
   const podcasts = data.allPodcast.edges.map(e => e.node.podcast);
   return (
-    <Layout>
-      { setPageTitle('Podcasts') }
+    <Layout title="Podcasts">
       { podcasts.map(p => <Podcast key={p.link} {...p} />) }
     </Layout>
   );

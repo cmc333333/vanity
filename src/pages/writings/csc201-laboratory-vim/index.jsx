@@ -2,12 +2,10 @@ import { Link } from 'gatsby';
 import React from 'react';
 
 import Layout from '../../../layouts';
-import setPageTitle from '../../../util/set-page-title';
 
 export default function Intro() {
   return (
-    <Layout>
-      { setPageTitle('CSC201 Laboratory: ViM') }
+    <Layout title="CSC201 Laboratory: ViM">
       <p>
         In this lab, we will be working with the versatile open-source editor,
         ViM. This program, which is available for all major operating systems

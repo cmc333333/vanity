@@ -2,12 +2,10 @@ import { Link } from 'gatsby';
 import React from 'react';
 
 import Layout from '../../../layouts';
-import setPageTitle from '../../../util/set-page-title';
 
 export default function FurtherSources() {
   return (
-    <Layout>
-      { setPageTitle('Further Sources') }
+    <Layout title="Further Sources">
       <p>
         Many of the examples were borrowed and modified from the examples
         given in vimtutor, a program that is installed with vim that provides

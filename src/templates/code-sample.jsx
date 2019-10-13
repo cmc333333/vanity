@@ -2,16 +2,16 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import setPageTitle from '../util/set-page-title';
+import Layout from "../layouts";
+
 
 export default function CodeSample({ data }) {
   const { frontmatter, html } = data.markdownRemark;
   /* eslint-disable react/no-danger */
   return (
-    <div>
-      { setPageTitle(frontmatter.title) }
+    <Layout title={frontmatter.title}>
       <div dangerouslySetInnerHTML={{ __html: html }} />
-    </div>
+    </Layout>
   );
   /* eslint-enable react/no-danger */
 }

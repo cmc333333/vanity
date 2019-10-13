@@ -2,13 +2,11 @@ import { Link } from 'gatsby';
 import React from 'react';
 
 import Layout from '../../../layouts';
-import setPageTitle from '../../../util/set-page-title';
 import './csc201-laboratory-vim.css';
 
 export default function ExecuteModeFiles() {
   return (
-    <Layout>
-      { setPageTitle('Exercise 6: Execute Mode and Files') }
+    <Layout title="Exercise 6: Execute Mode and Files">
       <p>
         We now reach the last major mode of ViM, the &ldquo;execute&rdquo;
         mode. This mode is accessed from command mode by pressing the colon

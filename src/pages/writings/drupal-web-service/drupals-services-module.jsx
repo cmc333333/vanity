@@ -2,12 +2,10 @@ import { Link } from 'gatsby';
 import React from 'react';
 
 import Layout from '../../../layouts';
-import setPageTitle from '../../../util/set-page-title';
 
 export default function DrupalsServicesModule() {
   return (
-    <Layout>
-      { setPageTitle("Drupal's Services Module") }
+    <Layout title="Drupal's Services Module">
       <p>
         Luckily, Drupal has the{' '}
         <a href="http://drupal.org/project/services">Services</a> module,
