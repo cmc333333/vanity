@@ -1,0 +1,13 @@
+{
+  "name": "gatsby-source-gpodder",
+  "peerDependencies": {
+    "axios": "*",
+    "es6-promisify": "*",
+    "gatsby": "2.x",
+    "gatsby-source-filesystem": "*",
+    "moment": "*",
+    "tough-cookie": "*",
+    "xml2js": "*"
+  }
+}
+
