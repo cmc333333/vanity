@@ -11,4 +11,8 @@ ARG NODE_ENV
 ENV NODE_ENV=$NODE_ENV
 RUN npm install
 
-COPY ["data", "plugins", "src", "static", "/usr/src/app/"]
+COPY ["data", "data"]
+COPY ["plugins", "plugins"]
+COPY ["src", "src"]
+COPY ["static", "static"]
+COPY ["gatsby-config.js", "gatsby-node.js", "/usr/src/app/"]
