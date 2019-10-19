@@ -1,4 +1,4 @@
-FROM node:8
+FROM node:12
 
 RUN apt update \
     && apt -y install libgl1-mesa-glx libxi6 \
