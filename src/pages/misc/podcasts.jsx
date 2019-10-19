@@ -6,29 +6,63 @@ import React from 'react';
 import Layout from '../../layouts';
 import styles, { colors } from '../../styles';
 
-function Podcast({
-  description,
-  title,
-  website,
-  recentTitles,
-}) {
-  return (
-    <glamorous.Div
-      borderBottomColor={colors.bodyText}
-      borderBottomStyle="solid"
-      borderBottomWidth="1px"
-      marginBottom={styles.rhythm(0.5)}
-      paddingBottom={styles.rhythm(0.5)}
-    >
-      <glamorous.H4 display="inline-block">
-        <a href={website}>{ title }</a>
-      </glamorous.H4>
-      <p>{ description }</p>
-      <ul>
-        { recentTitles.map(t => <li>{t}</li>) }
-      </ul>
-    </glamorous.Div>
-  );
+class Podcast extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { showAll: true };
+  }
+
+  componentDidMount() {
+    this.setState({ showAll: false });
+  }
+
+  get recentTitlesEl() {
+    const { recentTitles } = this.props;
+    if (this.state.showAll || recentTitles.length < 6) {
+      return (
+        <ul>
+          { recentTitles.map(t => <li>{t}</li>) }
+        </ul>
+      );
+    } else {
+
+      return (
+        <>
+          <ul>
+            { recentTitles.slice(0, 5).map(t => <li>{t}</li>) }
+          </ul>
+          <glamorous.Button
+            onClick={() => this.setState({ showAll: true })}
+            background="transparent"
+            border="none"
+            color={colors.link}
+            cursor="pointer"
+          >
+            Show all
+          </glamorous.Button>
+        </>
+      );
+    }
+  }
+
+  render() {
+    const { description, title, website } = this.props;
+    return (
+      <glamorous.Div
+        borderBottomColor={colors.bodyText}
+        borderBottomStyle="solid"
+        borderBottomWidth="1px"
+        marginBottom={styles.rhythm(0.5)}
+        paddingBottom={styles.rhythm(0.5)}
+      >
+        <glamorous.H4 display="inline-block">
+          <a href={website}>{ title }</a>
+        </glamorous.H4>
+        <p>{ description }</p>
+        { this.recentTitlesEl }
+      </glamorous.Div>
+    );
+  }
 }
 Podcast.propTypes = {
   description: PropTypes.string.isRequired,
