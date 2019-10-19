@@ -2,13 +2,13 @@ const crypto = require('crypto');
 
 const axios = require('axios');
 const promisify = require('es6-promisify');
+const _ = require('lodash');
 const moment = require('moment');
 const { Cookie } = require('tough-cookie');
 const callbackParseString = require('xml2js').parseString;
 
 const BASE_URL = 'https://gpodder.net';
 const parseString = promisify(callbackParseString);
-const RELEVENT_ACTIONS = new Set(['delete', 'play']);
 
 async function setupClient(auth) {
   const client = axios.create({ baseURL: BASE_URL });
@@ -31,17 +31,15 @@ async function recentActivity(client, username) {
   const weekAgo = moment().subtract(7, 'days').unix();
   const { data: { actions } } = await client.get(
     `api/2/episodes/${username}.json`,
-    { params: { aggregated: true, since: weekAgo } },
+    { params: { since: weekAgo } },
   );
-  const filteredActions = actions.filter(a => RELEVENT_ACTIONS.has(a.action));
+  const filteredActions = actions.filter(a => a.action === 'play');
   const byPodcast = {};
   filteredActions.forEach(({ episode, podcast, timestamp }) => {
-    const { episodes, latestDate } = byPodcast[podcast] || {};
-
-    byPodcast[podcast] = {
-      latestDate: Math.max(moment(timestamp).unix(), latestDate || 0),
-      episodes: [episode, ...(episodes || [])],
-    };
+    const actionDate = moment(timestamp).unix();
+    byPodcast[podcast] = byPodcast[podcast] || {};
+    const existingAction = byPodcast[podcast][episode] || 0;
+    byPodcast[podcast][episode] = Math.max(actionDate, existingAction);
   });
   return byPodcast;
 }
@@ -89,20 +87,22 @@ exports.sourceNodes = async ({ actions, createNodeId }, { auth }) => {
     // Use a try-catch to allow some podcasts to error
     try {
       const channel = await readRSS(subscription.url);
-      const { episodes, latestDate } = allRecent[subscription.url] || {};
-      const recentTitles = (episodes || [])
-        .map(url => channel.episodes[url])
-        .filter(ep => ep)
-        .map(ep => ep.title);
+      const listenedTo = [];
+      Object.entries(allRecent[subscription.url] || {}).forEach(([episode, timestamp]) => {
+        const channelEpisode = channel.episodes[episode] || {};
+        listenedTo.push({ timestamp, title: channelEpisode.title });
+      });
+      const recentTitles = _.sortBy(listenedTo, ep => -1 * ep.timestamp)
+        .map(ep => ep.title)
+        .filter(t => t);
 
       const fields = {
         recentTitles,
         description: subscription.description || channel.description,
         logoUrl: subscription.logo_url || channel.imageUrl,
-        maxActivity: latestDate || 0,
-        maxEpisode: Math.max(...Object.values(channel.episodes).map(i => i.pubDate)),
+        maxActivity: _.max(listenedTo.map(ep => ep.timestamp)) || 0,
+        maxEpisode: _.max(Object.values(channel.episodes).map(i => i.pubDate)) || 0,
         title: subscription.title || channel.title,
-        url: subscription.url,
         website: subscription.website || channel.link,
       };
       const contentDigest = crypto.createHash('md5')
