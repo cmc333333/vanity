@@ -3,13 +3,18 @@ import _ from 'lodash';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React from 'react';
-import ReactTimeline from 'react-visjs-timeline';
+import Loadable from 'react-loadable';
 
 import { spacing } from '../../styles';
 import Job from '../../util/job';
 
 const timelineMin = moment('2005-08-01');
 const partTimeBefore = moment('2008-06-01');
+
+const ClientSideReactTimeline = Loadable({
+  loader: () => import('react-visjs-timeline'),
+  loading: () => null,
+});
 
 export default function Timeline({ jobs }) {
   const [partTime, fullTime] = _.partition(
@@ -63,7 +68,7 @@ export default function Timeline({ jobs }) {
 
   return (
     <glamorous.Div css={colors} marginBottom="1rem" position="relative">
-      <ReactTimeline items={items} options={options} />
+      <ClientSideReactTimeline items={items} options={options} />
       <glamorous.P
         bottom={0}
         margin={0}
