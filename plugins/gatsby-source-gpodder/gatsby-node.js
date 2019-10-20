@@ -77,6 +77,14 @@ async function readRSS(url) {
 }
 
 
+function hash(str) {
+  return crypto
+    .createHash('md5')
+    .update(str)
+    .digest('hex');
+}
+
+
 exports.sourceNodes = async ({ actions, createNodeId }, { auth }) => {
   const { createNode } = actions;
   const client = await setupClient(auth);
@@ -96,24 +104,26 @@ exports.sourceNodes = async ({ actions, createNodeId }, { auth }) => {
         .map(ep => ep.title)
         .filter(t => t);
 
+      const description = subscription.description || channel.description;
+
       const fields = {
         recentTitles,
-        description: subscription.description || channel.description,
+        description,
         logoUrl: subscription.logo_url || channel.imageUrl,
         maxActivity: _.max(listenedTo.map(ep => ep.timestamp)) || 0,
         maxEpisode: _.max(Object.values(channel.episodes).map(i => i.pubDate)) || 0,
         title: subscription.title || channel.title,
         website: subscription.website || channel.link,
       };
-      const contentDigest = crypto.createHash('md5')
-        .update(JSON.stringify(fields)).digest('hex');
 
       createNode({
         ...fields,
         id: createNodeId(`Podcast:${subscription.url}`),
-        internal: { type: 'Podcast', contentDigest },
+        internal: {
+          contentDigest: hash(JSON.stringify(fields)),
+          type: 'Podcast',
+        },
         parent: null,
-        children: [],
       });
     } catch (err) {
       console.error(err); // eslint-disable-line no-console
@@ -121,3 +131,31 @@ exports.sourceNodes = async ({ actions, createNodeId }, { auth }) => {
   }));
 };
 
+function generateMarkdownDescription(node, { createNode, createNodeField }) {
+  if (!node.description) {
+    return;
+  }
+
+  const descNodeId = `${node.id}-MarkdownDescription`;
+  createNode({
+    id: descNodeId,
+    parent: node.id,
+    internal: {
+      content: node.description,
+      contentDigest: hash(node.description),
+      type: 'PodcastMarkdownDescription',
+      mediaType: 'text/markdown',
+    },
+  });
+  createNodeField({
+    node,
+    name: 'description___NODE',
+    value: descNodeId,
+  });
+}
+
+exports.onCreateNode = async ({ node, actions }) => {
+  if (node.internal.owner === 'gatsby-source-gpodder') {
+    generateMarkdownDescription(node, actions);
+  }
+};

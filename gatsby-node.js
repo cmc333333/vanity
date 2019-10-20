@@ -4,16 +4,18 @@ exports.onCreateNode = ({ actions, getNode, node }) => {
   const { createNodeField } = actions;
   if (node.internal.type === 'MarkdownRemark') {
     const { relativePath } = getNode(node.parent);
-    createNodeField({
-      name: 'basename',
-      node,
-      value: path.basename(relativePath, '.md'),
-    });
-    createNodeField({
-      name: 'dirname',
-      node,
-      value: path.dirname(relativePath),
-    });
+    if (relativePath) {
+      createNodeField({
+        name: 'basename',
+        node,
+        value: path.basename(relativePath, '.md'),
+      });
+      createNodeField({
+        name: 'dirname',
+        node,
+        value: path.dirname(relativePath),
+      });
+    }
   }
 };
 

@@ -46,7 +46,11 @@ class Podcast extends React.Component {
   }
 
   render() {
-    const { description, title, website } = this.props;
+    const {
+      fields: { description: { childMarkdownRemark: { html } } },
+      title,
+      website,
+    } = this.props;
     return (
       <glamorous.Div
         borderBottomColor={colors.bodyText}
@@ -58,7 +62,7 @@ class Podcast extends React.Component {
         <glamorous.H4 display="inline-block">
           <a href={website}>{ title }</a>
         </glamorous.H4>
-        <p>{ description }</p>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
         { this.recentTitlesEl }
       </glamorous.Div>
     );
@@ -66,6 +70,13 @@ class Podcast extends React.Component {
 }
 Podcast.propTypes = {
   description: PropTypes.string.isRequired,
+  fields: PropTypes.shape({
+    description: PropTypes.shape({
+      childMarkdownRemark: PropTypes.shape({
+        html: PropTypes.string.isRequired,
+      }),
+    }).isRequired,
+  }).isRequired,
   title: PropTypes.string.isRequired,
   website: PropTypes.string.isRequired,
   recentTitles: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -100,6 +111,14 @@ export const query = graphql`
         title
         website
         recentTitles
+
+        fields {
+          description {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
       }
     }
   }
