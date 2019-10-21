@@ -1,10 +1,13 @@
 import { graphql } from 'gatsby';
+import Img from "gatsby-image"
 import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 
 import Layout from '../../layouts';
-import styles, { colors } from '../../styles';
+import styles, { colors, columns, row } from '../../styles';
+
+const NBSP = '\u00A0';
 
 class Podcast extends React.Component {
   constructor(props) {
@@ -47,7 +50,10 @@ class Podcast extends React.Component {
 
   render() {
     const {
-      fields: { description: { childMarkdownRemark: { html } } },
+      fields: {
+        description: { childMarkdownRemark: { html } },
+        logo,
+      },
       title,
       website,
     } = this.props;
@@ -59,22 +65,33 @@ class Podcast extends React.Component {
         marginBottom={styles.rhythm(0.5)}
         paddingBottom={styles.rhythm(0.5)}
       >
-        <glamorous.H4 display="inline-block">
-          <a href={website}>{ title }</a>
-        </glamorous.H4>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-        { this.recentTitlesEl }
+        <div css={row}>
+          <div css={columns({ small: 3 })}>
+            { logo && <Img fluid={logo.childImageSharp.fluid} /> || NBSP }
+          </div>
+          <glamorous.Div css={columns({ small: 9 })} paddingLeft={styles.rhythm(0.5)}>
+            <glamorous.H4 display="inline-block">
+              <a href={website}>{ title }</a>
+            </glamorous.H4>
+            <div dangerouslySetInnerHTML={{ __html: html }} />
+            { this.recentTitlesEl }
+          </glamorous.Div>
+        </div>
       </glamorous.Div>
     );
   }
 }
 Podcast.propTypes = {
-  description: PropTypes.string.isRequired,
   fields: PropTypes.shape({
     description: PropTypes.shape({
       childMarkdownRemark: PropTypes.shape({
         html: PropTypes.string.isRequired,
       }),
+    }).isRequired,
+    logo: PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        fluid: PropTypes.any.isRequired,
+      }).isRequired,
     }).isRequired,
   }).isRequired,
   title: PropTypes.string.isRequired,
@@ -106,8 +123,6 @@ export const query = graphql`
       },
     ) {
       nodes {
-        description
-        logoUrl
         title
         website
         recentTitles
@@ -116,6 +131,13 @@ export const query = graphql`
           description {
             childMarkdownRemark {
               html
+            }
+          }
+          logo {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
             }
           }
         }

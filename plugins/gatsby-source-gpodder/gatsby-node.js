@@ -2,16 +2,18 @@ const crypto = require('crypto');
 
 const axios = require('axios');
 const promisify = require('es6-promisify');
+const { createRemoteFileNode } = require('gatsby-source-filesystem');
 const _ = require('lodash');
 const moment = require('moment');
 const { Cookie } = require('tough-cookie');
 const callbackParseString = require('xml2js').parseString;
 
 const BASE_URL = 'https://gpodder.net';
+const HTTP_TIMEOUT = 60 * 1000;
 const parseString = promisify(callbackParseString);
 
 async function setupClient(auth) {
-  const client = axios.create({ baseURL: BASE_URL });
+  const client = axios.create({ baseURL: BASE_URL, timeout: HTTP_TIMEOUT });
   const authResp = await client.post(
     `api/2/auth/${auth.username}/login.json`,
     {},
@@ -45,7 +47,7 @@ async function recentActivity(client, username) {
 }
 
 async function readRSS(url) {
-  const { data } = await axios.get(url);
+  const { data } = await axios.get(url, { timeout: HTTP_TIMEOUT });
   const { rss } = await parseString(data);
   const rawChannel = rss.channel[0];
   const episodes = {};
@@ -91,8 +93,14 @@ exports.sourceNodes = async ({ actions, createNodeId }, { auth }) => {
 
   const allResp = await client.get(`subscriptions/${auth.username}.json`);
   const allRecent = await recentActivity(client, auth.username);
-  await Promise.all(allResp.data.map(async (subscription) => {
-    // Use a try-catch to allow some podcasts to error
+
+  // We allow for-of as we need to await within the loop. This is all
+  // happening render side, so performance isn't paramount.
+  for (const subscription of allResp.data) { // eslint-disable-line no-restricted-syntax
+    console.info('Processing', subscription.url); // eslint-disable-line no-console
+    // We want to do the inefficient thing and process these subscriptions one
+    // by one as each can be a lot of work.
+    /* eslint-disable no-await-in-loop */
     try {
       const channel = await readRSS(subscription.url);
       const listenedTo = [];
@@ -116,7 +124,7 @@ exports.sourceNodes = async ({ actions, createNodeId }, { auth }) => {
         website: subscription.website || channel.link,
       };
 
-      createNode({
+      await createNode({
         ...fields,
         id: createNodeId(`Podcast:${subscription.url}`),
         internal: {
@@ -128,16 +136,18 @@ exports.sourceNodes = async ({ actions, createNodeId }, { auth }) => {
     } catch (err) {
       console.error(err); // eslint-disable-line no-console
     }
-  }));
+    /* eslint-enable no-await-in-loop */
+  }
 };
 
-function generateMarkdownDescription(node, { createNode, createNodeField }) {
+async function generateMarkdownDescription({ actions, node }) {
+  const { createNode, createNodeField } = actions;
   if (!node.description) {
     return;
   }
 
   const descNodeId = `${node.id}-MarkdownDescription`;
-  createNode({
+  await createNode({
     id: descNodeId,
     parent: node.id,
     internal: {
@@ -147,15 +157,65 @@ function generateMarkdownDescription(node, { createNode, createNodeField }) {
       mediaType: 'text/markdown',
     },
   });
-  createNodeField({
+  await createNodeField({
     node,
     name: 'description___NODE',
     value: descNodeId,
   });
 }
 
-exports.onCreateNode = async ({ node, actions }) => {
-  if (node.internal.owner === 'gatsby-source-gpodder') {
-    generateMarkdownDescription(node, actions);
+async function generateLogoImage({
+  actions,
+  cache,
+  createNodeId,
+  node,
+  store,
+}) {
+  const { createNode, createNodeField } = actions;
+  if (!node.logoUrl) {
+    return;
+  }
+
+  try {
+    const streamResp = await axios.get(
+      node.logoUrl,
+      { responseType: 'stream', timeout: HTTP_TIMEOUT },
+    );
+    const isHtmlPromise = new Promise((resolve, reject) => {
+      streamResp.data.once('data', (chunk) => {
+        resolve(chunk.compare(Buffer.from('<'), 0, 1, 0, 1) === 0);
+      });
+      streamResp.data.on('end', () => resolve(false));
+      streamResp.data.on('error', error => reject(error));
+    });
+    if (await isHtmlPromise) {
+      console.error('Invalid file', node.logoUrl); // eslint-disable-line no-console
+    } else {
+      const fileNode = await createRemoteFileNode({
+        url: node.logoUrl,
+        parentNodeId: node.id,
+        createNode,
+        createNodeId,
+        store,
+        cache,
+      });
+
+      await createNodeField({
+        node,
+        name: 'logo___NODE',
+        value: fileNode.id,
+      });
+    }
+  } catch (err) {
+    console.error(err); // eslint-disable-line no-console
+  }
+}
+
+exports.onCreateNode = async (createNodeParams) => {
+  if (createNodeParams.node.internal.owner === 'gatsby-source-gpodder') {
+    await Promise.all([
+      generateMarkdownDescription(createNodeParams),
+      generateLogoImage(createNodeParams),
+    ]);
   }
 };
