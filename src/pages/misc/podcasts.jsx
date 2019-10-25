@@ -135,8 +135,8 @@ export const query = graphql`
           }
           logo {
             childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid_tracedSVG
+              fluid(srcSetBreakpoints: [100, 200, 400, 600, 800]) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
