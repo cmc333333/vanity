@@ -66,15 +66,19 @@ class Podcast extends React.Component {
         paddingBottom={styles.rhythm(0.5)}
       >
         <div css={row}>
-          <div {...columns({ medium: 3 })} {...hideOn({ small: true })}>
+          <glamorous.Div
+            border={logo && `1px solid ${colors.bodyText}`}
+            {...columns({ medium: 3 })}
+            {...hideOn({ small: true })}
+          >
             { logo && <Img fluid={logo.childImageSharp.fluid} /> || NBSP }
-          </div>
+          </glamorous.Div>
           <glamorous.Div css={columns({ small: 12, medium: 9 })} paddingLeft={styles.rhythm(0.5)}>
             <glamorous.H4 display="inline-block">
               <a href={website}>{ title }</a>
             </glamorous.H4>
             <glamorous.Div
-              border="solid 1px black"
+              border={logo && `1px solid ${colors.bodyText}`}
               css={hideOn({ medium: true, large: true })}
               margin={`${styles.rhythm(0.5)} 20%`}
             >
