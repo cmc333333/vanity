@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Layout from '../../layouts';
-import styles, { colors, columns, row } from '../../styles';
+import styles, { colors, columns, hideOn, row } from '../../styles';
 
 const NBSP = '\u00A0';
 
@@ -66,13 +66,24 @@ class Podcast extends React.Component {
         paddingBottom={styles.rhythm(0.5)}
       >
         <div css={row}>
-          <div css={columns({ small: 3 })}>
+          <glamorous.Div
+            border={logo && `1px solid ${colors.bodyText}`}
+            {...columns({ medium: 3 })}
+            {...hideOn({ small: true })}
+          >
             { logo && <Img fluid={logo.childImageSharp.fluid} /> || NBSP }
-          </div>
-          <glamorous.Div css={columns({ small: 9 })} paddingLeft={styles.rhythm(0.5)}>
+          </glamorous.Div>
+          <glamorous.Div css={columns({ small: 12, medium: 9 })} paddingLeft={styles.rhythm(0.5)}>
             <glamorous.H4 display="inline-block">
               <a href={website}>{ title }</a>
             </glamorous.H4>
+            <glamorous.Div
+              border={logo && `1px solid ${colors.bodyText}`}
+              css={hideOn({ medium: true, large: true })}
+              margin={`${styles.rhythm(0.5)} 20%`}
+            >
+              { logo && <Img fluid={logo.childImageSharp.fluid} /> || NBSP }
+            </glamorous.Div>
             <div dangerouslySetInnerHTML={{ __html: html }} />
             { this.recentTitlesEl }
           </glamorous.Div>
@@ -135,8 +146,8 @@ export const query = graphql`
           }
           logo {
             childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid_tracedSVG
+              fluid(srcSetBreakpoints: [100, 200, 400, 600, 800]) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
