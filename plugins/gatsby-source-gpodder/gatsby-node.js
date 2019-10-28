@@ -87,7 +87,7 @@ function hash(str) {
 }
 
 
-exports.sourceNodes = async ({ actions, createNodeId }, { auth }) => {
+exports.sourceNodes = async ({ actions, createNodeId, reporter }, { auth }) => {
   const { createNode } = actions;
   const client = await setupClient(auth);
 
@@ -96,8 +96,10 @@ exports.sourceNodes = async ({ actions, createNodeId }, { auth }) => {
 
   // We allow for-of as we need to await within the loop. This is all
   // happening render side, so performance isn't paramount.
+  let idx = 0;
   for (const subscription of allResp.data) { // eslint-disable-line no-restricted-syntax
-    console.info('Processing', subscription.url); // eslint-disable-line no-console
+    idx += 1;
+    reporter.log(`Processing ${idx} / ${allResp.data.length}`);
     // We want to do the inefficient thing and process these subscriptions one
     // by one as each can be a lot of work.
     /* eslint-disable no-await-in-loop */
