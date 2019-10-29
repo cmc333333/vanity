@@ -2,7 +2,10 @@
 
 prod:
 	docker build . --tag cmc333333/vanity:prod --build-arg NODE_ENV=production
-	docker run --rm  --env-file .env cmc333333/vanity:prod npm run build
+	docker run --rm  --env-file .env --volume ${PWD}/public-new:/usr/src/app/public cmc333333/vanity:prod npm run build
+	ls public-new/index.html
+	rm -rf public
+	mv public-new public
 
 dev:
 	docker build . --tag cmc333333/vanity
