@@ -1,12 +1,12 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import Layout from '../../../layouts';
+import Layout, { writingsSidebar } from '../../../layouts';
 import './csc201-laboratory-vim.css';
 
 export default function DiscussedCommands() {
   return (
-    <Layout title="Table of Discussed Commands">
+    <Layout sidebar={writingsSidebar} title="Table of Discussed Commands">
       <table>
         <thead>
           <tr>

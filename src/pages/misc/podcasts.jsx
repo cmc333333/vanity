@@ -4,7 +4,7 @@ import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Layout from '../../layouts';
+import Layout, { miscSidebar } from '../../layouts';
 import styles, { colors, columns, hideOn, row } from '../../styles';
 
 const NBSP = '\u00A0';
@@ -112,7 +112,7 @@ Podcast.propTypes = {
 
 export default function Podcasts({ data }) {
   return (
-    <Layout title="Podcasts">
+    <Layout sidebar={miscSidebar} title="Podcasts">
       { data.allPodcast.nodes.map(p => <Podcast key={p.link} {...p} />) }
     </Layout>
   );

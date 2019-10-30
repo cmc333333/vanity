@@ -5,7 +5,7 @@ import React from 'react';
 
 import JobComponent from '../../components/work/job';
 import Timeline from '../../components/work/timeline';
-import Layout from '../../layouts';
+import Layout, { workSidebar } from '../../layouts';
 import Job from '../../util/job';
 import PortfolioProject from '../../util/portfolio-project';
 
@@ -29,7 +29,7 @@ export default function WorkHistory({ data }) {
     url: e.node.frontmatter.url,
   }));
   return (
-    <Layout title="Work History">
+    <Layout sidebar={workSidebar} title="Work History">
       <Timeline jobs={jobs} />
       { jobs.map(job => <JobComponent key={job.id} job={job} />) }
     </Layout>

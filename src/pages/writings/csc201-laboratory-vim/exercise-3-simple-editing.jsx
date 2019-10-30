@@ -1,12 +1,12 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import Layout from '../../../layouts';
+import Layout, { writingsSidebar } from '../../../layouts';
 import './csc201-laboratory-vim.css';
 
 export default function SimpleEditing() {
   return (
-    <Layout title="Exercise 3: Simple Editing">
+    <Layout sidebar={writingsSidebar} title="Exercise 3: Simple Editing">
       <p>
         We begin with the &ldquo;delete&rdquo; command. As with most commands,
         this takes a movement parameter. Please maneuver your cursor to the

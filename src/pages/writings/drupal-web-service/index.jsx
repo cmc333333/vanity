@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import Layout from '../../../layouts';
+import Layout, { writingsSidebar } from '../../../layouts';
 
 export default function Index() {
   return (
-    <Layout title="Drupal as a Web Service">
+    <Layout sidebar={writingsSidebar} title="Drupal as a Web Service">
       <p>
         I gave a{' '}
         <a href="http://2009.drupalcampchicago.org/sessions/drupal-web-service">

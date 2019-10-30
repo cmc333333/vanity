@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import Layout from '../../../layouts';
+import Layout, { writingsSidebar } from '../../../layouts';
 
 export default function UsefulFeatures() {
   return (
-    <Layout title="A List of Some Other Useful Features">
+    <Layout sidebar={writingsSidebar} title="A List of Some Other Useful Features">
       <p>
         The following is a list of spiffy features and a short explaination.
         Please look at{' '}

@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import Layout from '../../../layouts';
+import Layout, { writingsSidebar } from '../../../layouts';
 
 export default function Index() {
   return (
-    <Layout title="Programming Languages for Web Developers">
+    <Layout sidebar={writingsSidebar} title="Programming Languages for Web Developers">
       <p>
         I consider myself a programming languages connoisseur; I truly love to
         pick up new languages, take them for a spin, and pick apart their

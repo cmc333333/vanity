@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import Layout from '../../../layouts';
+import Layout, { writingsSidebar } from '../../../layouts';
 
 export default function FurtherSources() {
   return (
-    <Layout title="Further Sources">
+    <Layout sidebar={writingsSidebar} title="Further Sources">
       <p>
         Many of the examples were borrowed and modified from the examples
         given in vimtutor, a program that is installed with vim that provides

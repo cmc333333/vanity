@@ -6,7 +6,7 @@ import React from 'react';
 import CurrentTopics from '../../../components/education/topics/current-topics';
 import Entry from '../../../components/education/topics/entry';
 import Visualization from '../../../components/education/topics/visualization';
-import Layout from '../../../layouts';
+import Layout, { educationSidebar } from '../../../layouts';
 import TopicEntry, { commonTags } from '../../../util/topic-entry';
 
 
@@ -62,7 +62,7 @@ export default class Topics extends React.Component {
 
   render() {
     return (
-      <Layout title="Education by Topic">
+      <Layout sidebar={educationSidebar} title="Education by Topic">
         <CurrentTopics deactivate={this.deactivate} topics={this.state.selectedTopics} />
         { this.state.inBrowser ?
           <Visualization

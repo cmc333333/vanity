@@ -3,7 +3,7 @@ import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Layout from '../../layouts';
+import Layout, { cvSidebar } from '../../layouts';
 import { trailingComma } from '../../styles';
 
 export default function CodeSamples({ data }) {
@@ -33,7 +33,7 @@ export default function CodeSamples({ data }) {
     );
   });
   return (
-    <Layout title="Code Samples">
+    <Layout sidebar={cvSidebar} title="Code Samples">
       <ul>{ children }</ul>
     </Layout>
   );

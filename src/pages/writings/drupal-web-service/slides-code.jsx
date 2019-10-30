@@ -1,11 +1,11 @@
 import { Link, withPrefix } from 'gatsby';
 import React from 'react';
 
-import Layout from '../../../layouts';
+import Layout, { writingsSidebar } from '../../../layouts';
 
 export default function SlidesCode() {
   return (
-    <Layout title="Slides and Code">
+    <Layout sidebar={writingsSidebar} title="Slides and Code">
       <iframe
         frameBorder="0"
         height="451"

@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import Layout from '../../../layouts';
+import Layout, { writingsSidebar } from '../../../layouts';
 
 export default function WebServices() {
   return (
-    <Layout title="Web Services">
+    <Layout sidebar={writingsSidebar} title="Web Services">
       <h2>Web 2.0 : The Need</h2>
       <p>
         Before I explain what web services are, let me describe their purpose

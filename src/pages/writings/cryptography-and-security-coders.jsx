@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Layout from '../../layouts';
+import Layout, { writingsSidebar } from '../../layouts';
 
 const highlight = { backgroundColor: '#ff0' };
 
 export default function CrypotgraphyCoders() {
   return (
-    <Layout title="Cryptography (and Security) for Coders">
+    <Layout sidebar={writingsSidebar} title="Cryptography (and Security) for Coders">
       <p>
         This page was written to supplement my Cryptography (and Security) for
         Coders talk at the Chicago Code Camp &rsquo;12. It is a significant

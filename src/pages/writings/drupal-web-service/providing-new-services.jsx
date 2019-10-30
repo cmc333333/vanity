@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import Layout from '../../../layouts';
+import Layout, { writingsSidebar } from '../../../layouts';
 
 export default function ProvidingNewServices() {
   return (
-    <Layout title="Providing New Services">
+    <Layout sidebar={writingsSidebar} title="Providing New Services">
       <p>
         The final topic for this presentation regarding adding new services
         for your Drupal site. Before we dive in to the code, I wanted to take

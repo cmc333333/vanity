@@ -4,7 +4,7 @@ import _ from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Layout from '../../layouts';
+import Layout, { educationSidebar } from '../../layouts';
 import { scaleText, spacing } from '../../styles';
 
 const University = glamorous.span(
@@ -102,7 +102,7 @@ export default function Degrees({ data }) {
   const courses = data.allCoursesYaml.edges.map(e => e.node);
   const [withCerts, withoutCerts] = _.partition(courses, c => c.certificate);
   return (
-    <Layout title="Degrees & Certificates">
+    <Layout sidebar={educationSidebar} title="Degrees & Certificates">
       <Degree title="Master of Science, Computer Science (with Distinction)">
         <University>
           College of Computing and Digital Media, Depaul University
