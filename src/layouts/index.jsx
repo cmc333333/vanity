@@ -1,4 +1,3 @@
-import { globalHistory } from "@reach/router"
 import { Link } from 'gatsby';
 import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
@@ -16,7 +15,7 @@ import logoMiddle from './img/logo_middle.gif';
 import logoRight from './img/logo_right.gif';
 
 
-const writings = (
+export const writingsSidebar = (
   <Sidebar title="Writings">
     <SidebarLink to="/writings/csc201-laboratory-vim/">
       CSC201 Laboratory: ViM
@@ -39,24 +38,24 @@ const writings = (
     </SidebarLink>
   </Sidebar>
 );
-const misc = (
+export const miscSidebar = (
   <Sidebar title="Misc">
     <SidebarLink to="/writings/">Writings</SidebarLink>
     <SidebarLink to="/misc/books/">Books</SidebarLink>
     <SidebarLink to="/misc/podcasts/">Podcasts</SidebarLink>
   </Sidebar>
 );
-const cv = (
+export const cvSidebar = (
   <Sidebar title="At a Glance">
     <SidebarLink to="/">Résumé</SidebarLink>
   </Sidebar>
 );
-const work = (
+export const workSidebar = (
   <Sidebar title="Work">
     <SidebarLink to="/work/history/">History</SidebarLink>
   </Sidebar>
 );
-const education = (
+export const educationSidebar = (
   <Sidebar title="Education">
     <SidebarLink to="/education/topics/">By Topic</SidebarLink>
     <SidebarLink to="/education/degrees/">
@@ -125,22 +124,7 @@ const footer = (
   </glamorous.Div>
 );
 
-export default function Layout({ children, title }) {
-  const { pathname } = globalHistory.location;
-
-  let sidebar;
-  if (pathname.startsWith('/writings/')) {
-    sidebar = writings;
-  } else if (pathname.startsWith('/misc/')) {
-    sidebar = misc;
-  } else if (pathname.startsWith('/education/')) {
-    sidebar = education;
-  } else if (pathname.startsWith('/work/')) {
-    sidebar = work;
-  } else {
-    sidebar = cv;
-  }
-
+export default function Layout({ children, sidebar, title }) {
   return (
     <glamorous.Div
       marginLeft="auto"
@@ -191,7 +175,6 @@ export default function Layout({ children, title }) {
 }
 Layout.propTypes = {
   children: PropTypes.func.isRequired,
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-  }).isRequired,
+  sidebar: PropTypes.element.isRequired,
+  title: PropTypes.string.isRequired,
 };

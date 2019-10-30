@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import Layout from '../../layouts';
+import Layout, { writingsSidebar } from '../../layouts';
 
 export default function Writings() {
   return (
-    <Layout title="Writings">
+    <Layout sidebar={writingsSidebar} title="Writings">
       <div>
         <p>
           <Link to="/writings/csc201-laboratory-vim/">

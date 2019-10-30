@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import Layout from '../../layouts';
+import Layout, { writingsSidebar } from '../../layouts';
 
 export default function WebApplicationSecurityFundamentals() {
   return (
-    <Layout title="Web Application Security Fundamentals">
+    <Layout sidebar={writingsSidebar} title="Web Application Security Fundamentals">
       <div style={{ textAlign: 'center' }}>
         Given as a{' '}
         <a href="http://2011.drupalcampchicago.org/sessions/web-application-security-fundamentals">

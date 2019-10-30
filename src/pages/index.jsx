@@ -7,7 +7,7 @@ import Overview from '../components/resume/overview';
 import Pride from '../components/resume/pride';
 import { baseFontSize, baseSpace } from '../components/resume/utils';
 import WorkHistory from '../components/resume/work-history';
-import Layout from '../layouts';
+import Layout, { cvSidebar } from '../layouts';
 
 export default function Index() {
   const resumeStyles = {
@@ -17,7 +17,7 @@ export default function Index() {
     },
   };
   return (
-    <Layout title="Résumé">
+    <Layout sidebar={cvSidebar} title="Résumé">
       <div css={resumeStyles}>
         <Links />
         <Contact />

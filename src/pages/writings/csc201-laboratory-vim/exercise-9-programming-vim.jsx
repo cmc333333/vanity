@@ -1,12 +1,12 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import Layout from '../../../layouts';
+import Layout, { writingsSidebar } from '../../../layouts';
 import './csc201-laboratory-vim.css';
 
 export default function ProgrammingVim() {
   return (
-    <Layout title="Exercise 9: Programming with ViM">
+    <Layout sidebar={writingsSidebar} title="Exercise 9: Programming with ViM">
       <p>
         Though ViM was designed to be a multifunctional text editor, it is
         probably most useful as a coding tool. As such, it implements several

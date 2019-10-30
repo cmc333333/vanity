@@ -1,12 +1,12 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import Layout from '../../../layouts';
+import Layout, { writingsSidebar } from '../../../layouts';
 import './csc201-laboratory-vim.css';
 
 export default function MovingAround() {
   return (
-    <Layout title="Exercise 2: Moving Around">
+    <Layout sidebar={writingsSidebar} title="Exercise 2: Moving Around">
       <p>
         In both insert and command mode, movement keys include those that one
         would generally expect. The arrow keys move the cursor on their

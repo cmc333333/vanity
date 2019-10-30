@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import ProjectComponent from '../../components/work/portfolio-project';
-import Layout from '../../layouts';
+import Layout, { workSidebar } from '../../layouts';
 import PortfolioProject from '../../util/portfolio-project';
 
 export default function Portfolio({ data }) {
   const projects = data.Portfolio.edges.map(e =>
     new PortfolioProject({ ...e.node.frontmatter, html: e.node.html }));
   return (
-    <Layout title="Portfolio">
+    <Layout sidebar={workSidebar} title="Portfolio">
       { projects.map(project =>
         <ProjectComponent key={project.title} project={project} />) }
     </Layout>

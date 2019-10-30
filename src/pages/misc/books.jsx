@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Layout from '../../layouts';
+import Layout, { miscSidebar } from '../../layouts';
 
 
 function Book({ book, image, imgStyle }) {
@@ -41,7 +41,7 @@ Book.defaultProps = {
 export default function Books({ data }) {
   const books = data.allGoodreads.edges.map(e => e.node.book);
   return (
-    <Layout title="Books">
+    <Layout sidebar={miscSidebar} title="Books">
       <h3>Currently Reading</h3>
       { books.filter(b => b.currentlyReading).map(b => (
         <Book

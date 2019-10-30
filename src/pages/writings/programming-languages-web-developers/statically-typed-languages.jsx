@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import Layout from '../../../layouts';
+import Layout, { writingsSidebar } from '../../../layouts';
 
 export default function StaticallyTyped() {
   return (
-    <Layout title="Statically Typed Languages">
+    <Layout sidebar={writingsSidebar} title="Statically Typed Languages">
       <p>
         Many languages, such as Java, Scala, and Haskell are &ldquo;statically
         typed&rdquo;, meaning that the &ldquo;type&rdquo; (often,

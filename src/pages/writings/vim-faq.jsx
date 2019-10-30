@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import Layout from '../../layouts';
+import Layout, { writingsSidebar } from '../../layouts';
 
 export default function VimFaq() {
   return (
-    <Layout title="Vim FAQ">
+    <Layout sidebar={writingsSidebar} title="Vim FAQ">
       <p>
         This is a bit of an addendum to my original{' '}
         <Link to="/writings/csc201-laboratory-vim/">introduction</Link> to Vim

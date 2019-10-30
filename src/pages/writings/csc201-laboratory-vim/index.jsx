@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import Layout from '../../../layouts';
+import Layout, { writingsSidebar } from '../../../layouts';
 
 export default function Intro() {
   return (
-    <Layout title="CSC201 Laboratory: ViM">
+    <Layout sidebar={writingsSidebar} title="CSC201 Laboratory: ViM">
       <p>
         In this lab, we will be working with the versatile open-source editor,
         ViM. This program, which is available for all major operating systems

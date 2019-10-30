@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import Layout from '../../../layouts';
+import Layout, { writingsSidebar } from '../../../layouts';
 
 export default function AccessingDrupal() {
   return (
-    <Layout title="Accessing Drupal through Web Services">
+    <Layout sidebar={writingsSidebar} title="Accessing Drupal through Web Services">
       <p>
         Regardless of the mechanism used for accessing your Drupal site
         through a web service, users will follow the same basic steps. First,

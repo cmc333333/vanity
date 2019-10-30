@@ -1,12 +1,12 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import Layout from '../../../layouts';
+import Layout, { writingsSidebar } from '../../../layouts';
 import './csc201-laboratory-vim.css';
 
 export default function RevisitingInsertMode() {
   return (
-    <Layout title="Exercise 4: Revisiting Insert Mode">
+    <Layout sidebar={writingsSidebar} title="Exercise 4: Revisiting Insert Mode">
       <p>
         Now that we&rsquo;ve covered some more command mechanics, I&rsquo;d
         like to mention a few more means of editing text. The &lsquo;i&rsquo;

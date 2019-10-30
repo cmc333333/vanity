@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import Layout from '../../../layouts';
+import Layout, { writingsSidebar } from '../../../layouts';
 
 export default function DrupalsServicesModule() {
   return (
-    <Layout title="Drupal's Services Module">
+    <Layout sidebar={writingsSidebar} title="Drupal's Services Module">
       <p>
         Luckily, Drupal has the{' '}
         <a href="http://drupal.org/project/services">Services</a> module,
