@@ -11,6 +11,7 @@ export const colors = {
   background: '#dcdff6',
   backgroundPage: '#9caac6',
   bodyText: gray(23, 204),
+  header: '#5a79a5',
   link: '#005580',
 };
 
