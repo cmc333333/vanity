@@ -7,9 +7,8 @@ import Helmet from 'react-helmet';
 import MainMenuLink, { mainMenuHeight } from '../components/main-menu-link';
 import Sidebar from '../components/sidebar';
 import SidebarLink from '../components/sidebar-link';
-import { colors, columns, hideOn, row, spacing } from '../styles';
+import { colors, columns, hideOn, row, scaleText, spacing } from '../styles';
 import favicon from './favicon.ico';
-import logo from './img/logo.gif';
 import logoLeft from './img/logo_left.gif';
 import logoMiddle from './img/logo_middle.gif';
 import logoRight from './img/logo_right.gif';
@@ -138,7 +137,25 @@ export default function Layout({ children, sidebar, title }) {
       </Helmet>
       <div id="header" css={row}>
         <Link css={{ position: 'absolute' }} to="/">
-          <img src={logo} alt="Home" />
+          <glamorous.Div
+            border={`10px solid ${colors.header}`}
+            borderRadius="50%"
+            height="100px"
+            width="100px"
+          >
+            <glamorous.Div
+              backgroundColor={colors.header}
+              borderRadius="10px"
+              color="#fff"
+              css={scaleText(1)}
+              height="62px"
+              margin="9px"
+              paddingLeft="5px"
+              width="62px"
+            >
+              &gt;_
+            </glamorous.Div>
+          </glamorous.Div>
         </Link>
         { headerName }
         { mainMenu }
@@ -153,11 +170,10 @@ export default function Layout({ children, sidebar, title }) {
             padding="0 2em 2em 2em"
           >
             <glamorous.H1
-              background="#5A79A5"
+              background={colors.header}
               borderBottomLeftRadius="20px"
               borderBottomRightRadius="20px"
               color="#FFF"
-              key="h1"
               paddingBottom=".5rem"
               paddingTop=".5rem"
               margin="0 20% .5em 20%"
