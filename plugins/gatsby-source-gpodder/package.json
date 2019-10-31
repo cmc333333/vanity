@@ -1,4 +1,5 @@
 {
+  "main": "gatsby-node.js",
   "name": "gatsby-source-gpodder",
   "peerDependencies": {
     "axios": "*",
