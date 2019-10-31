@@ -7,6 +7,7 @@
     "gatsby-source-filesystem": "*",
     "lodash": "*",
     "moment": "*",
+    "normalize-url": "*",
     "tough-cookie": "*",
     "xml2js": "*"
   }
