@@ -5,12 +5,21 @@ const promisify = require('es6-promisify');
 const { createRemoteFileNode } = require('gatsby-source-filesystem');
 const _ = require('lodash');
 const moment = require('moment');
+const normalizeUrl = require('normalize-url');
 const { Cookie } = require('tough-cookie');
 const callbackParseString = require('xml2js').parseString;
 
 const BASE_URL = 'https://gpodder.net';
 const HTTP_TIMEOUT = 60 * 1000;
 const parseString = promisify(callbackParseString);
+
+function normalizeEpisode(asStr) {
+  return normalizeUrl(
+    asStr,
+    { removeQueryParameters: [/.+/] },
+  );
+}
+
 
 async function setupClient(auth) {
   const client = axios.create({ baseURL: BASE_URL, timeout: HTTP_TIMEOUT });
@@ -38,10 +47,11 @@ async function recentActivity(client, username) {
   const filteredActions = actions.filter(a => a.action === 'play');
   const byPodcast = {};
   filteredActions.forEach(({ episode, podcast, timestamp }) => {
+    const normEpisode = normalizeEpisode(episode);
     const actionDate = moment(timestamp).unix();
     byPodcast[podcast] = byPodcast[podcast] || {};
-    const existingAction = byPodcast[podcast][episode] || 0;
-    byPodcast[podcast][episode] = Math.max(actionDate, existingAction);
+    const existingAction = byPodcast[podcast][normEpisode] || 0;
+    byPodcast[podcast][normEpisode] = Math.max(actionDate, existingAction);
   });
   return byPodcast;
 }
@@ -55,14 +65,15 @@ async function readRSS(url) {
   rawChannel.item
     .filter(item => item.enclosure)
     .forEach((item) => {
-      episodes[item.enclosure[0].$.url] = {
+      const normEpisode = normalizeEpisode(item.enclosure[0].$.url);
+      episodes[normEpisode] = {
         description: (
           (item.description && item.description[0])
           || (item['itunes:summary'] && item['itunes:summary'][0])
         ),
         pubDate: moment(item.pubDate[0]).unix(),
         title: item.title[0],
-        url: item.enclosure[0].$.url,
+        url: normEpisode,
       };
     });
 

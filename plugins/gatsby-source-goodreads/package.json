@@ -1,9 +1,10 @@
 {
+  "main": "gatsby-node.js",
   "name": "gatsby-source-goodreads",
-  "dependencies": {
-    "axios": "^0.17.1",
-    "es6-promisify": "^5.0.0",
-    "moment": "^2.20.1",
-    "xml2js": "^0.4.19"
+  "peerDependencies": {
+    "axios": "*",
+    "es6-promisify": "*",
+    "moment": "*",
+    "xml2js": "*"
   }
 }
