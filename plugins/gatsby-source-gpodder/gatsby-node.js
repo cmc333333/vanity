@@ -71,6 +71,7 @@ async function readRSS(url) {
           (item.description && item.description[0])
           || (item['itunes:summary'] && item['itunes:summary'][0])
         ),
+        imageUrl: item['itunes:image'] && item['itunes:image'][0].$.href,
         pubDate: moment(item.pubDate[0]).unix(),
         title: item.title[0],
         url: normEpisode,
@@ -97,6 +98,26 @@ function hash(str) {
     .digest('hex');
 }
 
+async function createEpisodes(actions, createNodeId, podcastId, podcastLogo, listenedTo) {
+  const { createNode } = actions;
+  for (const episode of listenedTo) { // eslint-disable-line no-restricted-syntax
+    /* eslint-disable no-await-in-loop */
+    if (episode.logoUrl === podcastLogo) {
+      delete episode.logoUrl;
+    }
+    await createNode({
+      ...episode,
+      id: createNodeId(`PodcastEpisode:${episode.url}`),
+      internal: {
+        contentDigest: hash(JSON.stringify(episode)),
+        type: 'PodcastEpisode',
+      },
+      parent: null,
+    });
+    /* eslint-enable no-await-in-loop */
+  }
+}
+
 
 exports.sourceNodes = async ({ actions, createNodeId, reporter }, { auth }) => {
   const { createNode } = actions;
@@ -119,16 +140,20 @@ exports.sourceNodes = async ({ actions, createNodeId, reporter }, { auth }) => {
       const listenedTo = [];
       Object.entries(allRecent[subscription.url] || {}).forEach(([episode, timestamp]) => {
         const channelEpisode = channel.episodes[episode] || {};
-        listenedTo.push({ timestamp, title: channelEpisode.title });
+        listenedTo.push({
+          timestamp,
+          logoUrl: channelEpisode.imageUrl,
+          title: channelEpisode.title,
+          url: episode,
+        });
       });
-      const recentTitles = _.sortBy(listenedTo, ep => -1 * ep.timestamp)
-        .map(ep => ep.title)
-        .filter(t => t);
+      const recentEpisodes = _.sortBy(listenedTo, ep => -1 * ep.timestamp)
+        .map(ep => ep.url);
 
       const description = subscription.description || channel.description;
 
       const fields = {
-        recentTitles,
+        recentEpisodes,
         description,
         logoUrl: subscription.logo_url || channel.imageUrl,
         maxActivity: _.max(listenedTo.map(ep => ep.timestamp)) || 0,
@@ -137,15 +162,17 @@ exports.sourceNodes = async ({ actions, createNodeId, reporter }, { auth }) => {
         website: subscription.website || channel.link,
       };
 
+      const podcastId = createNodeId(`Podcast:${subscription.url}`);
       await createNode({
         ...fields,
-        id: createNodeId(`Podcast:${subscription.url}`),
+        id: podcastId,
         internal: {
           contentDigest: hash(JSON.stringify(fields)),
           type: 'Podcast',
         },
         parent: null,
       });
+      await createEpisodes(actions, createNodeId, podcastId, fields.logoUrl, listenedTo);
     } catch (err) {
       reporter.warn(`${err} when retreiving ${subscription.url}`);
     }

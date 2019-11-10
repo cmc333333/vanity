@@ -5,9 +5,40 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Layout, { miscSidebar } from '../../layouts';
-import styles, { colors, columns, hideOn, row } from '../../styles';
+import styles, { colors, columns, hideOn, row, spacing } from '../../styles';
 
 const NBSP = '\u00A0';
+
+function PodcastEpisode({ ep }) {
+  const { fields, title } = ep;
+  const logo = fields && fields.logo.childImageSharp.fixed;
+
+  if (logo) {
+    return (
+      <glamorous.Div css={row} marginBottom={spacing(1 / 2)} marginTop={spacing(1 / 2)}>
+        <glamorous.Div boxSizing="border-box" float="left" width={`${logo.width}px`}>
+          <Img fixed={logo} style={{ border: "1px solid black", maxWidth: "100%" }}/>
+        </glamorous.Div>
+        <glamorous.Div
+          boxSizing="border-box"
+          display="table"
+          float="left"
+          height={`${logo.height}px`}
+          paddingLeft={spacing(1 / 2)}
+          width={`calc(100% - ${logo.width}px)`}
+        >
+          <glamorous.Span display="table-cell" verticalAlign="middle">
+            { title }
+          </glamorous.Span>
+        </glamorous.Div>
+      </glamorous.Div>
+    );
+  } else {
+    return (
+      <glamorous.Div marginBottom={spacing(1 / 2)} marginTop={spacing(1 / 2)}>• { title }</glamorous.Div>
+    );
+  }
+}
 
 class Podcast extends React.Component {
   constructor(props) {
@@ -19,33 +50,29 @@ class Podcast extends React.Component {
     this.setState({ showAll: false });
   }
 
-  get recentTitlesEl() {
-    const { recentTitles } = this.props;
-    if (this.state.showAll || recentTitles.length < 6) {
-      return (
-        <ul>
-          { recentTitles.map(t => <li>{t}</li>) }
-        </ul>
-      );
-    } else {
-
-      return (
-        <>
-          <ul>
-            { recentTitles.slice(0, 5).map(t => <li>{t}</li>) }
-          </ul>
-          <glamorous.Button
-            onClick={() => this.setState({ showAll: true })}
-            background="transparent"
-            border="none"
-            color={colors.link}
-            cursor="pointer"
-          >
-            Show all
-          </glamorous.Button>
-        </>
+  get recentEpisodesEl() {
+    let { recentEpisodes } = this.props;
+    let showAllButton = null;
+    if (recentEpisodes.length > 5 && !this.state.showAll) {
+      recentEpisodes = recentEpisodes.slice(0, 5);
+      showAllButton = (
+        <glamorous.Button
+          onClick={() => this.setState({ showAll: true })}
+          background="transparent"
+          border="none"
+          color={colors.link}
+          cursor="pointer"
+        >
+          Show all
+        </glamorous.Button>
       );
     }
+    return (
+      <>
+        { recentEpisodes.map(ep => <PodcastEpisode ep={ep} />) }
+        { showAllButton }
+      </>
+    )
   }
 
   render() {
@@ -85,7 +112,7 @@ class Podcast extends React.Component {
               { logo && <Img fluid={logo.childImageSharp.fluid} /> || NBSP }
             </glamorous.Div>
             <div dangerouslySetInnerHTML={{ __html: html }} />
-            { this.recentTitlesEl }
+            { this.recentEpisodesEl }
           </glamorous.Div>
         </div>
       </glamorous.Div>
@@ -107,10 +134,18 @@ Podcast.propTypes = {
   }).isRequired,
   title: PropTypes.string.isRequired,
   website: PropTypes.string.isRequired,
-  recentTitles: PropTypes.arrayOf(PropTypes.string).isRequired,
+  recentEpisodes: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default function Podcasts({ data }) {
+  const episodes = {};
+  data.allPodcastEpisode.nodes.forEach((ep) => {
+    episodes[ep.url] = ep
+  });
+  data.allPodcast.nodes.forEach((podcast) => {
+    podcast.recentEpisodes = podcast.recentEpisodes.map(epUrl => episodes[epUrl]).filter(e => e);
+  });
+
   return (
     <Layout sidebar={miscSidebar} title="Podcasts">
       { data.allPodcast.nodes.map(p => <Podcast key={p.link} {...p} />) }
@@ -121,6 +156,12 @@ Podcasts.propTypes = {
   data: PropTypes.shape({
     allPodcast: PropTypes.shape({
       nodes: PropTypes.arrayOf(Podcast.propTypes).isRequired,
+    }).isRequired,
+    allPodcastEpisode: PropTypes.shape({
+      nodes: PropTypes.arrayOf(PropTypes.shape({
+        logoUrl: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
+      })).isRequired,
     }).isRequired,
   }).isRequired,
 };
@@ -136,7 +177,7 @@ export const query = graphql`
       nodes {
         title
         website
-        recentTitles
+        recentEpisodes
 
         fields {
           description {
@@ -148,6 +189,23 @@ export const query = graphql`
             childImageSharp {
               fluid(srcSetBreakpoints: [100, 200, 400, 600, 800]) {
                 ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+
+    allPodcastEpisode {
+      nodes {
+        title
+        url
+
+        fields {
+          logo {
+            childImageSharp {
+              fixed(height: 100) {
+                ...GatsbyImageSharpFixed
               }
             }
           }
