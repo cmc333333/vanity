@@ -71,7 +71,10 @@ async function readRSS(url) {
           (item.description && item.description[0])
           || (item['itunes:summary'] && item['itunes:summary'][0])
         ),
-        imageUrl: item['itunes:image'] && item['itunes:image'][0].$.href,
+        imageUrl: (
+          (item['itunes:image'] && item['itunes:image'][0].$.href)
+          || (item['media:thumbnail'] && item['media:thumbnail'][0].$.url)
+        ),
         pubDate: moment(item.pubDate[0]).unix(),
         title: item.title[0],
         url: normEpisode,
