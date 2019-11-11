@@ -13,6 +13,10 @@ function PodcastEpisode({ ep }) {
   const { fields, title } = ep;
   const logo = fields && fields.logo.childImageSharp.fixed;
 
+  if (!title) {
+    return null;
+  }
+
   if (logo) {
     return (
       <glamorous.Div css={row} marginBottom={spacing(1 / 2)} marginTop={spacing(1 / 2)}>
