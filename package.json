@@ -5,7 +5,8 @@
   "scripts": {
     "develop": "gatsby develop -H 0.0.0.0",
     "build": "gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "trakt-sign-in": "trakt-sign-in"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -23,6 +24,7 @@
     "gatsby-plugin-typography": "^2.3.12",
     "gatsby-remark-autolink-headers": "^2.1.14",
     "gatsby-source-filesystem": "^2.1.31",
+    "gatsby-source-trakt": "file:plugins/gatsby-source-trakt",
     "gatsby-transformer-remark": "^2.6.28",
     "gatsby-transformer-sharp": "^2.2.23",
     "gatsby-transformer-yaml": "^2.2.13",
@@ -42,6 +44,7 @@
     "react-typography": "^0.16.19",
     "react-visjs-timeline": "^1.6.0",
     "tough-cookie": "^3.0.1",
+    "trakt.tv": "^7.2.0",
     "typography": "^0.16.19",
     "vis-timeline": "^5.1.0",
     "xml2js": "^0.4.22"

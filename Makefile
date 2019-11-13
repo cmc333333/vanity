@@ -16,3 +16,6 @@ dev:
 
 start-dev-server:
 	docker run --rm -it --env-file .env --volume ${PWD}:/usr/src/app -p8000:8000 cmc333333/vanity npm run develop
+
+trakt-sign-in:
+	docker run --rm -it --env-file .env --volume ${PWD}:/usr/src/app cmc333333/vanity npm run trakt-sign-in

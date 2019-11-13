@@ -1,0 +1,11 @@
+{
+  "main": "gatsby-node.js",
+  "name": "gatsby-source-trakt",
+  "bin": {
+    "trakt-sign-in": "./sign-in.js"
+  },
+  "peerDependencies": {
+    "trakt.tv": "*"
+  },
+  "version": "1.0.0"
+}
