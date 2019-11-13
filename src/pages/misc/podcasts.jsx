@@ -152,6 +152,31 @@ export default function Podcasts({ data }) {
 
   return (
     <Layout sidebar={miscSidebar} title="Podcasts">
+      <p>
+        I listen to a lot of podcasts. They're perfect for multi-tasking:
+        learn unexpected factoids and hear analysis of world events while
+        doing the dishes, running errands, or exercising. In fact, I enjoy
+        so many of them that I need to speed up their playback (currently: 3.2
+        times) just to keep up with their release schedules!
+      </p>
+      <p>
+        One of the interesting features of my podcatcher of choice,
+        {' '}
+        <a href="https://antennapod.org/">AntennaPod</a>, is the ability to
+        record listening habits through
+        {' '}
+        <a href="https://gpodder.net/">gPodder.net</a>. This page uses data
+        from the latter's API to display not only my current subscriptions,
+        but also some expanded episode information for pieces I've listened to
+        in the last week. See the
+        {' '}
+        <a
+          href="https://github.com/cmc333333/vanity/tree/master/plugins/gatsby-source-gpodder"
+        >
+          source code
+        </a> for details.
+      </p>
+      <hr />
       { data.allPodcast.nodes.map(p => <Podcast key={p.link} {...p} />) }
     </Layout>
   );
