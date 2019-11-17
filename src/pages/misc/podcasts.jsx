@@ -9,9 +9,8 @@ import styles, { colors, columns, hideOn, row, spacing } from '../../styles';
 
 const NBSP = '\u00A0';
 
-function PodcastEpisode({ ep }) {
-  const { fields, title } = ep;
-  const logo = fields && fields.logo.childImageSharp.fixed;
+function PodcastEpisode({ logo, title }) {
+  const logoData = logo && logo.childImageSharp.fixed;
 
   if (!title) {
     return null;
@@ -20,16 +19,16 @@ function PodcastEpisode({ ep }) {
   if (logo) {
     return (
       <glamorous.Div css={row} marginBottom={spacing(1 / 2)} marginTop={spacing(1 / 2)}>
-        <glamorous.Div boxSizing="border-box" float="left" width={`${logo.width}px`}>
-          <Img fixed={logo} style={{ border: "1px solid black", maxWidth: "100%" }}/>
+        <glamorous.Div boxSizing="border-box" float="left" width={`${logoData.width}px`}>
+          <Img fixed={logoData} style={{ border: "1px solid black", maxWidth: "100%" }}/>
         </glamorous.Div>
         <glamorous.Div
           boxSizing="border-box"
           display="table"
           float="left"
-          height={`${logo.height}px`}
+          height={`${logoData.height}px`}
           paddingLeft={spacing(1 / 2)}
-          width={`calc(100% - ${logo.width}px)`}
+          width={`calc(100% - ${logoData.width}px)`}
         >
           <glamorous.Span display="table-cell" verticalAlign="middle">
             { title }
@@ -73,7 +72,7 @@ class Podcast extends React.Component {
     }
     return (
       <>
-        { recentEpisodes.map(ep => <PodcastEpisode ep={ep} />) }
+        { recentEpisodes.map(ep => <PodcastEpisode key={ep.title} {...ep} />) }
         { showAllButton }
       </>
     )
@@ -81,10 +80,8 @@ class Podcast extends React.Component {
 
   render() {
     const {
-      fields: {
-        description: { childMarkdownRemark: { html } },
-        logo,
-      },
+      description: { childMarkdownRemark: { html } },
+      logo,
       title,
       website,
     } = this.props;
@@ -124,32 +121,29 @@ class Podcast extends React.Component {
   }
 }
 Podcast.propTypes = {
-  fields: PropTypes.shape({
-    description: PropTypes.shape({
-      childMarkdownRemark: PropTypes.shape({
-        html: PropTypes.string.isRequired,
-      }),
-    }).isRequired,
-    logo: PropTypes.shape({
-      childImageSharp: PropTypes.shape({
-        fluid: PropTypes.any.isRequired,
-      }).isRequired,
+  description: PropTypes.shape({
+    childMarkdownRemark: PropTypes.shape({
+      html: PropTypes.string.isRequired,
+    }),
+  }).isRequired,
+  logo: PropTypes.shape({
+    childImageSharp: PropTypes.shape({
+      fluid: PropTypes.any.isRequired,
     }).isRequired,
   }).isRequired,
+  recentEpisodes: PropTypes.arrayOf(PropTypes.shape({
+    logo: PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        fixed: PropTypes.any.isRequired,
+      }).isRequired,
+    }).isRequired,
+    title: PropTypes.string.isRequired,
+  })).isRequired,
   title: PropTypes.string.isRequired,
   website: PropTypes.string.isRequired,
-  recentEpisodes: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default function Podcasts({ data }) {
-  const episodes = {};
-  data.allPodcastEpisode.nodes.forEach((ep) => {
-    episodes[ep.url] = ep
-  });
-  data.allPodcast.nodes.forEach((podcast) => {
-    podcast.recentEpisodes = podcast.recentEpisodes.map(epUrl => episodes[epUrl]).filter(e => e);
-  });
-
   return (
     <Layout sidebar={miscSidebar} title="Podcasts">
       <p>
@@ -177,7 +171,7 @@ export default function Podcasts({ data }) {
         </a> for details.
       </p>
       <hr />
-      { data.allPodcast.nodes.map(p => <Podcast key={p.link} {...p} />) }
+      { data.allPodcast.nodes.map(p => <Podcast key={p.website} {...p} />) }
     </Layout>
   );
 }
@@ -185,12 +179,6 @@ Podcasts.propTypes = {
   data: PropTypes.shape({
     allPodcast: PropTypes.shape({
       nodes: PropTypes.arrayOf(Podcast.propTypes).isRequired,
-    }).isRequired,
-    allPodcastEpisode: PropTypes.shape({
-      nodes: PropTypes.arrayOf(PropTypes.shape({
-        logoUrl: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired,
-      })).isRequired,
     }).isRequired,
   }).isRequired,
 };
@@ -206,36 +194,29 @@ export const query = graphql`
       nodes {
         title
         website
-        recentEpisodes
 
-        fields {
-          description {
-            childMarkdownRemark {
-              html
-            }
-          }
-          logo {
-            childImageSharp {
-              fluid(srcSetBreakpoints: [100, 200, 400, 600, 800]) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
+        recentEpisodes {
+          title
 
-    allPodcastEpisode {
-      nodes {
-        title
-        url
-
-        fields {
           logo {
             childImageSharp {
               fixed(height: 100) {
                 ...GatsbyImageSharpFixed
               }
+            }
+          }
+        }
+
+        description {
+          childMarkdownRemark {
+            html
+          }
+        }
+
+        logo {
+          childImageSharp {
+            fluid(srcSetBreakpoints: [100, 200, 400, 600, 800]) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

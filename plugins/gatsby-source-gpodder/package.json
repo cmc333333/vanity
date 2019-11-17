@@ -9,6 +9,7 @@
     "lodash": "*",
     "moment": "*",
     "normalize-url": "*",
+    "p-iteration": "*",
     "tough-cookie": "*",
     "xml2js": "*"
   }
