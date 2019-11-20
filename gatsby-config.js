@@ -1,3 +1,27 @@
+const gatsbySourceGpodder = {
+  resolve: 'gatsby-source-gpodder',
+  options: { auth: { username: 'cmc', password: process.env.GPODDER_PASSWORD } },
+};
+const fakeGatsbySourceGpodder = {
+  resolve: 'gatsby-source-doubles',
+  options: {
+    schema: {
+      maxActivity: 'random.number',
+      maxEpisode: 'random.number',
+      recentEpisodes: [{
+        title: 'company.bs',
+        logo: 'image',
+      }],
+      description: { childMarkdownRemark: { html: 'lorem.paragraph' } },
+      logo: 'image',
+      title: 'company.bs',
+      website: 'internet.url',
+    },
+    count: 3,
+    type: 'Podcast',
+  },
+};
+
 module.exports = {
   plugins: [
     {
@@ -11,10 +35,7 @@ module.exports = {
       resolve: 'gatsby-source-goodreads',
       options: { userId: 21996113 },
     },
-    {
-      resolve: 'gatsby-source-gpodder',
-      options: { auth: { username: 'cmc', password: process.env.GPODDER_PASSWORD } },
-    },
+    process.env.FAKE_GPODDER ? fakeGatsbySourceGpodder : gatsbySourceGpodder,
     'gatsby-transformer-remark',
     'gatsby-transformer-yaml',
     'gatsby-remark-autolink-headers',
