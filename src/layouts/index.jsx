@@ -1,4 +1,4 @@
-import { Link } from 'gatsby';
+import { graphql, Link, StaticQuery } from 'gatsby';
 import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -108,7 +108,7 @@ const mainMenu = (
     <MainMenuLink last to="/misc/books/">Misc.</MainMenuLink>
   </glamorous.Ul>
 );
-const footer = (
+const Footer = ({ buildTimeHoursAgo }) => (
   <glamorous.Div
     margin="1em 0"
     textAlign="center"
@@ -117,11 +117,13 @@ const footer = (
       background={colors.background}
       borderRadius="10px"
       padding="0 1em"
+      title={`Built ${buildTimeHoursAgo} hours ago`}
     >
       &copy; C.M. Lubinski 2008-2019
     </glamorous.Span>
   </glamorous.Div>
 );
+Footer.propTypes = { buildTimeHoursAgo: PropTypes.string.isRequired };
 
 export default function Layout({ children, sidebar, title }) {
   return (
@@ -183,7 +185,10 @@ export default function Layout({ children, sidebar, title }) {
             </glamorous.H1>
             { children }
           </glamorous.Div>
-          { footer }
+          <StaticQuery
+            query={graphql`{ site { buildTimeHoursAgo: buildTime(difference: "hours") } }`}
+            render={data => <Footer {...data.site} />}
+          />
         </div>
       </div>
     </glamorous.Div>
