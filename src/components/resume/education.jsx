@@ -1,4 +1,3 @@
-import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -13,9 +12,9 @@ function Degree({ children, date, title }) {
         <SubSectionHeader css={columns({ small: 9 })}>
           { title }
         </SubSectionHeader>
-        <glamorous.Span css={columns({ small: 3 })} textAlign="right">
+        <span css={{ ...columns({ small: 3 }), textAlign: 'right' }}>
           { date }
-        </glamorous.Span>
+        </span>
       </div>
       <p>{ children }</p>
     </div>

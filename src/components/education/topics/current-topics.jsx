@@ -1,5 +1,3 @@
-import { css } from 'glamor';
-import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -14,10 +12,10 @@ export default function CurrentTopics({
   if (topics.length) {
     const deactivateList = topics.map((topic, idx) => (
       <Button
-        css={css(
+        css={[
           idx <= topics.length - 2 ? trailingComma : {},
-          idx === topics.length - 2 ? { '::after': { content: ', or ' } } : {},
-        )}
+          idx === topics.length - 2 ? { '::after': { content: '", or "' } } : {},
+        ]}
         key={topic}
         onClick={() => deactivate(topic)}
       >
@@ -25,32 +23,27 @@ export default function CurrentTopics({
       </Button>
     ));
     return (
-      <glamorous.Fieldset
-        css={row}
-        paddingLeft={spacing()}
-        paddingRight={spacing()}
-      >
-        <glamorous.Legend
-          border={0}
-          css={columns({ small: 12, medium: 2, large: 1 })}
-          fontWeight="bold"
+      <fieldset css={{ ...row, paddingLeft: spacing(), paddingRight: spacing() }}>
+        <legend
+          css={{
+            ...columns({ small: 12, medium: 2, large: 1 }),
+            border: 0,
+            fontWeight: 'bold',
+          }}
         >
           Topics:
-        </glamorous.Legend>
+        </legend>
         <div css={columns({ small: 12, medium: 8, large: 9 })}>
           {' '}
           { deactivateList }
           {' '}
         </div>
-        <glamorous.Div
-          css={columns({ small: 12, medium: 2, large: 2 })}
-          textAlign="right"
-        >
+        <div css={{ ...columns({ small: 12, medium: 2, large: 2 }), textAlign: 'right' }}>
           <Button onClick={() => deactivate(...topics)}>
             Remove All
           </Button>
-        </glamorous.Div>
-      </glamorous.Fieldset>
+        </div>
+      </fieldset>
     );
   }
   return null;

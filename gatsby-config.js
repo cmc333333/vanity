@@ -40,7 +40,7 @@ module.exports = {
     'gatsby-transformer-yaml',
     'gatsby-remark-autolink-headers',
     'gatsby-plugin-catch-links',
-    'gatsby-plugin-glamor',
+    'gatsby-plugin-emotion',
     'gatsby-plugin-lodash',
     'gatsby-plugin-nprogress',
     {

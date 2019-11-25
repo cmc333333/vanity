@@ -1,4 +1,3 @@
-import glamorous from 'glamorous';
 import _ from 'lodash';
 import moment from 'moment';
 import PropTypes from 'prop-types';
@@ -67,19 +66,21 @@ export default function Timeline({ jobs }) {
   };
 
   return (
-    <glamorous.Div css={colors} marginBottom="1rem" position="relative">
+    <div css={{ ...colors, marginBottom: '1rem', position: 'relative' }}>
       <ClientSideReactTimeline items={items} options={options} />
-      <glamorous.P
-        bottom={0}
-        margin={0}
-        padding={spacing(1 / 4)}
-        position="absolute"
-        textAlign="center"
-        width="100%"
+      <p
+        css={{
+          bottom: 0,
+          margin: 0,
+          padding: spacing(1 / 4),
+          position: 'absolute',
+          textAlign: 'center',
+          width: '100%',
+        }}
       >
         Drag left or right to see more.
-      </glamorous.P>
-    </glamorous.Div>
+      </p>
+    </div>
   );
 }
 Timeline.propTypes = {

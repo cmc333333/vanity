@@ -1,4 +1,3 @@
-import glamorous from 'glamorous';
 import Markdown from 'markdown-to-jsx';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -35,9 +34,7 @@ function Project({ project: { summary, technology, title } }) {
   ));
   return (
     <li>
-      <glamorous.Span css={trailingColon} fontStyle="italic">
-        { title }
-      </glamorous.Span>
+      <span css={{ ...trailingColon, fontStyle: 'italic' }}>{ title }</span>
       { summary }<br />{ techList }
     </li>
   );
@@ -62,8 +59,8 @@ export default function Job({
   const body = <div dangerouslySetInnerHTML={{ __html: html }} />;
   /* eslint-enable react/no-danger */
   const companyEl = url ?
-    <glamorous.A href={url} whiteSpace="nowrap">{ company }</glamorous.A> :
-    <glamorous.Span whiteSpace="nowrap">{ company }</glamorous.Span>;
+    <a css={{ whiteSpace: 'nowrap' }} href={url}>{ company }</a> :
+    <span css={{ whiteSpace: 'nowrap' }}>{ company }</span>;
 
   return (
     <div>
@@ -71,15 +68,17 @@ export default function Job({
         <span css={columns({ small: 12, medium: 8, large: 9 })}>
           { title } &mdash; { companyEl }
         </span>
-        <glamorous.Span
-          css={columns({ small: 12, medium: 4, large: 3 })}
-          fontSize={scaleText(0).fontSize /* maintain lineHeight */}
-          fontWeight="normal"
-          textAlign="right"
+        <span
+          css={{
+            ...columns({ small: 12, medium: 4, large: 3 }),
+            fontSize: scaleText(0).fontSize, /* maintain lineHeight */
+            fontWeight: 'normal',
+            textAlign: 'right',
+          }}
         >
           { start.format("MMM 'YY") } &ndash;{' '}
           { end ? end.format("MMM 'YY") : 'Present '}
-        </glamorous.Span>
+        </span>
       </h2>
       { body }
       <ProjectSection title="Demonstrated Impact">

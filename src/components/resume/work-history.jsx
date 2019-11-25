@@ -1,4 +1,4 @@
-import glamorous from 'glamorous';
+import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -16,20 +16,12 @@ function JobHeader({
       <SubSectionHeader css={columns({ small: 6, medium: 3 })}>
         { title }
       </SubSectionHeader>
-      <glamorous.Span
-        css={columns({ small: 6, medium: 3 })}
-        float="right"
-        textAlign="right"
-      >
+      <span css={{ ...columns({ small: 6, medium: 3 }), float: 'right', textAlign: 'right' }}>
         { dates }
-      </glamorous.Span>
-      <glamorous.Span
-        css={columns({ small: 12, medium: 6 })}
-        fontStyle="italic"
-        textAlign="center"
-      >
+      </span>
+      <span css={{ ...columns({ small: 12, medium: 6 }), fontStyle: 'italic', textAlign: 'center' }}>
         { company } &mdash; { location }
-      </glamorous.Span>
+      </span>
     </div>
   );
 }
@@ -40,8 +32,8 @@ JobHeader.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-const Description = glamorous.p({ marginBottom: baseSpace });
-const TechList = glamorous(InlineList)({ marginBottom: baseSpace });
+const Description = styled.p({ marginBottom: baseSpace });
+const TechList = styled(InlineList)({ marginBottom: baseSpace });
 
 export default function WorkHistory() {
   return (

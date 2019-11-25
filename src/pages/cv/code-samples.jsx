@@ -1,5 +1,4 @@
 import { graphql, Link } from 'gatsby';
-import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -15,19 +14,18 @@ export default function CodeSamples({ data }) {
     return (
       <li key={basename}>
         <Link to={`/cv/code-samples/${basename}`}>{ title }</Link>
-        <glamorous.Ul
-          display="inline-block"
-          listStyleType="none"
-        >
+        <ul css={{ display: 'inline-block', listStyleType: 'none' }}>
           { tags.map((tag, idx) => (
-            <glamorous.Li
-              css={idx !== tags.length - 1 ? trailingComma : {}}
-              display="inline"
+            <li
+              css={[
+                idx !== tags.length - 1 ? trailingComma : {},
+                { display: 'inline' },
+              ]}
               key={tag}
             >
               { tag }
-            </glamorous.Li>)) }
-        </glamorous.Ul>
+            </li>)) }
+        </ul>
         <div>{ summary }</div>
       </li>
     );

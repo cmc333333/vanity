@@ -1,4 +1,4 @@
-import glamorous from 'glamorous';
+import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -6,14 +6,12 @@ import { columns, row, spacing, trailingComma } from '../../../styles';
 import TopicEntry from '../../../util/topic-entry';
 import Button from './button';
 
-const Row = glamorous.div(
-  row,
-  {
-    borderBottom: '1px solid black',
-    paddingBottom: spacing(1 / 2),
-    paddingTop: spacing(1 / 2),
-  },
-);
+const Row = styled.div({
+  ...row,
+  borderBottom: '1px solid black',
+  paddingBottom: spacing(1 / 2),
+  paddingTop: spacing(1 / 2),
+});
 
 export default function Entry({
   selectTopic,

@@ -1,11 +1,11 @@
-import glamorous from 'glamorous';
+import styled from '@emotion/styled';
 import React from 'react';
 
 import { columns } from '../../styles';
 import { baseSpace, BorderedRow, InlineList, MarkerlessList, SectionHeader, SubSectionHeader, ThirdCol } from './utils';
 
 
-const TagList = glamorous(InlineList)({ marginBottom: baseSpace });
+const TagList = styled(InlineList)({ marginBottom: baseSpace });
 
 export default function Overview() {
   return (

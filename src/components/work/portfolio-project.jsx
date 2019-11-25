@@ -1,5 +1,4 @@
-import { css } from 'glamor';
-import glamorous from 'glamorous';
+import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -16,13 +15,13 @@ function Links({ source, url }) {
   const urlEl = url ? <a href={url}>See it Live</a> : null;
   const leftEl = <span css={halfCol}>{ sourceEl || urlEl }</span>;
   const rightEl = source && url ?
-    <span css={css(halfCol, { textAlight: 'right' })}>{ urlEl }</span> : null;
+    <span css={{ ...halfCol, textAlight: 'right' }}>{ urlEl }</span> : null;
 
   return (
-    <glamorous.Div css={row} marginBottom={spacing(1 / 4)}>
+    <div css={{ ...row, marginBottom: spacing(1 / 4) }}>
       { leftEl }
       { rightEl }
-    </glamorous.Div>
+    </div>
   );
 }
 Links.propTypes = {
@@ -34,7 +33,7 @@ Links.defaultProps = {
   url: '',
 };
 
-const InlineLi = glamorous.li({ display: 'inline', marginRight: spacing() });
+const InlineLi = styled.li({ display: 'inline', marginRight: spacing() });
 
 export default function Project({
   project: {
@@ -49,15 +48,15 @@ export default function Project({
   const body = <div dangerouslySetInnerHTML={{ __html: html }} />;
   /* eslint-enable react/no-danger */
   return (
-    <glamorous.Div marginTop={spacing()}>
-      <glamorous.H2 marginBottom={spacing(1 / 4)}>{ title }</glamorous.H2>
+    <div css={{ marginTop: spacing() }}>
+      <h2 css={{ marginBottom: spacing(1 / 4) }}>{ title }</h2>
       <Links source={source} url={url} />
       { body }
       <h3>Tech Stack</h3>
-      <glamorous.Ul listStyleType="none" marginBottom={0} marginLeft={0}>
+      <ul css={{ listStyleType: 'none', marginBottom: 0, marginLeft: 0 }}>
         { technology.map(tech => <InlineLi key={tech}>{ tech }</InlineLi>) }
-      </glamorous.Ul>
-    </glamorous.Div>
+      </ul>
+    </div>
   );
 }
 Project.propTypes = {

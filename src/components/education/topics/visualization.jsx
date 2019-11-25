@@ -1,4 +1,3 @@
-import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Graph from 'react-graph-vis';
@@ -27,25 +26,27 @@ export default function Visualization({ entries, getVis, setTopics }) {
     },
   };
   return (
-    <glamorous.Div border="1px solid silver" height="400px" position="relative">
+    <div css={{ border: '1px solid silver', height: '400px', position: 'relative' }}>
       <Graph
         events={events}
         getNetwork={getVis}
         graph={graph}
         options={options}
       />
-      <glamorous.P
-        background="silver"
-        border="1px solid silver"
-        bottom={0}
-        margin={0}
-        padding={spacing(1 / 4)}
-        position="absolute"
-        right={0}
+      <p
+        css={{
+          background: 'silver',
+          border: '1px solid silver',
+          bottom: 0,
+          margin: 0,
+          padding: spacing(1 / 4),
+          position: 'absolute',
+          right: 0,
+        }}
       >
         Ctrl-click or long-click to select multiple.
-      </glamorous.P>
-    </glamorous.Div>
+      </p>
+    </div>
   );
 }
 Visualization.propTypes = {

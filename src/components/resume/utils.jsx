@@ -1,4 +1,4 @@
-import glamorous from 'glamorous';
+import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -7,24 +7,23 @@ import { colors, columns, mediaQueries, row, spacing } from '../../styles';
 export const baseFontSize = '14px';
 export const baseSpace = spacing(1 / 4);
 
-export const BorderedRow = glamorous.section(row, {
+export const BorderedRow = styled.section({
+  ...row,
   borderBottomColor: colors.bodyText,
   borderBottomStyle: 'solid',
   borderBottomWidth: '1px',
 });
-export const HalfCol = glamorous.section(
-  columns({ small: 12, medium: 6 }),
-  { paddingBottom: spacing(1 / 2) },
-);
-export const ThirdCol = glamorous.section(
+export const HalfCol = styled.section({
+  ...columns({ small: 12, medium: 6 }),
+  paddingBottom: spacing(1 / 2),
+});
+export const ThirdCol = styled.section([
   columns({ small: 12, medium: 6, large: 4 }),
   {
-    [mediaQueries.medium]: {
-      paddingRight: baseSpace,
-    },
+    [mediaQueries.medium]: { paddingRight: baseSpace },
   },
-);
-export const LeftCol = glamorous(HalfCol)({
+]);
+export const LeftCol = styled(HalfCol)({
   borderBottomColor: colors.bodyText,
   borderBottomStyle: 'solid',
   borderBottomWidth: '1px',
@@ -36,30 +35,30 @@ export const LeftCol = glamorous(HalfCol)({
   },
   paddingRight: baseSpace,
 });
-export const RightCol = glamorous(HalfCol)({
+export const RightCol = styled(HalfCol)({
   [mediaQueries.medium]: { paddingLeft: baseSpace },
 });
-export const SectionHeader = glamorous.h4({
+export const SectionHeader = styled.h4({
   fontSize: '16px',
   marginBottom: baseSpace,
   marginTop: baseSpace,
 });
-export const SubSectionHeader = glamorous.h5({
+export const SubSectionHeader = styled.h5({
   fontSize: baseFontSize,
   fontWeight: 'normal',
   marginBottom: 0,
   textDecoration: 'underline',
 });
-export const MarkerlessList = glamorous.ul({
+export const MarkerlessList = styled.ul({
   listStyleType: 'none',
   marginBottom: 0,
   marginLeft: 0,
 });
-export const InlineList = glamorous(MarkerlessList)({
+export const InlineList = styled(MarkerlessList)({
   fontStyle: 'italic',
   '& li': {
     display: 'inline',
-    '::after': { content: ' • ' },
+    '::after': { content: '" • "' },
   },
   '& li:last-child': {
     '::after': { content: 'none' },

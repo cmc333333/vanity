@@ -1,4 +1,3 @@
-import { css } from 'glamor';
 import gray from 'gray-percentage';
 import Typography from 'typography';
 
@@ -85,11 +84,11 @@ function trailingStr(content) {
   };
 }
 
-export const trailingComma = trailingStr(', ');
-export const trailingColon = trailingStr(': ');
+export const trailingComma = trailingStr('", "');
+export const trailingColon = trailingStr('": "');
 
 export function hideOn({ small = false, medium = false, large = false }) {
-  return css({
+  return {
     display: small ? 'none' : 'inherit',
     [mediaQueries.medium]: {
       display: medium ? 'none' : 'inherit',
@@ -97,23 +96,23 @@ export function hideOn({ small = false, medium = false, large = false }) {
     [mediaQueries.large]: {
       display: large ? 'none' : 'inherit',
     },
-  });
+  };
 }
 
-export const row = css({
-  ':before': {
-    content: ' ',
+export const row = {
+  '::before': {
+    content: '" "',
     display: 'table',
   },
-  ':after': {
+  '::after': {
     clear: 'both',
-    content: ' ',
+    content: '" "',
     display: 'table',
   },
-});
+};
 
 export function columns({ small = 0, medium = 0, large = 0 }) {
-  return css({
+  return {
     boxSizing: 'border-box',
     float: 'left',
     width: `calc(${small}/12 * 100%)`,
@@ -123,5 +122,5 @@ export function columns({ small = 0, medium = 0, large = 0 }) {
     [mediaQueries.large]: {
       width: `calc(${large || medium || small}/12 * 100%)`,
     },
-  });
+  };
 }

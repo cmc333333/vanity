@@ -1,5 +1,4 @@
 import { graphql, Link, StaticQuery } from 'gatsby';
-import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
@@ -65,15 +64,17 @@ export const educationSidebar = (
 );
 
 const headerName = (
-  <glamorous.Span
-    background={`url(${logoLeft}) left bottom no-repeat`}
-    display="inline-block"
-    fontWeight="bold"
-    height="25px"
-    lineHeight="25px"
-    marginLeft="90px"
-    marginTop="10px"
-    paddingLeft="17px"
+  <span
+    css={{
+      background: `url(${logoLeft}) left bottom no-repeat`,
+      display: 'inline-block',
+      fontWeight: 'bold',
+      height: '25px',
+      lineHeight: '25px',
+      marginLeft: '90px',
+      marginTop: '10px',
+      paddingLeft: '17px',
+    }}
   >
     <Link
       css={{
@@ -84,54 +85,54 @@ const headerName = (
       }}
       to="/"
     >
-      <glamorous.Span
-        background={`url(${logoMiddle}) repeat`}
-        display="inline-block"
-      >
+      <span css={{ background: `url(${logoMiddle}) repeat`, display: 'inline-block' }}>
         C.M. Lubinski
-      </glamorous.Span>
+      </span>
     </Link>
-  </glamorous.Span>
+  </span>
 );
 const mainMenu = (
-  <glamorous.Ul
-    display="block"
-    height={mainMenuHeight}
-    lineHeight={mainMenuHeight}
-    marginBottom={0}
-    marginLeft="80px"
-    marginTop="5px"
+  <ul
+    css={{
+      display: 'block',
+      height: mainMenuHeight,
+      lineHeight: mainMenuHeight,
+      marginBottom: 0,
+      marginLeft: '80px',
+      marginTop: '5px',
+    }}
   >
     <MainMenuLink first to="/">At a Glance</MainMenuLink>
     <MainMenuLink to="/work/history/">Work</MainMenuLink>
     <MainMenuLink to="/education/topics/">Education</MainMenuLink>
     <MainMenuLink last to="/misc/books/">Misc.</MainMenuLink>
-  </glamorous.Ul>
+  </ul>
 );
 const Footer = ({ buildTimeHoursAgo }) => (
-  <glamorous.Div
-    margin="1em 0"
-    textAlign="center"
-  >
-    <glamorous.Span
-      background={colors.background}
-      borderRadius="10px"
-      padding="0 1em"
+  <div css={{ margin: '1em 0', textAlign: 'center' }}>
+    <span
+      css={{
+        background: colors.background,
+        borderRadius: '10px',
+        padding: '0 1em',
+      }}
       title={`Built ${buildTimeHoursAgo} hours ago`}
     >
       &copy; C.M. Lubinski 2008-2019
-    </glamorous.Span>
-  </glamorous.Div>
+    </span>
+  </div>
 );
 Footer.propTypes = { buildTimeHoursAgo: PropTypes.string.isRequired };
 
 export default function Layout({ children, sidebar, title }) {
   return (
-    <glamorous.Div
-      marginLeft="auto"
-      marginRight="auto"
-      marginTop={spacing(1 / 2)}
-      maxWidth="1000px"
+    <div
+      css={{
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        marginTop: spacing(1 / 2),
+        maxWidth: '1000px',
+      }}
     >
       <Helmet>
         <title>{`${title} | C.M. Lubinski`}</title>
@@ -139,25 +140,29 @@ export default function Layout({ children, sidebar, title }) {
       </Helmet>
       <div id="header" css={row}>
         <Link css={{ position: 'absolute' }} to="/">
-          <glamorous.Div
-            border={`10px solid ${colors.header}`}
-            borderRadius="50%"
-            height="100px"
-            width="100px"
+          <div
+            css={{
+              border: `10px solid ${colors.header}`,
+              borderRadius: '50%',
+              height: '100px',
+              width: '100px',
+            }}
           >
-            <glamorous.Div
-              backgroundColor={colors.header}
-              borderRadius="10px"
-              color="#fff"
-              css={scaleText(1)}
-              height="62px"
-              margin="9px"
-              paddingLeft="5px"
-              width="62px"
+            <div
+              css={{
+                ...scaleText(1),
+                backgroundColor: colors.header,
+                borderRadius: '10px',
+                color: '#fff',
+                height: '62px',
+                margin: '9px',
+                paddingLeft: '5px',
+                width: '62px',
+              }}
             >
               &gt;_
-            </glamorous.Div>
-          </glamorous.Div>
+            </div>
+          </div>
         </Link>
         { headerName }
         { mainMenu }
@@ -165,33 +170,37 @@ export default function Layout({ children, sidebar, title }) {
       <div css={row}>
         { sidebar }
         <div css={columns({ small: 12, medium: 9 })}>
-          <glamorous.Div
-            background={colors.background}
-            borderRadius="10px"
-            color="#222"
-            padding="0 2em 2em 2em"
+          <div
+            css={{
+              background: colors.background,
+              borderRadius: '10px',
+              color: '#222',
+              padding: '0 2em 2em 2em',
+            }}
           >
-            <glamorous.H1
-              background={colors.header}
-              borderBottomLeftRadius="20px"
-              borderBottomRightRadius="20px"
-              color="#FFF"
-              paddingBottom=".5rem"
-              paddingTop=".5rem"
-              margin="0 20% .5em 20%"
-              textAlign="center"
+            <h1
+              css={{
+                background: colors.header,
+                borderBottomLeftRadius: '20px',
+                borderBottomRightRadius: '20px',
+                color: '#FFF',
+                paddingBottom: '.5rem',
+                paddingTop: '.5rem',
+                margin: '0 20% .5em 20%',
+                textAlign: 'center',
+              }}
             >
               {title}
-            </glamorous.H1>
+            </h1>
             { children }
-          </glamorous.Div>
+          </div>
           <StaticQuery
             query={graphql`{ site { buildTimeHoursAgo: buildTime(difference: "hours") } }`}
             render={data => <Footer {...data.site} />}
           />
         </div>
       </div>
-    </glamorous.Div>
+    </div>
   );
 }
 Layout.propTypes = {

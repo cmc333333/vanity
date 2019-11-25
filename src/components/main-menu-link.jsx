@@ -1,5 +1,4 @@
 import { Link } from 'gatsby';
-import glamorous from 'glamorous';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -19,32 +18,32 @@ export default function MainMenuLink({
   to,
 }) {
   const pseudoEl = {
-    content: ' ',
+    content: '" "',
     display: 'inline-block',
     height: mainMenuHeight,
     verticalAlign: 'top',
     width: '25px',
   };
   return (
-    <glamorous.Li
+    <li
       css={{
-        ':before': {
+        '::before': {
           ...pseudoEl,
           background: `url(${first ? mmLeftCurve : mmLeft}) no-repeat right top`,
         },
-        ':after': {
+        '::after': {
           ...pseudoEl,
           background: `url(${last ? mmRightCurve : mmRight}) no-repeat left top`,
         },
+        float: 'left',
+        lineHeight: mainMenuHeight,
+        listStyleType: 'none',
+        marginLeft: first ? '10px' : null,
       }}
-      float="left"
-      lineHeight={mainMenuHeight}
-      listStyleType="none"
-      marginLeft={first ? '10px' : null}
     >
       <Link
         css={{
-          ...(scaleText(1)),
+          ...scaleText(1),
           background: `#5A79A5 url(${mmMiddle}) repeat-x`,
           color: '#FFF',
           display: 'inline-block',
@@ -58,7 +57,7 @@ export default function MainMenuLink({
       >
         { children }
       </Link>
-    </glamorous.Li>
+    </li>
   );
 }
 MainMenuLink.propTypes = {

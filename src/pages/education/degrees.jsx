@@ -1,5 +1,5 @@
+import styled from '@emotion/styled';
 import { graphql } from 'gatsby';
-import glamorous from 'glamorous';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -7,7 +7,7 @@ import React from 'react';
 import Layout, { educationSidebar } from '../../layouts';
 import { scaleText, spacing } from '../../styles';
 
-const University = glamorous.span(
+const University = styled.span(
   scaleText(1 / 4),
   {
     display: 'block',
@@ -15,18 +15,18 @@ const University = glamorous.span(
     marginBottom: spacing(1 / 2),
   },
 );
-const UniversitylessP = glamorous.p({ marginTop: spacing(1 / 2) });
+const UniversitylessP = styled.p({ marginTop: spacing(1 / 2) });
 
 function Degree({ children, title }) {
   return (
-    <glamorous.Div marginTop={spacing()}>
-      <glamorous.H2 marginBottom={0} marginTop={0}>
+    <div css={{ marginTop: spacing() }}>
+      <h2 css={{ marginBottom: 0, marginTop: 0 }}>
         { title }
-      </glamorous.H2>
-      <glamorous.Div paddingLeft={spacing()}>
+      </h2>
+      <div css={{ paddingLeft: spacing() }}>
         { children }
-      </glamorous.Div>
-    </glamorous.Div>
+      </div>
+    </div>
   );
 }
 Degree.propTypes = {
@@ -37,12 +37,11 @@ Degree.propTypes = {
 function Certificates({ data }) {
   const ordered = _.orderBy(data, ['certificate.date'], ['desc']);
   return (
-    <glamorous.Ul listStyleType="none" marginLeft={0}>
+    <ul css={{ listStyleType: 'none', marginLeft: 0 }}>
       { ordered.map(wc => (
-        <glamorous.Li
+        <li
+          css={{ paddingLeft: spacing(), textIndent: `-${spacing()}` }}
           key={wc.title}
-          paddingLeft={spacing()}
-          textIndent={`-${spacing()}`}
         >
           { wc.certificate.type }
           { wc.certificate.distinction ?
@@ -51,9 +50,9 @@ function Certificates({ data }) {
           { wc.url ? <a href={wc.url}>{ wc.title }</a> : wc.title }
           {'" from '}
           { wc.university }
-        </glamorous.Li>
+        </li>
         )) }
-    </glamorous.Ul>
+    </ul>
   );
 }
 Certificates.propTypes = {
@@ -73,20 +72,19 @@ Certificates.propTypes = {
 function NonCertificates({ data }) {
   const ordered = _.orderBy(data, ['end'], ['desc']);
   return (
-    <glamorous.Ul listStyleType="none" marginLeft={0}>
+    <ul css={{ listStyleType: 'none', marginLeft: 0 }}>
       { ordered.map(wc => (
-        <glamorous.Li
+        <li
+          css={{ paddingLeft: spacing(), textIndent: `-${spacing()}` }}
           key={wc.title}
-          paddingLeft={spacing()}
-          textIndent={`-${spacing()}`}
         >
           {'"'}
           { wc.url ? <a href={wc.url}>{ wc.title }</a> : wc.title }
           {'" from '}
           { wc.university }
-        </glamorous.Li>
+        </li>
         )) }
-    </glamorous.Ul>
+    </ul>
   );
 }
 NonCertificates.propTypes = {

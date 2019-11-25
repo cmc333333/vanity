@@ -1,6 +1,5 @@
 import { graphql } from 'gatsby';
-import Img from "gatsby-image"
-import glamorous from 'glamorous';
+import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -10,7 +9,7 @@ import styles, { colors, columns, hideOn, row, spacing } from '../../styles';
 const NBSP = '\u00A0';
 
 function PodcastEpisode({ logo, title }) {
-  const logoData = logo && logo.childImageSharp.fixed;
+  const logoData = logo && logo.childImageSharp && logo.childImageSharp.fixed;
 
   if (!title) {
     return null;
@@ -18,29 +17,32 @@ function PodcastEpisode({ logo, title }) {
 
   if (logo) {
     return (
-      <glamorous.Div css={row} marginBottom={spacing(1 / 2)} marginTop={spacing(1 / 2)}>
-        <glamorous.Div boxSizing="border-box" float="left" width={`${logoData.width}px`}>
-          <Img fixed={logoData} style={{ border: "1px solid black", maxWidth: "100%" }}/>
-        </glamorous.Div>
-        <glamorous.Div
-          boxSizing="border-box"
-          display="table"
-          float="left"
-          height={`${logoData.height}px`}
-          paddingLeft={spacing(1 / 2)}
-          width={`calc(100% - ${logoData.width}px)`}
+      <div css={{ ...row, marginBottom: spacing(1 / 2), marginTop: spacing(1 / 2) }}>
+        <div css={{ boxSizing: 'border-box', float: 'left', width: `${logoData.width}px` }}>
+          <Img fixed={logoData} style={{ border: '1px solid black', maxWidth: '100%' }} />
+        </div>
+        <div
+          css={{
+            boxSizing: 'border-box',
+            display: 'table',
+            float: 'left',
+            height: `${logoData.height}px`,
+            paddingLeft: spacing(1 / 2),
+            width: `calc(100% - ${logoData.width}px)`,
+          }}
         >
-          <glamorous.Span display="table-cell" verticalAlign="middle">
+          <span css={{ display: 'table-cell', verticalAlign: 'middle' }}>
             { title }
-          </glamorous.Span>
-        </glamorous.Div>
-      </glamorous.Div>
-    );
-  } else {
-    return (
-      <glamorous.Div marginBottom={spacing(1 / 2)} marginTop={spacing(1 / 2)}>• { title }</glamorous.Div>
+          </span>
+        </div>
+      </div>
     );
   }
+  return (
+    <div css={{ marginBottom: spacing(1 / 2), marginTop: spacing(1 / 2) }}>
+      • { title }
+    </div>
+  );
 }
 
 class Podcast extends React.Component {
@@ -59,23 +61,25 @@ class Podcast extends React.Component {
     if (recentEpisodes.length > 5 && !this.state.showAll) {
       recentEpisodes = recentEpisodes.slice(0, 5);
       showAllButton = (
-        <glamorous.Button
+        <button
           onClick={() => this.setState({ showAll: true })}
-          background="transparent"
-          border="none"
-          color={colors.link}
-          cursor="pointer"
+          css={{
+            background: 'transparent',
+            border: 'none',
+            color: colors.link,
+            cursor: 'pointer',
+          }}
         >
           Show all
-        </glamorous.Button>
+        </button>
       );
     }
     return (
-      <>
+      <React.Fragment>
         { recentEpisodes.map(ep => <PodcastEpisode key={ep.title} {...ep} />) }
         { showAllButton }
-      </>
-    )
+      </React.Fragment>
+    );
   }
 
   render() {
@@ -85,38 +89,45 @@ class Podcast extends React.Component {
       title,
       website,
     } = this.props;
+    const img = logo && logo.childImageSharp && logo.childImageSharp.fluid;
     return (
-      <glamorous.Div
-        borderBottomColor={colors.bodyText}
-        borderBottomStyle="solid"
-        borderBottomWidth="1px"
-        marginBottom={styles.rhythm(0.5)}
-        paddingBottom={styles.rhythm(0.5)}
+      <div
+        css={{
+          borderBottomColor: colors.bodyText,
+          borderBottomStyle: 'solid',
+          borderBottomWidth: '1px',
+          marginBottom: styles.rhythm(0.5),
+          paddingBottom: styles.rhythm(0.5),
+        }}
       >
         <div css={row}>
-          <glamorous.Div
-            border={logo && `1px solid ${colors.bodyText}`}
-            {...columns({ medium: 3 })}
-            {...hideOn({ small: true })}
+          <div
+            css={[
+              columns({ medium: 3 }),
+              hideOn({ small: true }),
+              { border: img && `1px solid ${colors.bodyText}` },
+            ]}
           >
-            { logo && <Img fluid={logo.childImageSharp.fluid} /> || NBSP }
-          </glamorous.Div>
-          <glamorous.Div css={columns({ small: 12, medium: 9 })} paddingLeft={styles.rhythm(0.5)}>
-            <glamorous.H4 display="inline-block">
+            { (img && <Img fluid={img} />) || NBSP }
+          </div>
+          <div css={{ ...columns({ small: 12, medium: 9 }), paddingLeft: styles.rhythm(0.5) }}>
+            <h4 css={{ display: 'inline-block' }}>
               <a href={website}>{ title }</a>
-            </glamorous.H4>
-            <glamorous.Div
-              border={logo && `1px solid ${colors.bodyText}`}
-              css={hideOn({ medium: true, large: true })}
-              margin={`${styles.rhythm(0.5)} 20%`}
+            </h4>
+            <div
+              css={{
+                ...hideOn({ medium: true, large: true }),
+                border: img && `1px solid ${colors.bodyText}`,
+                margin: `${styles.rhythm(0.5)} 20%`,
+              }}
             >
-              { logo && <Img fluid={logo.childImageSharp.fluid} /> || NBSP }
-            </glamorous.Div>
+              { (img && <Img fluid={img} />) || NBSP }
+            </div>
             <div dangerouslySetInnerHTML={{ __html: html }} />
             { this.recentEpisodesEl }
-          </glamorous.Div>
+          </div>
         </div>
-      </glamorous.Div>
+      </div>
     );
   }
 }

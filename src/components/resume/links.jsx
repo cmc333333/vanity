@@ -1,4 +1,3 @@
-import { css } from 'glamor';
 import React from 'react';
 
 import resume from '../../assets/lubinski-resume.pdf';
@@ -8,11 +7,11 @@ const docsUrl = 'https://docs.google.com/document/d/16djyBXmJ1mij0uM76wzmT_fkgni
 
 export default function Links() {
   return (
-    <div css={css(row, { marginBottom: '1rem' })}>
+    <div css={{ ...row, marginBottom: '1rem' }}>
       <section css={columns({ small: 6 })}>
         <a href={resume}>PDF Version</a>
       </section>
-      <section css={css(columns({ small: '6' }), { textAlign: 'right' })}>
+      <section css={{ ...columns({ small: 6 }), textAlign: 'right' }}>
         <a href={docsUrl}>Google Drive Version</a>
       </section>
     </div>
