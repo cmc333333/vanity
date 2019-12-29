@@ -1,4 +1,5 @@
 import { graphql, Link, StaticQuery } from 'gatsby';
+import moment from 'moment';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
@@ -108,7 +109,7 @@ const mainMenu = (
     <MainMenuLink last to="/misc/books/">Misc.</MainMenuLink>
   </ul>
 );
-const Footer = ({ buildTimeHoursAgo }) => (
+const Footer = ({ buildTime }) => (
   <div css={{ margin: '1em 0', textAlign: 'center' }}>
     <span
       css={{
@@ -116,13 +117,13 @@ const Footer = ({ buildTimeHoursAgo }) => (
         borderRadius: '10px',
         padding: '0 1em',
       }}
-      title={`Built ${buildTimeHoursAgo} hours ago`}
+      title={`Built ${moment(buildTime).fromNow()}`}
     >
       &copy; C.M. Lubinski 2008-2019
     </span>
   </div>
 );
-Footer.propTypes = { buildTimeHoursAgo: PropTypes.string.isRequired };
+Footer.propTypes = { buildTime: PropTypes.string.isRequired };
 
 export default function Layout({ children, sidebar, title }) {
   return (
@@ -195,7 +196,7 @@ export default function Layout({ children, sidebar, title }) {
             { children }
           </div>
           <StaticQuery
-            query={graphql`{ site { buildTimeHoursAgo: buildTime(difference: "hours") } }`}
+            query={graphql`{ site { buildTime } }`}
             render={data => <Footer {...data.site} />}
           />
         </div>
