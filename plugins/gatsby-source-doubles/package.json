@@ -1,0 +1,10 @@
+{
+  "main": "gatsby-node.js",
+  "name": "gatsby-source-doubles",
+  "peerDependencies": {
+    "faker": "*",
+    "gatsby-source-filesystem": "*",
+    "p-iteration": "*"
+  }
+}
+
