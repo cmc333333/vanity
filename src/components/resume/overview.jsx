@@ -2,7 +2,8 @@ import styled from '@emotion/styled';
 import React from 'react';
 
 import { columns } from '../../styles';
-import { baseSpace, BorderedRow, InlineList, MarkerlessList, SectionHeader, SubSectionHeader, ThirdCol } from './utils';
+import { MarkerlessList } from '../common';
+import { baseSpace, BorderedRow, InlineList, SectionHeader, SubSectionHeader, ThirdCol } from './utils';
 
 
 const TagList = styled(InlineList)({ marginBottom: baseSpace });

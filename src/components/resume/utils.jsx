@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import { MarkerlessList } from '../common';
 import { colors, columns, mediaQueries, row, spacing } from '../../styles';
 
 export const baseFontSize = '14px';
@@ -48,11 +49,6 @@ export const SubSectionHeader = styled.h5({
   fontWeight: 'normal',
   marginBottom: 0,
   textDecoration: 'underline',
-});
-export const MarkerlessList = styled.ul({
-  listStyleType: 'none',
-  marginBottom: 0,
-  marginLeft: 0,
 });
 export const InlineList = styled(MarkerlessList)({
   fontStyle: 'italic',
