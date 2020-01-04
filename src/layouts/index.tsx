@@ -3,6 +3,7 @@ import * as moment from 'moment';
 import * as React from 'react';
 import Helmet from 'react-helmet';
 
+import { Row } from '../components/common';
 import MainMenuLink, { mainMenuHeight } from '../components/main-menu-link';
 import Sidebar from '../components/sidebar';
 import SidebarLink from '../components/sidebar-link';
@@ -10,7 +11,6 @@ import {
   colors,
   columns,
   hideOn,
-  row,
   scaleText,
   spacing,
 } from '../styles';
@@ -175,7 +175,7 @@ const Layout: React.SFC<LayoutProps> = ({ children, sidebar, title }) => (
       <title>{`${title} | C.M. Lubinski`}</title>
       <link rel="shortcut icon" href={favicon} type="image/x-icon" />
     </Helmet>
-    <div id="header" css={row}>
+    <Row id="header">
       <Link css={{ position: 'absolute' }} to="/">
         <div
           css={{
@@ -203,8 +203,8 @@ const Layout: React.SFC<LayoutProps> = ({ children, sidebar, title }) => (
       </Link>
       { headerName }
       { mainMenu }
-    </div>
-    <div css={row}>
+    </Row>
+    <Row>
       { sidebar }
       <div css={columns({ small: 12, medium: 9 })}>
         <div
@@ -236,7 +236,7 @@ const Layout: React.SFC<LayoutProps> = ({ children, sidebar, title }) => (
           render={footerFromGraphQL}
         />
       </div>
-    </div>
+    </Row>
   </div>
 );
 export default Layout;

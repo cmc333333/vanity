@@ -1,21 +1,22 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { columns, row } from '../../styles';
+import { Row } from '../common';
+import { columns } from '../../styles';
 import { BorderedRow, LeftCol, RightCol, ParagraphWithTitle, SectionHeader, SubSectionHeader } from './utils';
 
 
 function Degree({ children, date, title }) {
   return (
     <div>
-      <div css={row}>
+      <Row>
         <SubSectionHeader css={columns({ small: 9 })}>
           { title }
         </SubSectionHeader>
         <span css={{ ...columns({ small: 3 }), textAlign: 'right' }}>
           { date }
         </span>
-      </div>
+      </Row>
       <p>{ children }</p>
     </div>
   );

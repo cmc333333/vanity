@@ -2,7 +2,8 @@ import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { columns, row } from '../../styles';
+import { Row } from '../common';
+import { columns } from '../../styles';
 import { baseSpace, BorderedRow, InlineList, SectionHeader, SubSectionHeader } from './utils';
 
 function JobHeader({
@@ -12,7 +13,7 @@ function JobHeader({
   title,
 }) {
   return (
-    <div css={row}>
+    <Row>
       <SubSectionHeader css={columns({ small: 6, medium: 3 })}>
         { title }
       </SubSectionHeader>
@@ -22,7 +23,7 @@ function JobHeader({
       <span css={{ ...columns({ small: 12, medium: 6 }), fontStyle: 'italic', textAlign: 'center' }}>
         { company } &mdash; { location }
       </span>
-    </div>
+    </Row>
   );
 }
 JobHeader.propTypes = {

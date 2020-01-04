@@ -1,15 +1,26 @@
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import PropTypes from 'prop-types';
-import React from 'react';
+import { EpisodeNode, PodcastNode } from 'gatsby-source-gpodder';
+import * as React from 'react';
 
+import { ContentEntry, Row } from '../../components/common';
 import Layout, { miscSidebar } from '../../layouts';
-import styles, { colors, columns, hideOn, row, spacing } from '../../styles';
+import styles, {
+  colors,
+  columns,
+  hideOn,
+  row,
+  spacing,
+} from '../../styles';
 
 const NBSP = '\u00A0';
 
-function PodcastEpisode({ logo, title }) {
-  const logoData = logo && logo.childImageSharp && logo.childImageSharp.fixed;
+const PodcastEpisode: React.SFC<{ episode: EpisodeNode }> = ({ episode }) => {
+  const { logo, title } = episode;
+  let logoData = logo && logo.childImageSharp && logo.childImageSharp.fixed;
+  if (Array.isArray(logoData)) {
+    [logoData] = logoData;
+  }
 
   if (!title) {
     return null;
@@ -40,29 +51,32 @@ function PodcastEpisode({ logo, title }) {
   }
   return (
     <div css={{ marginBottom: spacing(1 / 2), marginTop: spacing(1 / 2) }}>
-      • { title }
+      {'• '}
+      { title }
     </div>
   );
-}
+};
 
-class Podcast extends React.Component {
+class Podcast extends React.Component<{ podcast: PodcastNode }, { showAll: boolean }> {
   constructor(props) {
     super(props);
     this.state = { showAll: true };
   }
 
-  componentDidMount() {
+  componentDidMount(): void {
     this.setState({ showAll: false });
   }
 
-  get recentEpisodesEl() {
-    let { recentEpisodes } = this.props;
+  get recentEpisodesEl(): JSX.Element {
+    let { podcast: { recentEpisodes } } = this.props;
+    const { showAll } = this.state;
     let showAllButton = null;
-    if (recentEpisodes.length > 5 && !this.state.showAll) {
+    if (recentEpisodes.length > 5 && !showAll) {
       recentEpisodes = recentEpisodes.slice(0, 5);
       showAllButton = (
         <button
-          onClick={() => this.setState({ showAll: true })}
+          type="button"
+          onClick={(): void => this.setState({ showAll: true })}
           css={{
             background: 'transparent',
             border: 'none',
@@ -75,32 +89,26 @@ class Podcast extends React.Component {
       );
     }
     return (
-      <React.Fragment>
-        { recentEpisodes.map(ep => <PodcastEpisode key={ep.title} {...ep} />) }
+      <>
+        { recentEpisodes.map((ep) => <PodcastEpisode key={ep.title} episode={ep} />) }
         { showAllButton }
-      </React.Fragment>
+      </>
     );
   }
 
-  render() {
+  render(): JSX.Element {
     const {
-      description: { childMarkdownRemark: { html } },
-      logo,
-      title,
-      website,
+      podcast: {
+        description: { childMarkdownRemark: { html } },
+        logo,
+        title,
+        website,
+      },
     } = this.props;
     const img = logo && logo.childImageSharp && logo.childImageSharp.fluid;
     return (
-      <div
-        css={{
-          borderBottomColor: colors.bodyText,
-          borderBottomStyle: 'solid',
-          borderBottomWidth: '1px',
-          marginBottom: styles.rhythm(0.5),
-          paddingBottom: styles.rhythm(0.5),
-        }}
-      >
-        <div css={row}>
+      <ContentEntry>
+        <Row>
           <div
             css={[
               columns({ medium: 3 }),
@@ -123,76 +131,53 @@ class Podcast extends React.Component {
             >
               { (img && <Img fluid={img} />) || NBSP }
             </div>
+            {/* eslint-disable-next-line react/no-danger */}
             <div dangerouslySetInnerHTML={{ __html: html }} />
             { this.recentEpisodesEl }
           </div>
-        </div>
-      </div>
+        </Row>
+      </ContentEntry>
     );
   }
 }
-Podcast.propTypes = {
-  description: PropTypes.shape({
-    childMarkdownRemark: PropTypes.shape({
-      html: PropTypes.string.isRequired,
-    }),
-  }).isRequired,
-  logo: PropTypes.shape({
-    childImageSharp: PropTypes.shape({
-      fluid: PropTypes.any.isRequired,
-    }).isRequired,
-  }).isRequired,
-  recentEpisodes: PropTypes.arrayOf(PropTypes.shape({
-    logo: PropTypes.shape({
-      childImageSharp: PropTypes.shape({
-        fixed: PropTypes.any.isRequired,
-      }).isRequired,
-    }).isRequired,
-    title: PropTypes.string.isRequired,
-  })).isRequired,
-  title: PropTypes.string.isRequired,
-  website: PropTypes.string.isRequired,
-};
 
-export default function Podcasts({ data }) {
-  return (
-    <Layout sidebar={miscSidebar} title="Podcasts">
-      <p>
-        I listen to a lot of podcasts. They're perfect for multi-tasking:
-        learn unexpected factoids and hear analysis of world events while
-        doing the dishes, running errands, or exercising. In fact, I enjoy
-        so many of them that I need to speed up their playback (currently: 3.2
-        times) just to keep up with their release schedules!
-      </p>
-      <p>
-        One of the interesting features of my podcatcher of choice,
-        {' '}
-        <a href="https://antennapod.org/">AntennaPod</a>, is the ability to
-        record listening habits through
-        {' '}
-        <a href="https://gpodder.net/">gPodder.net</a>. This page uses data
-        from the latter's API to display not only my current subscriptions,
-        but also some expanded episode information for pieces I've listened to
-        in the last week. See the
-        {' '}
-        <a
-          href="https://github.com/cmc333333/vanity/tree/master/plugins/gatsby-source-gpodder"
-        >
-          source code
-        </a> for details.
-      </p>
-      <hr />
-      { data.allPodcast.nodes.map(p => <Podcast key={p.website} {...p} />) }
-    </Layout>
-  );
+interface PodcastsProps {
+  data: {
+    allPodcast: {
+      nodes: PodcastNode[];
+    };
+  };
 }
-Podcasts.propTypes = {
-  data: PropTypes.shape({
-    allPodcast: PropTypes.shape({
-      nodes: PropTypes.arrayOf(Podcast.propTypes).isRequired,
-    }).isRequired,
-  }).isRequired,
-};
+const Podcasts: React.SFC<PodcastsProps> = ({ data: { allPodcast: { nodes } } }) => (
+  <Layout sidebar={miscSidebar} title="Podcasts">
+    <p>
+      I listen to a lot of podcasts. They&rsquo;re perfect for multi-tasking:
+      learn unexpected factoids and hear analysis of world events while
+      doing the dishes, running errands, or exercising. In fact, I enjoy
+      so many of them that I need to speed up their playback (currently: 3.2
+      times) just to keep up with their release schedules!
+    </p>
+    <p>
+      {'One of the interesting features of my podcatcher of choice, '}
+      <a href="https://antennapod.org/">AntennaPod</a>
+      {', is the ability to record listening habits through '}
+      <a href="https://gpodder.net/">gPodder.net</a>
+      . This page uses data from the latter&rsquo;s API to display not only
+      my current subscriptions, but also some expanded episode information
+      for pieces I&rsquo;ve listened to in the last week. See the
+      {' '}
+      <a
+        href="https://github.com/cmc333333/vanity/tree/master/plugins/gatsby-source-gpodder"
+      >
+        source code
+      </a>
+      {' for details.'}
+    </p>
+    <hr />
+    { nodes.map((p) => <Podcast key={p.website} podcast={p} />) }
+  </Layout>
+);
+export default Podcasts;
 
 export const query = graphql`
   {
