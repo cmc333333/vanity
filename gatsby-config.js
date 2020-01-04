@@ -36,6 +36,21 @@ module.exports = {
       options: { userId: 21996113 },
     },
     process.env.FAKE_GPODDER ? fakeGatsbySourceGpodder : gatsbySourceGpodder,
+    {
+      resolve: 'gatsby-source-trakt',
+      options: {
+        mdataAuth: {
+          fanart: process.env.FANART_KEY,
+          omdb: process.env.OMDB_KEY,
+          tmdb: process.env.TMDB_KEY,
+          tvdb: process.env.TVDB_KEY,
+        },
+        traktAuth: {
+          client_id: process.env.TRAKT_CLIENT,
+          client_secret: process.env.TRAKT_SECRET,
+        },
+      },
+    },
     'gatsby-transformer-remark',
     'gatsby-transformer-yaml',
     'gatsby-remark-autolink-headers',

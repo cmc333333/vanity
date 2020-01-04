@@ -17,17 +17,7 @@ client
     const checkSignIn = () => {
       client.poll_access(pollInfo)
         .then(() => {
-          fs.writeFile(
-            'trakt-session.json',
-            JSON.stringify(client.export_token()),
-            (err) => {
-              if (err) {
-                console.error(err);
-              } else {
-                console.log('Logged in successfully!');
-              }
-            },
-          );
+          fs.writeFileSync('trakt-session.json', JSON.stringify(client.export_token()));
         })
         .catch(() => {
           setTimeout(checkSignIn, pollInfo.interval);

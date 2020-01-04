@@ -48,6 +48,7 @@ export const miscSidebar = (
     <SidebarLink to="/writings/">Writings</SidebarLink>
     <SidebarLink to="/misc/books/">Books</SidebarLink>
     <SidebarLink to="/misc/podcasts/">Podcasts</SidebarLink>
+    <SidebarLink to="/misc/watching/">Watching</SidebarLink>
   </Sidebar>
 );
 export const cvSidebar = (

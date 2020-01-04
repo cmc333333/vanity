@@ -5,6 +5,11 @@
     "trakt-sign-in": "./sign-in.js"
   },
   "peerDependencies": {
+    "gatsby-image": "*",
+    "gatsby-source-filesystem": "*",
+    "lodash": "*",
+    "mdata": "*",
+    "p-iteration": "*",
     "trakt.tv": "*"
   },
   "version": "1.0.0"
