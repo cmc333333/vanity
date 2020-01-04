@@ -3,7 +3,7 @@
 prod:
 	docker build . --tag cmc333333/vanity:prod --build-arg NODE_ENV=production
 	docker rm builder | true
-	docker run --name builder --env-file .env cmc333333/vanity:prod npm run build
+	docker run --name builder --env-file .env --volume ${PWD}/.env:/usr/src/app/.env cmc333333/vanity:prod npm run build
 	docker cp builder:/usr/src/app/public public-new
 	docker rm builder
 	ls public-new/index.html

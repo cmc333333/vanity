@@ -10,11 +10,14 @@ const Trakt = require('trakt.tv');
 /* eslint-disable no-await-in-loop */
 
 const traktClient = async (traktAuth) => {
-  const traktSession = JSON.parse(fs.readFileSync('trakt-session.json'));
+  const traktSession = JSON.parse(process.env.TRAKT_SESSION);
   const client = new Trakt(traktAuth);
 
   await client.import_token(traktSession);
-  fs.writeFileSync('trakt-session.json', JSON.stringify(client.export_token()));
+  fs.appendFileSync(
+    '.env',
+    `\nTRAKT_SESSION=${JSON.stringify(client.export_token())}\n`,
+  );
 
   return client;
 };
