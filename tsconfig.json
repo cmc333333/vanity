@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
     "jsx": "react",
+    "moduleResolution": "Node",
     "target": "es6",
     "types": ["@emotion/core"]
   },
   "include": [
+    "custom_typings",
     "src"
   ]
 }
