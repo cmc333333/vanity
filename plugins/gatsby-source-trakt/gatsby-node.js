@@ -86,7 +86,7 @@ exports.sourceNodes = async (sourceNodeArgs, pluginArgs) => {
     });
     const favorite = favorites.has(traktEntry[traktType].ids.trakt);
     let posterId = null;
-    if (favorite || Moment(traktEntry.watched_at).diff(Date(), 'days') < 60) {
+    if (favorite || Moment().diff(Moment(traktEntry.watched_at), 'days') < 60) {
       posterId = await fetchPoster(
         nodeId,
         traktType,
