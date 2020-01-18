@@ -14,7 +14,7 @@ const createRandomImage = async (sourceNodesArgs) => {
     createNodeId,
     store,
     cache,
-    url: faker.random.image(),
+    url: `https://picsum.photos/640/480/?image=${faker.random.number(1084)}`,
   });
   return fileNode.id;
 };
