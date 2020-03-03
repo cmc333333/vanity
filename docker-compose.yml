@@ -14,7 +14,7 @@ services:
       SERVER_NAME: ${SERVER_NAME}
     command: start-nginx.sh
   certbot:
-    image: certbot/certbot:v0.23.0
+    image: certbot/certbot:v1.2.0
     volumes:
     - ./.docker/sleep-certbot.sh:/usr/bin/sleep-certbot.sh
     - ./public:/var/www/html
