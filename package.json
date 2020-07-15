@@ -34,7 +34,7 @@
     "gatsby-transformer-sharp": "^2.3.9",
     "gatsby-transformer-yaml": "^2.2.20",
     "gray-percentage": "^2.0.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "markdown-to-jsx": "^6.10.3",
     "mdata": "^1.0.1",
     "moment": "^2.24.0",
