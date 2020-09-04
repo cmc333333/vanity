@@ -35,7 +35,7 @@
     "gatsby-transformer-yaml": "^2.2.20",
     "gray-percentage": "^2.0.0",
     "lodash": "^4.17.15",
-    "markdown-to-jsx": "^6.10.3",
+    "markdown-to-jsx": "^6.11.4",
     "mdata": "^1.0.1",
     "moment": "^2.24.0",
     "normalize-url": "^4.5.0",
