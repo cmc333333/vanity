@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:14.15.3-buster
 
 RUN apt update \
     && apt -y install libgl1-mesa-glx libxi6 \
