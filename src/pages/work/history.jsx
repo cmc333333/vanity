@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import JobComponent from '../../components/work/job';
-import Timeline from '../../components/work/timeline';
+// import Timeline from '../../components/work/timeline';
 import Layout, { workSidebar } from '../../layouts';
 import Job from '../../util/job';
 import PortfolioProject from '../../util/portfolio-project';
@@ -30,7 +30,6 @@ export default function WorkHistory({ data }) {
   }));
   return (
     <Layout sidebar={workSidebar} title="Work History">
-      <Timeline jobs={jobs} />
       { jobs.map(job => <JobComponent key={job.id} job={job} />) }
     </Layout>
   );

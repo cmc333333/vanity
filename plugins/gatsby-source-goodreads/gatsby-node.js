@@ -1,7 +1,7 @@
 const crypto = require('crypto');
 
 const axios = require('axios');
-const promisify = require('es6-promisify');
+const {promisify} = require('es6-promisify');
 const moment = require('moment');
 const callbackParseString = require('xml2js').parseString;
 
