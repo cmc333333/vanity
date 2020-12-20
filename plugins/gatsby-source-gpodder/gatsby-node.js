@@ -1,5 +1,5 @@
 const axios = require('axios');
-const promisify = require('es6-promisify');
+const { promisify } = require('es6-promisify');
 const { createRemoteFileNode } = require('gatsby-source-filesystem');
 const _ = require('lodash');
 const moment = require('moment');
