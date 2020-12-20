@@ -1,9 +1,11 @@
-.PHONY: dev prod start-dev-server
+.PHONY: dev prod shell start-dev-server trakt-sign-in
+start_cmd = docker run --rm -it --env-file .env --volume ${PWD}:/usr/src/app
+image = cmc333333/vanity
 
 prod:
-	docker build . --tag cmc333333/vanity:prod --build-arg NODE_ENV=production
+	docker build . --tag ${image}:prod --build-arg NODE_ENV=production
 	docker rm builder | true
-	docker run --name builder --env-file .env --volume ${PWD}/.env:/usr/src/app/.env cmc333333/vanity:prod npm run build
+	${start_cmd} ${image}:prod npm run build
 	docker cp builder:/usr/src/app/public public-new
 	docker rm builder
 	ls public-new/index.html
@@ -11,11 +13,15 @@ prod:
 	mv public-new public
 
 dev:
-	docker build . --tag cmc333333/vanity
-	docker run --rm -it --env-file .env --volume ${PWD}:/usr/src/app cmc333333/vanity npm install
+	docker build . --tag ${image}
+	${start_cmd} ${image} npm install
+
+
+shell:
+	${start_cmd} ${image} bash
 
 start-dev-server:
-	docker run --rm -it --env-file .env --volume ${PWD}:/usr/src/app -p8000:8000 cmc333333/vanity npm run develop
+	${start_cmd} -p 8000:8000 ${image} npm run develop
 
 trakt-sign-in:
-	docker run --rm -it --env-file .env --volume ${PWD}:/usr/src/app cmc333333/vanity npm run trakt-sign-in
+	${start_cmd} ${image} npm run trakt-sign-in
