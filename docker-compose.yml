@@ -1,12 +1,12 @@
-version: '3'
+version: "3"
 services:
   nginx:
     image: nginx:1.13.12-alpine
     volumes:
-    - ./.docker/start-nginx.sh:/usr/bin/start-nginx.sh
-    - ./nginx:/etc/nginx-conf
-    - ./public:/var/www/html
-    - certs:/etc/letsencrypt
+      - ./.docker/start-nginx.sh:/usr/bin/start-nginx.sh
+      - ./nginx:/etc/nginx-conf
+      - ./public:/var/www/html
+      - certs:/etc/letsencrypt
     ports:
       - 80:80
       - 443:443
@@ -16,9 +16,9 @@ services:
   certbot:
     image: certbot/certbot:v1.2.0
     volumes:
-    - ./.docker/sleep-certbot.sh:/usr/bin/sleep-certbot.sh
-    - ./public:/var/www/html
-    - certs:/etc/letsencrypt
+      - ./.docker/sleep-certbot.sh:/usr/bin/sleep-certbot.sh
+      - ./public:/var/www/html
+      - certs:/etc/letsencrypt
     entrypoint: sleep-certbot.sh
 volumes:
   certs:

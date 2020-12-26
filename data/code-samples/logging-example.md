@@ -53,7 +53,6 @@ therefore added a step which strips any passwords from the logged information.
 It certainly isn't a big step, but I hoped it would remind the audience of
 some simple precautions they should be taking with user data.
 
-
 ## Code
 
 First, the dispatcher (RestDispatch.) As this is just a toy example, we can
@@ -78,22 +77,21 @@ fields, replacing any problematic field names (such as any that contain a
 period) as well as wiping out any passwords. This is more a token mention of
 security than anything else, but is still a good practice.
 
-
 ## Technology Choices
 
-* Scala - A strongly-typed, functional language, with all of
+- Scala - A strongly-typed, functional language, with all of
   the latest bells and whistles in language design. This is my language of
   choice for web applications in part due to its strong emphasis on
   immutability (HTTP is stateless,) sophisticated type system (allowing rapid
   re-writes,) and speed (built on the JVM.)
-* Lift - A Scala web framework. While other, lighter frameworks would have
+- Lift - A Scala web framework. While other, lighter frameworks would have
   made more sense for this example, Lift's what's used at Toodalu, so I
   included it here.
-* MongoDB - For logging JSON input and output, Mongo is a great choice. Not
+- MongoDB - For logging JSON input and output, Mongo is a great choice. Not
   only is it blazingly fast, but the JSON-oriented documents make it ideal for
   storing this type of data. Further, as these are only logs, there's no need
   for ACID.
-* Actors - While not a technology per se, Actors are a very nice abstraction
+- Actors - While not a technology per se, Actors are a very nice abstraction
   for multi-threaded applications. In this case, they allowed me to push
   certain chunks of processing into a separate thread via a message-queueing
   model.

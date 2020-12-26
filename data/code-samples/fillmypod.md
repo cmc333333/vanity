@@ -19,8 +19,7 @@ specifications, "FillMyPod" was born.
 
 I chose to present this project not because it's particularly useful for
 back-end development, but rather because it shows the use of Python as a
-general purpose scripting language. 
-
+general purpose scripting language.
 
 ## Code
 
@@ -43,14 +42,13 @@ Each of these transforms emits a new iterator with the modified mp3s. Again,
 additional transforms could easily be added by simply manipulating the stream
 of mp3s given.
 
-
 ## Technology Choices
 
-* Python - Python's a great, general-purpose language. In
+- Python - Python's a great, general-purpose language. In
   this case, it was chosen to limit development time. In particular, there was
   no need for the heavy-hitting of a statically typed language; also Python's
   generally pretty easy to work with.
-* Generators/Iterators - Using python's generators and iterators allowed the
+- Generators/Iterators - Using python's generators and iterators allowed the
   project to lazily evaluate input, which turns out to be a great boon when
   dealing with data from unexpected sources. In effect, instead of
   transforming a collection of data, I transformed a stream of data.

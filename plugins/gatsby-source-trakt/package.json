@@ -9,6 +9,7 @@
     "gatsby-source-filesystem": "*",
     "lodash": "*",
     "mdata": "*",
+    "moment": "*",
     "p-iteration": "*",
     "trakt.tv": "*"
   },

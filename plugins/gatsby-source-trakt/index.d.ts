@@ -1,4 +1,4 @@
-import { GatsbyImageProps } from 'gatsby-image';
+import { GatsbyImageProps } from "gatsby-image";
 
 export interface PosterImage {
   childImageSharp: GatsbyImageProps;
@@ -14,6 +14,6 @@ export interface TraktNode {
   tagline: string | null;
   title: string;
   trailer: string | null;
-  traktType: 'movie' | 'show';
+  traktType: "movie" | "show";
   watchedAt: string;
 }

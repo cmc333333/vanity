@@ -3,13 +3,16 @@
   "description": "C.M. Lubinski's website",
   "license": "MIT",
   "scripts": {
-    "develop": "gatsby develop -H 0.0.0.0",
     "build": "gatsby build",
+    "develop": "gatsby develop -H 0.0.0.0",
+    "fmt": "eslint . --fix && prettier . --write --list-different",
+    "lint": "eslint . && prettier . --check",
     "serve": "gatsby serve",
     "trakt-sign-in": "trakt-sign-in"
   },
   "dependencies": {
     "@emotion/react": "^11.1.2",
+    "@emotion/serialize": "^1.0.0",
     "@emotion/styled": "^11.0.0",
     "axios": "^0.21.0",
     "es6-promisify": "^6.1.1",
@@ -33,7 +36,6 @@
     "gatsby-transformer-remark": "^2.13.0",
     "gatsby-transformer-sharp": "^2.9.0",
     "gatsby-transformer-yaml": "^2.8.0",
-    "gray-percentage": "^2.0.0",
     "lodash": "^4.17.20",
     "markdown-to-jsx": "^7.1.0",
     "mdata": "^1.0.1",
@@ -50,6 +52,7 @@
     "tough-cookie": "^4.0.0",
     "trakt.tv": "^8.0.0",
     "typography": "^0.16.19",
+    "vis-network": "^8.5.5",
     "xml2js": "^0.4.22"
   },
   "devDependencies": {
@@ -61,12 +64,15 @@
     "eslint": "^7.16.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-typescript": "^12.0.0",
+    "eslint-config-prettier": "^7.1.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.0",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "gatsby-cli": "^2.16.1",
+    "prettier": "^2.2.1",
     "typescript": "^4.1.3"
   }
 }

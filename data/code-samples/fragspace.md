@@ -21,10 +21,10 @@ as credit card processing services. As I was already in exploration-mode, I
 decided to also learn the OAuth2 spec well enough that my service (Frag Space)
 could be an OAuth2 provider.
 
-This API is RESTful and JSON-oriented (as all modern APIs should be.) 
-
+This API is RESTful and JSON-oriented (as all modern APIs should be.)
 
 ## Code
+
 As there are too many lines of source in this project to describe all of the
 functionality in detail, I'll instead discuss some of the more interesting
 sub-systems.
@@ -46,9 +46,9 @@ relatively self-contained provider. Unfortunately, the standard isn't super
 straight-forward and I'd rather not bore you with the details. Instead, I'll
 note that a "client" refers to an application which may receive permission
 (from a user) to access the user's data -- hence the OAuth2 implementation has
-an open signup for applications. One design decision was to *not* store OAuth
+an open signup for applications. One design decision was to _not_ store OAuth
 tokens (like sessions in a web app) in a database; instead, the token is
-*composed of* the encrypted token information. In theory, only our servers
+_composed of_ the encrypted token information. In theory, only our servers
 have the key, so any message which decrypts correctly must have come from our
 servers. Unfortunately, the encryption scheme is not authenticated, so this
 doesn't provide adequate security at the moment.
@@ -57,7 +57,7 @@ The http and httphelper libs (/fragspace/http and /fragspace/httphelper)
 provide the base concepts for all of the API methods. The handler.go file
 describes the basic structure of any Handler; it should have Get, Delete,
 Post, and Put methods (with Post and Put accepting JSON data,) though the base
-class (BaseHandler) provides default 404 messages.  Each method must return a
+class (BaseHandler) provides default 404 messages. Each method must return a
 "Response" (see /fragspace/http/response,) which may include several common
 responses, such as 404, 400, and 500 error messages. Perhaps the most
 interesting feature of these libs is the /fragspace/httphelper/requirements.go
@@ -72,7 +72,7 @@ The api (/fragspace/api) represents the RESTful endpoints a user may access.
 Consider charge.go, which registers itself with the dispatcher and defines an
 action to perform on POST to "/api/charge". When this is called, the method
 wraps the interesting logic in an anonymous function, which is handed over to
-one of the guard methods in httphelper.  The syntax is a bit cumbersome, but
+one of the guard methods in httphelper. The syntax is a bit cumbersome, but
 this allows the guard checking code to be moved to a single location; it also
 means that the "interesting logic" is only evaluated if the guard was
 successful. Each method's body returns a response, such as a JsonResponse,
@@ -81,25 +81,25 @@ automatically converted into JSON and returned to the user.
 
 ## Technology Choices
 
-* Go - This recent, systems-level language was chosen for this project purely
+- Go - This recent, systems-level language was chosen for this project purely
   because I wanted to learn something new. It has relatively good support for
   web applications, but its low-level nature made many tasks needlessly
   tedious.
-* App Engine - Generally, app engine is my go-to for small, exploratory
+- App Engine - Generally, app engine is my go-to for small, exploratory
   projects. It's free, stable, and requires very little setup (particularly
   useful when learning a new language.) Unfortunately, App Engine doesn't
   support Go's goroutines well enough that they would make much of a
   difference in the application. This meant that this language feature (along
   with related ideas such as channels) are not used at all.
-* Memcache - Super-fast, key-value memory store. As I didn't want to be
+- Memcache - Super-fast, key-value memory store. As I didn't want to be
   hitting the database on every request (this would be slow and costly,) I
   tried to store most quick-access values (sessions, tokens, etc.) in
   memcache. Further, everything stored here could be easily re-created if the
   entries were ejected.
-* Rackspace - Cloud hosting provider used by many (including in my
+- Rackspace - Cloud hosting provider used by many (including in my
   professional work.) In general, they have an nice API and pretty solid
   performance.
-* OAuth2 - An emerging standard for authentication, OAuth2 allows third
+- OAuth2 - An emerging standard for authentication, OAuth2 allows third
   parties to access a user's data on behalf of that user without completely
   compromising that user's account. As all API developers hope, I wanted the
   API to be useful enough that others would want to integrate with it. OAuth2

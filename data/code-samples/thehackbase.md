@@ -60,12 +60,12 @@ entries which were not in the user's input.
 
 ## Technology Choices
 
-* Python - As mentioned before, Python's a great, general-purpose language.
+- Python - As mentioned before, Python's a great, general-purpose language.
   The ability to meta-program and dynamic typing allow it to work particularly
   well with a framework like Django, which uses these traits to create
   concise, largely-legible code.
-* Django - One of the primary Python frameworks, Django should definitely be
-  reviewed whenever starting a new project.  It has a great deal of support in
+- Django - One of the primary Python frameworks, Django should definitely be
+  reviewed whenever starting a new project. It has a great deal of support in
   the Python community, including many, many plugins which will make life much
   easier for development (consider that XSS tokens were added to all forms
   without any of my code declaring them.) Django also runs well on Google App

@@ -19,7 +19,7 @@ encrypting multiple blocks of data so that not only is the data non-legible,
 but also tamper-resistant. For a bit more detailed description of
 authenticated encryption, see notes for a
 [talk](http://cmlubinski.info/cryptography-and-security-coders#encryption-modes)
-I gave which touched on the topic.  One problem I found was that almost no
+I gave which touched on the topic. One problem I found was that almost no
 software (including Lift, the web-framework I use most often) used
 authenticated encryption.
 
@@ -31,7 +31,6 @@ me to implement some of the skills learned in the online course and also allow
 me to give something back to the Lift community. Though I began work on this
 library in my spare time, it became so useful that it runs at the heart of
 many of Toodalu's upcoming applications.
-
 
 ## Code
 
@@ -77,22 +76,21 @@ The other classes might be interesting if you have a particular fascination
 with type theory (as I do,) but they do not contain much in the way of high
 concepts. For the most part, they are wrappers on previously discussed methods
 to allow a Record's field to be an encrypted string/enumeration/optional
-string/ etc. 
-
+string/ etc.
 
 ## Technology Choices
 
-* Scala - As mentioned in the first sample, Scala is a wonderful language in
+- Scala - As mentioned in the first sample, Scala is a wonderful language in
   which I spend most of my coding time. As such, it proved a natural choice
   for implementing authenticated encryption.
-* Lift - Again, Lift is a popular web framework; the project has had a short
+- Lift - Again, Lift is a popular web framework; the project has had a short
   life time, but has evolved rapidly. While its built-in security measures
   aren't particularly impressive, I use their record ("model") system in many
   projects, so it makes sense to choose this framework for this library.
-* Bouncy Castle - Perhaps the best crypto alternative in the JVM ecosystem,
+- Bouncy Castle - Perhaps the best crypto alternative in the JVM ecosystem,
   Bouncy Castle adopts many crypto algorithms before they move in to mainline
   Java. This includes GCM, which is at the heart of this library.
-* Authenticated Encryption - This mechanism for encryption is essential for
+- Authenticated Encryption - This mechanism for encryption is essential for
   cutting-edge applications, but should really be more widely adopted. Data
   which has been tampered with cannot be decrypted, greatly improving the
   security of shared resources (and further firewalling the data.)

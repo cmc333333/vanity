@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
     "jsx": "react",
-    "moduleResolution": "Node",
+    "jsxImportSource": "@emotion/react",
+    "moduleResolution": "node",
     "target": "es6",
-    "types": ["@emotion/core"]
+    "types": ["@emotion/core", "node"]
   },
-  "include": [
-    "custom_typings",
-    "plugins",
-    "src"
-  ]
+  "exclude": ["public/"],
+  "include": ["**/*", ".*.js"]
 }

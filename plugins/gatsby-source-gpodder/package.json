@@ -5,6 +5,7 @@
     "axios": "*",
     "es6-promisify": "*",
     "gatsby": "2.x",
+    "gatsby-image": "*",
     "gatsby-source-filesystem": "*",
     "lodash": "*",
     "moment": "*",
@@ -14,4 +15,3 @@
     "xml2js": "*"
   }
 }
-

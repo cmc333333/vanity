@@ -6,25 +6,26 @@ start: 2012-12-03
 end: 2014-09-05
 color: "#20aa3f"
 events:
-- title: Bright Idea<br />(Harvard)
-  date: 2015-02-18
-- title: Wrote First<br />Technical Blog
-  date: 2014-01-31
-- title: '"One Federal Website<br />That Works" (Bloomberg)'
-  date: 2013-10-29
+  - title: Bright Idea<br />(Harvard)
+    date: 2015-02-18
+  - title: Wrote First<br />Technical Blog
+    date: 2014-01-31
+  - title: '"One Federal Website<br />That Works" (Bloomberg)'
+    date: 2013-10-29
 impact:
-- Shipped three multi-month software projects and two significant prototypes,
-  cementing the success of the first round of T&I fellows.
-- Improved the team's code quality by setting a high bar; led CFPB in commits,
-  test coverage, alignment with style guides, and depth of code review.
-- Aided government accountability through groups focused on Transparency &
-  Communications (Co-Chair), Open Source, and Release Management as well as
-  writing T&I's [first blog
-  post](http://cfpb.github.io/articles/rules-rules/).
-- Influenced co-workers and management by creating nearly a dozen
-  presentations, ranging from technology-specific decision-making to
-  longer-term policy manifestos.
+  - Shipped three multi-month software projects and two significant prototypes,
+    cementing the success of the first round of T&I fellows.
+  - Improved the team's code quality by setting a high bar; led CFPB in commits,
+    test coverage, alignment with style guides, and depth of code review.
+  - Aided government accountability through groups focused on Transparency &
+    Communications (Co-Chair), Open Source, and Release Management as well as
+    writing T&I's [first blog
+    post](http://cfpb.github.io/articles/rules-rules/).
+  - Influenced co-workers and management by creating nearly a dozen
+    presentations, ranging from technology-specific decision-making to
+    longer-term policy manifestos.
 ---
+
 The **C**onsumer **F**inancial **P**rotection **B**ureau aims to prevent
 banks, lendors, and other financial institutions from taking illegal advantage
 of their customers and to give the public tools to protect their financial
