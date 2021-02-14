@@ -1,4 +1,4 @@
-version: "3"
+version: "3.7"
 services:
   nginx:
     image: nginx:1.13.12-alpine
@@ -20,5 +20,25 @@ services:
       - ./public:/var/www/html
       - certs:/etc/letsencrypt
     entrypoint: sleep-certbot.sh
+  gpo:
+    build: ./gpo/
+    depends_on:
+    - gpodb
+    command: gunicorn mygpo.wsgi --bind=0.0.0.0:8000
+    environment:
+      DATABASE_URL: postgres://mygpo:mygpo@gpodb/mygpo
+      EMAIL_BACKEND: django.core.mail.backends.console.EmailBaclend
+      SECRET_KEY: ${GPO_SECRET_KEY:?}
+  gpodb:
+    image: postgres:13.2-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: mygpo
+      POSTGRES_PASSWORD: mygpo
+      POSTGRES_USER: mygpo
+    volumes:
+    - gpodb:/var/lib/postgresql/data
+
 volumes:
   certs:
+  gpodb:
