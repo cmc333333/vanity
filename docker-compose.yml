@@ -13,6 +13,8 @@ services:
     environment:
       SERVER_NAME: ${SERVER_NAME}
     command: start-nginx.sh
+    depends_on:
+    - gpo
   certbot:
     image: certbot/certbot:v1.2.0
     volumes:
@@ -24,10 +26,12 @@ services:
     build: ./gpo/
     depends_on:
     - gpodb
-    command: gunicorn mygpo.wsgi --bind=0.0.0.0:8000
+    - gporedis
+    command: gunicorn mygpo.wsgi --bind=0.0.0.0:8000 --timeout 600 --workers 3
     environment:
+      CELERY_BROKER_URL: redis://gporedis:6379//
       DATABASE_URL: postgres://mygpo:mygpo@gpodb/mygpo
-      EMAIL_BACKEND: django.core.mail.backends.console.EmailBaclend
+      EMAIL_BACKEND: django.core.mail.backends.console.EmailBackend
       SECRET_KEY: ${GPO_SECRET_KEY:?}
   gpodb:
     image: postgres:13.2-alpine
@@ -38,6 +42,9 @@ services:
       POSTGRES_USER: mygpo
     volumes:
     - gpodb:/var/lib/postgresql/data
+  gporedis:
+    image: redis:6.0.10-alpine
+    restart: always
 
 volumes:
   certs:

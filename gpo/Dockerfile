@@ -9,3 +9,5 @@ RUN SECRET_KEY='irrelevant' python manage.py collectstatic
 # Add whitenoise for simple static file hosting
 RUN pip install whitenoise
 RUN echo 'MIDDLEWARE.append("whitenoise.middleware.WhiteNoiseMiddleware")' >> mygpo/settings.py
+# Turn off async
+RUN echo 'API_ACTIONS_BG_HANDLER = None' >> mygpo/settings.py
