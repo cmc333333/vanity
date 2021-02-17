@@ -1,7 +1,11 @@
 const gatsbySourceGpodder = {
   resolve: "gatsby-source-gpodder",
   options: {
-    auth: { username: "cmc", password: process.env.GPODDER_PASSWORD },
+    auth: {
+      host: process.env.GPODDER_HOST,
+      username: "cmc",
+      password: process.env.GPODDER_PASSWORD
+    },
   },
 };
 const fakeGatsbySourceGpodder = {

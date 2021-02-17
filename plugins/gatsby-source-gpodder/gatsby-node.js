@@ -8,7 +8,7 @@ const pIter = require("p-iteration");
 const { Cookie } = require("tough-cookie");
 const callbackParseString = require("xml2js").parseString;
 
-const BASE_URL = "https://gpodder.net";
+const DEFAULT_HOST = "gpodder.net";
 const HTTP_TIMEOUT = 60 * 1000;
 const parseString = promisify(callbackParseString);
 
@@ -16,7 +16,10 @@ const normalizeEpisode = (asStr) =>
   normalizeUrl(asStr, { removeQueryParameters: [/.+/] });
 
 const setupClient = async (auth) => {
-  const client = axios.create({ baseURL: BASE_URL, timeout: HTTP_TIMEOUT });
+  const client = axios.create({
+    baseURL: `https://${auth.host || DEFAULT_HOST}`,
+    timeout: HTTP_TIMEOUT
+  });
   const authResp = await client.post(
     `api/2/auth/${auth.username}/login.json`,
     {},
