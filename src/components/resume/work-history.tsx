@@ -56,8 +56,47 @@ const WorkHistory: React.FC = () => (
   <BorderedRow>
     <SectionHeader>Recent Work History</SectionHeader>
     <JobHeader
+      company="Democratic National Committee"
+      dates="Aug '18 - Present"
+      location="Remote"
+      title="Staff Engineer"
+    />
+    <Description>
+      Providing data and technology infrastructure services down the ballot and
+      through the Democratic ecosystem
+    </Description>
+    <TechList>
+      <li>Python</li>
+      <li>Django</li>
+      <li>Airflow</li>
+      <li>React</li>
+      <li>Postgres</li>
+      <li>AWS</li>
+      <li>GCP</li>
+      <li>BigQuery</li>
+      <li>Docker</li>
+    </TechList>
+    <ul>
+      <li>
+        Designed &amp; led several core DNC Tech tools, including ecosystem-wide
+        IAM, auditing, and async jobs
+      </li>
+      <li>
+        Contributed across teams, e.g. writing data migrations, hardening
+        election-day apps, and automating GSuite
+      </li>
+      <li>
+        Integrated &amp; extended third party products to magnify our impact
+        &amp; boost an ecosystem with high turn-over
+      </li>
+      <li>
+        Promoted and standardized best practices around infrastructure,
+        security, usability, and coding from day one
+      </li>
+    </ul>
+    <JobHeader
       company="18F (General Services Administration)"
-      dates="Sept '14 - Present"
+      dates="Sept '14 - Aug '18"
       location="Remote"
       title="Backend Lead"
     />
@@ -145,34 +184,9 @@ const WorkHistory: React.FC = () => (
       title="Chief Developer"
     />
     <Description>
-      Quickly evolving, location-based startup focusing on loyalty rewards,
-      charitable giving, and white-labeled apps
+      Quickly evolving, location-based financial startup, with webapps, APIs,
+      and integrations written in Scala
     </Description>
-    <TechList>
-      <li>Scala</li>
-      <li>Python</li>
-      <li>Lift</li>
-      <li>jQuery</li>
-      <li>Postgres</li>
-      <li>MongoDB</li>
-      <li>Solr</li>
-      <li>Wordpress</li>
-      <li>Debian</li>
-    </TechList>
-    <ul>
-      <li>
-        Led the majority of technology decisions, shepherded the code base
-        through numerous, radical pivots
-      </li>
-      <li>
-        Researched and integrated with credit card processors, social networks,
-        CMSes, mobile utilities, and more
-      </li>
-      <li>
-        Configured and maintained all servers, including continuous integration
-        with black-box integration tests
-      </li>
-    </ul>
     <JobHeader
       company="Network Ninja, Inc."
       dates="Jun '08 - Aug '10"
@@ -180,29 +194,9 @@ const WorkHistory: React.FC = () => (
       title="Web Developer"
     />
     <Description>
-      White-labeled case management tool for pro bono legal aid, providing
-      document/client tracking and reporting
+      Case management tool for pro bono legal aid, written in custom PHP; weekly
+      sprints and feature releases
     </Description>
-    <TechList>
-      <li>Object-Oriented PHP</li>
-      <li>JavaScript</li>
-      <li>Python</li>
-      <li>Prototype</li>
-      <li>Postgres</li>
-      <li>Trac</li>
-      <li>Drupal</li>
-      <li>Debian</li>
-    </TechList>
-    <ul>
-      <li>
-        Extended application based on project management priorities, pushing
-        weekly; focused on modularity
-      </li>
-      <li>
-        Instituted automation regimes around app setup and unit-testing,
-        preventing countless bugs
-      </li>
-    </ul>
   </BorderedRow>
 );
 export default WorkHistory;

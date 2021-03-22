@@ -4,7 +4,7 @@ import * as resume from "../../assets/lubinski-resume.pdf";
 import { columns, row } from "../../styles/grid";
 
 const docsUrl =
-  "https://docs.google.com/document/d/16djyBXmJ1mij0uM76wzmT_fkgnihqvBGocLnyPUngDY/edit";
+  "https://docs.google.com/document/d/1nFCipBWbs1MdUyeLDZPDicVuq2LUvO2vqOA3numHDvg/edit";
 
 const Links: React.FC = () => (
   <div css={{ ...row, marginBottom: "1rem" }}>

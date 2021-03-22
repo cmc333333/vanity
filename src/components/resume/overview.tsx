@@ -12,53 +12,36 @@ import {
   ThirdCol,
 } from "./utils";
 
-const TagList = styled(InlineList)({ marginBottom: baseSpace });
 const FullHeader = styled(SectionHeader)(columns({ small: 12 }));
 
 const Overview: React.FC = () => (
   <BorderedRow>
     <FullHeader>Skills &amp; Hats</FullHeader>
     <ThirdCol>
-      <SubSectionHeader>APIs &amp; Data Wrangler</SubSectionHeader>
-      <TagList>
-        <li>Python</li>
-        <li>Postgres</li>
-        <li>REST</li>
-      </TagList>
+      <SubSectionHeader>Data &amp; Web App Developer</SubSectionHeader>
       <MarkerlessList>
-        <li>API-First Development</li>
-        <li>Text Parsing, Machine Learning</li>
         <li>Data Modeling, Analysis, &amp; ETL</li>
-        <li>Secure, Scalable Solutions</li>
-      </MarkerlessList>
-    </ThirdCol>
-    <ThirdCol>
-      <SubSectionHeader>Web Developer</SubSectionHeader>
-      <TagList>
-        <li>Django</li>
-        <li>NodeJS</li>
-        <li>React</li>
-        <li>SASS</li>
-      </TagList>
-      <MarkerlessList>
-        <li>Static Site Generators, CMSes</li>
-        <li>Visualizations, Maps, Interactions</li>
-        <li>DevOps &amp; Cloud Infrastructure</li>
-        <li>Tests, Continuous Integration</li>
+        <li>Test-driven, API-first Engineering</li>
+        <li>Text Parsing, Data Viz and Maps</li>
+        <li>Scalable DevSecOps Solutions</li>
       </MarkerlessList>
     </ThirdCol>
     <ThirdCol>
       <SubSectionHeader>Communicator &amp; Teammate</SubSectionHeader>
-      <TagList>
-        <li>Agile</li>
-        <li>User-Centered</li>
-        <li>Fail-Fast</li>
-      </TagList>
       <MarkerlessList>
+        <li>Play Many Roles, Filling Gaps</li>
         <li>Tight-Knit Peers Sharing Skills</li>
+        <li>Thoughtful Critiques &amp; Reviews</li>
         <li>Continuous Research &amp; Learning</li>
-        <li>Thoughtful Code Reviews</li>
-        <li>Open Source, Transparent Plans</li>
+      </MarkerlessList>
+    </ThirdCol>
+    <ThirdCol>
+      <SubSectionHeader>Strategy &amp; Leadership</SubSectionHeader>
+      <MarkerlessList>
+        <li>Decompose Gnarly Problems</li>
+        <li>Agile &amp; User-Centered Design</li>
+        <li>Balance Delivery &amp; Vision</li>
+        <li>Build Buy-in, Gain Momentum</li>
       </MarkerlessList>
     </ThirdCol>
   </BorderedRow>
