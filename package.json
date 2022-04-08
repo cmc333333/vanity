@@ -39,7 +39,7 @@
     "lodash": "^4.17.20",
     "markdown-to-jsx": "^7.1.0",
     "mdata": "^1.0.1",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "normalize-url": "^5.3.0",
     "p-iteration": "^1.1.8",
     "prop-types": "^15.7.2",
