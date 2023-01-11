@@ -33,7 +33,7 @@
     "gatsby-source-filesystem": "^2.8.0",
     "gatsby-source-gpodder": "file:plugins/gatsby-source-gpodder",
     "gatsby-source-trakt": "file:plugins/gatsby-source-trakt",
-    "gatsby-transformer-remark": "^2.13.0",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.9.0",
     "gatsby-transformer-yaml": "^2.8.0",
     "lodash": "^4.17.20",
